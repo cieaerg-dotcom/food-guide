@@ -1,5 +1,5 @@
-const CACHE_NAME = 'tw-food-guide-v1';
-const ASSETS = ['./', './index.html', './manifest.json'];
+const CACHE_NAME = 'tw-food-guide-v2';
+const ASSETS = ['./', './index.html', './seaview.html', './manifest.json'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));

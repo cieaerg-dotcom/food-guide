@@ -311,8 +311,14 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
   </div>
 
   <!-- 複製成功提示 Toast -->
-  <div id="toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background-color:rgba(15,23,42,0.95);color:#ffffff;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.2);transition:transform 0.25s ease;z-index:999;pointer-events:none;">
+  <div id="toast" style="position:fixed;bottom:64px;left:50%;transform:translateX(-50%) translateY(120px);background-color:rgba(15,23,42,0.95);color:#ffffff;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.2);transition:transform 0.25s ease;z-index:999;pointer-events:none;">
     已複製店舖資訊！
+  </div>
+
+  <!-- 底部手冊導覽浮動條 -->
+  <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (185)</a>
+    <a href="全台看海放空旅宿隨身手冊.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
   <script>
@@ -503,6 +509,7 @@ def main() -> None:
   </script>
 </head>"""
     web_index_html = rendered_html.replace("</head>", pwa_head_inject, 1)
+    web_index_html = web_index_html.replace('href="全台看海放空旅宿隨身手冊.html"', 'href="seaview.html"')
     with open(os.path.join(WEB_DIST_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(web_index_html)
 
@@ -525,8 +532,8 @@ def main() -> None:
     with open(os.path.join(WEB_DIST_DIR, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest_data, f, ensure_ascii=False, indent=2)
 
-    sw_js = """const CACHE_NAME = 'tw-food-guide-v1';
-const ASSETS = ['./', './index.html', './manifest.json'];
+    sw_js = """const CACHE_NAME = 'tw-food-guide-v2';
+const ASSETS = ['./', './index.html', './seaview.html', './manifest.json'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));

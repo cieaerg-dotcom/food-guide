@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>全台看海放空旅宿隨身手冊 🌊 醒來即是大海</title>
+  <style>
+    :root {
+      --bg-ocean: #f0f7fa;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --accent-deep-blue: #0284c7;
+      --accent-teal: #0d9488;
+      --accent-coral: #f43f5e;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(2, 132, 199, 0.08);
+      --shadow-lg: 0 10px 25px -5px rgba(2, 132, 199, 0.12);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif;
+      background: var(--bg-ocean);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    /* 頂部海浪光影 Header */
+    .header {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #0f172a 100%);
+      color: #ffffff;
+      padding: 40px 20px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 16px;
+      background: var(--bg-ocean);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .header h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 0.95rem;
+      color: #e0f2fe;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 控制面板區 */
+    .sticky-controls {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(240, 247, 250, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .search-wrapper {
+      max-width: 760px;
+      margin: 0 auto 10px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 40px 0 42px;
+      border-radius: 12px;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-deep-blue);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 13px;
+      color: var(--text-muted);
+    }
+
+    .clear-btn {
+      position: absolute;
+      right: 12px;
+      top: 11px;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* 縣市分頁標籤 */
+    .filter-tabs-wrapper {
+      max-width: 760px;
+      margin: 0 auto 8px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 2px;
+    }
+    .filter-tabs-wrapper::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      flex-shrink: 0;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: var(--text-main);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--accent-deep-blue);
+      color: #ffffff;
+      border-color: var(--accent-deep-blue);
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+    }
+
+    /* 情境篩選 Pill */
+    .vibe-pills-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .vibe-pills-wrapper::-webkit-scrollbar { display: none; }
+
+    .vibe-pill {
+      flex-shrink: 0;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: #e2e8f0;
+      color: #475569;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .vibe-pill.active {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    /* 卡片清單網格 */
+    .container {
+      max-width: 760px;
+      margin: 16px auto;
+      padding: 0 16px;
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* 單張卡片樣式 */
+    .stay-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .stay-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: #bae6fd;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .location-cluster {
+      display: flex;
+      gap: 6px;
+    }
+
+    .region-pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .area-pill {
+      font-size: 0.75rem;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .likes-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #e11d48;
+      background: #ffe4e6;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+
+    .card-header {
+      margin-bottom: 10px;
+    }
+
+    .stay-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .stay-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .badge-type {
+      background: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+
+    .badge-vibe {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .badge-solo {
+      background: #fdf2f8;
+      color: #be185d;
+      border: 1px solid #fbcfe8;
+    }
+
+    .price-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #f8fafc;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #334155;
+      margin-bottom: 12px;
+    }
+
+    .seaview-feature {
+      background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+      border: 1px solid #bae6fd;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+    }
+
+    .feature-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 4px;
+    }
+
+    .feature-desc {
+      font-size: 0.88rem;
+      color: #0f172a;
+      line-height: 1.45;
+    }
+
+    .highlights-box {
+      margin-bottom: 12px;
+    }
+
+    .box-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 5px;
+    }
+
+    .highlight-list {
+      padding-left: 18px;
+      font-size: 0.86rem;
+      color: #334155;
+    }
+
+    .highlight-list li {
+      margin-bottom: 3px;
+    }
+
+    .amen-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .amen-tag {
+      font-size: 0.72rem;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .tips-box {
+      background: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      padding: 8px 10px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 14px;
+      font-size: 0.82rem;
+    }
+
+    .tips-tag {
+      display: inline-block;
+      font-weight: 700;
+      color: #b45309;
+      margin-bottom: 2px;
+    }
+
+    .tips-text {
+      color: #78350f;
+      line-height: 1.4;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 0.82rem;
+    }
+
+    .address-text {
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 60%;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #0284c7;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+
+    .nav-btn:hover {
+      background: #0369a1;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      display: none;
+    }
+
+    /* 底部手冊切換浮動條 */
+    .bottom-nav-bar {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      display: flex;
+      gap: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 100;
+    }
+
+    .nav-link-btn {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      transition: all 0.2s;
+    }
+
+    .nav-link-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-badge">🌊 醒來即是大海 · 靜心放空精選</div>
+    <h1>全台看海放空旅宿隨身手冊</h1>
+    <p>收錄 Threads 萬人共鳴推薦：起床即是太平洋與台灣海峽，適合一個人的療癒發呆之旅</p>
+  </header>
+
+  <div class="sticky-controls">
+    <div class="search-wrapper">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="搜尋旅宿、海景特色、鄉鎮、亮點...">
+      <button id="clearBtn" class="clear-btn">✕</button>
+    </div>
+
+    <div class="filter-tabs-wrapper" id="cityTabs">
+      <button class="tab-btn active" data-city="all">全部縣市 (20)</button><button class="tab-btn" data-city="屏東縣">屏東縣 (11)</button><button class="tab-btn" data-city="花蓮縣">花蓮縣 (3)</button><button class="tab-btn" data-city="台東縣">台東縣 (2)</button><button class="tab-btn" data-city="宜蘭縣">宜蘭縣 (2)</button><button class="tab-btn" data-city="高雄市">高雄市 (1)</button><button class="tab-btn" data-city="基隆市">基隆市 (1)</button>
+    </div>
+
+    <div class="vibe-pills-wrapper" id="vibePills">
+      <span class="vibe-pill active" data-vibe="all">全部氛圍</span>
+      <span class="vibe-pill" data-vibe="solo">限一人獨旅</span>
+      <span class="vibe-pill" data-vibe="浴缸">海景浴缸</span>
+      <span class="vibe-pill" data-vibe="泳池">無邊際泳池</span>
+      <span class="vibe-pill" data-vibe="日出">看日出</span>
+      <span class="vibe-pill" data-vibe="沙灘">直通沙灘</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="stats-bar">
+      <span>目前顯示：<strong id="visibleCount">20</strong> 間看海放空旅宿</span>
+      <span>全離線單檔 · 支援一鍵導航</span>
+    </div>
+
+    <div class="grid" id="staysGrid">
+      
+    <div class="stay-card" data-city="屏東縣" data-district="恆春鎮" data-vibe="極致放空" data-solo="true" data-search="白旅居 (b&amp;b wanli) 屏東縣 恆春鎮 萬里桐海岸 萬里桐第一排面海全景落地窗，退潮潮間帶與絕美落日晚霞 位於寧靜純樸的萬里桐漁村，周邊夜間無熱鬧商圈，適合喜愛安靜、聽海浪聲入睡的人；建議白天先採買好零食飲料。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 恆春鎮</span>
+          <span class="area-pill">萬里桐海岸</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          18,800+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">白旅居 (B&amp;B Wanli)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">純白海景民宿</span>
+          <span class="badge badge-vibe">極致放空</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中價位質感 (約 $2,800 - $4,200)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">萬里桐第一排面海全景落地窗，退潮潮間帶與絕美落日晚霞</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>脆友高達 1.8 萬讚狂推回訪多次的私藏名單</li><li>純白極簡空間，無遮蔽面向萬里桐純淨海域</li><li>傍晚躺在房內或露台就能看完整顆夕陽沉入台灣海峽</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">獨立海景陽台</span><span class="amen-tag">手作早餐</span><span class="amen-tag">步行至海灘1分鐘</span><span class="amen-tag">安靜漁村巷弄</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">位於寧靜純樸的萬里桐漁村，周邊夜間無熱鬧商圈，適合喜愛安靜、聽海浪聲入睡的人；建議白天先採買好零食飲料。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣恆春鎮山海里萬里路25-1號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣恆春鎮山海里萬里路25-1號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%20%E8%90%AC%E9%87%8C%E6%A1%90%20%E7%99%BD%E6%97%85%E5%B1%85" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="恆春鎮" data-vibe="超值海景" data-solo="true" data-search="覓夏旅店 (misia) 屏東縣 恆春鎮 南灣沙灘 過馬路即是南灣沙灘，三樓陽台全視角俯瞰蔚藍海面 房間空間不大但極乾淨明亮，南灣路臨馬路，夜間對聲音極敏感者建議自備耳塞或選高樓層。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 恆春鎮</span>
+          <span class="area-pill">南灣沙灘</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          5,300+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">覓夏旅店 (Misia)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">高CP值海景旅店</span>
+          <span class="badge badge-vibe">超值海景</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">親民平價 (低樓層約 $1,900 / 海景約 $2,500)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">過馬路即是南灣沙灘，三樓陽台全視角俯瞰蔚藍海面</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>脆友 4 訪狂推：低樓層 1900 元起、海景房 2500 元超親民定價</li><li>老闆手作早餐極其豐盛用心，每天變化菜色</li><li>窩在海景陽台吹風發呆一整天完全不心疼荷包</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">超大觀海陽台</span><span class="amen-tag">每日變換手作早餐</span><span class="amen-tag">直通南灣沙灘</span><span class="amen-tag">房型小巧溫馨</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">房間空間不大但極乾淨明亮，南灣路臨馬路，夜間對聲音極敏感者建議自備耳塞或選高樓層。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣恆春鎮南灣路104號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣恆春鎮南灣路104號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E5%8D%97%E7%81%A3%E8%B7%AF104%E8%99%9F%20%E8%A6%93%E5%A4%8F%E6%97%85%E5%BA%97" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="恆春鎮" data-vibe="床上看海" data-solo="true" data-search="海堤112 (sea wall 112) 屏東縣 恆春鎮 大灣海岸 大灣沙灘第一排，躺在床上直接看向大海，室內與露台雙浴缸 頂樓海景房視野最遼闊，若想同時享受浴缸泡澡與無敵海景，預訂時務必指名面海雙人房型。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 恆春鎮</span>
+          <span class="area-pill">大灣海岸</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          2,600+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">海堤112 (Sea Wall 112)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">雙浴缸海景民宿</span>
+          <span class="badge badge-vibe">床上看海</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中價位質感 (約 $2,800 - $4,500)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">大灣沙灘第一排，躺在床上直接看向大海，室內與露台雙浴缸</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>全景落地窗將大灣弧形海岸線框成一幅畫</li><li>配備室內蛋型浴缸與陽台露天泡澡池，邊泡澡邊看浪花拍岸</li><li>步行 3 分鐘即達墾丁大街，鬧中取靜的絕佳平衡點</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">室內外雙浴缸</span><span class="amen-tag">面海躺椅</span><span class="amen-tag">近墾丁大街</span><span class="amen-tag">冷氣與隔音佳</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">頂樓海景房視野最遼闊，若想同時享受浴缸泡澡與無敵海景，預訂時務必指名面海雙人房型。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣恆春鎮大灣路112號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣恆春鎮大灣路112號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E5%A4%A7%E7%81%A3%E8%B7%AF112%E8%99%9F%20%E6%B5%B7%E5%A0%A4112" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="恆春鎮" data-vibe="海景露台" data-solo="true" data-search="日和灣居 (sunshine liv.) 屏東縣 恆春鎮 南灣沙灘 正對南灣沙灘全景，私人大陽台直面層次分明的果凍藍海水 南灣第一排熱門首選，旺季與週末極難搶訂，建議提前 1-2 個月預約；附專屬停車位非常方便。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 恆春鎮</span>
+          <span class="area-pill">南灣沙灘</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          2,600+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">日和灣居 (Sunshine Liv.)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">北歐現代設計旅宿</span>
+          <span class="badge badge-vibe">海景露台</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中高價位 (約 $3,800 - $6,500)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">正對南灣沙灘全景，私人大陽台直面層次分明的果凍藍海水</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>純白極簡現代建築，客房皆標配 Marshall 藍牙音響</li><li>陽台超寬敞，早晨一睜開眼就是無遮蔽南灣全景</li><li>步行過馬路即刻踏上細軟沙灘</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">Marshall 藍牙音響</span><span class="amen-tag">超大海景露台</span><span class="amen-tag">精緻套餐式早餐</span><span class="amen-tag">設計感衛浴</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">南灣第一排熱門首選，旺季與週末極難搶訂，建議提前 1-2 個月預約；附專屬停車位非常方便。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣恆春鎮南灣路48號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣恆春鎮南灣路48號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E5%8D%97%E7%81%A3%E8%B7%AF48%E8%99%9F%20%E6%97%A5%E5%92%8C%E7%81%A3%E5%B1%85" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="滿州鄉" data-vibe="日出太平洋" data-solo="true" data-search="日日旅海 (ocean day by day) 屏東縣 滿州鄉 佳樂水海岸 全房型面向太平洋，落地窗看日出，純白建築搭配無垠綠草皮 位置偏東海岸，早晨拉開窗簾就是太平洋日出；無光害夜間星空壯麗，離恆春市區車程約20分鐘，適合開車或騎車前往。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 滿州鄉</span>
+          <span class="area-pill">佳樂水海岸</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          840+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">日日旅海 (Ocean Day by Day)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">大草皮純白旅宿</span>
+          <span class="badge badge-vibe">日出太平洋</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">平價至中價位 (淡季平日約 $1,500 - $3,000)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">全房型面向太平洋，落地窗看日出，純白建築搭配無垠綠草皮</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>滿州佳樂水秘境，前面一片大草坪直接延伸到太平洋岸</li><li>脆友實測淡季平日雙人房優惠約 1350-1500 元，CP值突破天際</li><li>一樓為知名草地咖啡餐酒館，拍照放空極具氛圍</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">全房型面海</span><span class="amen-tag">日出景觀</span><span class="amen-tag">一樓草地餐酒館</span><span class="amen-tag">廣大放空綠草坪</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">位置偏東海岸，早晨拉開窗簾就是太平洋日出；無光害夜間星空壯麗，離恆春市區車程約20分鐘，適合開車或騎車前往。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣滿州鄉港口村興海路33號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣滿州鄉港口村興海路33號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%BB%BF%E5%B7%9E%E9%84%89%E8%88%88%E6%B5%B7%E8%B7%AF33%E8%99%9F%20%E6%97%A5%E6%97%A5%E6%97%85%E6%B5%B7" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="恆春鎮" data-vibe="聽浪入眠" data-solo="true" data-search="聽著海聲迷路旅居 (casa ostia) 屏東縣 恆春鎮 萬里桐海岸 萬里桐海域保護區正前方，窗邊海景雙人浴缸與私人觀浪露台 房型少且極具人氣，無提供電視（旨在讓旅人回歸自然放空），村內路較窄，需依指示停放於外側停車位步行進入。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 恆春鎮</span>
+          <span class="area-pill">萬里桐海岸</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          380+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">聽著海聲迷路旅居 (Casa Ostia)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">質感老宅海景旅宿</span>
+          <span class="badge badge-vibe">聽浪入眠</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中價位質感 (約 $3,200 - $5,000)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">萬里桐海域保護區正前方，窗邊海景雙人浴缸與私人觀浪露台</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>迷路系列最具代表性海景作品，老宅木質調溫潤氛圍</li><li>真正躺在床上聽著潮起潮落入眠，一樓即是人氣海龜咖啡</li><li>純天然無人工喧囂，傍晚萬里桐落日第一排</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">海景獨立浴缸</span><span class="amen-tag">海龜咖啡聯名</span><span class="amen-tag">木質設計家具</span><span class="amen-tag">露天觀浪陽台</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">房型少且極具人氣，無提供電視（旨在讓旅人回歸自然放空），村內路較窄，需依指示停放於外側停車位步行進入。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣恆春鎮山海里萬里路25-3號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣恆春鎮山海里萬里路25-3號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E8%90%AC%E9%87%8C%E8%B7%AF25-3%E8%99%9F%20%E8%81%BD%E8%91%97%E6%B5%B7%E8%81%B2%E8%BF%B7%E8%B7%AF%E6%97%85%E5%B1%85" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="恆春鎮" data-vibe="山海制高點" data-solo="true" data-search="海境渡假民宿 (ocean paradise) 屏東縣 恆春鎮 山海里紅柴坑 獨佔整座山頭，360度恆春小希臘山海夕陽全景，廣闊牧草地看牛群吃草 上山路段有一小段產業道路，夜晚外出較暗，建議入住前買齊晚餐或在山莊內享用下午茶，整天待在園區內放空是最佳體驗方式。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 恆春鎮</span>
+          <span class="area-pill">山海里紅柴坑</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          68+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">海境渡假民宿 (Ocean Paradise)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">莊園級山海全景民宿</span>
+          <span class="badge badge-vibe">山海制高點</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中高價位 (約 $4,500 - $7,000)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">獨佔整座山頭，360度恆春小希臘山海夕陽全景，廣闊牧草地看牛群吃草</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>佔地13公頃私有山頭，全台灣絕無僅有的居高臨下斷崖海景</li><li>房內擁有超大觀景玻璃窗與景觀泡澡池，隱密性極高</li><li>清晨看大尖山日出，傍晚在草皮上看台灣海峽落日</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">13公頃私有牧草原</span><span class="amen-tag">360度山海觀景台</span><span class="amen-tag">玻璃屋景觀浴缸</span><span class="amen-tag">自養牛群景觀</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">上山路段有一小段產業道路，夜晚外出較暗，建議入住前買齊晚餐或在山莊內享用下午茶，整天待在園區內放空是最佳體驗方式。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣恆春鎮山海里紅柴路2-6號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣恆春鎮山海里紅柴路2-6號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E7%B4%85%E6%9F%B4%E8%B7%AF2-6%E8%99%9F%20%E6%B5%B7%E5%A2%83%E6%B8%A1%E5%81%87%E6%B0%91%E5%AE%BF" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="恆春鎮" data-vibe="草原泳池" data-solo="true" data-search="日光·嶼南 屏東縣 恆春鎮 埔頂大草原 埔頂草原制高點俯瞰巴士海峽，空中無邊際雙泳池與純白幾何建築 位於鵝鑾鼻埔頂台地，風勢有時較大，但景致壯闊大氣，非住客無法進入泳池區，保有高隱私與安寧感。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 恆春鎮</span>
+          <span class="area-pill">埔頂大草原</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          150+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">日光·嶼南</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">極簡無邊際泳池旅宿</span>
+          <span class="badge badge-vibe">草原泳池</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中高價位 (約 $4,000 - $6,800)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">埔頂草原制高點俯瞰巴士海峽，空中無邊際雙泳池與純白幾何建築</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>被草原與蔚藍大海環抱，建築本身宛如現代藝術美術館</li><li>空中懸浮無邊際海景泳池，暢游時視線與海平線連成一線</li><li>脆友大讚被充電的精緻現做早餐（松露炒蛋、蒲燒鰻魚等）</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">無邊際空中泳池</span><span class="amen-tag">精品手作早餐</span><span class="amen-tag">大片綠意草原</span><span class="amen-tag">乾濕分離奢華衛浴</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">位於鵝鑾鼻埔頂台地，風勢有時較大，但景致壯闊大氣，非住客無法進入泳池區，保有高隱私與安寧感。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣恆春鎮埔頂路191號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣恆春鎮埔頂路191號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E5%9F%94%E9%A0%82%E8%B7%AF191%E8%99%9F%20%E6%97%A5%E5%85%89%E5%B6%BC%E5%8D%97" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="恆春鎮" data-vibe="全幅海景窗" data-solo="true" data-search="靜觀行館 (jingguan hotel) 屏東縣 恆春鎮 船帆石海岸 船帆石正前方第一排，無死角全幅弧形落地窗直面壯麗巨石與海浪 房間面海景觀震撼度極高，建議下午辦理入住後直接待在房內泡茶看海，夕陽餘暉灑進房內時氛圍無敵。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 恆春鎮</span>
+          <span class="area-pill">船帆石海岸</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          4+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">靜觀行館 (Jingguan Hotel)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">精品海景行館</span>
+          <span class="badge badge-vibe">全幅海景窗</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中高價位 (約 $4,200 - $7,500)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">船帆石正前方第一排，無死角全幅弧形落地窗直面壯麗巨石與海浪</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>客房採大面整面無接縫落地玻璃，床鋪正對船帆石與大海</li><li>每間房配備原石大浴缸，一邊泡澡一邊欣賞蔚藍漸層海水</li><li>隔音極為優秀，在繁華船帆石路段享有寧靜獨立私領域</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">超大面海景落地窗</span><span class="amen-tag">船帆石正對景觀</span><span class="amen-tag">奢華景觀浴缸</span><span class="amen-tag">管家式服務</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">房間面海景觀震撼度極高，建議下午辦理入住後直接待在房內泡茶看海，夕陽餘暉灑進房內時氛圍無敵。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣恆春鎮船帆石路698號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣恆春鎮船帆石路698號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%81%86%E6%98%A5%E9%8E%AE%E8%88%B9%E5%B8%86%E7%9F%B3%E8%B7%AF698%E8%99%9F%20%E9%9D%9C%E8%A7%80%E8%A1%8C%E9%A4%A8" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="枋寮鄉" data-vibe="高空夕陽泳池" data-solo="true" data-search="枋客文旅 (fangliao hotel) 屏東縣 枋寮鄉 枋寮市區/漁港 頂樓高空無邊際泳池正對台灣海峽夕陽，高樓層衛浴落地窗遠眺海平線 前往墾丁或台東的中繼站，適合不想長途開車的旅人；頂樓泳池下午4點至6點夕陽時段最美。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 枋寮鄉</span>
+          <span class="area-pill">枋寮市區/漁港</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          270+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">枋客文旅 (Fangliao Hotel)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">無邊際泳池設計旅店</span>
+          <span class="badge badge-vibe">高空夕陽泳池</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">親民平價 (平日約 $2,000 - $3,200)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">頂樓高空無邊際泳池正對台灣海峽夕陽，高樓層衛浴落地窗遠眺海平線</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>近枋寮火車站步行5分鐘，免租車輕鬆抵達的看海首選</li><li>頂樓無邊際海景泳池與 Sky Lounge 星空酒吧，夕陽落日美不勝收</li><li>雙人入住平日兩千初頭，CP值極高</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">頂樓無邊際泳池</span><span class="amen-tag">高空景觀酒吧</span><span class="amen-tag">近火車站免租車</span><span class="amen-tag">景觀落地衛浴</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">前往墾丁或台東的中繼站，適合不想長途開車的旅人；頂樓泳池下午4點至6點夕陽時段最美。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣枋寮鄉中興路22-19號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣枋寮鄉中興路22-19號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%9E%8B%E5%AF%AE%E9%84%89%E4%B8%AD%E8%88%88%E8%B7%AF22-19%E8%99%9F%20%E6%9E%8B%E5%AE%A2%E6%96%87%E6%97%85" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="屏東縣" data-district="琉球鄉" data-vibe="開門即海灘" data-solo="true" data-search="威尼斯海景會館 屏東縣 琉球鄉 蛤板灣/威尼斯沙灘 坐落蛤板灣高處，大片綠地直通小琉球最美威尼斯沙灘 位於蛤板灣生態保護區附近，夜間生態豐富；小琉球全島騎機車便可輕鬆抵達各景點。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">屏東縣 · 琉球鄉</span>
+          <span class="area-pill">蛤板灣/威尼斯沙灘</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          30+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">威尼斯海景會館</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">離島綠地海景民宿</span>
+          <span class="badge badge-vibe">開門即海灘</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">親民平價 (平日雙人約 $2,400 - $2,800)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">坐落蛤板灣高處，大片綠地直通小琉球最美威尼斯沙灘</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>脆友推薦：平日雙人只要 2600 元，附早餐券</li><li>獨享廣闊戶外草皮與無敵海景，推開房門就是海</li><li>傍晚可直接漫步到威尼斯沙灘踏浪看夕陽</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">私人景觀草坪</span><span class="amen-tag">直達沙灘步道</span><span class="amen-tag">代訂船票機車</span><span class="amen-tag">早餐兌換券</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">位於蛤板灣生態保護區附近，夜間生態豐富；小琉球全島騎機車便可輕鬆抵達各景點。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="屏東縣琉球鄉相埔路58號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          屏東縣琉球鄉相埔路58號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E7%90%89%E7%90%83%E9%84%89%E7%9B%B8%E5%9F%94%E8%B7%AF58%E8%99%9F%20%E5%A8%81%E5%B0%BC%E6%96%AF%E6%B5%B7%E6%99%AF%E6%9C%83%E9%A4%A8" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="台東縣" data-district="長濱鄉" data-vibe="限一人獨旅" data-solo="true" data-search="分手巧克力 (chocolate separator b&amp;b) 台東縣 長濱鄉 三間屋台11線海岸 沙漠荒原風建築，整面大窗正對太平洋孤寂浪潮，無電視無網路 嚴格限定一人入住（兩人同行會被拒絕），全館只有幾間房，非常搶手；適合低潮期、想徹底放空療傷的靈魂。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">台東縣 · 長濱鄉</span>
+          <span class="area-pill">三間屋台11線海岸</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          500+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">分手巧克力 (Chocolate Separator B&amp;B)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">單人專屬極致獨處民宿</span>
+          <span class="badge badge-vibe">限一人獨旅</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">親民平價 (單人入住約 $1,800 - $2,500)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">沙漠荒原風建築，整面大窗正對太平洋孤寂浪潮，無電視無網路</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>脆友近 500 讚狂推：全館嚴格僅限「單人入住」，拒絕喧囂結伴</li><li>台東長濱海岸沙漠風情系列建築，極致安靜的面海發呆秘境</li><li>房內無電視、無干擾，讓你徹底與大海對話、療癒低潮</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">100%單人專屬</span><span class="amen-tag">直面太平洋孤窗</span><span class="amen-tag">安靜書寫角落</span><span class="amen-tag">極簡原石建築</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">嚴格限定一人入住（兩人同行會被拒絕），全館只有幾間房，非常搶手；適合低潮期、想徹底放空療傷的靈魂。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="台東縣長濱鄉三間村三間屋1-8號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          台東縣長濱鄉三間村三間屋1-8號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E6%9D%B1%E7%B8%A3%E9%95%B7%E6%BF%B1%E9%84%89%E4%B8%89%E9%96%93%E5%B1%8B%20%E5%88%86%E6%89%8B%E5%B7%A7%E5%85%8B%E5%8A%9B%E6%B0%91%E5%AE%BF" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="台東縣" data-district="成功鎮" data-vibe="太平洋日出" data-solo="true" data-search="暮光民宿 (twilight b&amp;b) 台東縣 成功鎮 石雨傘海岸 太平洋第一排石雨傘海岬，早晨在床上看旭日東升，入夜滿天銀河 位於成功與長濱交界處，周遭自然無光害；建議傍晚前完成 check-in，順道在成功鎮採買新鮮生魚片回民宿享用。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">台東縣 · 成功鎮</span>
+          <span class="area-pill">石雨傘海岸</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          1,600+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">暮光民宿 (Twilight B&amp;B)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">日出星空海景民宿</span>
+          <span class="badge badge-vibe">太平洋日出</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中價位質感 (約 $2,800 - $4,200)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">太平洋第一排石雨傘海岬，早晨在床上看旭日東升，入夜滿天銀河</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>脆友 1600+ 讚激推：「日出跟日落都美到不行」</li><li>臨海而建，無任何高樓阻擋，清晨陽光直接灑落在棉被上</li><li>環境純樸遠離塵囂，夜間躺在庭院聽海濤仰望銀河星空</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">直面日出景觀窗</span><span class="amen-tag">海邊觀景露台</span><span class="amen-tag">附設停車場</span><span class="amen-tag">現做熱騰騰早餐</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">位於成功與長濱交界處，周遭自然無光害；建議傍晚前完成 Check-in，順道在成功鎮採買新鮮生魚片回民宿享用。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="台東縣成功鎮石傘路38-3號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          台東縣成功鎮石傘路38-3號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E6%9D%B1%E7%B8%A3%E6%88%90%E5%8A%9F%E9%8E%AE%E7%9F%B3%E5%82%98%E8%B7%AF38-3%E8%99%9F%20%E6%9A%AE%E5%85%89%E6%B0%91%E5%AE%BF" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="花蓮縣" data-district="花蓮市" data-vibe="夜市海景雙享" data-solo="true" data-search="天使不穿鞋 (angels barefoot) 花蓮縣 花蓮市 北濱公園海濱街 北濱公園第一排，過馬路就是海灘涼亭，窗邊臥榻直接遠眺太平洋海平面 地理位置無敵，適合無車族搭火車到花蓮後租機車或步行；早晨可到對面北濱公園散步看日出。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">花蓮縣 · 花蓮市</span>
+          <span class="area-pill">北濱公園海濱街</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          610+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">天使不穿鞋 (Angels Barefoot)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">文青溫馨海景民宿</span>
+          <span class="badge badge-vibe">夜市海景雙享</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">親民平價 (平日約 $1,800 - $2,600)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">北濱公園第一排，過馬路就是海灘涼亭，窗邊臥榻直接遠眺太平洋海平面</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>脆友 600+ 讚力推：海邊第一排、過馬路就是海、離東大門夜市步行僅需7分鐘</li><li>民宿內有親人店貓店狗迎賓，溫暖療癒感滿分</li><li>價格親民、位置神級便利，兼具看海放空與美食機能</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">店貓店狗陪伴</span><span class="amen-tag">觀海休憩臥榻</span><span class="amen-tag">步行至東大門夜市</span><span class="amen-tag">直通海濱自行車道</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">地理位置無敵，適合無車族搭火車到花蓮後租機車或步行；早晨可到對面北濱公園散步看日出。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="花蓮縣花蓮市海濱街77號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          花蓮縣花蓮市海濱街77號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E8%93%AE%E7%B8%A3%E8%8A%B1%E8%93%AE%E5%B8%82%E6%B5%B7%E6%BF%B1%E8%A1%9777%E8%99%9F%20%E5%A4%A9%E4%BD%BF%E4%B8%8D%E7%A9%BF%E9%9E%8B" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="花蓮縣" data-district="花蓮市" data-vibe="文青如畫窗景" data-solo="true" data-search="owlstay 鹽花 (the salt owlstay) 花蓮縣 花蓮市 北濱公園海濱街 灰色清水模極簡空間，大面落地景觀方窗將太平洋海浪框成一幅動態油畫 極簡無多餘一次性備品（請自備牙刷），無電梯但行李可請管家協助，海景房非常搶手建議提早下訂。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">花蓮縣 · 花蓮市</span>
+          <span class="area-pill">北濱公園海濱街</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          120+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">OwlStay 鹽花 (The Salt OwlStay)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">極簡清水模設計旅宿</span>
+          <span class="badge badge-vibe">文青如畫窗景</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">親民質感 (平日約 $2,200 - $3,500)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">灰色清水模極簡空間，大面落地景觀方窗將太平洋海浪框成一幅動態油畫</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>官方脆號親自認證高CP值，文青圈口碑爆棚</li><li>設計低調洗鍊，去除一切繁瑣裝飾，留給旅人整面純粹的大海</li><li>房內配備精選茶器與藍牙音響，靜坐窗前即可放空一下午</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">大面取景觀海窗</span><span class="amen-tag">極簡清水模空間</span><span class="amen-tag">嚴選台灣茶葉體驗</span><span class="amen-tag">步行至夜市</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">極簡無多餘一次性備品（請自備牙刷），無電梯但行李可請管家協助，海景房非常搶手建議提早下訂。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="花蓮縣花蓮市海濱街71號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          花蓮縣花蓮市海濱街71號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E8%93%AE%E7%B8%A3%E8%8A%B1%E8%93%AE%E5%B8%82%E6%B5%B7%E6%BF%B1%E8%A1%9771%E8%99%9F%20OwlStay%20%E9%B9%BD%E8%8A%B1" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="花蓮縣" data-district="壽豐鄉" data-vibe="私密礫石灘" data-solo="true" data-search="海明蔚民宿 花蓮縣 壽豐鄉 鹽寮海岸台11線 鹽寮海景第一排，綠意庭院穿過小徑直接連通太平洋黑石灘 鄰近遠雄海洋公園，周圍多海產餐廳，夜晚極度寧靜，適合喜歡在天然海灘撿石頭、聽海潮聲放空的人。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">花蓮縣 · 壽豐鄉</span>
+          <span class="area-pill">鹽寮海岸台11線</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          30+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">海明蔚民宿</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">庭院通海度假民宿</span>
+          <span class="badge badge-vibe">私密礫石灘</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">親民平價 (平日約 $2,000 - $3,200)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">鹽寮海景第一排，綠意庭院穿過小徑直接連通太平洋黑石灘</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>遠離花蓮市區喧鬧，鹽寮段純天然未過度開發的原始海岸線</li><li>庭園草皮上有發呆躺椅與涼亭，潮浪聲隨風傳遞</li><li>親民價格就能享受獨門獨院直通海灘的奢華體驗</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">直通礫石海灘</span><span class="amen-tag">海景草坪發呆亭</span><span class="amen-tag">海景四面採光</span><span class="amen-tag">寵物友善空間</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">鄰近遠雄海洋公園，周圍多海產餐廳，夜晚極度寧靜，適合喜歡在天然海灘撿石頭、聽海潮聲放空的人。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="花蓮縣壽豐鄉鹽寮村福德56號">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          花蓮縣壽豐鄉鹽寮村福德56號
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E8%93%AE%E7%B8%A3%E5%A3%BD%E8%B1%90%E9%84%89%E7%A6%8F%E5%BE%B756%E8%99%9F%20%E6%B5%B7%E6%98%8E%E8%94%9A%E6%B0%91%E5%AE%BF" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="宜蘭縣" data-district="頭城鎮" data-vibe="台北1小時看海" data-solo="true" data-search="海之子民宿 (ocean child) 宜蘭縣 頭城鎮 大溪/外澳濱海公路 正對龜山島，大面落地窗與陽台景觀浴缸直接收納太平洋日出金光 台北搭乘客運或開車走雪隧僅約 1 小時車程，是北台灣逃離城市喧鬧、週五下班直奔看海的極致首選。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">宜蘭縣 · 頭城鎮</span>
+          <span class="area-pill">大溪/外澳濱海公路</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          2,500+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">海之子民宿 (Ocean Child)</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">龜山島海景日出民宿</span>
+          <span class="badge badge-vibe">台北1小時看海</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中價位質感 (平日約 $2,800 - $4,200)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">正對龜山島，大面落地窗與陽台景觀浴缸直接收納太平洋日出金光</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>脆友 2500+ 讚狂推「去了三遍！離台北又超級近」</li><li>客房落地窗一拉開，整座龜山島就在眼前浮現</li><li>陽台配備觀景浴缸，一邊泡澡一邊吹著海風看大船穿行</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">陽台海景浴缸</span><span class="amen-tag">正對龜山島日出</span><span class="amen-tag">近頭城衝浪勝地</span><span class="amen-tag">高階舒適床寢</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">台北搭乘客運或開車走雪隧僅約 1 小時車程，是北台灣逃離城市喧鬧、週五下班直奔看海的極致首選。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="宜蘭縣頭城鎮濱海路三段">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          宜蘭縣頭城鎮濱海路三段
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%AE%9C%E8%98%AD%E7%B8%A3%E9%A0%AD%E5%9F%8E%E9%8E%AE%20%E6%B5%B7%E4%B9%8B%E5%AD%90%E6%B0%91%E5%AE%BF" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="宜蘭縣" data-district="蘇澳鎮" data-vibe="內埤海浪聲" data-solo="true" data-search="蘇澳 住海邊民宿 宜蘭縣 蘇澳鎮 南方澳內埤情人灣 南方澳內埤海灘第一排，推開大門踏出幾步就是情人灣壯麗礫石弧線 內埤海灘為陡降型礫石灘，不可下海戲水；沿岸漫步、吹風、聽渾厚浪花滾動碎石的聲音非常療癒。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">宜蘭縣 · 蘇澳鎮</span>
+          <span class="area-pill">南方澳內埤情人灣</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          11+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">蘇澳 住海邊民宿</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">情人灣畔純樸海邊屋</span>
+          <span class="badge badge-vibe">內埤海浪聲</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">親民平價 (平日約 $1,600 - $2,400)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">南方澳內埤海灘第一排，推開大門踏出幾步就是情人灣壯麗礫石弧線</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>脆友特別指名推薦的蘇澳秘境</li><li>真正名副其實的「住海邊」，無造作的質樸在地漁港生活感</li><li>價格平易近人，早起在情人灣看日出、傍晚看漁船進港</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">門口即情人灣海灘</span><span class="amen-tag">親民平實定價</span><span class="amen-tag">鄰近南方澳漁港美食</span><span class="amen-tag">純樸安寧</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">內埤海灘為陡降型礫石灘，不可下海戲水；沿岸漫步、吹風、聽渾厚浪花滾動碎石的聲音非常療癒。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="宜蘭縣蘇澳鎮內埤路 (內埤海灘旁)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          宜蘭縣蘇澳鎮內埤路 (內埤海灘旁)
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%AE%9C%E8%98%AD%E7%B8%A3%E8%98%87%E6%BE%B3%E9%8E%AE%E5%85%A7%E5%9F%A4%E8%B7%AF%20%E4%BD%8F%E6%B5%B7%E9%82%8A%E6%B0%91%E5%AE%BF" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="高雄市" data-district="鼓山區" data-vibe="大船入港夕照" data-solo="true" data-search="西子灣沙灘會館 高雄市 鼓山區 中山大學西子灣 坐落中山大學內，坐擁南台灣唯一的私有專屬沙灘與無遮蔽夕陽海景 車輛可直接駛入中山大學校園並停放在會館專屬停車場；非住宿遊客無法進入私人沙灘區，清靜度絕佳。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">高雄市 · 鼓山區</span>
+          <span class="area-pill">中山大學西子灣</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          160+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">西子灣沙灘會館</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">私人沙灘夕陽會館</span>
+          <span class="badge badge-vibe">大船入港夕照</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">中價位質感 (約 $2,800 - $4,500)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">坐落中山大學內，坐擁南台灣唯一的私有專屬沙灘與無遮蔽夕陽海景</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>客房落地窗直接面對台灣海峽，躺床上就能看大輪船進出高雄港</li><li>擁有房客專屬私人沙灘與椰林躺椅，不用出國就有南洋度假感</li><li>下樓直接踏沙玩水，傍晚西子灣落日晚霞染紅整片海面</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">專屬私人沙灘</span><span class="amen-tag">西子灣夕陽全景</span><span class="amen-tag">椰林發呆躺椅</span><span class="amen-tag">海景中西餐廳</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">車輛可直接駛入中山大學校園並停放在會館專屬停車場；非住宿遊客無法進入私人沙灘區，清靜度絕佳。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="高雄市鼓山區蓮海路51號 (中山大學校園內)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          高雄市鼓山區蓮海路51號 (中山大學校園內)
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E9%9B%84%E5%B8%82%E9%BC%93%E5%B1%B1%E5%8D%80%E8%93%AE%E6%B5%B7%E8%B7%AF51%E8%99%9F%20%E8%A5%BF%E5%AD%90%E7%81%A3%E6%B2%99%E7%81%98%E6%9C%83%E9%A4%A8" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="stay-card" data-city="基隆市" data-district="中山區" data-vibe="基隆嶼海岬" data-solo="true" data-search="外木山 中華郵輪民宿 基隆市 中山區 外木山濱海公路 外木山海岸第一排，客房大窗正對基隆嶼與遼闊東海海天一色 外木山步道全長約5公里，清晨或傍晚散步非常舒適；距離基隆廟口夜市車程約12分鐘，美食與看海兼得。">
+      <div class="card-top">
+        <div class="location-cluster">
+          <span class="region-pill">基隆市 · 中山區</span>
+          <span class="area-pill">外木山濱海公路</span>
+        </div>
+        <div class="likes-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          30+ 讚推
+        </div>
+      </div>
+      
+      <div class="card-header">
+        <h3 class="stay-name">外木山 中華郵輪民宿</h3>
+        <div class="stay-meta">
+          <span class="badge badge-type">北海岸海岬民宿</span>
+          <span class="badge badge-vibe">基隆嶼海岬</span>
+          <span class="badge badge-solo">一人獨旅極推</span>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <span class="price-icon">💰</span>
+        <span class="price-val">親民平價 (平日約 $1,800 - $2,800)</span>
+      </div>
+
+      <div class="seaview-feature">
+        <div class="feature-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          起床看海視覺體驗
+        </div>
+        <p class="feature-desc">外木山海岸第一排，客房大窗正對基隆嶼與遼闊東海海天一色</p>
+      </div>
+
+      <div class="highlights-box">
+        <div class="box-label">脆友精選口碑亮點：</div>
+        <ul class="highlight-list">
+          <li>北台灣看海秘境，外木山濱海步道與天然海興游泳池就在眼前</li><li>房型採郵輪客艙主題概念，窗景視野毫無遮蔽直探海岬</li><li>親民價格適合北部朋友週末來一趟說走就走的看海散心之旅</li>
+        </ul>
+      </div>
+
+      <div class="amen-container">
+        <span class="amen-tag">正對基隆嶼海景</span><span class="amen-tag">緊鄰外木山步道</span><span class="amen-tag">近天然海水海興池</span><span class="amen-tag">交通便利</span>
+      </div>
+
+      <div class="tips-box">
+        <span class="tips-tag">放空與避坑建議</span>
+        <p class="tips-text">外木山步道全長約5公里，清晨或傍晚散步非常舒適；距離基隆廟口夜市車程約12分鐘，美食與看海兼得。</p>
+      </div>
+
+      <div class="card-footer">
+        <span class="address-text" title="基隆市中山區協和街段 (外木山濱海風景區)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          基隆市中山區協和街段 (外木山濱海風景區)
+        </span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%9F%BA%E9%9A%86%E5%B8%82%20%E5%A4%96%E6%9C%A8%E5%B1%B1%20%E4%B8%AD%E8%8F%AF%E9%83%B5%E8%BC%AA%E6%B0%91%E5%AE%BF" target="_blank" rel="noopener noreferrer" class="nav-btn">
+          <span>開啟導航</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+    </div>
+
+    <div class="empty-state" id="emptyState">
+      <h3>沒有找到相符的看海旅宿</h3>
+      <p style="margin-top:6px;">試著清除搜尋條件或選擇「全部縣市」</p>
+    </div>
+  </div>
+
+  <div class="bottom-nav-bar">
+    <a href="index.html" class="nav-link-btn">🍲 美食隨身手冊</a>
+    <a href="javascript:void(0)" class="nav-link-btn active">🌊 看海旅宿手冊 (20)</a>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearBtn');
+    const cityTabs = document.querySelectorAll('.tab-btn');
+    const vibePills = document.querySelectorAll('.vibe-pill');
+    const cards = document.querySelectorAll('.stay-card');
+    const visibleCount = document.getElementById('visibleCount');
+    const emptyState = document.getElementById('emptyState');
+
+    let currentCity = 'all';
+    let currentVibe = 'all';
+
+    function filterStays() {
+      const query = searchInput.value.trim().toLowerCase();
+      clearBtn.style.display = query ? 'block' : 'none';
+      let count = 0;
+
+      cards.forEach(card => {
+        const cardCity = card.getAttribute('data-city');
+        const cardSearch = card.getAttribute('data-search');
+        const cardVibe = card.getAttribute('data-vibe');
+        const cardSolo = card.getAttribute('data-solo') === 'true';
+
+        // 縣市篩選
+        const matchCity = (currentCity === 'all') || (cardCity === currentCity);
+
+        // 氛圍篩選
+        let matchVibe = true;
+        if (currentVibe === 'solo') {
+          matchVibe = cardSolo;
+        } else if (currentVibe !== 'all') {
+          matchVibe = cardVibe.includes(currentVibe) || cardSearch.includes(currentVibe);
+        }
+
+        // 關鍵字搜尋
+        const matchSearch = !query || cardSearch.includes(query);
+
+        if (matchCity && matchVibe && matchSearch) {
+          card.style.display = 'block';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      visibleCount.textContent = count;
+      emptyState.style.display = count === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterStays);
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      filterStays();
+      searchInput.focus();
+    });
+
+    cityTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        cityTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentCity = tab.getAttribute('data-city');
+        filterStays();
+      });
+    });
+
+    vibePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        vibePills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentVibe = pill.getAttribute('data-vibe');
+        filterStays();
+      });
+    });
+  </script>
+</body>
+</html>
