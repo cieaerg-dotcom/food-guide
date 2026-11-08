@@ -72,7 +72,8 @@ def render_card_html(s: Dict[str, Any]) -> str:
         for d in dishes
     )
 
-    map_url = f"https://www.google.com/maps/search/?api=1&query={html_lib.escape(s['mapQuery'], quote=True)}"
+    map_q = s.get("mapQuery") or f"{city}{district} {name}"
+    map_url = f"https://www.google.com/maps/search/?api=1&query={html_lib.escape(map_q, quote=True)}"
     search_blob = " ".join([
         name, city, district, category, sub_cat, dish_text, comment, tips, address, " ".join(tags)
     ]).lower()
@@ -477,7 +478,7 @@ def main() -> None:
     manifest_data = {
         "name": "台灣私房美食避雷隨身手冊",
         "short_name": "美食避雷手冊",
-        "description": "收錄嘉義市與臺南市 103 間在地口碑與避坑指南",
+        "description": f"收錄嘉義市與臺南市 {len(all_stores)} 間在地口碑與避坑指南",
         "start_url": "./index.html",
         "display": "standalone",
         "background_color": "#f8fafc",
