@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>{{TITLE}} ｜ {{SUBTITLE}}</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="{{THEME_COLOR}}">
+  <style>
+    :root {
+      --primary: {{THEME_COLOR}};
+      --primary-dark: #b45309;
+      --primary-light: #fef3c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-sub: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 80px;
+    }
+    header {
+      background: linear-gradient(135deg, #b45309, var(--primary), #f59e0b);
+      color: #fff;
+      padding: 32px 20px 24px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 13px;
+      opacity: 0.92;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .controls {
+      background: #ffffff;
+      padding: 12px 16px;
+      position: sticky;
+      top: 106px;
+      z-index: 90;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .search-box {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      font-size: 14px;
+      background: #f8fafc;
+      color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .filter-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .filter-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .filter-btn {
+      flex-shrink: 0;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 13px;
+      color: var(--text-sub);
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
+    }
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px 4px;
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+    .count-badge {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      padding: 12px 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card.closed {
+      background: #fafafa;
+      border: 1.5px dashed #cbd5e1;
+      opacity: 0.85;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .store-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 12px;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .store-name-row {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+    .store-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+    .cat-badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: var(--text-sub);
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+    .cat-badge.alert {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+    }
+    .dish-box {
+      background: #fffbeb;
+      border-left: 3px solid var(--primary);
+      padding: 8px 10px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 10px;
+    }
+    .dish-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: #92400e;
+    }
+    .comment-text {
+      font-size: 13.5px;
+      color: #334155;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .tips-box {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      font-size: 12.5px;
+      color: #475569;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .tips-box.alert {
+      background: #fff1f2;
+      color: #be123c;
+    }
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .tag {
+      font-size: 11.5px;
+      padding: 2px 8px;
+      background: #f1f5f9;
+      color: #64748b;
+      border-radius: 4px;
+    }
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .btn {
+      flex: 1;
+      padding: 9px 0;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .btn-map {
+      background: var(--primary);
+      color: #ffffff;
+      border: 1px solid var(--primary);
+    }
+    .btn-map:active {
+      background: var(--primary-dark);
+    }
+    .btn-copy {
+      background: #f8fafc;
+      color: var(--text-sub);
+      border: 1px solid var(--border);
+    }
+    .btn-copy:active {
+      background: #e2e8f0;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-sub);
+      grid-column: 1 / -1;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: rgba(30, 41, 59, 0.95);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      z-index: 999;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-badge">{{HEADER_BADGE}}</div>
+    <h1>{{TITLE}}</h1>
+    <div class="subtitle">{{SUBTITLE}}</div>
+  </header>
+
+  <div class="controls">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="搜尋店名、推薦菜色、屬性或關鍵字...">
+    </div>
+    <div class="filter-scroll" id="filterContainer">
+      <button class="filter-btn active" data-cat="all">全部</button>
+      {{CATEGORY_BUTTONS}}
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div>顯示中：<span id="storeCount" class="count-badge">0</span> 間店舖</div>
+    <div style="font-size:12px;">點選導航可直接開 Google 地圖</div>
+  </div>
+
+  <main class="grid" id="storesGrid"></main>
+
+  <div id="toast" class="toast">已複製店舖名稱！</div>
+
+  <script>
+    const storesData = {{STORES_JSON}};
+    const regionName = "{{REGION_NAME}}";
+
+    const grid = document.getElementById('storesGrid');
+    const searchInput = document.getElementById('searchInput');
+    const filterContainer = document.getElementById('filterContainer');
+    const storeCount = document.getElementById('storeCount');
+    const toast = document.getElementById('toast');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    function renderCards() {
+      const q = searchQuery.trim().toLowerCase();
+      const filtered = storesData.filter(s => {
+        const matchesCat = (currentFilter === 'all') || (s.category === currentFilter) || (s.category.includes(currentFilter));
+        const matchesSearch = !q || 
+                              s.name.toLowerCase().includes(q) || 
+                              s.dish.toLowerCase().includes(q) || 
+                              s.comment.toLowerCase().includes(q) || 
+                              s.tips.toLowerCase().includes(q) ||
+                              (s.tags && s.tags.some(t => t.toLowerCase().includes(q)));
+        return matchesCat && matchesSearch;
+      });
+
+      storeCount.textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <div style="font-size: 40px; margin-bottom: 12px;">🔍</div>
+            <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;">無相符的美食店舖</div>
+            <div>請嘗試更換關鍵字或點選「全部」分類</div>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(s => {
+        const isClosed = s.category.includes('已歇業') || s.tips.includes('歇業');
+        const queryTerm = encodeURIComponent((regionName ? regionName + ' ' : '') + s.name);
+        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${queryTerm}`;
+        const tagsHtml = (s.tags || []).map(t => `<span class="tag">#${t}</span>`).join('');
+        const isAlertTip = s.tips.includes('難買') || s.tips.includes('售罄') || s.tips.includes('排隊') || s.tips.includes('歇業') || s.tips.includes('鹹') || s.tips.includes('避雷');
+
+        return `
+          <article class="card ${isClosed ? 'closed' : ''}">
+            <div class="card-header">
+              <div class="store-name-row">
+                <span class="store-num">${s.id}</span>
+                <h2 class="store-name">${s.name}</h2>
+              </div>
+              <span class="cat-badge ${isClosed ? 'alert' : ''}">${s.category}</span>
+            </div>
+
+            <div class="section-title">招牌必點菜色</div>
+            <div class="dish-box">
+              <div class="dish-text">${s.dish}</div>
+            </div>
+
+            <div class="comment-text">${s.comment}</div>
+
+            <div class="tips-box ${isAlertTip ? 'alert' : ''}">
+              <span>💡</span>
+              <div>${s.tips}</div>
+            </div>
+
+            <div class="tags-row">${tagsHtml}</div>
+
+            <div class="card-actions">
+              <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-map">
+                📍 地圖導航
+              </a>
+              <button class="btn btn-copy" onclick="copyShop('${s.name}', '${s.dish}')">
+                📋 複製店名
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function copyShop(name, dish) {
+      const text = `${name} (推薦菜色：${dish})`;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`已複製：${name}`);
+      }).catch(() => {
+        showToast(`已複製：${name}`);
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderCards();
+    });
+
+    filterContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('filter-btn')) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        currentFilter = e.target.getAttribute('data-cat');
+        renderCards();
+      }
+    });
+
+    renderCards();
+  </script>
+</body>
+</html>
