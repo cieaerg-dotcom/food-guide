@@ -52,6 +52,8 @@ def render_card_html(s: Dict[str, Any]) -> str:
         region_style = "background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;"
     elif city == "嘉義市":
         region_style = "background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;"
+    elif city == "嘉義縣":
+        region_style = "background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;"
     else:
         region_style = "background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;"
 
@@ -136,14 +138,72 @@ def render_card_html(s: Dict[str, Any]) -> str:
 
 def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     """建置 100% 預渲染 + Inline CSS 之單檔離線獨立版 HTML。"""
+    from collections import Counter
+
     cards_prerendered = "\n".join(render_card_html(s) for s in stores)
     total_count = len(stores)
-    cy_count = sum(1 for s in stores if s["city"] == "嘉義市")
-    cy_east = sum(1 for s in stores if s["city"] == "嘉義市" and s["district"] == "東區")
-    cy_west = sum(1 for s in stores if s["city"] == "嘉義市" and s["district"] == "西區")
-    tn_count = sum(1 for s in stores if s["city"] == "臺南市")
-    tn_xinying = sum(1 for s in stores if s["city"] == "臺南市" and s["district"] == "新營區")
-    tn_houbi = sum(1 for s in stores if s["city"] == "臺南市" and s["district"] == "後壁區")
+
+    city_counts = Counter(s["city"] for s in stores)
+    dist_counts = Counter((s["city"], s["district"]) for s in stores)
+
+    city_icons = {
+        "嘉義市": "🐓",
+        "嘉義縣": "🌲",
+        "臺南市": "🏛️",
+        "高雄市": "⚓",
+        "臺中市": "☀️",
+        "臺北市": "🏙️"
+    }
+
+    # 動態產生縣市分頁按鈕
+    city_tab_buttons = [
+        f"""        <button type="button" data-city-btn="all" onclick="selectCity('all')"
+                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
+          <span>🗺️ 全部縣市</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">{total_count}</span>
+        </button>"""
+    ]
+    ordered_cities = ["嘉義市", "嘉義縣", "臺南市"] + [c for c in city_counts if c not in ["嘉義市", "嘉義縣", "臺南市"]]
+    for c in ordered_cities:
+        if c in city_counts:
+            icon = city_icons.get(c, "📍")
+            cnt = city_counts[c]
+            city_tab_buttons.append(
+                f"""        <button type="button" data-city-btn="{esc(c)}" onclick="selectCity('{esc(c)}')"
+                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
+          <span>{icon} {esc(c)}</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">{cnt}</span>
+        </button>"""
+            )
+    city_tabs_html = "\n".join(city_tab_buttons)
+
+    # 動態產生鄉鎮市區按鈕
+    dist_buttons = [
+        f"""        <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
+          全部鄉鎮市區 ({total_count})
+        </button>"""
+    ]
+    city_sort_order = {"嘉義市": 0, "嘉義縣": 1, "臺南市": 2}
+    sorted_dists = sorted(
+        dist_counts.items(),
+        key=lambda x: (city_sort_order.get(x[0][0], 99), x[0][1])
+    )
+    for (c, d), cnt in sorted_dists:
+        dist_key = f"{c}・{d}"
+        dist_buttons.append(
+            f"""        <button type="button" data-dist-btn="{esc(dist_key)}" data-dist-city="{esc(c)}" onclick="selectDistrict('{esc(dist_key)}')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          {esc(dist_key)} ({cnt})
+        </button>"""
+        )
+    district_bar_html = "\n".join(dist_buttons)
+
+    cy_east = dist_counts.get(("嘉義市", "東區"), 0)
+    cy_west = dist_counts.get(("嘉義市", "西區"), 0)
+    tn_xinying = dist_counts.get(("臺南市", "新營區"), 0)
+    tn_houbi = dist_counts.get(("臺南市", "後壁區"), 0)
+    cx_count = city_counts.get("嘉義縣", 0)
 
     return f"""<!DOCTYPE html>
 <html lang="zh-TW">
@@ -174,8 +234,8 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
       ✈️ 手機離線獨立版 ｜ 免網路・免伺服器隨點隨開
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
-    <div style="font-size:13px;opacity:0.92;max-width:560px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 {cy_east}／西區 {cy_west}）＆ 臺南市（新營區 {tn_xinying}／後壁區 {tn_houbi}）共 {total_count} 間實測指南
+    <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
+      收錄嘉義市（東區 {cy_east}／西區 {cy_west}）、嘉義縣（{cx_count} 間）＆ 臺南市（新營區 {tn_xinying}／後壁區 {tn_houbi}）共 {total_count} 間實測指南
     </div>
   </header>
 
@@ -185,46 +245,13 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
 
       <!-- 第一層：台灣縣市分頁 -->
       <div id="cityTabs" class="no-scrollbar" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:9px;padding-bottom:2px;">
-        <button type="button" data-city-btn="all" onclick="selectCity('all')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">{total_count}</span>
-        </button>
-        <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>🐓 嘉義市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">{cy_count}</span>
-        </button>
-        <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>🏛️ 臺南市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">{tn_count}</span>
-        </button>
+{city_tabs_html}
       </div>
 
       <!-- 第二層：鄉鎮市區子分頁 -->
       <div id="districtBar" class="no-scrollbar" style="display:flex;align-items:center;gap:6px;overflow-x:auto;margin-bottom:9px;padding:6px 10px;background-color:#f1f5f9;border-radius:10px;">
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
-        <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 ({total_count})
-        </button>
-        <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義市・東區 ({cy_east})
-        </button>
-        <button type="button" data-dist-btn="嘉義市・西區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・西區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義市・西區 ({cy_west})
-        </button>
-        <button type="button" data-dist-btn="臺南市・新營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・新營區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・新營區 ({tn_xinying})
-        </button>
-        <button type="button" data-dist-btn="臺南市・後壁區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・後壁區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・後壁區 ({tn_houbi})
-        </button>
+{district_bar_html}
       </div>
 
       <!-- 搜尋框 -->
@@ -298,11 +325,15 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     var STRATEGY_NOTES = {{
       "all": {{
         title: "⚡ 跨縣市 3 秒精準避坑總覽（點選上方「縣市」與「鄉鎮市區」可快速切換分頁）",
-        html: "• <b>嘉義市（東區 {cy_east} 間／西區 {cy_west} 間）</b>：必吃緯英海南雞飯、五千金炒飯、豆豆／京站湯包、黃記／南門白醋涼麵；<b>阿婆烤玉米（東區）與友愛鹹酥雞（西區）為極難買到的排隊魔王</b>；阿霞滷肉飯務必請店家滷汁少一點。<br>• <b>臺南市（新營區 {tn_xinying} 間／後壁區 {tn_houbi} 間）</b>：正餐首推溪北飯桌、小紅堂牛肉麵、燒蛋一下、阿豪冰糖豬腳；阿翔蚵仔煎必點「鐵板炒飯＋乾煎魚肚」，榮昌雞肉飯必加「半熟煎鴨蛋」；伯恩意麵份量精緻、金丘腿庫飯出餐較慢。"
+        html: "• <b>嘉義市（東區 {cy_east} 間／西區 {cy_west} 間）</b>：必吃阿宏師火雞片飯＋半熟蛋、桃城三禾、大人味日印珈哩、五千金炒飯、豆豆／京站湯包、黃記／南門白醋涼麵；阿岸米糕附柴魚高湯；<b>阿婆烤玉米、友愛鹹酥雞與大人味咖哩為極難排到的名店</b>。<br>• <b>嘉義縣（{cx_count} 間）</b>：竹香園甕缸烤雞（中埔）、烘焙旅程手作蜂巢可頌（水上）、朴子第一市場九十年麻糬棟。<br>• <b>臺南市（新營區 {tn_xinying} 間／後壁區 {tn_houbi} 間）</b>：正餐首推溪北飯桌、小紅堂牛肉麵、燒蛋一下、阿豪冰糖豬腳；阿翔蚵仔煎必點「鐵板炒飯＋乾煎魚肚」，榮昌雞肉飯必加「半熟煎鴨蛋」；伯恩意麵份量精緻、金丘腿庫飯出餐較慢。"
       }},
       "嘉義市": {{
         title: "⚡ 嘉義市（東區／西區）3 秒精準避坑指南",
-        html: "• <b>東區亮點（{cy_east} 間）</b>：五千金炒飯、豆豆小籠湯包、黃記涼麵涼圓、劉湯圓（<b>必加脆圓</b>）、阿霞火雞肉飯（<b>反向推手切滷肉飯，務必請店家滷汁少一點</b>）、古月焗烤（<b>必點偏甜酥皮濃湯</b>）、卡早起晨（<b>辣醬必加外帶必包</b>）。<br>• <b>西區亮點（{cy_west} 間）</b>：緯英海南雞飯、桔吉力早餐（<b>建議電話預訂外帶</b>）、大眾水餃（<b>必加特製辣醬</b>）、霜空咖啡、友愛鹹酥雞。<br>• <b>歇業提醒</b>：西區 WT Food Drinks 已歇業，請勿白跑撲空！"
+        html: "• <b>東區亮點（{cy_east} 間）</b>：阿宏師火雞片飯加半熟蛋、桃城三禾火雞肉飯、大人味咖哩（<b>每天午晚各限18份</b>）、五千金炒飯、豆豆小籠湯包、黃記涼麵涼圓、劉湯圓（<b>必加脆圓</b>）、阿霞火雞肉飯（<b>反向推手切滷肉飯，務必請店家滷汁少一點</b>）、古月焗烤（<b>必點偏甜酥皮濃湯</b>）、卡早起晨（<b>辣醬必加外帶必包</b>）。<br>• <b>西區亮點（{cy_west} 間）</b>：蕭老師火雞肉飯配炸排骨、阿岸米糕（<b>附贈柴魚大骨湯</b>）、咱台灣人的冰（<b>陳澄波故居蜜蕃薯</b>）、大盛居定食、隱燃燒肉丼、米半鐵板燒、緯英海南雞飯、桔吉力早餐（<b>建議電話預訂外帶</b>）、大眾水餃（<b>必加特製辣醬</b>）、霜空咖啡、友愛鹹酥雞。<br>• <b>歇業提醒</b>：西區 WT Food Drinks 與東區二奶巷星馬叻沙（租約到期）暫停營業，請勿白跑撲空！"
+      }},
+      "嘉義縣": {{
+        title: "⚡ 嘉義縣（中埔鄉／水上鄉／朴子市）3 秒精準避坑指南",
+        html: "• <b>中埔鄉</b>：竹香園甕缸雞（<b>招牌脆皮烤雞附筍乾大骨湯，炸地瓜酥必沾梅粉，假日人潮極多務必提早訂位</b>）。<br>• <b>水上鄉</b>：烘焙旅程（<b>田園蜂巢手作可頌天花板，建議提早於官方IG預留避免售罄</b>）。<br>• <b>朴子市</b>：麻糬棟（<b>朴子第一市場近百年老攤，招牌鹹綠豆花生手工麻糬冷熱皆軟Q</b>）。"
       }},
       "臺南市": {{
         title: "⚡ 臺南市（新營區／後壁區）3 秒精準避坑指南",
