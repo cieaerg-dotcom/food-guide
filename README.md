@@ -32,7 +32,7 @@
 │   └── threads_chiayi_raw.json        # 嘉義貼文與 154 則串文留言完整結構數據
 ├── scripts/                           # 專案自動化建置與同步腳本
 │   ├── build_unified_guide.py         # 跨縣市鄉鎮區資料正規化與單檔 HTML 建置腳本
-│   └── sync_food_guides.py            # Google Drive & iCloud 雙雲端增量同步腳本
+│   └── deploy_web.py                  # 本機與 GitHub Pages 網頁自動建置同步腳本
 ├── logs/                              # 同步與背景監控日誌
 │   └── food_guides_sync.log
 └── .agents/skills/                    # 專案內嵌 Skill
@@ -41,16 +41,17 @@
 
 ---
 
-## ☁️ 雲端同步與持續更新架構
+## ☁️ 網站發布與本機同步架構 (GitHub Pages)
 
-本專案配置了 macOS 原生常駐監控服務（LaunchAgent）：
-* **服務識別碼**：`com.foodguide.sync`
-* **監聽檔案**：
-  * `/Users/mac/AGY本地工作區/專案資料夾/美食景點整理/美食避雷隨身手冊.html`
-* **自動同步目標**：
-  1. **Google 雲端硬碟**：`~/Library/CloudStorage/GoogleDrive-cieaer.g@gmail.com/我的雲端硬碟/AGY工作區GD/美食隨身手冊/美食避雷隨身手冊.html`
-  2. **Apple iCloud Drive**：`~/Library/Mobile Documents/com~apple~CloudDocs/AGY工作區i/美食隨身手冊/美食避雷隨身手冊.html`
-* **更新特性**：只要本地手冊一存檔，系統於 2 秒內自動比對校驗碼並增量推送至雲端，手機端（Google Drive App / iOS「檔案」App）立即可見最新修改，無需手動重新上傳。
+本專案已停止 Google Drive / iCloud 雲端同步，改採 **本機 ➔ GitHub Pages 網頁同步**：
+
+* **網站原始碼目錄**：`web_dist/`（包含 PWA 快取與離線網頁檔案）
+* **自動部署腳本**：[`scripts/deploy_web.py`](./scripts/deploy_web.py)
+* **自動發布機制**：
+  1. 當本機修改或抓取新店家後，執行 `python3 scripts/deploy_web.py`。
+  2. 腳本會自動重新產製手冊與網站包，並透過 Git 提交推送到 GitHub。
+  3. GitHub Actions 會自動啟動，在 1~2 分鐘內將最新店家資料發布至 GitHub Pages 線上網站。
+  4. 手機已安裝的 PWA 或網頁將自動無縫接收最新資料。
 
 ---
 
