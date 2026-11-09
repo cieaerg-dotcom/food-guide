@@ -35,7 +35,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 86／西區 64）、嘉義縣（34 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 70 間）共 254 間實測指南
+      收錄嘉義市（東區 86／西區 64）、嘉義縣（34 間）＆ 臺南市（新營區 62／後壁／柳營／鹽水共 75 間）共 259 間實測指南
     </div>
   </header>
 
@@ -48,7 +48,7 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">254</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">259</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -63,7 +63,7 @@
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🏛️ 臺南市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">70</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">75</span>
         </button>
       </div>
 
@@ -72,7 +72,7 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (254)
+          全部鄉鎮市區 (259)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -128,7 +128,7 @@
         </button>
         <button type="button" data-dist-btn="臺南市・新營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・新營區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・新營區 (61)
+          臺南市・新營區 (62)
         </button>
         <button type="button" data-dist-btn="臺南市・柳營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・柳營區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -136,7 +136,7 @@
         </button>
         <button type="button" data-dist-btn="臺南市・鹽水區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・鹽水區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・鹽水區 (1)
+          臺南市・鹽水區 (5)
         </button>
         <button type="button" data-dist-btn="臺南市・麻豆區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・麻豆區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -171,7 +171,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">254</b> 間店舖</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">259</b> 間店舖</div>
   </div>
 
   <!-- 預渲染之 103 間店家卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -12622,6 +12622,251 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="鹽水區"
+               data-city-district="臺南市・鹽水區"
+               data-category="麵食點心"
+               data-search="阿姬意麵 臺南市 鹽水區 麵食點心 鹽水意麵代表老字號・手工肉燕酥 鹽水乾意麵、肉燕酥湯、肉燕酥乾吃、滷鴨蛋、骨肉湯 走訪鹽水古鎮必吃的經典意麵老字號！堅持以新鮮鴨蛋揉入麵粉純手工日曬製成，麵條薄滑且韌性十足；煮熟後淋上香濃肉燥與爽脆豆芽菜，拌勻後油香撲鼻。搭配招牌「肉燕酥湯」，炸得金黃酥脆的肉燕泡入大骨高湯，外層微吸湯汁、內餡鮮甜扎實。 【避雷與內行吃法】1. 意麵強烈建議點乾麵，更能吃出鴨蛋香與q彈咬勁。2. 肉燕酥可單點乾吃感受香脆，亦可浸泡湯中半酥半軟吸附精華。 臺南市鹽水區中山路2-8號（鹽水觀光美食城對面） 鹽水意麵 肉燕酥 鹽水必吃 在地小吃 老店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・鹽水區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">麵食點心｜鹽水意麵代表老字號・手工肉燕酥</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">點心城旁排隊名店・鴨蛋手揉Q彈意麵</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-71</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿姬意麵</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鹽水乾意麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">肉燕酥湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">肉燕酥乾吃</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滷鴨蛋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">骨肉湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">走訪鹽水古鎮必吃的經典意麵老字號！堅持以新鮮鴨蛋揉入麵粉純手工日曬製成，麵條薄滑且韌性十足；煮熟後淋上香濃肉燥與爽脆豆芽菜，拌勻後油香撲鼻。搭配招牌「肉燕酥湯」，炸得金黃酥脆的肉燕泡入大骨高湯，外層微吸湯汁、內餡鮮甜扎實。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 意麵強烈建議點乾麵，更能吃出鴨蛋香與Q彈咬勁。2. 肉燕酥可單點乾吃感受香脆，亦可浸泡湯中半酥半軟吸附精華。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市鹽水區中山路2-8號（鹽水觀光美食城對面）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:00–17:00（售完提早打烊）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市鹽水區 阿姬意麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市鹽水區', '阿姬意麵', '鹽水乾意麵、肉燕酥湯、肉燕酥乾吃、滷鴨蛋、骨肉湯', '臺南市鹽水區中山路2-8號（鹽水觀光美食城對面）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="鹽水區"
+               data-city-district="臺南市・鹽水區"
+               data-category="甜點飲品"
+               data-search="銀鋒冰果室 臺南市 鹽水區 甜點飲品 八角樓旁七十年傳奇・獨門西瓜檸檬汁 西瓜檸檬汁、月見紅豆牛乳冰、紅豆布丁牛奶冰、木瓜牛奶、古早味冰棒 座落於國定古蹟鹽水八角樓旁的超過70年老字號冰果室，也是老一輩鹽水人的相親勝地。招牌「西瓜檸檬汁」將香甜西瓜汁加入整顆鮮榨檸檬汁，酸甜激盪出絕妙平衡，生津解膩超級消暑；經典「月見紅豆牛乳冰」在綿密香甜的自熬紅豆上打一顆生蛋黃，淋上煉乳濃郁香甜。 【避雷與內行吃法】1. 必喝全台少見的「西瓜檸檬汁」，甜酸比例堪稱一絕。2. 冰品可額外加點台南傳統手工布丁，口感更為滑順豐厚。 臺南市鹽水區中山路1號（八角樓旁） 老字號冰果室 西瓜檸檬汁 月見冰 鹽水地標 消暑飲品"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・鹽水區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">甜點飲品｜八角樓旁七十年傳奇・獨門西瓜檸檬汁</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">鹽水古鎮地標老冰店・月見紅豆牛乳冰</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-72</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">銀鋒冰果室</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">西瓜檸檬汁</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">月見紅豆牛乳冰</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">紅豆布丁牛奶冰</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">木瓜牛奶</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味冰棒</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">座落於國定古蹟鹽水八角樓旁的超過70年老字號冰果室，也是老一輩鹽水人的相親勝地。招牌「西瓜檸檬汁」將香甜西瓜汁加入整顆鮮榨檸檬汁，酸甜激盪出絕妙平衡，生津解膩超級消暑；經典「月見紅豆牛乳冰」在綿密香甜的自熬紅豆上打一顆生蛋黃，淋上煉乳濃郁香甜。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 必喝全台少見的「西瓜檸檬汁」，甜酸比例堪稱一絕。2. 冰品可額外加點台南傳統手工布丁，口感更為滑順豐厚。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市鹽水區中山路1號（八角樓旁）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30–22:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市鹽水區 銀鋒冰果室" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市鹽水區', '銀鋒冰果室', '西瓜檸檬汁、月見紅豆牛乳冰、紅豆布丁牛奶冰、木瓜牛奶、古早味冰棒', '臺南市鹽水區中山路1號（八角樓旁）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="鹽水區"
+               data-city-district="臺南市・鹽水區"
+               data-category="麵食點心"
+               data-search="鹽水水煎包 臺南市 鹽水區 麵食點心 午後排隊秒殺・酥脆爆汁花生甜煎包 招牌水煎包（筍肉高麗菜）、花生甜煎包、紅豆甜煎包 每日午後兩點開攤即引發排隊人潮的鹽水超人氣點心！大鐵鍋現包現煎，底部煎得金黃焦脆「恰恰」，麵皮軟q帶嚼勁。鹹煎包內餡塞滿鮮脆高麗菜、冬粉、鮮筍丁與絞肉，咬下湯汁四溢；獨創的「花生甜煎包」包入滿滿手炒花生粉，高溫熱融後香濃微甜，下午茶回購率極高。 【避雷與內行吃法】1. 每日約13:30開賣，通常傍晚16:30至17:00前即被掃空，建議出爐時段提早排隊。2. 花生甜煎包熱騰騰現吃最為酥香爆餡。 臺南市鹽水區朝琴路與中正路交叉口（伽藍廟前） 排隊小吃 水煎包 花生煎包 鹽水下午茶 銅板美食"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・鹽水區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">麵食點心｜午後排隊秒殺・酥脆爆汁花生甜煎包</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">朝琴路老攤・皮薄底脆現包現煎</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-73</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">鹽水水煎包</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌水煎包（筍肉高麗菜）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">花生甜煎包</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">紅豆甜煎包</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">每日午後兩點開攤即引發排隊人潮的鹽水超人氣點心！大鐵鍋現包現煎，底部煎得金黃焦脆「恰恰」，麵皮軟Q帶嚼勁。鹹煎包內餡塞滿鮮脆高麗菜、冬粉、鮮筍丁與絞肉，咬下湯汁四溢；獨創的「花生甜煎包」包入滿滿手炒花生粉，高溫熱融後香濃微甜，下午茶回購率極高。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 每日約13:30開賣，通常傍晚16:30至17:00前即被掃空，建議出爐時段提早排隊。2. 花生甜煎包熱騰騰現吃最為酥香爆餡。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市鹽水區朝琴路與中正路交叉口（伽藍廟前）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>13:30–18:00（每週一公休，售完為止）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市鹽水區 鹽水水煎包" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市鹽水區', '鹽水水煎包', '招牌水煎包（筍肉高麗菜）、花生甜煎包、紅豆甜煎包', '臺南市鹽水區朝琴路與中正路交叉口（伽藍廟前）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="鹽水區"
+               data-city-district="臺南市・鹽水區"
+               data-category="正餐主食"
+               data-search="鹽水豆簽羹 臺南市 鹽水區 正餐主食 傳承三代百年古早味・虱目魚蚵仔鮮羹 綜合豆簽羹（虱目魚肚+蚵仔）、虱目魚豆簽羹、鮮蚵豆簽羹、鹹瓜蔭瓜切盤 全台極為罕見的古法傳統小吃！豆簽是以米豆磨粉揉製曬乾的淡黃色扁平麵條，久煮不爛且帶有豆香。加入新鮮無刺虱目魚肚條、肥美鮮蚵與老蔭瓜共同熬煮勾芡，羹湯甘甜滑潤，麵條吸飽海味精華，是鹽水傳承三代的舌尖記憶。 【避雷與內行吃法】1. 必點「綜合口味」，一次品嚐虱目魚肚的嫩口與鮮蚵的海味。2. 嗜重口味者可加入少許黑醋與白胡椒粉，更能提引出羹湯的清甜。 臺南市鹽水區朝琴路19號 豆簽羹 百年老店 傳統小吃 鹽水特色 虱目魚鮮蚵"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・鹽水區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜傳承三代百年古早味・虱目魚蚵仔鮮羹</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">鹽水在地百年名物・傳統米豆特製麵條</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-74</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">鹽水豆簽羹</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合豆簽羹（虱目魚肚+蚵仔）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">虱目魚豆簽羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鮮蚵豆簽羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鹹瓜蔭瓜切盤</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">全台極為罕見的古法傳統小吃！豆簽是以米豆磨粉揉製曬乾的淡黃色扁平麵條，久煮不爛且帶有豆香。加入新鮮無刺虱目魚肚條、肥美鮮蚵與老蔭瓜共同熬煮勾芡，羹湯甘甜滑潤，麵條吸飽海味精華，是鹽水傳承三代的舌尖記憶。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 必點「綜合口味」，一次品嚐虱目魚肚的嫩口與鮮蚵的海味。2. 嗜重口味者可加入少許黑醋與白胡椒粉，更能提引出羹湯的清甜。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市鹽水區朝琴路19號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>14:00–19:00（售完提早打烊）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市鹽水區 鹽水豆簽羹" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市鹽水區', '鹽水豆簽羹', '綜合豆簽羹（虱目魚肚+蚵仔）、虱目魚豆簽羹、鮮蚵豆簽羹、鹹瓜蔭瓜切盤', '臺南市鹽水區朝琴路19號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="正餐主食"
+               data-search="嚴家水餃牛肉麵 臺南市 新營區 正餐主食 新營老字號・皮薄餡多鮮肉水餃 手工鮮肉水餃、牛肉水餃、紅燒牛肉麵、酸辣湯、煙燻豬頭皮 新營中正路上陪伴在地人長大的數十年老麵館！水餃顆顆飽滿扎實，外皮帶有手工手水桿製的彈性，內餡豬肉鮮甜多汁且菜肉比例拿捏得宜；搭配大碗料多爽口的酸辣湯與切盤滷味，是新營人日常最溫暖踏實的飽足好滋味。 【避雷與內行吃法】1. 沾醬區特調蔥花醬油辣椒是水餃靈魂伴侶。2. 小菜區的煙燻豬頭皮與豆乾入味耐嚼，建議隨餐夾取。 臺南市新營區中正路66號 新營老店 手工水餃 牛肉麵 銅板美食 在地日常"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜新營老字號・皮薄餡多鮮肉水餃</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">在地數十年老饕心頭好・平價大份量</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-75</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">嚴家水餃牛肉麵</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工鮮肉水餃</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">牛肉水餃</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">紅燒牛肉麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">酸辣湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">煙燻豬頭皮</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">新營中正路上陪伴在地人長大的數十年老麵館！水餃顆顆飽滿扎實，外皮帶有手工手水桿製的彈性，內餡豬肉鮮甜多汁且菜肉比例拿捏得宜；搭配大碗料多爽口的酸辣湯與切盤滷味，是新營人日常最溫暖踏實的飽足好滋味。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 沾醬區特調蔥花醬油辣椒是水餃靈魂伴侶。2. 小菜區的煙燻豬頭皮與豆乾入味耐嚼，建議隨餐夾取。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區中正路66號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00–14:00, 16:30–20:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區 嚴家水餃牛肉麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', '嚴家水餃牛肉麵', '手工鮮肉水餃、牛肉水餃、紅燒牛肉麵、酸辣湯、煙燻豬頭皮', '臺南市新營區中正路66號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -12638,7 +12883,7 @@
 
   <!-- 底部手冊導覽浮動條 -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (254)</a>
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (259)</a>
     <a href="全台看海放空旅宿隨身手冊.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
