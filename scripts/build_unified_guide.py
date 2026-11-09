@@ -277,7 +277,6 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
         <button type="button" data-cat-btn="鍋物補湯" onclick="selectCat('鍋物補湯')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍲 鍋物補湯</button>
         <button type="button" data-cat-btn="烘焙甜點冰品" onclick="selectCat('烘焙甜點冰品')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍰 烘焙甜點冰品</button>
         <button type="button" data-cat-btn="手搖咖啡茶飲" onclick="selectCat('手搖咖啡茶飲')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🥤 手搖咖啡茶飲</button>
-        <button type="button" data-cat-btn="已歇業提醒" onclick="selectCat('已歇業提醒')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">⚠️ 已歇業</button>
       </div>
     </div>
   </nav>
