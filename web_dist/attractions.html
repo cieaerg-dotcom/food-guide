@@ -35,7 +35,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">全台美拍私房景點隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#ecfdf5;">
-      深度收錄嘉義市、嘉義縣＆臺南市共 21 處精選美拍・歷史古蹟・自然秘境實測攻略
+      深度收錄嘉義市、嘉義縣＆臺南市共 22 處精選美拍・歷史古蹟・自然秘境實測攻略
     </div>
   </header>
 
@@ -48,7 +48,7 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #064e3b;background-color:#064e3b;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">21</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">22</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -63,7 +63,7 @@
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🏛️ 臺南市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">5</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">6</span>
         </button>
       </div>
 
@@ -72,7 +72,7 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#047857;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (21)
+          全部鄉鎮市區 (22)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -101,6 +101,10 @@
         <button type="button" data-dist-btn="嘉義縣・民雄鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・民雄鄉')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           嘉義縣・民雄鄉 (2)
+        </button>
+        <button type="button" data-dist-btn="臺南市・山上區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・山上區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・山上區 (1)
         </button>
         <button type="button" data-dist-btn="臺南市・後壁區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・後壁區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -142,7 +146,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#047857;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#047857;">21</b> 處景點</div>
+    <div>顯示中：<b id="storeCount" style="color:#047857;">22</b> 處景點</div>
   </div>
 
   <!-- 預渲染之景點卡片列表 -->
@@ -1340,6 +1344,63 @@
 
         <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
           <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#新營區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#鐵道地景</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#新營糖廠</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#散步綠廊</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#免門票景點</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="臺南市"
+               data-district="山上區"
+               data-city-district="臺南市・山上區"
+               data-category="文創園區"
+               data-search="臺南山上花園水道博物館 臺南市 山上區 文創園區   日治時期濱野彌四郎與巴爾頓規劃建造的現代化淨水工程遺址，完整保留快濾筒、重力式過濾池與英製蒸氣唧筒等珍貴工業遺產。巴洛克紅磚廠房掩映在茂密老樟樹與草坪間，兼具深厚文史深度與絕美工業美學拍照視角。 【避坑與參觀指南】1. 園區佔地廣達56公頃，分為博物館區與淨水池區（兩者相距約1公里），可搭乘接駁小火車或自駕移點。2. 「快濾池室」與「唧筒室挑高大廳」是必拍光影大景；夏季園內遮蔭有限，建議做好防曬與防蚊。 臺南市山上區山上里16號 "
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">臺南市・山上區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">文創園區｜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ </span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">臺南山上花園水道博物館</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-22</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">日治時期濱野彌四郎與巴爾頓規劃建造的現代化淨水工程遺址，完整保留快濾筒、重力式過濾池與英製蒸氣唧筒等珍貴工業遺產。巴洛克紅磚廠房掩映在茂密老樟樹與草坪間，兼具深厚文史深度與絕美工業美學拍照視角。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與參觀指南】1. 園區佔地廣達56公頃，分為博物館區與淨水池區（兩者相距約1公里），可搭乘接駁小火車或自駕移點。2. 「快濾池室」與「唧筒室挑高大廳」是必拍光影大景；夏季園內遮蔭有限，建議做好防曬與防蚊。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市山上區山上里16號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>09:30–17:30（每週二休館，16:30停止售票）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E5%B1%B1%E4%B8%8A%E5%8D%80%20%E8%87%BA%E5%8D%97%E5%B1%B1%E4%B8%8A%E8%8A%B1%E5%9C%92%E6%B0%B4%E9%81%93%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('臺南市山上區', '臺南山上花園水道博物館', '', '臺南市山上區山上里16號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          
         </div>
       </div>
     </article>

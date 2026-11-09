@@ -35,7 +35,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 86／西區 64）、嘉義縣（34 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 64 間）共 248 間實測指南
+      收錄嘉義市（東區 86／西區 64）、嘉義縣（34 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 70 間）共 254 間實測指南
     </div>
   </header>
 
@@ -48,7 +48,7 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">248</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">254</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -63,7 +63,7 @@
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🏛️ 臺南市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">64</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">70</span>
         </button>
       </div>
 
@@ -72,7 +72,7 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (248)
+          全部鄉鎮市區 (254)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -106,6 +106,22 @@
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           嘉義縣・鹿草鄉 (1)
         </button>
+        <button type="button" data-dist-btn="臺南市・下營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・下營區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・下營區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・六甲區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・六甲區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・六甲區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・善化區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・善化區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・善化區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・山上區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・山上區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・山上區 (1)
+        </button>
         <button type="button" data-dist-btn="臺南市・後壁區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・後壁區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           臺南市・後壁區 (1)
@@ -121,6 +137,10 @@
         <button type="button" data-dist-btn="臺南市・鹽水區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・鹽水區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           臺南市・鹽水區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・麻豆區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・麻豆區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・麻豆區 (2)
         </button>
       </div>
 
@@ -151,7 +171,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">248</b> 間店舖</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">254</b> 間店舖</div>
   </div>
 
   <!-- 預渲染之 103 間店家卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -12308,6 +12328,300 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="麻豆區"
+               data-city-district="臺南市・麻豆區"
+               data-category="正餐主食"
+               data-search="其森牛肉湯 臺南市 麻豆區 正餐主食 傳奇溫體牛・肉燥飯滷蛋吃到飽 溫體牛肉湯、牛腩湯、肉燥飯（無限享用）、滷蛋油豆腐（無限享用）、炒牛肉 麻豆在地人熱愛的早晨元氣牛肉湯！點一碗現燙溫體牛肉湯，內用享有香濃肉燥飯、滷蛋與油豆腐無限續用吃到飽。牛骨與蔬果熬煮的高湯清甜溫潤，粉嫩牛肉片口感極佳。 【避雷與內行吃法】1. 每日早晨05:00開賣，通常接近中午或假日10點多便告售罄，務必趁早到訪。2. 肉燥汁甘甜濃郁，搭配滷蛋與豆乾非常飽足。 臺南市麻豆區興國路1-1號 溫體牛肉湯 台南早餐 吃到飽 麻豆必吃 高cp值"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・麻豆區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜傳奇溫體牛・肉燥飯滷蛋吃到飽</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">在地高CP神店・清晨開賣賣完為止</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-65</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">其森牛肉湯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">溫體牛肉湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">牛腩湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">肉燥飯（無限享用）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滷蛋油豆腐（無限享用）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">炒牛肉</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">麻豆在地人熱愛的早晨元氣牛肉湯！點一碗現燙溫體牛肉湯，內用享有香濃肉燥飯、滷蛋與油豆腐無限續用吃到飽。牛骨與蔬果熬煮的高湯清甜溫潤，粉嫩牛肉片口感極佳。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 每日早晨05:00開賣，通常接近中午或假日10點多便告售罄，務必趁早到訪。2. 肉燥汁甘甜濃郁，搭配滷蛋與豆乾非常飽足。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市麻豆區興國路1-1號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>05:00–14:00（每週一、週二公休，賣完提早打烊）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市麻豆區 其森牛肉湯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市麻豆區', '其森牛肉湯', '溫體牛肉湯、牛腩湯、肉燥飯（無限享用）、滷蛋油豆腐（無限享用）、炒牛肉', '臺南市麻豆區興國路1-1號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="麻豆區"
+               data-city-district="臺南市・麻豆區"
+               data-category="正餐主食"
+               data-search="炎山碗粿 臺南市 麻豆區 正餐主食 在地老饕推崇・柴燒古法炊蒸 古早味碗粿、浮水魚羹、肉羹湯、貢丸湯 避開交流道觀光排隊人潮的麻豆老饕首選！堅持選用台灣在來米磨漿、遵循古法柴火慢火炊製，碗粿質地q彈扎實且散發濃郁純米香，內餡赤肉、香菇與鹹蛋黃給料大方，淋上蒜蓉黑豆油膏堪稱一絕。 【避雷與內行吃法】1. 早上06:00開賣至下午13:30，常提早售罄。2. 店內自製的辣椒醬微辣提味，加蒜泥搭配更能凸顯黑豆油的甘醇。 臺南市麻豆區三民路9-11號 麻豆碗粿 在地古早味 柴燒米香 傳統早餐"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・麻豆區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜在地老饕推崇・柴燒古法炊蒸</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">麻豆巷弄老滋味・米香Q彈扎實</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-66</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">炎山碗粿</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味碗粿</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">浮水魚羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">肉羹湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">貢丸湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">避開交流道觀光排隊人潮的麻豆老饕首選！堅持選用台灣在來米磨漿、遵循古法柴火慢火炊製，碗粿質地Q彈扎實且散發濃郁純米香，內餡赤肉、香菇與鹹蛋黃給料大方，淋上蒜蓉黑豆油膏堪稱一絕。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 早上06:00開賣至下午13:30，常提早售罄。2. 店內自製的辣椒醬微辣提味，加蒜泥搭配更能凸顯黑豆油的甘醇。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市麻豆區三民路9-11號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>06:00–13:30（每週一公休，售完為止）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市麻豆區 炎山碗粿" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市麻豆區', '炎山碗粿', '古早味碗粿、浮水魚羹、肉羹湯、貢丸湯', '臺南市麻豆區三民路9-11號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="六甲區"
+               data-city-district="臺南市・六甲區"
+               data-category="甜點飲品"
+               data-search="六甲媽祖廟前百年麵茶冰 臺南市 六甲區 甜點飲品 傳承四代百年剉冰・神級炒香麵茶 古早味麵茶挫冰、手工粉粿、米苔目、粉條、圓仔 創立於民國2年的世紀老冰攤，就位於六甲恆安宮媽祖廟埕前。手作粉粿軟q彈牙、米苔目滑順清爽，最精髓的是最後舀上一大杓手炒焦香麵茶粉，撲鼻的芝麻麵香融入細緻剉冰，層次濃醇驚艷，銅板價就能品嚐百年經典。 【避雷與內行吃法】1. 一定要點「全料+麵茶」！粉粿與圓仔均為每日手工現做，售完為止。2. 夏季下午常有排隊人潮，露天廟埕座位建議耐心稍候。 臺南市六甲區民生街28號（恆安宮媽祖廟前） 百年老店 麵茶冰 古早味挫冰 六甲必吃 銅板美食"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・六甲區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">甜點飲品｜傳承四代百年剉冰・神級炒香麵茶</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">媽祖廟前榕樹下・傳奇銅板冰品</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-67</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">六甲媽祖廟前百年麵茶冰</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味麵茶挫冰</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工粉粿</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">米苔目</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">粉條</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">圓仔</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">創立於民國2年的世紀老冰攤，就位於六甲恆安宮媽祖廟埕前。手作粉粿軟Q彈牙、米苔目滑順清爽，最精髓的是最後舀上一大杓手炒焦香麵茶粉，撲鼻的芝麻麵香融入細緻剉冰，層次濃醇驚艷，銅板價就能品嚐百年經典。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 一定要點「全料+麵茶」！粉粿與圓仔均為每日手工現做，售完為止。2. 夏季下午常有排隊人潮，露天廟埕座位建議耐心稍候。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市六甲區民生街28號（恆安宮媽祖廟前）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:00–16:30（無固定公休，雨天或天候不佳可能店休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市六甲區 六甲媽祖廟前百年麵茶冰" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市六甲區', '六甲媽祖廟前百年麵茶冰', '古早味麵茶挫冰、手工粉粿、米苔目、粉條、圓仔', '臺南市六甲區民生街28號（恆安宮媽祖廟前）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="下營區"
+               data-city-district="臺南市・下營區"
+               data-category="在地名產"
+               data-search="下營寶芝林燻茶鵝 臺南市 下營區 在地名產 全台鵝肉之鄉・甘甜茶香多汁 招牌燻茶鵝、鹽水鵝肉、茶鵝翅、茶鵝腳、鵝胗 下營「會贏」鵝肉指標名店！嚴選當日現宰肥美丹麥大白鵝，以龍眼木與高山茶葉、蜂蜜低溫慢燻而成，外皮呈現金黃油亮的琥珀色澤，肉質飽滿多汁毫不乾柴，咀嚼間散發天然茶香與清甜肉汁。 【避雷與內行吃法】1. 可依人數請店家切盒現吃，亦提供真空包裝方便外帶或回程享用。2. 骨肉邊角的鵝翅與鵝腳是下酒與追劇的神級啃骨良伴。 臺南市下營區中正南路95號 下營鵝肉 燻茶鵝 台南伴手禮 在地名產 冷盤下酒"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・下營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地名產｜全台鵝肉之鄉・甘甜茶香多汁</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">下營在地名物・真空保鮮下酒首選</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-68</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">下營寶芝林燻茶鵝</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌燻茶鵝</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鹽水鵝肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">茶鵝翅</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">茶鵝腳</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鵝胗</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">下營「會贏」鵝肉指標名店！嚴選當日現宰肥美丹麥大白鵝，以龍眼木與高山茶葉、蜂蜜低溫慢燻而成，外皮呈現金黃油亮的琥珀色澤，肉質飽滿多汁毫不乾柴，咀嚼間散發天然茶香與清甜肉汁。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 可依人數請店家切盒現吃，亦提供真空包裝方便外帶或回程享用。2. 骨肉邊角的鵝翅與鵝腳是下酒與追劇的神級啃骨良伴。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市下營區中正南路95號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:00–19:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市下營區 寶芝林燻茶鵝" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市下營區', '下營寶芝林燻茶鵝', '招牌燻茶鵝、鹽水鵝肉、茶鵝翅、茶鵝腳、鵝胗', '臺南市下營區中正南路95號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="善化區"
+               data-city-district="臺南市・善化區"
+               data-category="甜點飲品"
+               data-search="善化一等涼冬瓜茶 臺南市 善化區 甜點飲品 媽祖廟前一甲子・古法新鮮現熬冬瓜 冬瓜檸檬、冬瓜原汁、冬瓜紅茶、冬瓜烏龍、冬瓜仙草 座落於善化慶安宮媽祖廟前的超過一甲子古早味飲品！堅持每日以新鮮大冬瓜加上特級白糖慢火文火熬煮，茶湯溫潤滑順且帶有純天然冬瓜清香，甜度恰到好處毫不死甜。招牌「冬瓜檸檬」酸甘平衡極致生津，是公認勝過市區觀光店的真功夫冬瓜茶。 【避雷與內行吃法】1. 推薦「冬瓜檸檬（少冰或微冰）」，新鮮檸檬酸度完美襯托出冬瓜蜜香。2. 亦可購買高濃縮冬瓜原汁大瓶裝回家自行稀釋加牛奶飲用。 臺南市善化區中山路468號（慶安宮前） 冬瓜茶 古早味飲料 善化老店 廟口美食 消暑飲品"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・善化區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">甜點飲品｜媽祖廟前一甲子・古法新鮮現熬冬瓜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">善化在地神級茶飲・南科人最愛消暑首選</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-69</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">善化一等涼冬瓜茶</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">冬瓜檸檬</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">冬瓜原汁</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">冬瓜紅茶</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">冬瓜烏龍</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">冬瓜仙草</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">座落於善化慶安宮媽祖廟前的超過一甲子古早味飲品！堅持每日以新鮮大冬瓜加上特級白糖慢火文火熬煮，茶湯溫潤滑順且帶有純天然冬瓜清香，甜度恰到好處毫不死甜。招牌「冬瓜檸檬」酸甘平衡極致生津，是公認勝過市區觀光店的真功夫冬瓜茶。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 推薦「冬瓜檸檬（少冰或微冰）」，新鮮檸檬酸度完美襯托出冬瓜蜜香。2. 亦可購買高濃縮冬瓜原汁大瓶裝回家自行稀釋加牛奶飲用。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市善化區中山路468號（慶安宮前）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00–21:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市善化區 一等涼冬瓜茶" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市善化區', '善化一等涼冬瓜茶', '冬瓜檸檬、冬瓜原汁、冬瓜紅茶、冬瓜烏龍、冬瓜仙草', '臺南市善化區中山路468號（慶安宮前）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="山上區"
+               data-city-district="臺南市・山上區"
+               data-category="甜點飲品"
+               data-search="山上古早味一品清冰枝店 臺南市 山上區 甜點飲品 一甲子懷舊香蕉冰與三明治冰餅 三明治冰餅、清冰（香蕉水清冰）、四果冰、傳統枝仔冰、玉米牛奶冰棒 隱身在山上國小對面、傳承一甲子的懷舊冰品老店。招牌三明治冰餅用兩片酥脆微鹹的蘇打餅乾，夾入超厚切的草莓、牛奶或巧克力冰淇淋，鹹甜交融、口感酥脆紮實；古早味香蕉油清冰綿密細緻，甜而不膩，是走訪山上水道博物館後的絕佳消暑補給。 【避雷與內行吃法】1. 三明治冰餅外帶融化較快，建議現買現吃最能享受餅乾的酥脆感。2. 價格極其親民，枝仔冰與冰餅多為十幾元銅板價。 臺南市山上區南洲里67號（山上國小對面） 古早味冰品 三明治冰餅 香蕉清冰 山上區老店 銅板美食"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・山上區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">甜點飲品｜一甲子懷舊香蕉冰與三明治冰餅</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">山上國小前老冰店・傳統透心涼銅板價</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-70</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">山上古早味一品清冰枝店</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">三明治冰餅</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">清冰（香蕉水清冰）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">四果冰</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">傳統枝仔冰</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">玉米牛奶冰棒</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">隱身在山上國小對面、傳承一甲子的懷舊冰品老店。招牌三明治冰餅用兩片酥脆微鹹的蘇打餅乾，夾入超厚切的草莓、牛奶或巧克力冰淇淋，鹹甜交融、口感酥脆紮實；古早味香蕉油清冰綿密細緻，甜而不膩，是走訪山上水道博物館後的絕佳消暑補給。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 三明治冰餅外帶融化較快，建議現買現吃最能享受餅乾的酥脆感。2. 價格極其親民，枝仔冰與冰餅多為十幾元銅板價。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市山上區南洲里67號（山上國小對面）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:00–20:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市山上區 一品清冰枝店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市山上區', '山上古早味一品清冰枝店', '三明治冰餅、清冰（香蕉水清冰）、四果冰、傳統枝仔冰、玉米牛奶冰棒', '臺南市山上區南洲里67號（山上國小對面）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -12324,7 +12638,7 @@
 
   <!-- 底部手冊導覽浮動條 -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (248)</a>
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (254)</a>
     <a href="全台看海放空旅宿隨身手冊.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
