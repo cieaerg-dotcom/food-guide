@@ -44,7 +44,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 86／西區 64）、嘉義縣（34 間）＆ 臺南市（新營區 62／後壁／柳營／鹽水共 75 間）共 259 間實測指南
+      收錄嘉義市（東區 86／西區 64）、嘉義縣（34 間）＆ 臺南市（新營區 66／後壁／柳營／鹽水共 79 間）共 263 間實測指南
     </div>
   </header>
 
@@ -57,7 +57,7 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">259</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">263</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -72,7 +72,7 @@
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🏛️ 臺南市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">75</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">79</span>
         </button>
       </div>
 
@@ -81,7 +81,7 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (259)
+          全部鄉鎮市區 (263)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -137,7 +137,7 @@
         </button>
         <button type="button" data-dist-btn="臺南市・新營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・新營區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・新營區 (62)
+          臺南市・新營區 (66)
         </button>
         <button type="button" data-dist-btn="臺南市・柳營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・柳營區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -180,7 +180,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">259</b> 間店舖</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">263</b> 間店舖</div>
   </div>
 
   <!-- 預渲染之 103 間店家卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -12876,6 +12876,202 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="異國料理"
+               data-search="home city 我的家 臺南市 新營區 異國料理 溫馨鄉村風義式餐廳・黑松露燉飯與手工披薩 黑松露野菇燉飯、清炒蒜香海鮮義大利麵、手工薄餅披薩、特製附餐法式麵包與濃湯 新營東興路上空間寬敞且溫馨的義式好去處！店內走溫暖鄉村木質風，座位數多且周邊停車相當便利。義大利麵醬汁風格偏水潤但蒜香與海味十分入味，米芯吸飽湯汁的燉飯與現烤手工脆皮薄餅披薩更是招牌必點，適合個人放空或全家大小輕鬆聚餐。 【避雷與內行吃法】1. 義大利麵醬汁走偏水清爽路線，非濃稠起司乳化質地，喜好因人而異。2. 假日與尖峰時段團體家庭客多，出餐速度偶爾需稍候，建議提前訂位。 臺南市新營區東興路526號 新營義式 燉飯披薩 家庭聚餐 好停車 義大利麵"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜溫馨鄉村風義式餐廳・黑松露燉飯與手工披薩</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">座位寬敞好停車・家庭約會聚餐首選</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-76</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">HOME City 我的家</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">黑松露野菇燉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">清炒蒜香海鮮義大利麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工薄餅披薩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製附餐法式麵包與濃湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">新營東興路上空間寬敞且溫馨的義式好去處！店內走溫暖鄉村木質風，座位數多且周邊停車相當便利。義大利麵醬汁風格偏水潤但蒜香與海味十分入味，米芯吸飽湯汁的燉飯與現烤手工脆皮薄餅披薩更是招牌必點，適合個人放空或全家大小輕鬆聚餐。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 義大利麵醬汁走偏水清爽路線，非濃稠起司乳化質地，喜好因人而異。2. 假日與尖峰時段團體家庭客多，出餐速度偶爾需稍候，建議提前訂位。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區東興路526號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00–14:00, 17:30–21:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區 HOME City 我的家" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', 'HOME City 我的家', '黑松露野菇燉飯、清炒蒜香海鮮義大利麵、手工薄餅披薩、特製附餐法式麵包與濃湯', '臺南市新營區東興路526號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="異國料理"
+               data-search="卡布里義廚 臺南市 新營區 異國料理 老字號高cp值義大利麵・傳奇手工千層蛋糕 青醬綜合海鮮義大利麵、奶油蛤蜊焗烤飯、原味手工千層蛋糕、焦糖千層蛋糕 新營復興路在地經營多年的超人氣義式料理！以給料霸氣毫不手軟著稱，海鮮義大利麵滿滿大顆鮮甜蛤蜊與鮮蝦，青醬濃郁蒜香逼人。更被在地老饕封為「被義大利麵耽誤的千層蛋糕店」，純手工製作的千層蛋糕餅皮細緻蛋香四溢，往往一出爐即被搶購一空。 【避雷與內行吃法】1. 復興路車流量大且路旁汽車格較少，開車者建議稍停遠處步行前往。2. 手工千層蛋糕每日限量，想吃強烈建議訂位時同步預留。 臺南市新營區復興路83號 新營老店 義大利麵 千層蛋糕 高cp值 焗烤"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜老字號高CP值義大利麵・傳奇手工千層蛋糕</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">海鮮給料豪邁大方・被義麵耽誤的千層名店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-77</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">卡布里義廚</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">青醬綜合海鮮義大利麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">奶油蛤蜊焗烤飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">原味手工千層蛋糕</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">焦糖千層蛋糕</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">新營復興路在地經營多年的超人氣義式料理！以給料霸氣毫不手軟著稱，海鮮義大利麵滿滿大顆鮮甜蛤蜊與鮮蝦，青醬濃郁蒜香逼人。更被在地老饕封為「被義大利麵耽誤的千層蛋糕店」，純手工製作的千層蛋糕餅皮細緻蛋香四溢，往往一出爐即被搶購一空。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 復興路車流量大且路旁汽車格較少，開車者建議稍停遠處步行前往。2. 手工千層蛋糕每日限量，想吃強烈建議訂位時同步預留。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區復興路83號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:40–14:30, 17:40–21:30（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區 卡布里義廚" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', '卡布里義廚', '青醬綜合海鮮義大利麵、奶油蛤蜊焗烤飯、原味手工千層蛋糕、焦糖千層蛋糕', '臺南市新營區復興路83號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="異國料理"
+               data-search="c&amp;p cafe 臺南市 新營區 異國料理 太子宮質感染白複合咖啡餐館・濃稠醬汁義大利麵 濃郁白醬海鮮義大利麵、鐵鍋燉飯、千層焗烤麵、現打芒果果昔、手作甜點 隱身於新營太子宮聚落太南街的極致美學純白咖啡餐館！挑高且明亮的現代設計感空間，走道平整對推車與長輩非常友善。義大利麵醬汁走濃郁稠厚、緊緊包覆麵條的飽滿風格，與市區水潤感截然不同；搭配鑄鐵鍋燉飯與新鮮果昔，用餐氛圍極為愜意放鬆。 【避雷與內行吃法】1. 位於太子宮外圍太南街巷弄內，初訪建議開啟導航確認路徑。2. 無固定公休日，前往或假日家庭聚會前建議先去電或上粉絲頁確認訂位。 臺南市新營區太南街96號（近太子宮與太子派出所） 太子宮美食 純白咖啡廳 濃郁義大利麵 親子友善 高評分"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜太子宮質感染白複合咖啡餐館・濃稠醬汁義大利麵</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">Google 4.8星高評價・無障礙友善親子聚餐</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-78</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">C&amp;P CAFE</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">濃郁白醬海鮮義大利麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鐵鍋燉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">千層焗烤麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現打芒果果昔</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手作甜點</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">隱身於新營太子宮聚落太南街的極致美學純白咖啡餐館！挑高且明亮的現代設計感空間，走道平整對推車與長輩非常友善。義大利麵醬汁走濃郁稠厚、緊緊包覆麵條的飽滿風格，與市區水潤感截然不同；搭配鑄鐵鍋燉飯與新鮮果昔，用餐氛圍極為愜意放鬆。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 位於太子宮外圍太南街巷弄內，初訪建議開啟導航確認路徑。2. 無固定公休日，前往或假日家庭聚會前建議先去電或上粉絲頁確認訂位。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區太南街96號（近太子宮與太子派出所）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00–20:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區 C&amp;P CAFE" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', 'C&amp;P CAFE', '濃郁白醬海鮮義大利麵、鐵鍋燉飯、千層焗烤麵、現打芒果果昔、手作甜點', '臺南市新營區太南街96號（近太子宮與太子派出所）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="異國料理"
+               data-search="新月義式蔬食 臺南市 新營區 異國料理 全植物純素vegan美學・天然原型手作義式料理 松露野菇燉飯、青醬堅果義大利麵、純植物手工漢堡、主廚特製南瓜濃湯與手工麵包 新營義和街顛覆傳統素食印象的文青義式寶藏店！堅持全植物（vegan）無肉、無蛋、無奶、無素料及無人工添加物，純粹利用堅果、菇類與在地原型鮮蔬慢火乳化出極致濃郁醬汁。青醬堅果義大利麵香氣高雅層次分明，松露燉飯濃醇入味，連平時無肉不歡的客人都讚不絕口。 【避雷與內行吃法】1. 店內採文青木質小巧格局，座位數有限，強烈建議提早電話訂位。2. 每週一、週二固定公休（逢農曆初一、十五照常營業）。 臺南市新營區義和街25-2號（近新營高工與南瀛綠都心） 純素義式 vegan 蔬食料理 文青老屋 原型食物"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜全植物純素Vegan美學・天然原型手作義式料理</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">Google 4.8星神級蔬食・連肉食者也驚艷</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-79</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">新月義式蔬食</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">松露野菇燉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">青醬堅果義大利麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">純植物手工漢堡</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">主廚特製南瓜濃湯與手工麵包</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">新營義和街顛覆傳統素食印象的文青義式寶藏店！堅持全植物（Vegan）無肉、無蛋、無奶、無素料及無人工添加物，純粹利用堅果、菇類與在地原型鮮蔬慢火乳化出極致濃郁醬汁。青醬堅果義大利麵香氣高雅層次分明，松露燉飯濃醇入味，連平時無肉不歡的客人都讚不絕口。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避雷與內行吃法】1. 店內採文青木質小巧格局，座位數有限，強烈建議提早電話訂位。2. 每週一、週二固定公休（逢農曆初一、十五照常營業）。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區義和街25-2號（近新營高工與南瀛綠都心）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00–14:00, 17:00–20:00（每週一、週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區 新月義式蔬食" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', '新月義式蔬食', '松露野菇燉飯、青醬堅果義大利麵、純植物手工漢堡、主廚特製南瓜濃湯與手工麵包', '臺南市新營區義和街25-2號（近新營高工與南瀛綠都心）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -12892,7 +13088,7 @@
 
   <!-- 底部手冊導覽浮動條 -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (259)</a>
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (263)</a>
     <a href="seaview.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
