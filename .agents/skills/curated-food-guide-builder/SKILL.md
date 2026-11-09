@@ -1,14 +1,16 @@
 ---
 name: curated-food-guide-builder
 description: >-
-  Extracts, verifies, and compiles local foodie recommendations and hidden gems from Threads posts, comments, or web reviews into a mobile-friendly offline interactive HTML guide, complete with Google Maps navigation, categorized filters, avoidance tips, and automated Google Drive/iCloud synchronization.
+  Extracts, verifies, and compiles local foodie recommendations and hidden gems from Threads posts, comments, or web reviews into a mobile-friendly offline interactive HTML guide, complete with Google Maps navigation, categorized filters, avoidance tips, and GitHub Pages PWA deployment.
 ---
 
-# Curated Food Guide Builder (社群私房美食指南萃取與雲端同步工作流)
+# Curated Food Guide Builder (社群私房美食指南萃取與靜態網站發布工作流)
 
 ## 概述 (Overview)
 
-本 Skill 專門用於將社群平台（特別是 Threads 貼文、串文及大量留言討論串）中的在地美食推薦、私房清單與避雷心得，經由深層網路擷取、Google 評價與現況核實，自動封裝成高質感的**行動優先（Mobile-First）單檔離線 HTML 互動手冊**，並配置 **macOS LaunchAgent 系統級背景監控服務**，實現本地工作區與 Google Drive / iCloud 雲端的即時雙向持續同步。
+本 Skill 專門用於將社群平台（特別是 Threads 貼文、串文及大量留言討論串）中的在地美食推薦、私房清單與避雷心得，經由深層網路擷取、Google 評價與現況核實，自動封裝成高質感的**行動優先（Mobile-First）單檔離線 HTML 互動手冊**，並結合 **GitHub Pages 靜態網站自動化部署 (PWA)**。
+
+> ⚠️ **【重要架構原則】本專案已全面永久取消 Google Drive 與 iCloud Drive 雲端硬碟同步，改採全本地離線單檔與 GitHub Pages 部署。**
 
 ---
 
@@ -75,17 +77,18 @@ Threads 前端採用客戶端 Hydration 與 GraphQL API，單純以一般瀏覽�
    python3 scripts/build_unified_guide.py
    ```
 
-### 第四階段：配置多端雲端自動即時同步
-為了讓使用者在手機上隨時看到最新版本，並能將檔案分享給他人：
-1. 專案工作區路徑：`/Users/mac/AGY本地工作區/專案資料夾/美食景點整理/美食避雷隨身手冊.html`
-2. Google 雲端硬碟目標：`~/Library/CloudStorage/GoogleDrive-cieaer.g@gmail.com/我的雲端硬碟/AGY工作區GD/美食隨身手冊/`
-3. Apple iCloud Drive 目標：`~/Library/Mobile Documents/com~apple~CloudDocs/AGY工作區i/美食隨身手冊/`
-4. 部署 `~/Library/LaunchAgents/com.foodguide.sync.plist` 服務，監聽本地手冊檔案。只要手冊更新存檔，系統在 2 秒內自動比對 SHA256 並同步至 Google Drive 與 iCloud，手機端即刻自動同步。
-5. 工具腳本：
-   ```bash
-   python3 .agents/skills/curated-food-guide-builder/scripts/setup_cloud_sync.py \
-     --files "/Users/mac/AGY本地工作區/專案資料夾/美食景點整理/美食避雷隨身手冊.html"
-   ```
+### 第四階段：網站靜態發布與本地部署（GitHub Pages PWA 架構，停用雲端硬碟同步）
+> ⚠️ **【專案核心底層架構原則】**
+> **雲端硬碟（Google Drive / iCloud Drive）同步機制已永久取消且停用。**
+> 嚴禁再建立 macOS LaunchAgent 服務對第三方雲端硬碟進行同步或輪詢。
+> 所有手冊的發布與分發一律依循：
+> 1. 本地單檔離線 HTML（`美食避雷隨身手冊.html`、`全台看海放空旅宿隨身手冊.html`）。
+> 2. GitHub Pages 靜態網站自動部署（執行 `python3 scripts/deploy_web.py`）。
+
+工具腳本：
+```bash
+python3 scripts/deploy_web.py
+```
 
 ---
 

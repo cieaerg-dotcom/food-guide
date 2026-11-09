@@ -1,19 +1,35 @@
 # 🍽️ 美食景點整理 (Curated Food & Travel Guides)
 
-本專案致力於將社群平台（Threads、Instagram、Dcard 等）與老饕社群的私房推薦、真實評價與避雷心得，萃取並整理為**行動優先（Mobile-First）的離線單檔 Web App 隨身手冊**，並結合 **macOS 系統級即時雲端同步**，讓使用者在手機上隨時離線瀏覽、即時搜尋與一鍵地圖導航。
+本專案致力於將社群平台（Threads、老饕社群等）的私房推薦、真實評價與避雷心得，萃取並整理為**行動優先（Mobile-First）的純離線單檔 Web App 隨身手冊**，並結合 **GitHub Pages 靜態網站自動化部署 (PWA)**，讓使用者在手機與各裝置上隨時離線瀏覽、即時搜尋與一鍵地圖導航。
+
+> ⚠️ **【專案核心底層架構原則】**
+> **雲端硬碟（Google Drive / iCloud Drive）同步機制已永久取消且停用。**
+> 本專案的所有資料流與分發管道嚴格遵循：
+> 1. **本機單檔離線優先**：產出 100% 預渲染、內嵌 Inline CSS、零外部 CDN 依賴的獨立 HTML（如《美食避雷隨身手冊.html》、《全台看海放空旅宿隨身手冊.html》），可透過 AirDrop、通訊軟體或本機直接點開極速運作。
+> 2. **GitHub Pages 靜態部署**：透過 `scripts/deploy_web.py` 推送至 GitHub，由 GitHub Actions 自動發布至線上 PWA 網站，拒絕 macOS LaunchAgent 背景向第三方雲端硬碟輪詢或寫入。
 
 ---
 
-## 📂 目前收錄進度與成果（單一檔案跨縣市鄉鎮區整合版）
+## 📂 目前收錄成果
 
-所有縣市與鄉鎮市區資料已統一格式並整合進單一離線互動手冊 **[`美食避雷隨身手冊.html`](./美食避雷隨身手冊.html)**（共收錄 **103 間**）：
+### 1. 《美食避雷隨身手冊.html》（185 間全功能整合版）
+跨縣市鄉鎮區資料統一格式，具備縣市 Tab、鄉鎮市區 Pill、餐點類型即時過濾、複製店訊與一鍵 Google Maps 導航：
 
-| 縣市分頁 | 鄉鎮市區子分頁 | 收錄數量 | 核心亮點 |
+| 縣市分頁 | 鄉鎮市區 | 收錄數量 | 核心亮點 |
 | :--- | :--- | :---: | :--- |
-| **嘉義市** | **東區** | **32 間** | 五千金炒飯、豆豆小籠湯包、黃記／南門白醋涼麵、劉湯圓（脆圓）、阿霞滷肉飯、阿婆烤玉米 |
-| **嘉義市** | **西區** | **28 間** | 緯英海南雞飯、桔吉力早餐、大眾水餃、霜空咖啡、友愛鹹酥雞、今生茶記 |
-| **臺南市** | **新營區** | **42 間** | 溪北飯桌、小紅堂牛肉麵、燒蛋一下、阿翔蚵仔煎（鐵板炒飯）、榮昌雞肉飯、惟式巴斯克 |
-| **臺南市** | **後壁區** | **1 間** | 樂檸漢堡（新營服務區北上店，可由外圍後方秘密便道進入） |
+| **嘉義市** | **東區** | **74 間** | 阿宏師火雞肉飯（加半熟蛋）、桃城三禾、大人味咖哩（限量）、五千金炒飯、豆豆小籠湯包、黃記涼麵涼圓、劉湯圓（脆圓）、阿霞滷肉飯、阿婆烤玉米 |
+| **嘉義市** | **西區** | **65 間** | 蕭老師火雞肉飯（炸排骨）、阿岸米糕（附柴魚湯）、咱台灣人的冰、大盛居、緯英海南雞飯、桔吉力早餐、大眾水餃、霜空咖啡、友愛鹹酥雞 |
+| **嘉義縣** | **中埔／水上／朴子** | **3 間** | 竹香園甕缸烤雞（中埔）、烘焙旅程手作蜂巢可頌（水上）、麻糬棟近百年手工鹹綠豆麻糬（朴子） |
+| **臺南市** | **新營區** | **42 間** | 溪北飯桌、小紅堂牛肉麵、燒蛋一下、阿翔蚵仔煎（鐵板炒飯＋乾煎魚肚）、榮昌雞肉飯、惟式巴斯克 |
+| **臺南市** | **後壁區** | **1 間** | 樂檸漢堡（新營服務區北上店，可騎機車走外圍後方秘密便道進入） |
+
+### 2. 《全台看海放空旅宿隨身手冊.html》（20 間萬人點讚口碑版）
+收錄 Threads 萬人共鳴、適合一人放空與起床看海的高 CP 值海景旅宿，涵蓋屏東墾丁、台東海線、花蓮海岸、宜蘭頭城蘇澳、小琉球、高雄西子灣與基隆外木山：
+* **限一人獨旅**：台東長濱 分手巧克力（沙漠風情無電視無網路面海孤窗）。
+* **超值海景**：墾丁 覓夏旅店（南灣沙灘正對面、高CP值手作早餐）、日日旅海（純白草地太平洋日出）。
+* **床上看海與雙浴缸**：墾丁 海堤112、日和灣居、頭城 海之子。
+* **高空與無邊際泳池**：枋客文旅（枋寮站步行5分鐘、夕陽無邊際泳池）、日光·嶼南。
+* **直通沙灘**：高雄 西子灣沙灘會館（私人沙灘看大船入港）、花蓮 海明蔚、蘇澳 住海邊。
 
 ---
 
@@ -21,66 +37,38 @@
 
 ```text
 /Users/mac/AGY本地工作區/專案資料夾/美食景點整理/
-├── README.md                          # 專案說明文件與操作手冊
-├── 美食避雷隨身手冊.html               # 全台縣市 × 鄉鎮市區整合版單檔離線手冊 (103 間)
-├── guides/                            # 手冊備份歸檔目錄
-│   └── 美食避雷隨身手冊.html
-├── data/                              # 原始社群爬取與統一結構化之 JSON 數據庫
-│   ├── taiwan_food_guides_unified.json # 全台跨縣市鄉鎮市區統一格式總表 (103 間)
-│   ├── chiayi_stores_structured.json  # 嘉義市 60 間結構化資料
-│   ├── tainan_xinying_structured.json # 臺南市（新營／後壁）43 間結構化資料
-│   └── threads_chiayi_raw.json        # 嘉義貼文與 154 則串文留言完整結構數據
-├── scripts/                           # 專案自動化建置與同步腳本
-│   ├── build_unified_guide.py         # 跨縣市鄉鎮區資料正規化與單檔 HTML 建置腳本
-│   └── deploy_web.py                  # 本機與 GitHub Pages 網頁自動建置同步腳本
-├── logs/                              # 同步與背景監控日誌
-│   └── food_guides_sync.log
-└── .agents/skills/                    # 專案內嵌 Skill
-    └── curated-food-guide-builder/    # 社群美食指南自動化工作流
+├── README.md                           # 專案說明文件與底層架構規範
+├── 美食避雷隨身手冊.html                # 全台跨縣市美食避雷隨身手冊 (185 間)
+├── 全台看海放空旅宿隨身手冊.html        # 全台看海放空旅宿隨身手冊 (20 間)
+├── web_dist/                           # GitHub Pages / PWA 靜態發布包
+│   ├── index.html                      # 線上版美食手冊
+│   ├── seaview.html                    # 線上版看海旅宿手冊
+│   ├── manifest.json                   # Web App Manifest
+│   └── sw.js                           # Service Worker 離線快取
+├── data/                               # 結構化數據庫
+│   ├── taiwan_food_guides_unified.json # 全台美食 185 間統一總表
+│   ├── taiwan_seaview_stays_structured.json # 全台看海旅宿 20 間資料
+│   ├── chiayi_stores_structured.json
+│   ├── tainan_xinying_structured.json
+│   ├── threads_chiayi_dinner_structured.json
+│   └── threads_chiayi_masterpiece_structured.json
+├── scripts/                            # 自動化建置與部署腳本
+│   ├── build_unified_guide.py          # 美食手冊編譯器
+│   ├── build_seaview_guide.py          # 看海旅宿手冊編譯器
+│   └── deploy_web.py                   # 本地建置並推送 GitHub Pages 部署
+└── .agents/skills/
+    └── curated-food-guide-builder/     # 專案自動化工作流規範
 ```
 
 ---
 
-## ☁️ 網站發布與本機同步架構 (GitHub Pages)
+## 🚀 網站發布與部署作業流程
 
-本專案已停止 Google Drive / iCloud 雲端同步，改採 **本機 ➔ GitHub Pages 網頁同步**：
+本專案嚴格取消雲端硬碟同步，所有更新一律依循本地生成與 Git 部署：
 
-* **網站原始碼目錄**：`web_dist/`（包含 PWA 快取與離線網頁檔案）
-* **自動部署腳本**：[`scripts/deploy_web.py`](./scripts/deploy_web.py)
-* **自動發布機制**：
-  1. 當本機修改或抓取新店家後，執行 `python3 scripts/deploy_web.py`。
-  2. 腳本會自動重新產製手冊與網站包，並透過 Git 提交推送到 GitHub。
-  3. GitHub Actions 會自動啟動，在 1~2 分鐘內將最新店家資料發布至 GitHub Pages 線上網站。
-  4. 手機已安裝的 PWA 或網頁將自動無縫接收最新資料。
+```bash
+# 一鍵重新編譯雙手冊並推送至 GitHub Pages 發布
+python3 scripts/deploy_web.py
+```
 
----
-
-## 🛠️ 如何擴充新城市（工作流）
-
-本專案已建立專屬 Skill：`curated-food-guide-builder`。若未來想新增其他城市（如台南市區、高雄、台中等）：
-1. 提供 Threads 貼文網址給 AGY。
-2. 執行第一階段爬蟲抓取主貼文與所有分頁留言：
-   ```bash
-   python3 .agents/skills/curated-food-guide-builder/scripts/extract_threads_thread.py \
-     --url "<Threads_貼文網址>" \
-     --output "data/城市名_raw.json"
-   ```
-3. 經由 AGY 進行 Google 評價與營業狀態核查後，產出行動版單檔 HTML：
-   ```bash
-   python3 .agents/skills/curated-food-guide-builder/scripts/generate_guide_app.py \
-     --input "data/結構化店家.json" \
-     --output "城市美食精選隨身手冊.html" \
-     --title "城市美食精選隨身手冊" \
-     --subtitle "在地精選避雷手札" \
-     --region "城市名"
-   ```
-4. 檔案存檔後將自動同步至雲端供手機隨時查閱。
-
----
-
-## 📱 手機瀏覽與分享方式
-
-1. **自己瀏覽**：從手機 Google Drive App 或 iPhone「檔案」App 點選 `index.html`，即可滿版順跑，離線亦可搜尋與查看。
-2. **分享他人**：
-   * **Google Drive 共用**：將雲端「美食隨身手冊」資料夾開啟「知道連結者皆可檢視」傳送。
-   * **LINE / AirDrop 單檔傳送**：HTML 手冊為完全自給自足單檔，直接傳送即可在對方手機瀏覽器完美運行。
+發布後 GitHub Pages 將於 1～2 分鐘內自動更新線上網站，手機瀏覽器與已安裝之 PWA 隨身手冊即刻同步。
