@@ -37,7 +37,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 76／西區 62）、嘉義縣（3 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 64 間）共 205 間實測指南
+      收錄嘉義市（東區 76／西區 62）、嘉義縣（12 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 64 間）共 214 間實測指南
     </div>
   </header>
 
@@ -50,7 +50,7 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">205</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">214</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -60,7 +60,7 @@
         <button type="button" data-city-btn="嘉義縣" onclick="selectCity('嘉義縣')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🌲 嘉義縣</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">3</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">12</span>
         </button>
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -74,7 +74,7 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (205)
+          全部鄉鎮市區 (214)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -88,13 +88,21 @@
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           嘉義縣・中埔鄉 (1)
         </button>
+        <button type="button" data-dist-btn="嘉義縣・太保市" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・太保市')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義縣・太保市 (7)
+        </button>
         <button type="button" data-dist-btn="嘉義縣・朴子市" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・朴子市')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・朴子市 (1)
+          嘉義縣・朴子市 (2)
         </button>
         <button type="button" data-dist-btn="嘉義縣・水上鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・水上鄉')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           嘉義縣・水上鄉 (1)
+        </button>
+        <button type="button" data-dist-btn="嘉義縣・鹿草鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・鹿草鄉')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義縣・鹿草鄉 (1)
         </button>
         <button type="button" data-dist-btn="臺南市・後壁區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・後壁區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -141,7 +149,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">205</b> 間店舖</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">214</b> 間店舖</div>
   </div>
 
   <!-- 預渲染之 103 間店家卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -10159,7 +10167,7 @@
         </div>
 
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-140</span>
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-143</span>
           <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">好吃又香阿婆滷味（友愛路老攤）</h2>
         </div>
 
@@ -10191,6 +10199,447 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="麵點湯包"
+               data-search="嚕嚕咪湯包麵館 嘉義縣 太保市 麵點湯包 縣府特區現包爆汁小籠湯包 手工小籠湯包（現包現蒸爆汁）、雞湯餛飩、乾拌大餛飩、招牌滷米血 嘉義縣府與長庚商圈脆友公認第一名湯包。皮薄肉鮮多汁，現場手工現包現蒸，大餛飩飽滿扎實，配上滷透入味的米血與小菜，平價過癮。 【避坑與內行吃法】現點現蒸尖峰期需等待，建議提早電話訂購外帶（05-3628969）；正中午 12:00-12:40 店內人潮擁擠，服務風格較俐落直接，不喜久等者請避開核心高峰時段。 嘉義縣太保市安仁里太保二路9號1樓 太保市 嘉義縣府 手工湯包 長庚特區 爆汁湯包"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">麵點湯包｜縣府特區現包爆汁小籠湯包</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">串文最高呼聲平價神店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-144</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">嚕嚕咪湯包麵館</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工小籠湯包（現包現蒸爆汁）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">雞湯餛飩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾拌大餛飩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌滷米血</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">嘉義縣府與長庚商圈脆友公認第一名湯包。皮薄肉鮮多汁，現場手工現包現蒸，大餛飩飽滿扎實，配上滷透入味的米血與小菜，平價過癮。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑與內行吃法】現點現蒸尖峰期需等待，建議提早電話訂購外帶（05-3628969）；正中午 12:00-12:40 店內人潮擁擠，服務風格較俐落直接，不喜久等者請避開核心高峰時段。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市安仁里太保二路9號1樓</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00-14:00, 16:30-19:30（每週日公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 嚕嚕咪湯包麵館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '嚕嚕咪湯包麵館', '手工小籠湯包（現包現蒸爆汁）、雞湯餛飩、乾拌大餛飩、招牌滷米血', '嘉義縣太保市安仁里太保二路9號1樓')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="正餐主食"
+               data-search="御牛殿麵鍋食堂（鈜景御牧牛旗艦店） 嘉義縣 太保市 正餐主食 神農獎國產溫體牛專賣 現沖刺身牛肉麵（清燉/紅燒）、珍品沙朗牛個人鍋、滑蛋牛肉、乾煸炒牛雜 自有牧場神農獎產銷履歷「御牧牛」溫體黃牛專賣。刺身牛肉麵上桌時以滾燙精燉高湯現淋生牛肉片，肉質粉嫩鮮甜無草腥味，內用白飯飲料無限供應。 【避坑與內行吃法】現沖牛肉麵上桌後務必在 1~2 分鐘內享用最佳粉嫩熟度，泡太久肉質會變熟變柴失去滑嫩感；尖峰時段僅開放特定時段電話預約（05-3622998），其餘需現場候位。 嘉義縣太保市太保二路113號（永在食安大樓1樓） 太保市 嘉義縣府 御牧牛 刺身牛肉麵 神農獎牛肉"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜神農獎國產溫體牛專賣</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">在地人回訪率最高牛肉盛宴</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-145</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">御牛殿麵鍋食堂（鈜景御牧牛旗艦店）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現沖刺身牛肉麵（清燉/紅燒）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">珍品沙朗牛個人鍋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滑蛋牛肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾煸炒牛雜</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">自有牧場神農獎產銷履歷「御牧牛」溫體黃牛專賣。刺身牛肉麵上桌時以滾燙精燉高湯現淋生牛肉片，肉質粉嫩鮮甜無草腥味，內用白飯飲料無限供應。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑與內行吃法】現沖牛肉麵上桌後務必在 1~2 分鐘內享用最佳粉嫩熟度，泡太久肉質會變熟變柴失去滑嫩感；尖峰時段僅開放特定時段電話預約（05-3622998），其餘需現場候位。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市太保二路113號（永在食安大樓1樓）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30-20:00（最後收客 19:30）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 御牛殿麵鍋食堂" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '御牛殿麵鍋食堂（鈜景御牧牛旗艦店）', '現沖刺身牛肉麵（清燉/紅燒）、珍品沙朗牛個人鍋、滑蛋牛肉、乾煸炒牛雜', '嘉義縣太保市太保二路113號（永在食安大樓1樓）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="宵夜炭烤日料"
+               data-search="築日食堂 嘉義縣 太保市 宵夜炭烤日料 故宮大道日系高cp值定食 綜合生魚片丼飯、軟殼蟹卷壽司、烤中卷定食、土瓶蒸（附整尾鮮蝦） 故宮南院斜對面知名日料，木質裝潢具日系風情。生魚片厚度足且新鮮，定食附贈用料扎實的整尾蝦土瓶蒸，份量澎湃cp值高。 【避坑與內行吃法】假日不接受預約訂位，採現場候位；掃碼線上點餐後出餐依序製作，假日中午建議提早於 11:30 前抵達避免等候超過 30 分鐘。 嘉義縣太保市故宮大道785號 太保市 故宮南院 日式定食 生魚片丼飯 土瓶蒸"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">宵夜炭烤日料｜故宮大道日系高CP值定食</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">故宮南院旁人氣日料</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-146</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">築日食堂</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合生魚片丼飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">軟殼蟹卷壽司</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">烤中卷定食</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">土瓶蒸（附整尾鮮蝦）</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">故宮南院斜對面知名日料，木質裝潢具日系風情。生魚片厚度足且新鮮，定食附贈用料扎實的整尾蝦土瓶蒸，份量澎湃CP值高。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑與內行吃法】假日不接受預約訂位，採現場候位；掃碼線上點餐後出餐依序製作，假日中午建議提早於 11:30 前抵達避免等候超過 30 分鐘。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市故宮大道785號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30-14:30, 17:00-21:00（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 築日食堂" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '築日食堂', '綜合生魚片丼飯、軟殼蟹卷壽司、烤中卷定食、土瓶蒸（附整尾鮮蝦）', '嘉義縣太保市故宮大道785號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="正餐主食"
+               data-search="鑫苑鐵板料理 嘉義縣 太保市 正餐主食 產地海釣鮮魚少油精緻鐵板燒 東石產地海釣現煎鮮魚（海鱸/午仔魚）、菲力牛排、香煎松阪豬、熬煮鮮魚骨例湯 具音樂底蘊主廚主理的少油原味鐵板料理。堅持親至東石漁港挑選野生鮮魚，搭配在地優質好米與314不鏽鋼鐵板清爽煎烤，例湯與白飯誠意十足。 【避坑與內行吃法】店內席位僅約十餘席，強烈建議用餐前務必電話預約（0910-118308）；每日野生海魚數量有限，想吃特定魚種建議訂位時先詢問預留。 嘉義縣太保市太保二路91號 太保市 嘉義縣府 精緻鐵板燒 東石野生鮮魚 原味少油"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜產地海釣鮮魚少油精緻鐵板燒</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">老闆嚴選東石港現撈鮮魚</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-147</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">鑫苑鐵板料理</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">東石產地海釣現煎鮮魚（海鱸/午仔魚）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">菲力牛排</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">香煎松阪豬</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">熬煮鮮魚骨例湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">具音樂底蘊主廚主理的少油原味鐵板料理。堅持親至東石漁港挑選野生鮮魚，搭配在地優質好米與314不鏽鋼鐵板清爽煎烤，例湯與白飯誠意十足。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑與內行吃法】店內席位僅約十餘席，強烈建議用餐前務必電話預約（0910-118308）；每日野生海魚數量有限，想吃特定魚種建議訂位時先詢問預留。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市太保二路91號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30-13:30, 17:30-20:00（每週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 鑫苑鐵板料理" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '鑫苑鐵板料理', '東石產地海釣現煎鮮魚（海鱸/午仔魚）、菲力牛排、香煎松阪豬、熬煮鮮魚骨例湯', '嘉義縣太保市太保二路91號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="正餐主食"
+               data-search="蘊味·臺菜嘉餚 嘉義縣 太保市 正餐主食 嘉義十八鄉鎮小農精緻個人台菜 金酥旺來鮮菓蝦球、柴燒爐烤虱目魚、塔香三杯苦茶油雞、梅汁橙香排骨 將傳統油膩大盤台菜轉化為高質感單人定食，融入民雄鳳梨、布袋海鹽等在地物產。空間綠意雅致，一個人也能自在享用功夫台菜。 【避坑與內行吃法】價位落於 300~500 元間屬精緻套餐定位；故宮南院活動檔期人潮較多，建議先以電話預約訂位（05-3625157）確保席位。 嘉義縣太保市故宮大道795號 太保市 故宮南院 個人台菜 小農食材 精緻套餐"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜嘉義十八鄉鎮小農精緻個人台菜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">質感綠意老宅台菜套餐</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-148</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">蘊味·臺菜嘉餚</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">金酥旺來鮮菓蝦球</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">柴燒爐烤虱目魚</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">塔香三杯苦茶油雞</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">梅汁橙香排骨</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">將傳統油膩大盤台菜轉化為高質感單人定食，融入民雄鳳梨、布袋海鹽等在地物產。空間綠意雅致，一個人也能自在享用功夫台菜。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑與內行吃法】價位落於 300~500 元間屬精緻套餐定位；故宮南院活動檔期人潮較多，建議先以電話預約訂位（05-3625157）確保席位。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市故宮大道795號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00-19:30（最後點餐 19:00）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 蘊味·臺菜嘉餚" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '蘊味·臺菜嘉餚', '金酥旺來鮮菓蝦球、柴燒爐烤虱目魚、塔香三杯苦茶油雞、梅汁橙香排骨', '嘉義縣太保市故宮大道795號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="正餐主食"
+               data-search="緩食ゆっくり和洋料理 嘉義縣 太保市 正餐主食 故宮大道溫馨日系厚切咖哩 厚切炸豬排日式咖哩、唐揚雞咖哩、奶油菌菇寬扁麵 故宮大道上的質感日式洋食餐館，木質調與暖色燈光舒適放鬆。炸豬排厚實扎實多汁，熟成咖哩醬汁濃郁甘醇，逛完故宮後的溫馨正餐好去處。 【避坑與內行吃法】店內座位僅約二十餘席，餐期易滿座；每週一、二固定公休切勿撲空；低消每人一份主餐。 嘉義縣太保市故宮大道791號 太保市 故宮南院 日式咖哩 厚切炸豬排 和洋料理"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜故宮大道溫馨日系厚切咖哩</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">故宮南院周邊日系洋食首選</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-149</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">緩食ゆっくり和洋料理</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">厚切炸豬排日式咖哩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">唐揚雞咖哩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">奶油菌菇寬扁麵</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">故宮大道上的質感日式洋食餐館，木質調與暖色燈光舒適放鬆。炸豬排厚實扎實多汁，熟成咖哩醬汁濃郁甘醇，逛完故宮後的溫馨正餐好去處。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑與內行吃法】店內座位僅約二十餘席，餐期易滿座；每週一、二固定公休切勿撲空；低消每人一份主餐。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市故宮大道791號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00-14:00, 17:00-20:00（每週一、週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 緩食ゆっくり和洋料理" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '緩食ゆっくり和洋料理', '厚切炸豬排日式咖哩、唐揚雞咖哩、奶油菌菇寬扁麵', '嘉義縣太保市故宮大道791號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="正餐主食"
+               data-search="日好蒔光蔬食料理 嘉義縣 太保市 正餐主食 縣府特區高質感清爽無國界蔬食 日式濃郁咖哩飯、栗子百匯炒飯、檸檬香茅火鍋、手工三杯塔香煎餃 嘉義縣政府特區高口碑蔬食館，打破傳統素食刻板印象。調味乾淨淡雅不油膩，栗子百匯炒飯粒粒分明，手工煎餃脆皮飽滿，葷食者也能吃得極為滿意。 【避坑與內行吃法】每週四固定公休；餐點多為現點現炒現煮，人多時出餐需稍候，趕時間者建議提早電話預約或外帶。 嘉義縣太保市太保五路98-11號 太保市 嘉義縣府 蔬食料理 質感素食 栗子炒飯"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜縣府特區高質感清爽無國界蔬食</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">縣府特區高評價舒心蔬食</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-150</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">日好蒔光蔬食料理</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">日式濃郁咖哩飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">栗子百匯炒飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">檸檬香茅火鍋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工三杯塔香煎餃</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">嘉義縣政府特區高口碑蔬食館，打破傳統素食刻板印象。調味乾淨淡雅不油膩，栗子百匯炒飯粒粒分明，手工煎餃脆皮飽滿，葷食者也能吃得極為滿意。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑與內行吃法】每週四固定公休；餐點多為現點現炒現煮，人多時出餐需稍候，趕時間者建議提早電話預約或外帶。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市太保五路98-11號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00-14:00, 17:00-20:00（每週四公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 日好蒔光蔬食料理" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '日好蒔光蔬食料理', '日式濃郁咖哩飯、栗子百匯炒飯、檸檬香茅火鍋、手工三杯塔香煎餃', '嘉義縣太保市太保五路98-11號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="正餐主食"
+               data-search="采荷居人文茶館 嘉義縣 朴子市 正餐主食 朴子老字號古色古香人文茶館 醬燒豬腳定食、酸辣鱸魚鍋、廣式牛腩煲、懷舊古早味蛋蜜汁、大杯新鮮水果茶 朴子人從小喝到大的經典人文茶館，中式紅磚木質庭園造景古樸雅致。火鍋份量誠意滿滿，罕見的懷舊蛋蜜汁與大杯水果茶是老饕聚會標配。 【避坑與內行吃法】山通路路幅不寬停車需稍尋周邊白線；週末聚會人潮眾多，強烈建議提早電話訂位；公休日不固定出發前請確認粉專公告。 嘉義縣朴子市山通路24-13號 朴子市 人文茶館 庭園簡餐 古早味蛋蜜汁 火鍋聚餐"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜朴子老字號古色古香人文茶館</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">朴子聚餐經典回憶老店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-151</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">采荷居人文茶館</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">醬燒豬腳定食</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">酸辣鱸魚鍋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">廣式牛腩煲</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">懷舊古早味蛋蜜汁</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">大杯新鮮水果茶</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">朴子人從小喝到大的經典人文茶館，中式紅磚木質庭園造景古樸雅致。火鍋份量誠意滿滿，罕見的懷舊蛋蜜汁與大杯水果茶是老饕聚會標配。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑與內行吃法】山通路路幅不寬停車需稍尋周邊白線；週末聚會人潮眾多，強烈建議提早電話訂位；公休日不固定出發前請確認粉專公告。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市山通路24-13號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00-21:30（不定期公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣朴子市 采荷居人文茶館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣朴子市', '采荷居人文茶館', '醬燒豬腳定食、酸辣鱸魚鍋、廣式牛腩煲、懷舊古早味蛋蜜汁、大杯新鮮水果茶', '嘉義縣朴子市山通路24-13號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="鹿草鄉"
+               data-city-district="嘉義縣・鹿草鄉"
+               data-category="正餐主食"
+               data-search="和樂食堂 嘉義縣 鹿草鄉 正餐主食 傳奇一甲子山珍野味與熱炒台菜 三杯田鼠（皮q肉嫩無腥味）、香酥肚猴（酥炸蟋蟀）、山芹炒山羌、炒螺肉、古早味熱炒合菜 經營逾半世紀的台灣傳奇野味餐廳，被各大電視媒體深度專題報導。處理工序極為講究乾淨，三杯田鼠肉質滑嫩似頂級土雞，亦有豐富的平價大眾熱炒合菜。 【避坑與內行吃法】野味料理為嗜好性與民俗特色餐點，若同行者不吃野味，店內一般台菜熱炒（蚵仔煎蛋、炒水蓮、排骨湯等）亦相當道地；假日團體合菜較多建議先電話預約。 嘉義縣鹿草鄉西井村619號（鹿草路360號） 鹿草鄉 傳奇野味 三杯田鼠 台菜熱炒 一甲子老店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・鹿草鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜傳奇一甲子山珍野味與熱炒台菜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">鹿草全台知名傳奇料理</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-152</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">和樂食堂</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">三杯田鼠（皮Q肉嫩無腥味）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">香酥肚猴（酥炸蟋蟀）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">山芹炒山羌</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">炒螺肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味熱炒合菜</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">經營逾半世紀的台灣傳奇野味餐廳，被各大電視媒體深度專題報導。處理工序極為講究乾淨，三杯田鼠肉質滑嫩似頂級土雞，亦有豐富的平價大眾熱炒合菜。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑與內行吃法】野味料理為嗜好性與民俗特色餐點，若同行者不吃野味，店內一般台菜熱炒（蚵仔煎蛋、炒水蓮、排骨湯等）亦相當道地；假日團體合菜較多建議先電話預約。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣鹿草鄉西井村619號（鹿草路360號）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00-21:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣鹿草鄉 和樂食堂" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣鹿草鄉', '和樂食堂', '三杯田鼠（皮Q肉嫩無腥味）、香酥肚猴（酥炸蟋蟀）、山芹炒山羌、炒螺肉、古早味熱炒合菜', '嘉義縣鹿草鄉西井村619號（鹿草路360號）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -10207,7 +10656,7 @@
 
   <!-- 底部手冊導覽浮動條 -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (205)</a>
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (214)</a>
     <a href="seaview.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
