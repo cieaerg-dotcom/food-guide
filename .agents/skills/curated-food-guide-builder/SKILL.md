@@ -50,8 +50,12 @@ Threads 前端採用客戶端 Hydration 與 GraphQL API，單純以一般瀏覽�
    python3 scripts/extract_threads_thread.py --url "<Threads_URL>" --output "/tmp/threads_extracted.json"
    ```
 
-### 第二階段：店家數據結構化與情報核對（跨縣市鄉鎮市區統一格式）
-將抓取到的原始留言整理為標準 JSON 陣列（儲存於 `data/taiwan_food_guides_unified.json`），每筆店家包含：
+### 第二階段：店家數據結構化與情報核對（含防商業互捧與店家自薦過濾）
+在將留言收錄進資料庫前，必須嚴格執行「**防商業水軍與去自吹審查**」：
+1. **識別官方自薦與親友拉抬**：仔細過濾留言者帳號（如店家官方帳號、同名帳號、特定帳號互相 @ 吹捧）。
+2. **剔除連鎖加盟與粗飽型店家**：非在地老饕私房、依靠廉價麵食冰品吃到飽或大型商業集團網美店一律排除。
+3. **注入批判性真實負評（De-fluffing）**：交叉比對 Google 1～3 星評價與 PTT 鄉民實測，在 `tips` 中無情標明網美溢價、排隊時間過長、口味見仁見智等缺點，杜絕盲目造神。
+4. 將抓取到的原始留言整理為標準 JSON 陣列（儲存於 `data/taiwan_food_guides_unified.json`），每筆店家包含：
 * `uid`：店家唯一識別編號（如 `CY-01`、`TN-01`）
 * `name`：店家全名（標準招牌名稱）
 * `city`：台灣縣市名稱（如：`嘉義市`、`臺南市`）
