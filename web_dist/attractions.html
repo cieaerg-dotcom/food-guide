@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>全台美拍私房景點隨身手冊 ｜ 手機離線獨立版</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#047857">
+  <style>
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    @media (min-width: 680px) {
+      #storesGrid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)) !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0 0 84px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang TC','Microsoft JhengHei',sans-serif;background-color:#f8fafc;color:#0f172a;line-height:1.55;-webkit-font-smoothing:antialiased;">
+
+  <!-- 三大主題跨手冊切換列 -->
+  <div style="background-color:#0f172a;padding:8px 12px;display:flex;justify-content:center;gap:8px;font-size:12.5px;font-weight:700;">
+    <a href="index.html" style="color:#cbd5e1;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #334155;background:#1e293b;">🍱 美食避雷手冊</a>
+    <a href="attractions.html" style="color:#ffffff;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #10b981;background:#065f46;">📸 私房美拍景點</a>
+    <a href="seaview.html" style="color:#cbd5e1;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #334155;background:#1e293b;">🌊 看海放空旅宿</a>
+  </div>
+
+  <!-- 頂部橫幅（全內嵌 Inline CSS） -->
+  <header style="background:linear-gradient(135deg,#064e3b 0%,#047857 50%,#059669 100%);background-color:#047857;color:#ffffff;padding:24px 16px 18px;text-align:center;box-shadow:0 4px 14px rgba(4,120,87,0.22);">
+    <div style="display:inline-block;background-color:rgba(255,255,255,0.2);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.3);">
+      📸 手機離線獨立版 ｜ 免網路・免伺服器隨點隨開
+    </div>
+    <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">全台美拍私房景點隨身手冊</h1>
+    <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#ecfdf5;">
+      深度收錄嘉義市、嘉義縣＆臺南市共 21 處精選美拍・歷史古蹟・自然秘境實測攻略
+    </div>
+  </header>
+
+  <!-- 黏性三層分頁導覽列（全內嵌 Inline CSS） -->
+  <nav style="position:sticky;top:0;z-index:100;background-color:rgba(255,255,255,0.98);border-bottom:1px solid #e2e8f0;box-shadow:0 4px 12px rgba(15,23,42,0.05);padding:12px 14px 10px;">
+    <div style="max-width:1200px;margin:0 auto;">
+
+      <!-- 第一層：台灣縣市分頁 -->
+      <div id="cityTabs" class="no-scrollbar" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:9px;padding-bottom:2px;">
+        <button type="button" data-city-btn="all" onclick="selectCity('all')"
+                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #064e3b;background-color:#064e3b;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
+          <span>🗺️ 全部縣市</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">21</span>
+        </button>
+        <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
+                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
+          <span>🐓 嘉義市</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">9</span>
+        </button>
+        <button type="button" data-city-btn="嘉義縣" onclick="selectCity('嘉義縣')"
+                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
+          <span>🌲 嘉義縣</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">7</span>
+        </button>
+        <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
+                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
+          <span>🏛️ 臺南市</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">5</span>
+        </button>
+      </div>
+
+      <!-- 第二層：鄉鎮市區子分頁 -->
+      <div id="districtBar" class="no-scrollbar" style="display:flex;align-items:center;gap:6px;overflow-x:auto;margin-bottom:9px;padding:6px 10px;background-color:#f1f5f9;border-radius:10px;">
+        <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
+        <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#047857;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
+          全部鄉鎮市區 (21)
+        </button>
+        <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義市・東區 (6)
+        </button>
+        <button type="button" data-dist-btn="嘉義市・西區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・西區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義市・西區 (3)
+        </button>
+        <button type="button" data-dist-btn="嘉義縣・六腳鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・六腳鄉')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義縣・六腳鄉 (1)
+        </button>
+        <button type="button" data-dist-btn="嘉義縣・太保市" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・太保市')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義縣・太保市 (1)
+        </button>
+        <button type="button" data-dist-btn="嘉義縣・朴子市" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・朴子市')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義縣・朴子市 (2)
+        </button>
+        <button type="button" data-dist-btn="嘉義縣・梅山鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・梅山鄉')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義縣・梅山鄉 (1)
+        </button>
+        <button type="button" data-dist-btn="嘉義縣・民雄鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・民雄鄉')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義縣・民雄鄉 (2)
+        </button>
+        <button type="button" data-dist-btn="臺南市・後壁區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・後壁區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・後壁區 (2)
+        </button>
+        <button type="button" data-dist-btn="臺南市・新營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・新營區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・新營區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・柳營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・柳營區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・柳營區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・鹽水區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・鹽水區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・鹽水區 (1)
+        </button>
+      </div>
+
+      <!-- 搜尋框 -->
+      <div style="position:relative;margin-bottom:9px;">
+        <input type="text" id="searchInput" oninput="handleSearch()" placeholder="🔍 搜尋景點名稱、特色亮點、避坑攻略、地址..."
+               style="width:100%;padding:10px 14px 10px 38px;border-radius:10px;border:1.5px solid #cbd5e1;background-color:#f8fafc;font-size:13.5px;color:#0f172a;outline:none;-webkit-appearance:none;">
+        <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:15px;color:#94a3b8;pointer-events:none;">📍</span>
+      </div>
+
+      <!-- 第三層：景點類型篩選膠囊列 -->
+      <div id="catScroll" class="no-scrollbar" style="display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;">
+        <button type="button" data-cat-btn="all" onclick="selectCat('all')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #059669;background-color:#059669;color:#ffffff;font-size:12.5px;font-weight:700;cursor:pointer;">🏛️ 全部類型</button>
+        <button type="button" data-cat-btn="歷史古蹟" onclick="selectCat('歷史古蹟')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">📜 歷史古蹟</button>
+        <button type="button" data-cat-btn="文創園區" onclick="selectCat('文創園區')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🎨 文創園區</button>
+        <button type="button" data-cat-btn="自然步道" onclick="selectCat('自然步道')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🌲 自然步道</button>
+        <button type="button" data-cat-btn="親子休閒" onclick="selectCat('親子休閒')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🎠 親子休閒</button>
+        <button type="button" data-cat-btn="宗教信仰" onclick="selectCat('宗教信仰')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">⛩️ 宗教信仰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 篩選狀態統計列 -->
+  <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
+    <div id="breadcrumbText">目前分頁：<b style="color:#047857;">全部縣市 ▸ 全部鄉鎮市區</b></div>
+    <div>顯示中：<b id="storeCount" style="color:#047857;">21</b> 處景點</div>
+  </div>
+
+  <!-- 預渲染之景點卡片列表 -->
+  <main id="storesGrid" style="display:flex;flex-direction:column;gap:14px;padding:10px 14px;max-width:1200px;margin:0 auto;">
+
+    <article class="store-card"
+               data-city="嘉義市"
+               data-district="西區"
+               data-city-district="嘉義市・西區"
+               data-category="歷史古蹟"
+               data-search="台灣花磚博物館 嘉義市 西區 歷史古蹟 全台唯一珍稀老花磚文化老宅 立體百年彩繪花磚牆、日治歷史檜木老屋、手作花磚文創紀念品 創辦人傾盡心力搶救全台即將拆除老屋上的珍貴花磚，將日治老檜木宅改造為全台唯一花磚博物館。數千片彩繪磁磚拼成壯麗牆面，每片花磚皆承載著昔日家族的祈福寓意，光影穿透古老木窗美得令人屏息。 【避坑與內行玩法】1. 老宅空間狹窄為保護文物有室內人數上限，週末午後常需在門口排隊 20~30 分鐘，強烈建議平日或一早 10:00 前往。2. 門票可折抵部分文創商品消費。3. 門口林森西路為幹道切勿違停，可停至嘉義火車站周邊停車場再步行前往。 嘉義市西區林森西路282號 西區 老花磚 日式老宅 文青美拍 全台唯一"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜全台唯一珍稀老花磚文化老宅</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 老屋再生與百年花磚美學天花板</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">台灣花磚博物館</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-01</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">立體百年彩繪花磚牆</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">日治歷史檜木老屋</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">手作花磚文創紀念品</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">創辦人傾盡心力搶救全台即將拆除老屋上的珍貴花磚，將日治老檜木宅改造為全台唯一花磚博物館。數千片彩繪磁磚拼成壯麗牆面，每片花磚皆承載著昔日家族的祈福寓意，光影穿透古老木窗美得令人屏息。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 老宅空間狹窄為保護文物有室內人數上限，週末午後常需在門口排隊 20~30 分鐘，強烈建議平日或一早 10:00 前往。2. 門票可折抵部分文創商品消費。3. 門口林森西路為幹道切勿違停，可停至嘉義火車站周邊停車場再步行前往。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市西區林森西路282號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>10:00 - 17:30（每週一、週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E5%B8%82%E8%A5%BF%E5%8D%80%20%E5%8F%B0%E7%81%A3%E8%8A%B1%E7%A3%9A%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義市西區', '台灣花磚博物館', '立體百年彩繪花磚牆、日治歷史檜木老屋、手作花磚文創紀念品', '嘉義市西區林森西路282號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#西區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#老花磚</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#日式老宅</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#文青美拍</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#全台唯一</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義市"
+               data-district="西區"
+               data-city-district="嘉義市・西區"
+               data-category="文創園區"
+               data-search="嘉義市立美術館（嘉美館） 嘉義市 西區 文創園區 昭和菸酒公賣局古蹟挑高木構藝術地標 經典湖水綠昭和弧形窗櫺、現代挑高clt膠合木構中庭、夜間燈光水池倒影、昭和j11咖啡館 前身為昭和時期臺灣總督府專賣局嘉義支局，由名建築師將近百年古蹟與現代大跨距集成材木構無縫融合。湖水綠弧形窗框與大片玻璃帷幕映襯藍天，戶外開放式庭園中庭更是市民散步與打卡的靈魂核心。 【避坑與內行玩法】1. 每週一固定休館；戶外庭院與一樓文創商店不需門票即可自由參觀拍照。2. 門票僅銅板價 50 元（嘉義市民免費），展覽內容每季更替水準極高。3. 緊鄰嘉義火車站步行僅 3 分鐘，搭火車前往最省時免找車位。 嘉義市西區廣寧街101號（嘉義火車站斜對面） 西區 嘉美館 古蹟改建 木構建築 火車站周邊"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">文創園區｜昭和菸酒公賣局古蹟挑高木構藝術地標</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 新舊共融之全台最美綠意木構美術館</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">嘉義市立美術館（嘉美館）</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-02</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">經典湖水綠昭和弧形窗櫺</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">現代挑高CLT膠合木構中庭</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">夜間燈光水池倒影</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">昭和J11咖啡館</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">前身為昭和時期臺灣總督府專賣局嘉義支局，由名建築師將近百年古蹟與現代大跨距集成材木構無縫融合。湖水綠弧形窗框與大片玻璃帷幕映襯藍天，戶外開放式庭園中庭更是市民散步與打卡的靈魂核心。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 每週一固定休館；戶外庭院與一樓文創商店不需門票即可自由參觀拍照。2. 門票僅銅板價 50 元（嘉義市民免費），展覽內容每季更替水準極高。3. 緊鄰嘉義火車站步行僅 3 分鐘，搭火車前往最省時免找車位。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市西區廣寧街101號（嘉義火車站斜對面）</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>09:00 - 17:00（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E5%B8%82%E8%A5%BF%E5%8D%80%20%E5%98%89%E7%BE%A9%E5%B8%82%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義市西區', '嘉義市立美術館（嘉美館）', '經典湖水綠昭和弧形窗櫺、現代挑高CLT膠合木構中庭、夜間燈光水池倒影、昭和J11咖啡館', '嘉義市西區廣寧街101號（嘉義火車站斜對面）')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#西區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#嘉美館</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#古蹟改建</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#木構建築</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#火車站周邊</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="文創園區"
+               data-search="檜意森活村（hinoki village） 嘉義市 東區 文創園區 全台最大日式官舍檜木歷史建築聚落 28棟日式檜木官舍群、日式和服體驗穿梭林間、森咖啡下午茶、霞之道日式庭園 阿里山林業開發全盛時期的官方宿舍「檜町」，是全台保存規模最大、最完整的日式木造官舍聚落。28棟日式木屋錯落於綠蔭與水塘間，微風拂過時散發淡淡檜木清香，宛如走入京都街巷。 【避坑與內行玩法】1. 園區全區免門票自由散步，戶外園區極大遮蔽物有限，正午烈日炎熱注意防曬防中暑，最佳漫步時間為 15:30 之後。2. 假日常有和服體驗人潮，換裝拍照建議提早預約。3. 園區忠孝路與林森東路車流大，建議停至長榮街或林森東路公有收費停車場。 嘉義市東區林森東路1號 東區 日式官舍 檜町 和服體驗 免門票景點"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">文創園區｜全台最大日式官舍檜木歷史建築聚落</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 全台保存最完整28棟檜木宿舍群</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">檜意森活村（Hinoki Village）</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-03</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">28棟日式檜木官舍群</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">日式和服體驗穿梭林間</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">森咖啡Morikoohii日系下午茶</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">霞之道水景日式庭園</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">阿里山林業開發全盛時期的官方宿舍「檜町」，是全台保存規模最大、最完整的日式木造官舍聚落。28棟日式木屋錯落於綠蔭與水塘間，微風拂過時散發淡淡檜木清香，宛如走入京都街巷。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 園區全區免門票自由散步，戶外園區極大遮蔽物有限，正午烈日炎熱注意防曬防中暑，最佳漫步時間為 15:30 之後。2. 假日常有和服體驗人潮，換裝拍照建議提早預約。3. 園區忠孝路與林森東路車流大，建議停至長榮街或林森東路公有收費停車場。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區林森東路1號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>10:00 - 18:00（園區戶外全天開放）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E5%B8%82%E6%9D%B1%E5%8D%80%20%E6%AA%9C%E6%84%8F%E6%A3%AE%E6%B4%BB%E6%9D%91" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義市東區', '檜意森活村（Hinoki Village）', '28棟日式檜木官舍群、日式和服體驗穿梭林間、森咖啡下午茶、霞之道日式庭園', '嘉義市東區林森東路1號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#東區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#日式官舍</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#檜町</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#和服體驗</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#免門票景點</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="歷史古蹟"
+               data-search="嘉義舊監獄（獄政博物館） 嘉義市 東區 歷史古蹟 全球少數完整保留之日治放射狀木造監獄 中央台放射狀扇形監房、空中巡邏貓道、婦育館女監、典獄長辦公室 興建於大正年間的國定古蹟，與日本網走監獄並列為全球僅存少數的「賓夕法尼亞式」放射狀木造監獄。由中央台向外輻射出三座牢房通道，站於台前能一眼監控整座牢舍，內部完整保留巡邏貓道與黑牢，歷史震撼感強烈。 【避坑與內行玩法】1. 不能自由隨意漫遊！必須配合專人免費定時導覽梯次（每日約 09:30、10:30、13:30、14:30 四梯次），切勿錯過開放入園時間。2. 每週一固定公休。3. 館內老建築無冷氣通風略顯悶熱，夏季參觀請攜帶飲用水與小扇子。 嘉義市東區維新路140號 東區 國定古蹟 定時導覽 放射狀牢房 深度文史"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜全球少數完整保留之日治放射狀木造監獄</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 全台唯一國定古蹟放射狀歷史監獄</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">嘉義舊監獄（獄政博物館）</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-04</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">中央台放射狀扇形監房（智仁勇三舍）</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">空中巡邏貓道</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">婦育館女監</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">典獄長辦公室與老檜木構造</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">興建於大正年間的國定古蹟，與日本網走監獄並列為全球僅存少數的「賓夕法尼亞式」放射狀木造監獄。由中央台向外輻射出三座牢房通道，站於台前能一眼監控整座牢舍，內部完整保留巡邏貓道與黑牢，歷史震撼感強烈。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 不能自由隨意漫遊！必須配合專人免費定時導覽梯次（每日約 09:30、10:30、13:30、14:30 四梯次），切勿錯過開放入園時間。2. 每週一固定公休。3. 館內老建築無冷氣通風略顯悶熱，夏季參觀請攜帶飲用水與小扇子。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區維新路140號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>專人導覽時段：09:30、10:30、13:30、14:30（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E5%B8%82%E6%9D%B1%E5%8D%80%20%E5%98%89%E7%BE%A9%E8%88%8A%E7%9B%A3%E7%8D%84" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義市東區', '嘉義舊監獄（獄政博物館）', '中央台放射狀扇形監房、空中巡邏貓道、婦育館女監、典獄長辦公室', '嘉義市東區維新路140號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#東區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#國定古蹟</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#定時導覽</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#放射狀牢房</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#深度文史</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="自然步道"
+               data-search="蘭潭風景區（月影潭心 / 音樂噴泉水舞） 嘉義市 東區 自然步道 絕美環潭自行車道與鋁合金鏤空地景藝術 大型鋁合金鳥巢「月影潭心」、夜間彩色音樂水舞秀、環潭木棧步道、三信亭 相傳為明鄭時期荷蘭人開鑿之「紅毛埤」，湖面波光粼粼。王文志大師設計的「月影潭心」以鋁條編織如鳥巢鳥翼，夜間點亮七彩光影宛如夢境；傍晚夕陽灑落湖面與夜間彩色水舞噴泉，是嘉義約會散步首選。 【避坑與內行玩法】1. 音樂水舞有固定演出場次（通常晚間 19:30、20:30、21:30 各一場），枯水期或湖底清淤時會暫時停演，出發前請確認水情公告。2. 湖畔夜間蚊蟲多務必噴妥防蚊液。3. 「月影潭心」橋面微透空，穿高跟鞋者行走需特別留意。 嘉義市東區鹿寮里紅毛埤187-4號 東區 月影潭心 夜間水舞 環潭步道 浪漫夜景"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">自然步道｜絕美環潭自行車道與鋁合金鏤空地景藝術</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 嘉義夜間最浪漫水岸水舞光影秀</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">蘭潭風景區（月影潭心 / 音樂噴泉水舞）</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-05</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">大型鋁合金編織鳥巢「月影潭心」</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">夜間彩色音樂噴泉水舞秀</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">環潭木棧步道夕陽湖景</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">三信亭眺望湖光山色</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">相傳為明鄭時期荷蘭人開鑿之「紅毛埤」，湖面波光粼粼。王文志大師設計的「月影潭心」以鋁條編織如鳥巢鳥翼，夜間點亮七彩光影宛如夢境；傍晚夕陽灑落湖面與夜間彩色水舞噴泉，是嘉義約會散步首選。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 音樂水舞有固定演出場次（通常晚間 19:30、20:30、21:30 各一場），枯水期或湖底清淤時會暫時停演，出發前請確認水情公告。2. 湖畔夜間蚊蟲多務必噴妥防蚊液。3. 「月影潭心」橋面微透空，穿高跟鞋者行走需特別留意。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區鹿寮里紅毛埤187-4號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>全天開放（水舞演出時段請參考市府公告）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E5%B8%82%E6%9D%B1%E5%8D%80%20%E8%98%AD%E6%BD%AD%E6%9C%88%E5%BD%B1%E6%BD%AD%E5%BF%83" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義市東區', '蘭潭風景區（月影潭心 / 音樂噴泉水舞）', '大型鋁合金鳥巢「月影潭心」、夜間彩色音樂水舞秀、環潭木棧步道、三信亭', '嘉義市東區鹿寮里紅毛埤187-4號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#東區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#月影潭心</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#夜間水舞</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#環潭步道</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#浪漫夜景</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="歷史古蹟"
+               data-search="嘉義公園（射日塔 / 昭和十八 j18 史蹟資料館） 嘉義市 東區 歷史古蹟 百年老樹古蹟與原嘉義神社歷史園區 射日塔360度展望台、昭和十八j18神社齋館、嘉義孔廟、百年古榕林 建於明治43年的百年都會公園，園內老樹參天、古蹟林立。62公尺高的「射日塔」頂樓能俯瞰整座嘉義市景；原嘉義神社齋館改建的「昭和十八 j18」純日式木造建築保留了手水舍與檜木緣側，和風氛圍極致雅致。 【避坑與內行玩法】1. 嘉義公園全區免門票；射日塔登頂需銅板門票（約 50 元）；「昭和十八 j18」入館需門票但可全額折抵館內餐飲或文創商品。2. 公園綠蔭極為茂密，小黑蚊較兇猛，務必穿著長褲或攜帶長效防蚊液。 嘉義市東區公園街46號 東區 百年公園 射日塔 昭和十八 神社古蹟"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜百年老樹古蹟與原嘉義神社歷史園區</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 嘉義百年古蹟公園與俯瞰市景地標</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">嘉義公園（射日塔 / 昭和十八 J18 史蹟資料館）</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-06</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">射日塔頂樓360度環景玻璃展望台</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">原嘉義神社齋館走入「昭和十八J18」</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">嘉義孔子廟</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">百年古榕樹與阿里山舊蒸氣火車頭</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">建於明治43年的百年都會公園，園內老樹參天、古蹟林立。62公尺高的「射日塔」頂樓能俯瞰整座嘉義市景；原嘉義神社齋館改建的「昭和十八 J18」純日式木造建築保留了手水舍與檜木緣側，和風氛圍極致雅致。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 嘉義公園全區免門票；射日塔登頂需銅板門票（約 50 元）；「昭和十八 J18」入館需門票但可全額折抵館內餐飲或文創商品。2. 公園綠蔭極為茂密，小黑蚊較兇猛，務必穿著長褲或攜帶長效防蚊液。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區公園街46號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>公園全天開放（射日塔與昭和十八約 09:00 - 17:00，週一休館）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E5%B8%82%E6%9D%B1%E5%8D%80%20%E5%98%89%E7%BE%A9%E5%85%AC%E5%9C%92%20%E5%B0%84%E6%97%A5%E5%A1%94" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義市東區', '嘉義公園（射日塔 / 昭和十八 J18 史蹟資料館）', '射日塔360度展望台、昭和十八J18神社齋館、嘉義孔廟、百年古榕林', '嘉義市東區公園街46號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#東區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#百年公園</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#射日塔</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#昭和十八</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#神社古蹟</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義市"
+               data-district="西區"
+               data-city-district="嘉義市・西區"
+               data-category="自然步道"
+               data-search="北香湖公園 嘉義市 西區 自然步道 重現清代諸羅八景與夜間光織影舞大型展場 環湖倒影落羽松、北香秋荷生態湖區、年度光織影舞光影藝術展 重現清代「北香秋荷」名景的景觀綠地，佔地廣達25公頃。湖面環繞步道綠樹成蔭、落羽松林隨四季更迭；每年秋季市府舉辦的大型沉浸式光影展「光織影舞」，將巨型藝術裝置置於湖心與林梢，光影倒映湖面震撼全台。 【避坑與內行玩法】1. 平日為在地居民幽靜的運動散步公園，免門票好停車。2. 「光織影舞」展覽期間（通常為中秋至國慶檔期）人潮極多，周邊文化路常實施交管，強烈建議搭乘免費接駁車或租借 youbike 前往。 嘉義市西區文化路552號 西區 北香秋荷 光織影舞 生態湖泊 都會綠地"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">自然步道｜重現清代諸羅八景與夜間光織影舞大型展場</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 嘉義市第二大綠地與年度光影藝術盛典</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">北香湖公園</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-07</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">環湖倒影落羽松與綠意步道</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">北香秋荷生態湖區</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">年度「光織影舞」全國級沉浸式光影藝術季</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">重現清代「北香秋荷」名景的景觀綠地，佔地廣達25公頃。湖面環繞步道綠樹成蔭、落羽松林隨四季更迭；每年秋季市府舉辦的大型沉浸式光影展「光織影舞」，將巨型藝術裝置置於湖心與林梢，光影倒映湖面震撼全台。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 平日為在地居民幽靜的運動散步公園，免門票好停車。2. 「光織影舞」展覽期間（通常為中秋至國慶檔期）人潮極多，周邊文化路常實施交管，強烈建議搭乘免費接駁車或租借 YouBike 前往。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市西區文化路552號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>24小時全天開放（免門票）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E5%B8%82%E8%A5%BF%E5%8D%80%20%E5%8C%97%E9%A6%99%E6%B9%96%E5%85%AC%E5%9C%92" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義市西區', '北香湖公園', '環湖倒影落羽松、北香秋荷生態湖區、年度光織影舞光影藝術展', '嘉義市西區文化路552號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#西區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#北香秋荷</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#光織影舞</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#生態湖泊</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#都會綠地</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="歷史古蹟"
+               data-search="阿里山森林鐵路車庫園區 嘉義市 東區 歷史古蹟 百年林鐵機車庫與退役老蒸汽火車頭大本營 28號黑面蒸汽火車頭、手動轉車台、檜木車廂展示、小火車調度景觀 阿里山森林鐵路火車頭的「心臟大本營」。綠樹如蔭的園區陳列著歷代退役蒸汽火車頭、柴油機車與檜木車廂，甚至能親眼見到罕見的手動火車轉車台；幸運時還能近距離看到運作中的林鐵班車鳴笛進出調度。 【避坑與內行玩法】1. 全區免門票自由入園參觀。2. 園區多為戶外鐵軌石礫路，推嬰兒車或輪椅需留意軌道縫隙；建議穿著舒適平底鞋。3. 與對面的「檜意森活村」及「嘉義市立博物館」僅隔一條街，推薦規劃成半日散步動線。 嘉義市東區林森西路2號 東區 鐵道園區 蒸汽火車 轉車台 親子免費景點"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜百年林鐵機車庫與退役老蒸汽火車頭大本營</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 全台唯一運作中窄軌森林鐵路機廠展示區</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿里山森林鐵路車庫園區</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-08</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">經典黑面28號蒸氣火車頭</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">手動轉車台機關軌道</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">檜木車廂歷史展示</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">林鐵小火車進出調度景觀</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">阿里山森林鐵路火車頭的「心臟大本營」。綠樹如蔭的園區陳列著歷代退役蒸汽火車頭、柴油機車與檜木車廂，甚至能親眼見到罕見的手動火車轉車台；幸運時還能近距離看到運作中的林鐵班車鳴笛進出調度。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 全區免門票自由入園參觀。2. 園區多為戶外鐵軌石礫路，推嬰兒車或輪椅需留意軌道縫隙；建議穿著舒適平底鞋。3. 與對面的「檜意森活村」及「嘉義市立博物館」僅隔一條街，推薦規劃成半日散步動線。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區林森西路2號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>08:00 - 18:00（全年無休，免門票）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E5%B8%82%E6%9D%B1%E5%8D%80%20%E9%98%BF%E9%87%8C%E5%B1%B1%E6%A3%AE%E6%9E%97%E9%90%B5%E8%B7%AF%E8%BB%8A%E5%BA%AB%E5%9C%92%E5%8D%80" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義市東區', '阿里山森林鐵路車庫園區', '28號黑面蒸汽火車頭、手動轉車台、檜木車廂展示、小火車調度景觀', '嘉義市東區林森西路2號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#東區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#鐵道園區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#蒸汽火車</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#轉車台</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#親子免費景點</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="親子休閒"
+               data-search="嘉大昆蟲館 嘉義市 東區 親子休閒 巨大旋轉彩蝶柱與透明玻璃溫室球體活體蝴蝶花園 球體透明蝴蝶溫室、千隻彩蝶旋轉柱、活體昆蟲觸摸體驗、珍奇標本館 位於嘉義大學蘭潭校區旁，最吸睛的是由千隻真實蝴蝶標本依色系排列而成的世界首創「旋轉彩蝶柱」。走入挑高透明球體玻璃溫室，數百隻活體蝴蝶在繁花瀑布間輕舞身旁，兼具拍照美感與自然生態教育。 【避坑與內行玩法】1. 需購門票（全票約 150 元，優待票 100 元）；週一、週二固定休館。2. 玻璃溫室為模擬熱帶雨林環境，濕度與溫度較高，參觀時可著透氣衣物。3. 設有專屬收費停車場，參觀完可順遊蘭潭水庫步道。 嘉義市東區學府路300號（嘉義大學蘭潭校區） 東區 嘉義大學 蝴蝶溫室 親子互動 雨天備案"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">親子休閒｜巨大旋轉彩蝶柱與透明玻璃溫室球體活體蝴蝶花園</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 全台首創球體溫室與巨型七彩蝴蝶柱</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">嘉大昆蟲館</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-09</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">球體透明蝴蝶溫室生態花園</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">世界首創千隻彩蝶旋轉柱</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">大型活體竹節蟲與甲蟲觸摸體驗區</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">昆蟲標本珍藏館</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">位於嘉義大學蘭潭校區旁，最吸睛的是由千隻真實蝴蝶標本依色系排列而成的世界首創「旋轉彩蝶柱」。走入挑高透明球體玻璃溫室，數百隻活體蝴蝶在繁花瀑布間輕舞身旁，兼具拍照美感與自然生態教育。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 需購門票（全票約 150 元，優待票 100 元）；週一、週二固定休館。2. 玻璃溫室為模擬熱帶雨林環境，濕度與溫度較高，參觀時可著透氣衣物。3. 設有專屬收費停車場，參觀完可順遊蘭潭水庫步道。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區學府路300號（嘉義大學蘭潭校區）</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>09:30 - 17:30（每週一、週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E5%B8%82%E6%9D%B1%E5%8D%80%20%E5%98%89%E5%A4%A7%E6%98%86%E8%9F%B2%E9%A4%A8" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義市東區', '嘉大昆蟲館', '球體透明蝴蝶溫室、千隻彩蝶旋轉柱、活體昆蟲觸摸體驗、珍奇標本館', '嘉義市東區學府路300號（嘉義大學蘭潭校區）')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#東區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#嘉義大學</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#蝴蝶溫室</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#親子互動</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#雨天備案</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="文創園區"
+               data-search="國立故宮博物院南部院區（故宮南院） 嘉義縣 太保市 文創園區 現代水墨流線綠建築與至美橋湖畔國寶展覽 水墨流線量體建築、跨湖至美橋、國寶沉浸展、草皮大型公共藝術 由名建築師姚仁喜設計，以書法草書的濃墨、飛白與渲染筆法化為建築量體。橫跨人工湖的「至美橋」弧度優雅，入夜點燈倒映湖水極美；館內展出故宮鎮館國寶與亞洲多元文明，冷氣舒適、策展極具國際水準。 【避坑與內行玩法】1. 戶外景觀園區極為寬廣（佔地70公頃），從接駁站走到主館距離較遠，炎夏酷暑強烈建議搭乘園區高爾夫球接駁車或租借電動輔助單車。2. 主館每週一休館，戶外園區全年無休。3. 門票 150 元，未滿 18 歲免費。 嘉義縣太保市故宮大道888號 太保市 國家級博物館 至美橋 水墨建築 親子文青"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">文創園區｜現代水墨流線綠建築與至美橋湖畔國寶展覽</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 亞洲藝術文化重鎮與國際級美學地標</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">國立故宮博物院南部院區（故宮南院）</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-10</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">流線型水墨虛實量體建築</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">橫跨人工湖之壯麗至美橋</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">沉浸式國寶常設展（肉形石/龍藏經）</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">戶外草皮大型公共藝術品</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">由名建築師姚仁喜設計，以書法草書的濃墨、飛白與渲染筆法化為建築量體。橫跨人工湖的「至美橋」弧度優雅，入夜點燈倒映湖水極美；館內展出故宮鎮館國寶與亞洲多元文明，冷氣舒適、策展極具國際水準。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 戶外景觀園區極為寬廣（佔地70公頃），從接駁站走到主館距離較遠，炎夏酷暑強烈建議搭乘園區高爾夫球接駁車或租借電動輔助單車。2. 主館每週一休館，戶外園區全年無休。3. 門票 150 元，未滿 18 歲免費。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市故宮大道888號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>博物館 09:00 - 17:00（週末至 18:00，週一休館）；園區 05:00 - 24:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E7%B8%A3%E5%A4%AA%E4%BF%9D%E5%B8%82%20%E6%95%85%E5%AE%AE%E5%8D%97%E9%99%A2" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義縣太保市', '國立故宮博物院南部院區（故宮南院）', '水墨流線量體建築、跨湖至美橋、國寶沉浸展、草皮大型公共藝術', '嘉義縣太保市故宮大道888號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#太保市</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#國家級博物館</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#至美橋</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#水墨建築</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#親子文青</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義縣"
+               data-district="六腳鄉"
+               data-city-district="嘉義縣・六腳鄉"
+               data-category="歷史古蹟"
+               data-search="蒜頭糖廠蔗埕文化園區 嘉義縣 六腳鄉 歷史古蹟 百年糖鐵五分車直通故宮與高鐵、紅豆酵母冰 復古尋光五分車、紅豆酵母冰淇淋、百年木造車站、製糖工場遺址 日治時期曾為全台第三大製糖工廠，園區保留了珍貴的百年日式木造車站與黑面蒸氣火車。最亮點為搭乘古董五分車穿梭鄉間田野，被譽為「全台最快五分車」，近年更直接延伸通往嘉義高鐵站與故宮南院，好玩又便利。 【避坑與內行玩法】1. 園區免門票自由參觀，搭乘五分車需購車票；五分車有固定發車時刻表，抵達後建議先購票再逛園區。2. 冰品部「紅豆酵母冰」口味獨特見仁見智，怕發酵味者可點純紅豆牛奶冰。3. 下午戶外蚊蟲多需防蚊。 嘉義縣六腳鄉工廠村1號 六腳鄉 百年糖廠 五分車 紅豆酵母冰 高鐵串聯"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・六腳鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜百年糖鐵五分車直通故宮與高鐵、紅豆酵母冰</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 最快五分車！串聯高鐵與故宮的百年糖鐵</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">蒜頭糖廠蔗埕文化園區</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-11</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">復古尋光五分車體驗（直達高鐵與故宮）</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味紅豆冰淇淋/酵母冰</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">百年日式木造火車站</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">古老製糖工廠遺址導覽</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">日治時期曾為全台第三大製糖工廠，園區保留了珍貴的百年日式木造車站與黑面蒸氣火車。最亮點為搭乘古董五分車穿梭鄉間田野，被譽為「全台最快五分車」，近年更直接延伸通往嘉義高鐵站與故宮南院，好玩又便利。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 園區免門票自由參觀，搭乘五分車需購車票；五分車有固定發車時刻表，抵達後建議先購票再逛園區。2. 冰品部「紅豆酵母冰」口味獨特見仁見智，怕發酵味者可點純紅豆牛奶冰。3. 下午戶外蚊蟲多需防蚊。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣六腳鄉工廠村1號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>08:00 - 17:00（五分車發車時段以現場公告為準）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E7%B8%A3%E5%85%AD%E8%85%B3%E9%84%89%20%E8%92%9C%E9%A0%AD%E7%B3%96%E5%BB%A0%E8%94%97%E5%9F%95%E6%96%87%E5%8C%96%E5%9C%92%E5%8D%80" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義縣六腳鄉', '蒜頭糖廠蔗埕文化園區', '復古尋光五分車、紅豆酵母冰淇淋、百年木造車站、製糖工場遺址', '嘉義縣六腳鄉工廠村1號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#六腳鄉</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#百年糖廠</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#五分車</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#紅豆酵母冰</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#高鐵串聯</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="文創園區"
+               data-search="嘉藝點水道頭文創聚落 嘉義縣 朴子市 文創園區 朴子日式官舍老屋群與水道頭老樹文創聚落 日式老宿舍建築群、歷史自來水水道頭、庭口金工鯛魚燒、綠蔭草地市集 前身為日治時期朴子警察官舍群與水道頭配水塔，修復後引進金工手作、陶藝、小農與選物店。老樟樹與日式黑瓦木房交織出安靜溫潤的歷史氛圍，隨意坐在緣側看貓曬太陽，是朴子最有味道的隱密綠洲。 【避坑與內行玩法】1. 聚落內多數獨立工作室與咖啡店於「每週一、週二」固定店休，建議安排於週三至週日午後前往。2. 週末不定期舉辦「水道頭小市集」，氣氛最熱鬧。3. 周邊山通路停車格較少，可停至東石國中旁公有白線。 嘉義縣朴子市山通路14號 朴子市 水道頭聚落 日式木屋 文創手作 市集散步"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">文創園區｜朴子日式官舍老屋群與水道頭老樹文創聚落</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 朴子最幽靜之日式木屋生活聚落</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">嘉藝點水道頭文創聚落</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-12</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">日式老宿舍歷史建築群</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">高聳歷史朴子自來水水道頭塔</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">Tinco庭口金工店貓與鯛魚燒</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">午後陽光綠蔭草地市集</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">前身為日治時期朴子警察官舍群與水道頭配水塔，修復後引進金工手作、陶藝、小農與選物店。老樟樹與日式黑瓦木房交織出安靜溫潤的歷史氛圍，隨意坐在緣側看貓曬太陽，是朴子最有味道的隱密綠洲。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 聚落內多數獨立工作室與咖啡店於「每週一、週二」固定店休，建議安排於週三至週日午後前往。2. 週末不定期舉辦「水道頭小市集」，氣氛最熱鬧。3. 周邊山通路停車格較少，可停至東石國中旁公有白線。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市山通路14號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>聚落戶外全天開放，各店家多為 11:00 - 18:00（週一、二多數公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E7%B8%A3%E6%9C%B4%E5%AD%90%E5%B8%82%20%E5%98%89%E8%97%9D%E9%BB%9E%E6%B0%B4%E9%81%93%E9%A0%AD%E6%96%87%E5%89%B5%E8%81%9A%E8%90%BD" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義縣朴子市', '嘉藝點水道頭文創聚落', '日式老宿舍建築群、歷史自來水水道頭、庭口金工鯛魚燒、綠蔭草地市集', '嘉義縣朴子市山通路14號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#朴子市</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#水道頭聚落</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#日式木屋</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#文創手作</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#市集散步</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="宗教信仰"
+               data-search="朴子配天宮 嘉義縣 朴子市 宗教信仰 嘉義海線信仰中心、全台唯一四季蘭賜花生子古廟 正殿不動天后、四季蘭牡丹求花樹、國寶剪黏交趾陶、康熙御賜金花 創建於康熙年間的三百年開基古廟，是朴子繁榮的起點。正殿媽祖神尊由整株古朴樹雕刻而成、樹根直通地下被尊為「不動天后」；殿內聞名全台的「牡丹求花」祈願儀式（求白花得男、求紅花得女），靈驗美談傳遍全台。 【避坑與內行玩法】1. 想進行求花祈願者，需先依廟方sop向媽祖焚香擲筊稟告，取得三聖筊方可請花回家。2. 周邊為朴子熱鬧老街商圈，開元路與光復路狹窄難以停車，強烈建議將車輛停放在平和路公有停車場步行進入。 嘉義縣朴子市開元路118號 朴子市 三百年古廟 求花賜子 開基媽祖 文化信仰"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">宗教信仰｜嘉義海線信仰中心、全台唯一四季蘭賜花生子古廟</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 三百三十年開基媽祖古廟與求花祈願聖地</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">朴子配天宮</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-13</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">正殿「不動天后」開基媽祖</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">全台唯一「求白花/紅花」牡丹求子樹</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">國寶剪黏與傳統交趾陶壁畫</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">康熙御賜金花榮譽</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">創建於康熙年間的三百年開基古廟，是朴子繁榮的起點。正殿媽祖神尊由整株古朴樹雕刻而成、樹根直通地下被尊為「不動天后」；殿內聞名全台的「牡丹求花」祈願儀式（求白花得男、求紅花得女），靈驗美談傳遍全台。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 想進行求花祈願者，需先依廟方SOP向媽祖焚香擲筊稟告，取得三聖筊方可請花回家。2. 周邊為朴子熱鬧老街商圈，開元路與光復路狹窄難以停車，強烈建議將車輛停放在平和路公有停車場步行進入。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市開元路118號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>05:00 - 22:30（全年無休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E7%B8%A3%E6%9C%B4%E5%AD%90%E5%B8%82%20%E6%9C%B4%E5%AD%90%E9%85%8D%E5%A4%A9%E5%AE%AE" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義縣朴子市', '朴子配天宮', '正殿不動天后、四季蘭牡丹求花樹、國寶剪黏交趾陶、康熙御賜金花', '嘉義縣朴子市開元路118號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#朴子市</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#三百年古廟</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#求花賜子</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#開基媽祖</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#文化信仰</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義縣"
+               data-district="民雄鄉"
+               data-city-district="嘉義縣・民雄鄉"
+               data-category="親子休閒"
+               data-search="khtoy 絨毛玩偶旗艦館 嘉義縣 民雄鄉 親子休閒 全台最大三層樓正版授權絨毛玩偶主題樂園 三層樓正版玩偶量販展區、巨型主題公仔拍照區、親子遊樂區 全台灣規模最大、正版授權絨毛玩偶觀光旗艦館。三層樓挑高空間匯集迪士尼、三麗鷗、寶可夢、間諜家家酒等上千款正版玩偶，價格為批發量販價極為親民；館內規劃多座等身大主題拍照場景，大人小孩都瘋狂。 【避坑與內行玩法】1. 連假與週末午後人潮極度擁擠，門口常會啟動人流進場管制（排隊 30~50 分鐘），強烈建議平日或週末早上 09:30 開門第一梯次入場。2. 園區附設免費停車場，若客滿可依引導停至工業區白線道路。 嘉義縣民雄鄉工業一路6-6號 民雄鄉 頭橋工業區 絨毛玩偶 正版授權 親子必訪"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・民雄鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">親子休閒｜全台最大三層樓正版授權絨毛玩偶主題樂園</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 全台第一座萬隻正版玩偶量販打卡天堂</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">KHTOY 絨毛玩偶旗艦館</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-14</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">三層樓超大絨毛玩偶量販展示空間</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">迪士尼/皮卡丘/卡娜赫拉正版授權拍照區</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">巨型恐龍與哥吉拉主題拍照展區</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">親子小小球池遊樂區</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">全台灣規模最大、正版授權絨毛玩偶觀光旗艦館。三層樓挑高空間匯集迪士尼、三麗鷗、寶可夢、間諜家家酒等上千款正版玩偶，價格為批發量販價極為親民；館內規劃多座等身大主題拍照場景，大人小孩都瘋狂。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 連假與週末午後人潮極度擁擠，門口常會啟動人流進場管制（排隊 30~50 分鐘），強烈建議平日或週末早上 09:30 開門第一梯次入場。2. 園區附設免費停車場，若客滿可依引導停至工業區白線道路。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣民雄鄉工業一路6-6號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>09:30 - 17:00（每週三公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E7%B8%A3%E6%B0%91%E9%9B%84%E9%84%89%20KHTOY%20%E7%B5%A8%E6%AF%9B%E7%8E%A9%E5%81%B6%E6%97%97%E8%89%A6%E9%A4%A8" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義縣民雄鄉', 'KHTOY 絨毛玩偶旗艦館', '三層樓正版玩偶量販展區、巨型主題公仔拍照區、親子遊樂區', '嘉義縣民雄鄉工業一路6-6號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#民雄鄉</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#頭橋工業區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#絨毛玩偶</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#正版授權</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#親子必訪</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義縣"
+               data-district="梅山鄉"
+               data-city-district="嘉義縣・梅山鄉"
+               data-category="自然步道"
+               data-search="梅山太平雲梯 / 太平老街 嘉義縣 梅山鄉 自然步道 海拔千米全台最高景觀吊橋與文藝高山老街 長281米景觀天梯、嘉南平原夕陽雲海、太平老街黑糖糕、空氣圖書館 橫跨太平山與龜山之長281公尺單跨景觀吊橋，海拔高達1000公尺。站在雲梯上微風徐徐，腳下即是壯麗的梅山三十六彎與遼闊嘉南平原；穿過吊橋沿步道直通滿布文藝氣息的太平老街，是嘉義山線最壯觀的經典名勝。 【避坑與內行玩法】1. 上山需經過著名的「梅山36彎」，山路連續髮夾彎，易暈車者務必於山下 30 分鐘前服用暈車藥。2. 太平雲梯採門票人數控管，強烈建議出發前先於官網線上預購門票。3. 下午容易起山嵐大霧，想看開闊平原遠景建議上午前往。 嘉義縣梅山鄉下坑仔5號 梅山鄉 景觀吊橋 海拔千米 雲海絕景 空氣圖書館"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・梅山鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">自然步道｜海拔千米全台最高景觀吊橋與文藝高山老街</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 俯瞰嘉南平原夕陽雲海絕景之天梯</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">梅山太平雲梯 / 太平老街</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-15</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">長281公尺跨越三原彩虹吊橋</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">俯瞰嘉南平原萬家燈火與夕陽雲海</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">太平老街文藝巷弄與黑糖良糕</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">空氣圖書館文青植物系打卡</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">橫跨太平山與龜山之長281公尺單跨景觀吊橋，海拔高達1000公尺。站在雲梯上微風徐徐，腳下即是壯麗的梅山三十六彎與遼闊嘉南平原；穿過吊橋沿步道直通滿布文藝氣息的太平老街，是嘉義山線最壯觀的經典名勝。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 上山需經過著名的「梅山36彎」，山路連續髮夾彎，易暈車者務必於山下 30 分鐘前服用暈車藥。2. 太平雲梯採門票人數控管，強烈建議出發前先於官網線上預購門票。3. 下午容易起山嵐大霧，想看開闊平原遠景建議上午前往。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣梅山鄉下坑仔5號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>平日 09:00 - 16:30 / 假日 09:00 - 17:30（每週三公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E7%B8%A3%E6%A2%85%E5%B1%B1%E9%84%89%20%E5%A4%AA%E5%B9%B3%E9%9B%B2%E6%A2%AF" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義縣梅山鄉', '梅山太平雲梯 / 太平老街', '長281米景觀天梯、嘉南平原夕陽雲海、太平老街黑糖糕、空氣圖書館', '嘉義縣梅山鄉下坑仔5號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#梅山鄉</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#景觀吊橋</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#海拔千米</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#雲海絕景</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#空氣圖書館</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="嘉義縣"
+               data-district="民雄鄉"
+               data-city-district="嘉義縣・民雄鄉"
+               data-category="歷史古蹟"
+               data-search="二戰廣播園區（國家廣播文物館） 嘉義縣 民雄鄉 歷史古蹟 日治民雄放送所歷史建築與四座巨大發射天線塔 日治機房歷史建築、大功率真空管發射機、高聳發射鐵塔、文資綠地 興建於昭和15年的「民雄放送所」，在二戰期間為日本向東南亞發動心戰廣播的核心重鎮。建築外觀採現代折衷主義風格，內部完整保存了極具歷史意義的大型真空管發射機具與發電機，是全台難得一見的國家級廣播文資寶庫。 【避坑與內行玩法】1. 門票僅銅板價 20~50 元；每週一固定公休。2. 園區平日遊客極少、環境靜謐悠閒，適合熱愛歷史、老工業機械與建築美學的深度旅人。3. 距離民雄市區及鵝肉一條街僅 3 分鐘車程，適合排為順遊點。 嘉義縣民雄鄉民權路74號 民雄鄉 歷史建築 二戰遺跡 廣播文物 小眾秘境"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・民雄鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜日治民雄放送所歷史建築與四座巨大發射天線塔</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 二戰歷史工業遺產與極簡老電台時空膠囊</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">二戰廣播園區（國家廣播文物館）</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-16</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">大正昭和時期鋼筋混凝土機房歷史建築</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">世界珍稀超大功率發射機具古董</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">巨大四座206公尺空中T型天線鐵塔</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">園區綠地放送所文化咖啡</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">興建於昭和15年的「民雄放送所」，在二戰期間為日本向東南亞發動心戰廣播的核心重鎮。建築外觀採現代折衷主義風格，內部完整保存了極具歷史意義的大型真空管發射機具與發電機，是全台難得一見的國家級廣播文資寶庫。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 門票僅銅板價 20~50 元；每週一固定公休。2. 園區平日遊客極少、環境靜謐悠閒，適合熱愛歷史、老工業機械與建築美學的深度旅人。3. 距離民雄市區及鵝肉一條街僅 3 分鐘車程，適合排為順遊點。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣民雄鄉民權路74號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>09:00 - 11:30, 13:30 - 16:00（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E7%B8%A3%E6%B0%91%E9%9B%84%E9%84%89%20%E5%9C%8B%E5%AE%B6%E5%BB%A3%E6%92%AD%E6%96%87%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('嘉義縣民雄鄉', '二戰廣播園區（國家廣播文物館）', '日治機房歷史建築、大功率真空管發射機、高聳發射鐵塔、文資綠地', '嘉義縣民雄鄉民權路74號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#民雄鄉</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#歷史建築</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#二戰遺跡</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#廣播文物</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#小眾秘境</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="臺南市"
+               data-district="柳營區"
+               data-city-district="臺南市・柳營區"
+               data-category="自然步道"
+               data-search="德元埤荷蘭村 臺南市 柳營區 自然步道 純荷蘭引進原汁原味風車與珊瑚狀水域大草原 荷蘭引進純白風車、巨大荷蘭木鞋、珊瑚水域步道、大草原露營區 以荷蘭農村田園風光打造的生態休閒園區。特地自荷蘭引進原汁原味的木造風車，坐落於如珊瑚狀分岔的天然埤塘水域旁；園內綠草如茵、小橋流水，搭配巨型木鞋造景，異國風情滿溢。 【避坑與內行玩法】1. 全區免門票參觀，附設免費停車場。2. 荷蘭風車僅在特定假日或微風適宜時段運轉，平日多為靜態景觀。3. 草原腹地廣大遮蔭處有限，烈日晴天務必做好防曬與補水；園區內設有餐廳與販賣部。 臺南市柳營區神農里新厝100號 柳營區 荷蘭風車 埤塘水岸 免門票 親子野餐"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">臺南市・柳營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">自然步道｜純荷蘭引進原汁原味風車與珊瑚狀水域大草原</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 免出國！台南柳營浪漫純白荷蘭異國風情</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">德元埤荷蘭村</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-17</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">荷蘭進口巨型木造純白運轉風車</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">巨大彩色荷蘭木鞋裝置藝術</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">珊瑚狀水道親水綠意步道</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">寬闊大草原露營露營車區</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">以荷蘭農村田園風光打造的生態休閒園區。特地自荷蘭引進原汁原味的木造風車，坐落於如珊瑚狀分岔的天然埤塘水域旁；園內綠草如茵、小橋流水，搭配巨型木鞋造景，異國風情滿溢。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 全區免門票參觀，附設免費停車場。2. 荷蘭風車僅在特定假日或微風適宜時段運轉，平日多為靜態景觀。3. 草原腹地廣大遮蔭處有限，烈日晴天務必做好防曬與補水；園區內設有餐廳與販賣部。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市柳營區神農里新厝100號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>24小時全天開放（遊客中心約 09:00 - 17:00）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E6%9F%B3%E7%87%9F%E5%8D%80%20%E5%BE%B7%E5%85%83%E5%9F%A4%E8%8D%B7%E8%98%AD%E6%9D%91" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('臺南市柳營區', '德元埤荷蘭村', '荷蘭引進純白風車、巨大荷蘭木鞋、珊瑚水域步道、大草原露營區', '臺南市柳營區神農里新厝100號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#柳營區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#荷蘭風車</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#埤塘水岸</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#免門票</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#親子野餐</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="臺南市"
+               data-district="後壁區"
+               data-city-district="臺南市・後壁區"
+               data-category="歷史古蹟"
+               data-search="烏樹林休閒園區 臺南市 後壁區 歷史古蹟 百年烏樹林糖廠復古勝利號五分車與鐵道博物館 百年木造車站、復古五分車穿梭田園、勝利號國寶客車、鐵道文物館 建於1910年的百年糖廠，曾是台南白河、後壁農產品與旅客的交通樞紐。園區保存了極珍貴的木造車站與全台僅存可運轉的「勝利號」軌道客車；搭上慢速搖曳的五分小火車，在導覽員生動逗趣的解說中穿過甘蔗林，滿載童趣回憶。 【避坑與內行玩法】1. 園區免門票進入，搭乘五分車與參觀博物館各館需個別購票。2. 平日五分車班次較少（通常需團體預約），散客強烈建議於「週六、週日」前往，班次密集且固定。3. 適合與鄰近的後壁菁寮老街規劃為一日遊行程。 臺南市後壁區烏樹里184號 後壁區 百年糖廠 烏樹林五分車 勝利號 親子懷舊"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">臺南市・後壁區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜百年烏樹林糖廠復古勝利號五分車與鐵道博物館</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 全台保存最珍貴糖鐵客車文化基地</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">烏樹林休閒園區</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-18</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">百年木造烏樹林車站</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">搭乘懷舊黑面五分車穿梭田野（車長解說生動）</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">勝利號國寶級糖鐵客車</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">鐵道歷史文物館與恐龍展館</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">建於1910年的百年糖廠，曾是台南白河、後壁農產品與旅客的交通樞紐。園區保存了極珍貴的木造車站與全台僅存可運轉的「勝利號」軌道客車；搭上慢速搖曳的五分小火車，在導覽員生動逗趣的解說中穿過甘蔗林，滿載童趣回憶。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 園區免門票進入，搭乘五分車與參觀博物館各館需個別購票。2. 平日五分車班次較少（通常需團體預約），散客強烈建議於「週六、週日」前往，班次密集且固定。3. 適合與鄰近的後壁菁寮老街規劃為一日遊行程。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市後壁區烏樹里184號</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>09:00 - 17:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E5%BE%8C%E5%A3%81%E5%8D%80%20%E7%83%8F%E6%A8%B9%E6%9E%97%E4%BC%91%E9%96%92%E5%9C%92%E5%8D%80" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('臺南市後壁區', '烏樹林休閒園區', '百年木造車站、復古五分車穿梭田園、勝利號國寶客車、鐵道文物館', '臺南市後壁區烏樹里184號')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#後壁區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#百年糖廠</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#烏樹林五分車</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#勝利號</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#親子懷舊</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="臺南市"
+               data-district="後壁區"
+               data-city-district="臺南市・後壁區"
+               data-category="歷史古蹟"
+               data-search="菁寮老街（無米樂老街 / 金德興中藥行） 臺南市 後壁區 歷史古蹟 《俗女養成記》陳嘉玲的家、百年中藥行與無米樂割稻飯 金德興中藥行、俗女陳嘉玲的家、傳統割稻飯、百年荷蘭古井 因紀錄片《無米樂》與熱門台劇《俗女養成記》紅遍全台的農村古街。清末建立的全杉木「金德興中藥行」雕梁畫棟，街邊古色古香的布莊、鐵舖、雜貨店仍維持昔日純樸樣貌；捧著大碗公品嚐熱騰騰割稻飯，感受最濃厚的台灣人情味。 【避坑與內行玩法】1. 老街平日店家營業較少、相對安靜，若喜熱鬧吃道地小吃，建議選擇「週末六日」前往。2. 老街巷弄狹窄禁止車輛駛入，車輛請依指標停放在後壁菁寮國小或外圍大型公有停車場。3. 割稻飯午間時段最熱銷，建議中午 12:30 前用餐。 臺南市後壁區菁寮老街 後壁區 無米樂 俗女養成記 割稻飯 百年中藥行"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">臺南市・後壁區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜《俗女養成記》陳嘉玲的家、百年中藥行與無米樂割稻飯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 走入台劇經典場景與百年清末木造街屋</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">菁寮老街（無米樂老街 / 金德興中藥行）</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-19</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">金德興中藥行（台劇《俗女養成記》陳嘉玲的家）</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">百年老茶室改建之稻稻來</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">傳統大碗公割稻飯</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">荷蘭井湧泉古井體驗</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">因紀錄片《無米樂》與熱門台劇《俗女養成記》紅遍全台的農村古街。清末建立的全杉木「金德興中藥行」雕梁畫棟，街邊古色古香的布莊、鐵舖、雜貨店仍維持昔日純樸樣貌；捧著大碗公品嚐熱騰騰割稻飯，感受最濃厚的台灣人情味。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 老街平日店家營業較少、相對安靜，若喜熱鬧吃道地小吃，建議選擇「週末六日」前往。2. 老街巷弄狹窄禁止車輛駛入，車輛請依指標停放在後壁菁寮國小或外圍大型公有停車場。3. 割稻飯午間時段最熱銷，建議中午 12:30 前用餐。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市後壁區菁寮老街</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>全天開放（各店家營業時間多為 09:30 - 17:30，平日部分店休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E5%BE%8C%E5%A3%81%E5%8D%80%20%E8%8F%81%E5%AF%AE%E8%80%81%E8%A1%97" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('臺南市後壁區', '菁寮老街（無米樂老街 / 金德興中藥行）', '金德興中藥行、俗女陳嘉玲的家、傳統割稻飯、百年荷蘭古井', '臺南市後壁區菁寮老街')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#後壁區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#無米樂</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#俗女養成記</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#割稻飯</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#百年中藥行</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="臺南市"
+               data-district="鹽水區"
+               data-city-district="臺南市・鹽水區"
+               data-category="歷史古蹟"
+               data-search="鹽水橋南老街 / 八角樓 / 月津港親水公園 臺南市 鹽水區 歷史古蹟 南瀛第一老街古法打鐵舖與杉木八角樓閣 二百年泉利打鐵舖、全杉木八角樓、月津港水岸步道、月津港燈節 清代鹽水港繁榮時期的南瀛第一街。老街上二百年歷史的「泉利打鐵舖」至今仍以傳統打鐵爐手工打磨菜刀；「八角樓」全棟不用一根鐵釘、純以福州杉與紅磚榫接而成，典雅宏偉；沿著月津港親水公園水岸漫步，古典詩意令人流連忘返。 【避坑與內行玩法】1. 八角樓為珍貴歷史建築，內部空間古樸，參觀請輕聲慢步並遵守動線。2. 平日老街清幽靜謐，適合深度文化散策；元宵節前後「月津港燈節」與「鹽水蜂炮」期間人潮極為龐大，交通全面管制需提早搭乘接駁公車。 臺南市鹽水區橋南街（橋南老街）/ 中山路4巷1號（八角樓） 鹽水區 南瀛第一街 八角樓 泉利打鐵舖 月津港"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">臺南市・鹽水區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜南瀛第一老街古法打鐵舖與杉木八角樓閣</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 鹽水風華起點與年度月津港燈節水岸舞台</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">鹽水橋南老街 / 八角樓 / 月津港親水公園</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-20</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">全台最老二百年「泉利打鐵舖」</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">全杉木接榫二層閣樓「八角樓」</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">月津港水岸漫步綠意親水步道</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">年度「月津港燈節」水上藝術聲光盛會</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">清代鹽水港繁榮時期的南瀛第一街。老街上二百年歷史的「泉利打鐵舖」至今仍以傳統打鐵爐手工打磨菜刀；「八角樓」全棟不用一根鐵釘、純以福州杉與紅磚榫接而成，典雅宏偉；沿著月津港親水公園水岸漫步，古典詩意令人流連忘返。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 八角樓為珍貴歷史建築，內部空間古樸，參觀請輕聲慢步並遵守動線。2. 平日老街清幽靜謐，適合深度文化散策；元宵節前後「月津港燈節」與「鹽水蜂炮」期間人潮極為龐大，交通全面管制需提早搭乘接駁公車。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市鹽水區橋南街（橋南老街）/ 中山路4巷1號（八角樓）</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>戶外全天開放；八角樓約 08:30 - 17:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E9%B9%BD%E6%B0%B4%E5%8D%80%20%E6%A9%8B%E5%8D%97%E8%80%81%E8%A1%97%20%E5%85%AB%E8%A7%92%E6%A8%93" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('臺南市鹽水區', '鹽水橋南老街 / 八角樓 / 月津港親水公園', '二百年泉利打鐵舖、全杉木八角樓、月津港水岸步道、月津港燈節', '臺南市鹽水區橋南街（橋南老街）/ 中山路4巷1號（八角樓）')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#鹽水區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#南瀛第一街</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#八角樓</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#泉利打鐵舖</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#月津港</span>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="歷史古蹟"
+               data-search="新營鐵道地景公園（新營糖廠） 臺南市 新營區 歷史古蹟 舊糖鐵調車場軌道遺構與綠色鐵道散步長廊 糖鐵調車場軌道遺構、新營糖廠冰品部、糖鐵自行車綠廊、地景裝置藝術 利用新營糖廠昔日全台最繁雜的五分車「調車場」歷史腹地改造而成。長達數公里的綠色鐵道長廊保留了交錯密集的鐵軌遺構、轉轍器與歷史月台；步道平緩寬闊，串聯糖廠冰品部與文創地景，是新營人傍晚散步慢活的最愛。 【避坑與內行玩法】1. 全區免門票 24 小時開放，臨近新營火車站步行約 5 分鐘即可抵達。2. 園區極為開闊，白天日曬強烈建議下午 16:00 之後或傍晚前往散步最舒適。3. 散步結束後可順道前往新營糖廠冰品部吃碗傳統冰品。 臺南市新營區新進路57號（新營火車站旁） 新營區 鐵道地景 新營糖廠 散步綠廊 免門票景點"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;box-shadow:0 2px 6px rgba(15,23,42,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.15s ease,box-shadow 0.15s ease;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:6px;flex-wrap:wrap;">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#334155;border:1px solid #e2e8f0;">歷史古蹟｜舊糖鐵調車場軌道遺構與綠色鐵道散步長廊</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#047857;background-color:#ecfdf5;border:1px solid #a7f3d0;padding:2px 8px;border-radius:6px;">✨ 新營市區歷史鐵道綠色慢活地標</span>
+        </div>
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">新營鐵道地景公園（新營糖廠）</h2>
+          <span style="font-size:12px;font-weight:700;color:#94a3b8;font-family:monospace;">#AT-21</span>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:11.5px;color:#047857;font-weight:700;margin-bottom:3px;">📸 必看亮點 / 推薦特色：</div>
+          <div style="line-height:1.6;"><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">昔日糖鐵五分車「調車場」廣闊軌道遺構</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">新營糖廠冰品部傳統紅豆酵母冰</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">糖鐵綠廊自行車漫遊步道</span><span style="display:inline-block;font-size:12px;font-weight:700;color:#065f46;background-color:#d1fae5;padding:2.5px 8px;border-radius:6px;margin:2px 4px 2px 0;">歷史轉向架與鐵道地景裝置藝術</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">利用新營糖廠昔日全台最繁雜的五分車「調車場」歷史腹地改造而成。長達數公里的綠色鐵道長廊保留了交錯密集的鐵軌遺構、轉轍器與歷史月台；步道平緩寬闊，串聯糖廠冰品部與文創地景，是新營人傍晚散步慢活的最愛。</div>
+
+        <div style="background-color:#f0fdf4;border-left:3.5px solid #059669;padding:9px 11px;border-radius:0 8px 8px 0;font-size:12.5px;color:#064e3b;margin-bottom:10px;line-height:1.5;">
+          <b style="color:#047857;">💡 避坑與內行玩法：</b>【避坑與內行玩法】1. 全區免門票 24 小時開放，臨近新營火車站步行約 5 分鐘即可抵達。2. 園區極為開闊，白天日曬強烈建議下午 16:00 之後或傍晚前往散步最舒適。3. 散步結束後可順道前往新營糖廠冰品部吃碗傳統冰品。
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;color:#64748b;margin-bottom:8px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區新進路57號（新營火車站旁）</span></div>
+          <div style="display:flex;align-items:center;gap:5px;"><span>⏰</span><span>24小時全天開放（免門票）</span></div>
+        </div>
+
+        <div style="display:flex;gap:7px;margin-top:4px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E6%96%B0%E7%87%9F%E5%8D%80%20%E6%96%B0%E7%87%9F%E9%90%B5%E9%81%93%E5%9C%B0%E6%99%AF%E5%85%AC%E5%9C%92" target="_blank" rel="noopener noreferrer"
+             style="flex:1;text-align:center;background-color:#059669;color:#ffffff;text-decoration:none;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;">
+            <span>🗺️ Google Maps 導航</span>
+          </a>
+          <button type="button" onclick="copyAttraction('臺南市新營區', '新營鐵道地景公園（新營糖廠）', '糖鐵調車場軌道遺構、新營糖廠冰品部、糖鐵自行車綠廊、地景裝置藝術', '臺南市新營區新進路57號（新營火車站旁）')"
+                  style="flex:0.6;background-color:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:7px 0;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;">
+            📋 複製資訊
+          </button>
+        </div>
+
+        <div style="margin-top:9px;padding-top:7px;border-top:1px dashed #f1f5f9;display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#新營區</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#鐵道地景</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#新營糖廠</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#散步綠廊</span><span style="font-size:11px;color:#64748b;background-color:#f8fafc;border:1px solid #e2e8f0;padding:1px 6px;border-radius:4px;margin-right:4px;">#免門票景點</span>
+        </div>
+      </div>
+    </article>
+    
+  </main>
+
+  <!-- 底部簡易版權聲明 -->
+  <footer style="text-align:center;padding:32px 16px 20px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:28px;">
+    全台美拍私房景點隨身手冊 ｜ 離線獨立版 ｜ 實測彙編・無業配廣告
+  </footer>
+
+  <!-- 互動控制 JavaScript（全原生、無外部依賴、極速執行） -->
+  <script>
+    var currentCity = 'all';
+    var currentDistrict = 'all';
+    var currentCategory = 'all';
+    var searchQuery = '';
+
+    function selectCity(city) {
+      currentCity = city;
+      currentDistrict = 'all';
+
+      // 更新縣市分頁按鈕外觀
+      var cityBtns = document.querySelectorAll('[data-city-btn]');
+      cityBtns.forEach(function(btn) {
+        var c = btn.getAttribute('data-city-btn');
+        if (c === city) {
+          btn.style.backgroundColor = '#064e3b';
+          btn.style.color = '#ffffff';
+          btn.style.borderColor = '#064e3b';
+        } else {
+          btn.style.backgroundColor = '#f8fafc';
+          btn.style.color = '#475569';
+          btn.style.borderColor = '#e2e8f0';
+        }
+      });
+
+      // 依縣市過濾第二層鄉鎮市區按鈕
+      var distBtns = document.querySelectorAll('[data-dist-btn]');
+      distBtns.forEach(function(btn) {
+        var d = btn.getAttribute('data-dist-btn');
+        var dCity = btn.getAttribute('data-dist-city');
+        if (d === 'all') {
+          btn.style.display = 'inline-block';
+        } else if (city === 'all' || dCity === city) {
+          btn.style.display = 'inline-block';
+        } else {
+          btn.style.display = 'none';
+        }
+      });
+
+      updateDistrictButtonsUI();
+      filterStores();
+    }
+
+    function selectDistrict(distKey) {
+      currentDistrict = distKey;
+      updateDistrictButtonsUI();
+      filterStores();
+    }
+
+    function updateDistrictButtonsUI() {
+      var distBtns = document.querySelectorAll('[data-dist-btn]');
+      distBtns.forEach(function(btn) {
+        var d = btn.getAttribute('data-dist-btn');
+        if (d === currentDistrict) {
+          btn.style.backgroundColor = '#ffffff';
+          btn.style.color = '#047857';
+          btn.style.borderColor = '#cbd5e1';
+          btn.style.fontWeight = '700';
+          btn.style.boxShadow = '0 1px 2px rgba(0,0,0,0.06)';
+        } else {
+          btn.style.backgroundColor = 'transparent';
+          btn.style.color = '#475569';
+          btn.style.borderColor = 'transparent';
+          btn.style.fontWeight = '600';
+          btn.style.boxShadow = 'none';
+        }
+      });
+    }
+
+    function selectCat(cat) {
+      currentCategory = cat;
+      var catBtns = document.querySelectorAll('[data-cat-btn]');
+      catBtns.forEach(function(btn) {
+        var c = btn.getAttribute('data-cat-btn');
+        if (c === cat) {
+          btn.style.backgroundColor = '#059669';
+          btn.style.color = '#ffffff';
+          btn.style.borderColor = '#059669';
+          btn.style.fontWeight = '700';
+        } else {
+          btn.style.backgroundColor = '#ffffff';
+          btn.style.color = '#64748b';
+          btn.style.borderColor = '#e2e8f0';
+          btn.style.fontWeight = '600';
+        }
+      });
+      filterStores();
+    }
+
+    function handleSearch() {
+      var input = document.getElementById('searchInput');
+      searchQuery = input.value.trim().toLowerCase();
+      filterStores();
+    }
+
+    function filterStores() {
+      var cards = document.querySelectorAll('.store-card');
+      var visibleCount = 0;
+
+      cards.forEach(function(card) {
+        var cCity = card.getAttribute('data-city');
+        var cCityDist = card.getAttribute('data-city-district');
+        var cCat = card.getAttribute('data-category');
+        var cSearch = card.getAttribute('data-search') || '';
+
+        var matchCity = (currentCity === 'all') || (cCity === currentCity);
+        var matchDist = (currentDistrict === 'all') || (cCityDist === currentDistrict);
+        var matchCat = (currentCategory === 'all') || (cCat === currentCategory);
+        var matchSearch = (!searchQuery) || (cSearch.indexOf(searchQuery) !== -1);
+
+        if (matchCity && matchDist && matchCat && matchSearch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('storeCount').textContent = visibleCount;
+
+      var bCity = (currentCity === 'all') ? '全部縣市' : currentCity;
+      var bDist = (currentDistrict === 'all') ? '全部鄉鎮市區' : currentDistrict.replace(currentCity + '・', '');
+      var bCat = (currentCategory === 'all') ? '全部類型' : currentCategory;
+      document.getElementById('breadcrumbText').innerHTML = '目前分頁：<b style="color:#047857;">' + bCity + ' ▸ ' + bDist + ' ▸ ' + bCat + '</b>';
+    }
+
+    function copyAttraction(region, name, highlights, address) {
+      var text = '【' + region + '】' + name + '\n📸 必看特色：' + highlights + '\n📍 地址：' + address;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          alert('已複製景點資訊至剪貼簿！\n\n' + text);
+        }).catch(function() {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand('copy');
+        alert('已複製景點資訊至剪貼簿！\n\n' + text);
+      } catch (err) {
+        prompt('請長按手動複製景點資訊：', text);
+      }
+      document.body.removeChild(ta);
+    }
+  </script>
+</body>
+</html>

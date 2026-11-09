@@ -15,6 +15,7 @@ from datetime import datetime
 
 PROJECT_DIR = "/Users/mac/AGY本地工作區/專案資料夾/美食景點整理"
 BUILD_FOOD_SCRIPT = os.path.join(PROJECT_DIR, "scripts", "build_unified_guide.py")
+BUILD_ATTRACTIONS_SCRIPT = os.path.join(PROJECT_DIR, "scripts", "build_attractions_guide.py")
 BUILD_SEAVIEW_SCRIPT = os.path.join(PROJECT_DIR, "scripts", "build_seaview_guide.py")
 
 def log(msg: str) -> None:
@@ -27,8 +28,13 @@ def run_cmd(cmd: list, cwd: str = PROJECT_DIR) -> subprocess.CompletedProcess:
 def main():
     log("開始執行本機手冊與網頁同步流程（純本地產出 + GitHub Pages 部署，已全面停用雲端硬碟同步）...")
 
-    # 1. 重新建置最新美食手冊與看海旅宿手冊
-    for name, script in [("美食避雷手冊", BUILD_FOOD_SCRIPT), ("看海放空旅宿手冊", BUILD_SEAVIEW_SCRIPT)]:
+    # 1. 重新建置最新手冊（美食避雷、美拍景點、看海旅宿）
+    targets = [
+        ("美食避雷手冊", BUILD_FOOD_SCRIPT),
+        ("美拍私房景點手冊", BUILD_ATTRACTIONS_SCRIPT),
+        ("看海放空旅宿手冊", BUILD_SEAVIEW_SCRIPT)
+    ]
+    for name, script in targets:
         if os.path.exists(script):
             res = run_cmd([sys.executable, script])
             if res.returncode != 0:

@@ -231,6 +231,13 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
 </head>
 <body style="margin:0;padding:0 0 84px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang TC','Microsoft JhengHei',sans-serif;background-color:#f8fafc;color:#0f172a;line-height:1.55;-webkit-font-smoothing:antialiased;">
 
+  <!-- 三大主題跨手冊切換列 -->
+  <div style="background-color:#0f172a;padding:8px 12px;display:flex;justify-content:center;gap:8px;font-size:12.5px;font-weight:700;">
+    <a href="美食避雷隨身手冊.html" style="color:#ffffff;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #d97706;background:#b45309;">🍱 美食避雷手冊</a>
+    <a href="全台美拍私房景點隨身手冊.html" style="color:#cbd5e1;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #334155;background:#1e293b;">📸 私房美拍景點</a>
+    <a href="全台看海放空旅宿隨身手冊.html" style="color:#cbd5e1;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #334155;background:#1e293b;">🌊 看海放空旅宿</a>
+  </div>
+
   <!-- 頂部橫幅（全內嵌 Inline CSS） -->
   <header style="background:linear-gradient(135deg,#78350f 0%,#b45309 50%,#d97706 100%);background-color:#b45309;color:#ffffff;padding:24px 16px 18px;text-align:center;box-shadow:0 4px 14px rgba(180,83,9,0.22);">
     <div style="display:inline-block;background-color:rgba(255,255,255,0.2);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.3);">
@@ -475,6 +482,8 @@ def main() -> None:
 </head>"""
     web_index_html = rendered_html.replace("</head>", pwa_head_inject, 1)
     web_index_html = web_index_html.replace('href="全台看海放空旅宿隨身手冊.html"', 'href="seaview.html"')
+    web_index_html = web_index_html.replace('href="全台美拍私房景點隨身手冊.html"', 'href="attractions.html"')
+    web_index_html = web_index_html.replace('href="美食避雷隨身手冊.html"', 'href="index.html"')
     with open(os.path.join(WEB_DIST_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(web_index_html)
 
@@ -497,8 +506,8 @@ def main() -> None:
     with open(os.path.join(WEB_DIST_DIR, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest_data, f, ensure_ascii=False, indent=2)
 
-    sw_js = """const CACHE_NAME = 'tw-food-guide-v2';
-const ASSETS = ['./', './index.html', './seaview.html', './manifest.json'];
+    sw_js = """const CACHE_NAME = 'tw-food-guide-v3';
+const ASSETS = ['./', './index.html', './attractions.html', './seaview.html', './manifest.json'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));

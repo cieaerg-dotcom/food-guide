@@ -113,6 +113,8 @@ def render_stay_card(s):
 def generate_html(stays, output_path, is_web_dist=False):
     total_count = len(stays)
     food_link = "index.html" if is_web_dist else "美食避雷隨身手冊.html"
+    attractions_link = "attractions.html" if is_web_dist else "全台美拍私房景點隨身手冊.html"
+    seaview_link = "seaview.html" if is_web_dist else "全台看海放空旅宿隨身手冊.html"
     
     # 計算各縣市數量
     city_counts = {}
@@ -622,6 +624,13 @@ def generate_html(stays, output_path, is_web_dist=False):
 </head>
 <body>
 
+  <!-- 三大主題跨手冊切換列 -->
+  <div style="background-color:#0f172a;padding:8px 12px;display:flex;justify-content:center;gap:8px;font-size:12.5px;font-weight:700;">
+    <a href="{food_link}" style="color:#cbd5e1;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #334155;background:#1e293b;">🍱 美食避雷手冊</a>
+    <a href="{attractions_link}" style="color:#cbd5e1;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #334155;background:#1e293b;">📸 私房美拍景點</a>
+    <a href="{seaview_link}" style="color:#ffffff;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #38bdf8;background:#0369a1;">🌊 看海放空旅宿</a>
+  </div>
+
   <header class="header">
     <div class="header-badge">🌊 醒來即是大海 · 靜心放空精選</div>
     <h1>全台看海放空旅宿隨身手冊</h1>
@@ -666,8 +675,9 @@ def generate_html(stays, output_path, is_web_dist=False):
   </div>
 
   <div class="bottom-nav-bar">
-    <a href="{food_link}" class="nav-link-btn">🍲 美食隨身手冊</a>
-    <a href="javascript:void(0)" class="nav-link-btn active">🌊 看海旅宿手冊 ({total_count})</a>
+    <a href="{food_link}" class="nav-link-btn">🍱 美食隨身手冊</a>
+    <a href="{attractions_link}" class="nav-link-btn">📸 私房景點手冊</a>
+    <a href="javascript:void(0)" class="nav-link-btn active">🌊 看海旅宿 ({total_count})</a>
   </div>
 
   <script>
