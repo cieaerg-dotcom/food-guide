@@ -33,7 +33,7 @@ def check_store(store_name, reference_data):
                 break
     return matched
 
-def audit(target_file=UNIFIED_FILE):
+def audit(target_input=UNIFIED_FILE):
     if not os.path.exists(REFERENCE_FILE):
         print(f"錯誤：找不到爭議對照庫: {REFERENCE_FILE}")
         return
@@ -41,7 +41,21 @@ def audit(target_file=UNIFIED_FILE):
     with open(REFERENCE_FILE, "r", encoding="utf-8") as f:
         references = json.load(f)
 
-    with open(target_file, "r", encoding="utf-8") as f:
+    # 支援傳入單一店名字串進行即時比對
+    if not os.path.exists(target_input):
+        print(f"🔍 針對單一店名【{target_input}】比對社群爭議基準庫（共 {len(references)} 間）...\n")
+        matches = check_store(target_input, references)
+        if matches:
+            for ref in matches:
+                print(f"⚠️ 命中爭議基準：{ref.get('name')} ({ref.get('id')})")
+                print(f"【脆友痛點】{ref.get('communityPainPoints')}")
+                print(f"【Google評論核查重點】{ref.get('auditFocus')}")
+                print(f"【綜合判斷建議】{ref.get('judgmentGuideline')}")
+        else:
+            print(f"✅ 【{target_input}】未命中重大社群踩雷爭議名單。")
+        return
+
+    with open(target_input, "r", encoding="utf-8") as f:
         stores = json.load(f)
 
     print(f"📊 執行社群爭議對照分析：待審查清單共 {len(stores)} 間店家，爭議基準共 {len(references)} 間...\n")
