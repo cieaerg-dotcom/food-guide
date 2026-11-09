@@ -282,21 +282,8 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     </div>
   </nav>
 
-  <!-- 3 秒精準避坑總覽橫幅（預先渲染並內嵌樣式） -->
-  <section style="max-width:1200px;margin:14px auto 4px;padding:0 14px;">
-    <div id="strategyCard" style="background-color:#fffbeb;border:1px solid #fde68a;border-radius:16px;padding:13px 15px;font-size:12.5px;color:#78350f;box-shadow:0 2px 6px rgba(217,119,6,0.05);">
-      <div id="strategyTitle" style="font-weight:800;font-size:13.5px;color:#92400e;margin-bottom:6px;">
-        ⚡ 跨縣市 3 秒精準避坑總覽（點選上方「縣市」與「鄉鎮市區」可快速切換分頁）
-      </div>
-      <div id="strategyBody" style="line-height:1.65;">
-        • <b>嘉義市（東區 {cy_east} 間／西區 {cy_west} 間）</b>：必吃緯英海南雞飯、五千金炒飯、豆豆／京站湯包、黃記／南門白醋涼麵；<b>阿婆烤玉米（東區）與友愛鹹酥雞（西區）為極難買到的排隊魔王</b>；阿霞滷肉飯務必請店家滷汁少一點。<br>
-        • <b>臺南市（新營區 {tn_xinying} 間／後壁區 {tn_houbi} 間）</b>：正餐首推溪北飯桌、小紅堂牛肉麵、燒蛋一下、阿豪冰糖豬腳；阿翔蚵仔煎必點「鐵板炒飯＋乾煎魚肚」，榮昌雞肉飯必加「半熟煎鴨蛋」；伯恩意麵份量精緻、金丘腿庫飯出餐較慢。
-      </div>
-    </div>
-  </section>
-
   <!-- 篩選狀態統計列 -->
-  <div style="max-width:1200px;margin:0 auto;padding:10px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
+  <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
     <div>顯示中：<b id="storeCount" style="color:#b45309;">{total_count}</b> 間店舖</div>
   </div>
@@ -330,25 +317,6 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     var currentDistrict = "all";
     var currentCat = "all";
     var searchQuery = "";
-
-    var STRATEGY_NOTES = {{
-      "all": {{
-        title: "⚡ 跨縣市 3 秒精準避坑總覽（點選上方「縣市」與「鄉鎮市區」可快速切換分頁）",
-        html: "• <b>嘉義市（東區 {cy_east} 間／西區 {cy_west} 間）</b>：必吃阿宏師火雞片飯＋半熟蛋、桃城三禾、大人味日印珈哩、五千金炒飯、豆豆／京站湯包、黃記／南門白醋涼麵；阿岸米糕附柴魚高湯；<b>阿婆烤玉米、友愛鹹酥雞與大人味咖哩為極難排到的名店</b>。<br>• <b>嘉義縣（{cx_count} 間）</b>：竹香園甕缸烤雞（中埔）、烘焙旅程手作蜂巢可頌（水上）、朴子第一市場九十年麻糬棟。<br>• <b>臺南市（新營區 {tn_xinying} 間／柳營 {tn_liuying}／鹽水 {tn_yanshui}／後壁 {tn_houbi}）</b>：已啟動防店家自推與商業互捧審核！聚餐推卓也灶腳（清淡養生需訂位）、旭更廚房（復古網美早午餐）、日阪駒（大阪關東煮）、禾沐日料、海口現撈；必吃大口香雞排（爆汁雞肉串）、康樂胚芽意麵（大燒賣）、阿翔蚵仔煎（鐵板炒飯）；溪北延伸推柳營太康食堂與鹽水吾業遊民。"
-      }},
-      "嘉義市": {{
-        title: "⚡ 嘉義市（東區／西區）3 秒精準避坑指南",
-        html: "• <b>東區亮點（{cy_east} 間）</b>：阿宏師火雞片飯加半熟蛋、桃城三禾火雞肉飯、大人味咖哩（<b>每天午晚各限18份</b>）、五千金炒飯、豆豆小籠湯包、黃記涼麵涼圓、劉湯圓（<b>必加脆圓</b>）、阿霞火雞肉飯（<b>反向推手切滷肉飯，務必請店家滷汁少一點</b>）、古月焗烤（<b>必點偏甜酥皮濃湯</b>）、卡早起晨（<b>辣醬必加外帶必包</b>）。<br>• <b>西區亮點（{cy_west} 間）</b>：蕭老師火雞肉飯配炸排骨、阿岸米糕（<b>附贈柴魚大骨湯</b>）、咱台灣人的冰（<b>陳澄波故居蜜蕃薯</b>）、大盛居定食、隱燃燒肉丼、米半鐵板燒、緯英海南雞飯、桔吉力早餐（<b>建議電話預訂外帶</b>）、大眾水餃（<b>必加特製辣醬</b>）、霜空咖啡、友愛鹹酥雞。<br>• <b>歇業提醒</b>：西區 WT Food Drinks 與東區二奶巷星馬叻沙（租約到期）暫停營業，請勿白跑撲空！"
-      }},
-      "嘉義縣": {{
-        title: "⚡ 嘉義縣（中埔鄉／水上鄉／朴子市）3 秒精準避坑指南",
-        html: "• <b>中埔鄉</b>：竹香園甕缸雞（<b>招牌脆皮烤雞附筍乾大骨湯，炸地瓜酥必沾梅粉，假日人潮極多務必提早訂位</b>）。<br>• <b>水上鄉</b>：烘焙旅程（<b>田園蜂巢手作可頌天花板，建議提早於官方IG預留避免售罄</b>）。<br>• <b>朴子市</b>：麻糬棟（<b>朴子第一市場近百年老攤，招牌鹹綠豆花生手工麻糬冷熱皆軟Q</b>）。"
-      }},
-      "臺南市": {{
-        title: "⚡ 臺南市（新營／柳營／鹽水／後壁）3 秒精準避坑指南",
-        html: "• <b>【⚠️ 防店家自推與互捧預警】</b>：社群常見店家官方自介（如鄉寓食事所）或網美照宣傳。本手冊已剔除連鎖加盟與粗飽小火鍋，並對熱門店注入真實負評警示！<br>• <b>新營區熱炒合菜與宴會餐廳（{tn_xinying} 間）</b>：宴席熱炒御三家為<b>海口現撈</b>（在地人一生推，附大停車場）、<b>海宴餐廳</b>（包廂宴席）與<b>旗津現撈</b>；老牌實力派合菜首推<b>山寨家庭餐廳</b>（30年總鋪師阿佑師，招牌山寨雞與黑豆化骨豬腳）、<b>家福川菜館</b>（老字號大圓桌大停車場）與<b>省都川菜海鮮</b>（健康路重口味鹹香熱炒）；大型庭園宴會可選<b>華味香長榮旗艦店</b>（千坪落羽松造景，但定價高偏觀光宴席）；平價熱炒推<b>阿安現炒</b>（家常炒泡麵）與<b>勇伯擔仔麵</b>（綠川路專屬停車大火快炒炒飯）。<br>• <b>新營區傳奇小吃與特色宵夜</b>：<b>阿崑日式小吃</b>（隱藏版爆量大蝦仁蛋炒飯與黑醋炒飯，在地老饕默默吃）、<b>大口香雞排</b>（招牌爆汁雞肉串必點，強烈建議提早電話預約）、<b>日阪駒</b>（大阪關東煮至凌晨1點）、<b>卓也灶腳</b>（庭園麻油雞腿一鍋二吃，清淡養生需訂位）、<b>康樂胚芽意麵</b>（招牌大燒賣與黑白切骨頭肉）、溪北飯桌（咖哩）、小紅堂（牛肉麵）、阿翔蚵仔煎（鐵板炒飯＋乾煎魚肚）、榮昌雞肉飯（半熟煎鴨蛋）；樸拾僅10席吧檯無訂位排隊長、伯恩意麵份量精緻、金丘腿庫飯出餐慢。<br>• <b>柳營區亮點（{tn_liuying} 間）</b>：<b>太康食堂</b>（太康有機園區2樓，千則4.6星，綠色隧道大片綠意，有機養生鍋物與家常合菜，大停車場好聊）。<br>• <b>鹽水區亮點（{tn_yanshui} 間）</b>：<b>吾業遊民</b>（4.8星巷弄文青名店，極鮮蒜蝦飯與紹興去骨醉雞腿，不定休出發前必看粉專）。<br>• <b>後壁區秘技（{tn_houbi} 間）</b>：樂檸漢堡（新營服務區北上店）可騎機車走外圍後方秘密便道免上國道進入，穿短褲享升級優惠！"
-      }}
-    }};
 
     function applyFilters() {{
       var cards = document.querySelectorAll(".store-card");
@@ -424,11 +392,6 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
         cBtn.style.borderColor = isCatAct ? "#d97706" : "#e2e8f0";
         cBtn.style.fontWeight = isCatAct ? "700" : "600";
       }}
-
-      // 更新 3 秒避坑指南文字
-      var note = STRATEGY_NOTES[currentCity] || STRATEGY_NOTES["all"];
-      document.getElementById("strategyTitle").innerHTML = note.title;
-      document.getElementById("strategyBody").innerHTML = note.html;
     }}
 
     function selectCity(city) {{
