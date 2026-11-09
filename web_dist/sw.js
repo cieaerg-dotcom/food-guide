@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tw-food-guide-v3';
+const CACHE_NAME = 'tw-food-guide-v4';
 const ASSETS = ['./', './index.html', './attractions.html', './seaview.html', './manifest.json'];
 
 self.addEventListener('install', (event) => {

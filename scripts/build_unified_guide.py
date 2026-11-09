@@ -250,8 +250,21 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
   </header>
 
   <!-- 黏性三層分頁導覽列（全內嵌 Inline CSS） -->
-  <nav style="position:sticky;top:0;z-index:100;background-color:rgba(255,255,255,0.98);border-bottom:1px solid #e2e8f0;box-shadow:0 4px 12px rgba(15,23,42,0.05);padding:12px 14px 10px;">
+  <nav style="position:sticky;top:0;z-index:100;background-color:rgba(255,255,255,0.98);border-bottom:1px solid #e2e8f0;box-shadow:0 4px 12px rgba(15,23,42,0.05);padding:10px 14px 10px;">
     <div style="max-width:1200px;margin:0 auto;">
+
+      <!-- 核心主題大分頁導航（美食・景點・旅宿） -->
+      <div style="display:flex;gap:6px;margin-bottom:10px;padding-bottom:10px;border-bottom:1.5px solid #f1f5f9;overflow-x:auto;" class="no-scrollbar">
+        <a href="美食避雷隨身手冊.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:800;background:#b45309;color:#ffffff;box-shadow:0 2px 6px rgba(180,83,9,0.25);">
+          🍱 美食避雷 ({total_count})
+        </a>
+        <a href="全台美拍私房景點隨身手冊.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:700;background:#f8fafc;color:#475569;border:1px solid #cbd5e1;">
+          📸 私房景點 (22)
+        </a>
+        <a href="全台看海放空旅宿隨身手冊.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:700;background:#f8fafc;color:#475569;border:1px solid #cbd5e1;">
+          🌊 看海旅宿 (20)
+        </a>
+      </div>
 
       <!-- 第一層：台灣縣市分頁 -->
       <div id="cityTabs" class="no-scrollbar" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:9px;padding-bottom:2px;">
@@ -311,10 +324,11 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     已複製店舖資訊！
   </div>
 
-  <!-- 底部手冊導覽浮動條 -->
-  <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 ({total_count})</a>
-    <a href="全台看海放空旅宿隨身手冊.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
+  <!-- 底部手冊導覽浮動條（三大手冊常駐置底切換） -->
+  <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.94);backdrop-filter:blur(10px);padding:6px 10px;border-radius:30px;display:flex;gap:6px;box-shadow:0 10px 25px rgba(0,0,0,0.35);z-index:900;max-width:96vw;white-space:nowrap;">
+    <a href="美食避雷隨身手冊.html" style="color:#ffffff;background:#b45309;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🍱 美食手冊 ({total_count})</a>
+    <a href="全台美拍私房景點隨身手冊.html" id="attractionsBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">📸 私房景點 (22)</a>
+    <a href="全台看海放空旅宿隨身手冊.html" id="seaviewBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿 (20)</a>
   </div>
 
   <script>
@@ -506,7 +520,7 @@ def main() -> None:
     with open(os.path.join(WEB_DIST_DIR, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest_data, f, ensure_ascii=False, indent=2)
 
-    sw_js = """const CACHE_NAME = 'tw-food-guide-v3';
+    sw_js = """const CACHE_NAME = 'tw-food-guide-v4';
 const ASSETS = ['./', './index.html', './attractions.html', './seaview.html', './manifest.json'];
 
 self.addEventListener('install', (event) => {

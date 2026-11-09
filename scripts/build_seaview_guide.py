@@ -638,6 +638,19 @@ def generate_html(stays, output_path, is_web_dist=False):
   </header>
 
   <div class="sticky-controls">
+    <!-- 核心主題大分頁導航（美食・景點・旅宿） -->
+    <div style="max-width:760px;margin:0 auto 10px;display:flex;gap:6px;padding-bottom:10px;border-bottom:1.5px solid #e2e8f0;overflow-x:auto;">
+      <a href="{food_link}" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:700;background:#ffffff;color:#475569;border:1px solid #cbd5e1;">
+        🍱 美食避雷 (274)
+      </a>
+      <a href="{attractions_link}" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:700;background:#ffffff;color:#475569;border:1px solid #cbd5e1;">
+        📸 私房景點 (22)
+      </a>
+      <a href="{seaview_link}" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:800;background:#0284c7;color:#ffffff;box-shadow:0 2px 6px rgba(2,132,199,0.25);">
+        🌊 看海旅宿 ({total_count})
+      </a>
+    </div>
+
     <div class="search-wrapper">
       <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <input type="text" id="searchInput" class="search-input" placeholder="搜尋旅宿、海景特色、鄉鎮、亮點...">
@@ -674,10 +687,10 @@ def generate_html(stays, output_path, is_web_dist=False):
     </div>
   </div>
 
-  <div class="bottom-nav-bar">
-    <a href="{food_link}" class="nav-link-btn">🍱 美食隨身手冊</a>
-    <a href="{attractions_link}" class="nav-link-btn">📸 私房景點手冊</a>
-    <a href="javascript:void(0)" class="nav-link-btn active">🌊 看海旅宿 ({total_count})</a>
+  <div class="bottom-nav-bar" style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.94);backdrop-filter:blur(10px);padding:6px 10px;border-radius:30px;display:flex;gap:6px;box-shadow:0 10px 25px rgba(0,0,0,0.35);z-index:900;max-width:96vw;white-space:nowrap;">
+    <a href="{food_link}" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">🍱 美食手冊 (274)</a>
+    <a href="{attractions_link}" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">📸 私房景點 (22)</a>
+    <a href="{seaview_link}" style="color:#ffffff;background:#0284c7;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🌊 看海旅宿 ({total_count})</a>
   </div>
 
   <script>
