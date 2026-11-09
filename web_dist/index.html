@@ -37,7 +37,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 76／西區 62）、嘉義縣（32 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 64 間）共 234 間實測指南
+      收錄嘉義市（東區 84／西區 63）、嘉義縣（32 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 64 間）共 243 間實測指南
     </div>
   </header>
 
@@ -50,12 +50,12 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">234</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">243</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🐓 嘉義市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">138</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">147</span>
         </button>
         <button type="button" data-city-btn="嘉義縣" onclick="selectCity('嘉義縣')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -74,15 +74,15 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (234)
+          全部鄉鎮市區 (243)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義市・東區 (76)
+          嘉義市・東區 (84)
         </button>
         <button type="button" data-dist-btn="嘉義市・西區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・西區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義市・西區 (62)
+          嘉義市・西區 (63)
         </button>
         <button type="button" data-dist-btn="嘉義縣・中埔鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・中埔鄉')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -149,7 +149,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">234</b> 間店舖</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">243</b> 間店舖</div>
   </div>
 
   <!-- 預渲染之 103 間店家卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -11620,6 +11620,447 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="正餐主食"
+               data-search="民主火雞肉飯 嘉義市 東區 正餐主食 豪邁酥脆自炸油蔥酥與厚切嫩肉片飯 特選火雞肉片飯（滿滿酥香油蔥酥）、火雞肉切盤、過貓沙拉、白菜滷、味噌湯 嘉義指標性油蔥系火雞肉飯代表。靈魂在於那一匙手炸極度酥香的油蔥酥，搭配鹹甘特製雞油醬汁，米飯粒粒分明飽滿；店內附設專屬免費停車場，對開車族極度友善。 【避坑吃法】用餐尖峰（11:30-13:00、17:00-18:30）排隊人潮極長，內用與外帶動線分流務必排對隊伍；雞肉片飯每日數量有限，想吃厚切肉片建議提早抵達。 嘉義市東區民族路149號 東區 火雞肉片飯 酥脆油蔥酥 附設停車場 排隊名店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜豪邁酥脆自炸油蔥酥與厚切嫩肉片飯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">油蔥酥愛好者公認第一名雞肉飯</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-173</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">民主火雞肉飯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特選火雞肉片飯（滿滿酥香油蔥酥）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">火雞肉切盤</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">過貓沙拉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">白菜滷</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">味噌湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">嘉義指標性油蔥系火雞肉飯代表。靈魂在於那一匙手炸極度酥香的油蔥酥，搭配鹹甘特製雞油醬汁，米飯粒粒分明飽滿；店內附設專屬免費停車場，對開車族極度友善。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】用餐尖峰（11:30-13:00、17:00-18:30）排隊人潮極長，內用與外帶動線分流務必排對隊伍；雞肉片飯每日數量有限，想吃厚切肉片建議提早抵達。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區民族路149號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 20:40</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 民主火雞肉飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '民主火雞肉飯', '特選火雞肉片飯（滿滿酥香油蔥酥）、火雞肉切盤、過貓沙拉、白菜滷、味噌湯', '嘉義市東區民族路149號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="宵夜炭烤日料"
+               data-search="阿樓師火雞肉飯 嘉義市 東區 宵夜炭烤日料 傍晚開賣至深夜之純雞油刀切肉片飯 手工刀切火雞肉片飯、銅板價料多味噌湯、火雞肉切盤、蒜泥皮蛋豆腐、下水湯 嘉義深夜最強火雞肉飯傳奇。下午 16:00 開賣一路狂賣到午夜，堅持不加油蔥酥、走濃郁純雞油醬香路線，肉質滑嫩多汁；銅板價味噌湯滿滿雙色豆腐與魚乾熬煮，深夜排隊依舊人聲鼎沸。 【避坑吃法】傍晚 16:00 一開門或宵夜 21:00 點後排隊人潮皆長，外帶比內用快；純雞油醬汁香濃微鹹，若喜歡油蔥可主動請店家淋上一匙油蔥；附近為吳鳳北路紅線多，切勿違停。 嘉義市東區吳鳳北路102號 東區 深夜宵夜 純雞油醬汁 刀切肉片飯 深夜排隊"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">宵夜炭烤日料｜傍晚開賣至深夜之純雞油刀切肉片飯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">嘉義宵夜場第一把交椅火雞肉飯</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-174</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿樓師火雞肉飯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工刀切火雞肉片飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">銅板價料多味噌湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">火雞肉切盤</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">蒜泥皮蛋豆腐</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">下水湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">嘉義深夜最強火雞肉飯傳奇。下午 16:00 開賣一路狂賣到午夜，堅持不加油蔥酥、走濃郁純雞油醬香路線，肉質滑嫩多汁；銅板價味噌湯滿滿雙色豆腐與魚乾熬煮，深夜排隊依舊人聲鼎沸。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】傍晚 16:00 一開門或宵夜 21:00 點後排隊人潮皆長，外帶比內用快；純雞油醬汁香濃微鹹，若喜歡油蔥可主動請店家淋上一匙油蔥；附近為吳鳳北路紅線多，切勿違停。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區吳鳳北路102號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>16:00 - 00:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 阿樓師火雞肉飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '阿樓師火雞肉飯', '手工刀切火雞肉片飯、銅板價料多味噌湯、火雞肉切盤、蒜泥皮蛋豆腐、下水湯', '嘉義市東區吳鳳北路102號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="在地小吃"
+               data-search="公園老店涼麵 嘉義市 東區 在地小吃 特製白醋麻醬寬扁麵與古早味香菇肉羹 招牌白醋涼麵（手工寬扁麵）、扁魚古早味香菇肉羹、涼拌牛蒡絲、皮蛋豆腐 老嘉義人與各路美食創作者（如張譯）熱烈朝聖的涼麵名店。特製白醋（美乃滋）融合香濃麻醬、蒜泥與清爽醬汁，均勻包覆在q彈寬扁麵上，搭上一碗扁魚赤肉香菇肉羹，酸甜滑順堪稱一絕。 【避坑吃法】店址已搬遷至維新路36號（切勿跑去新生路舊址）；營業時間 09:00 至 17:00（每週四公休），若當日備料提早售罄會提早打烊；怕蒜味過重者點餐時可告知蒜泥減量。 嘉義市東區維新路36號 東區 白醋涼麵 美乃滋麻醬 香菇肉羹 張譯推薦"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜特製白醋麻醬寬扁麵與古早味香菇肉羹</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">美食YT張譯指名狂讚之斯文老闆娘老店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-175</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">公園老店涼麵</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌白醋涼麵（手工寬扁麵）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">扁魚古早味香菇肉羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">涼拌牛蒡絲</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">皮蛋豆腐</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">老嘉義人與各路美食創作者（如張譯）熱烈朝聖的涼麵名店。特製白醋（美乃滋）融合香濃麻醬、蒜泥與清爽醬汁，均勻包覆在Q彈寬扁麵上，搭上一碗扁魚赤肉香菇肉羹，酸甜滑順堪稱一絕。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】店址已搬遷至維新路36號（切勿跑去新生路舊址）；營業時間 09:00 至 17:00（每週四公休），若當日備料提早售罄會提早打烊；怕蒜味過重者點餐時可告知蒜泥減量。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區維新路36號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00 - 17:00（每週四公休，售完提早打烊）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 公園老店涼麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '公園老店涼麵', '招牌白醋涼麵（手工寬扁麵）、扁魚古早味香菇肉羹、涼拌牛蒡絲、皮蛋豆腐', '嘉義市東區維新路36號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="在地小吃"
+               data-search="崇文錦魯麵 嘉義市 東區 在地小吃 走過七十年古早味魚羹麵與在地涼菜 招牌錦魯麵（手工魚羹麵）、白醋特調涼麵、滿櫃傳統黑白切涼菜 崇文國小旁走過七十年的嘉義老味道。「錦魯麵」即為濃醇鮮甜的古法魚羹麵，湯底勾芡滑順、魚羹彈牙鮮香；搭配白醋涼麵與滿櫃冰鎮黑白切涼菜，是嘉義人傳承三代的午後記憶。 【避坑吃法】營業至 18:00（每週三公休），午餐與下午茶時段人潮絡繹不絕；錦魯羹湯微帶台南嘉義特有的清甜，喜酸辣者強烈建議加一匙烏醋與特製辣椒醬提味。 嘉義市東區崇文街107號 東區 崇文街 七十年老店 錦魯麵 特色涼菜"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜走過七十年古早味魚羹麵與在地涼菜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">七十年老字號嘉義特色錦魯麵</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-176</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">崇文錦魯麵</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌錦魯麵（手工魚羹麵）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">白醋特調涼麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滿櫃傳統黑白切涼菜（紅粉腸/三色蛋/過貓）</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">崇文國小旁走過七十年的嘉義老味道。「錦魯麵」即為濃醇鮮甜的古法魚羹麵，湯底勾芡滑順、魚羹彈牙鮮香；搭配白醋涼麵與滿櫃冰鎮黑白切涼菜，是嘉義人傳承三代的午後記憶。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】營業至 18:00（每週三公休），午餐與下午茶時段人潮絡繹不絕；錦魯羹湯微帶台南嘉義特有的清甜，喜酸辣者強烈建議加一匙烏醋與特製辣椒醬提味。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區崇文街107號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30 - 18:00（每週三公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 崇文錦魯麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '崇文錦魯麵', '招牌錦魯麵（手工魚羹麵）、白醋特調涼麵、滿櫃傳統黑白切涼菜', '嘉義市東區崇文街107號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="早餐早午餐"
+               data-search="嘉義南門包氏炭燒杏仁茶 嘉義市 東區 早餐早午餐 南門圓環傳統炭爐慢熬杏仁茶加蛋沾油條 炭燒熱杏仁茶（必加現打生雞蛋）、現炸酥脆老油條 南門圓環邊的清晨傳奇攤車。以傳統炭爐大鍋慢火熬煮，保留純天然杏仁淡淡炭燒煙燻香氣；老饕必點「加蛋」，滾燙杏仁茶沖入鮮生蛋黃攪散成金黃滑順蛋花，拿酥脆油條沾著熱飲入口，純樸暖胃極致享受。 【避坑吃法】只賣清晨 06:00 至 10:00（僅 4 小時，每週一公休），通常 09:00 前油條常被掃空；純路邊板凳攤車無冷氣，雨天或寒冬早起前往體驗最道地。 嘉義市東區民族路191號（南門圓環旁） 東區 南門圓環 炭燒杏仁茶 杏仁茶加蛋 清晨古早味早餐"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">早餐早午餐｜南門圓環傳統炭爐慢熬杏仁茶加蛋沾油條</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台僅存之炭火古法杏仁茶活化石</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-177</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">嘉義南門包氏炭燒杏仁茶</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">炭燒熱杏仁茶（必加現打生雞蛋）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現炸酥脆老油條</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">南門圓環邊的清晨傳奇攤車。以傳統炭爐大鍋慢火熬煮，保留純天然杏仁淡淡炭燒煙燻香氣；老饕必點「加蛋」，滾燙杏仁茶沖入鮮生蛋黃攪散成金黃滑順蛋花，拿酥脆油條沾著熱飲入口，純樸暖胃極致享受。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】只賣清晨 06:00 至 10:00（僅 4 小時，每週一公休），通常 09:00 前油條常被掃空；純路邊板凳攤車無冷氣，雨天或寒冬早起前往體驗最道地。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區民族路191號（南門圓環旁）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>06:00 - 10:00（每週一公休，售完為止）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 嘉義南門包氏炭燒杏仁茶" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '嘉義南門包氏炭燒杏仁茶', '炭燒熱杏仁茶（必加現打生雞蛋）、現炸酥脆老油條', '嘉義市東區民族路191號（南門圓環旁）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="宵夜炭烤日料"
+               data-search="燃手串（嘉義總店） 嘉義市 東區 宵夜炭烤日料 文青老宅職人日式炭火創意串燒 牛肉剝皮辣椒串、豬肉溏心蛋串、酥脆烤手羽、香烤櫛瓜、免費無限熱雞湯 文化路商圈人氣最爆棚的日式炭火串燒店。木質文青老宅風格，食材以冷藏櫥櫃陳列現選，將肉片包入剝皮辣椒、麻糬、蘋果等創意搭配；炭火純熟微焦酥脆多汁，內用還提供香醇回甘的免費熱雞湯暖胃。 【避坑吃法】傍晚 18:00 開店即大排長龍，尖峰時段烤物現烤需等候 30~50 分鐘，建議一開門即入座或先點好外帶；店內席位較緊湊，週末夜宵建議提早安排。 嘉義市東區文化路157號 東區 文化路 炭火串燒 創意肉串 深夜居酒屋"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">宵夜炭烤日料｜文青老宅職人日式炭火創意串燒</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">文化路商圈最夯排隊日式串燒</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-178</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">燃手串（嘉義總店）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">牛肉剝皮辣椒串</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">豬肉溏心蛋串</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">酥脆烤手羽（雞翅）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">香烤櫛瓜</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">免費無限熱雞湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">文化路商圈人氣最爆棚的日式炭火串燒店。木質文青老宅風格，食材以冷藏櫥櫃陳列現選，將肉片包入剝皮辣椒、麻糬、蘋果等創意搭配；炭火純熟微焦酥脆多汁，內用還提供香醇回甘的免費熱雞湯暖胃。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】傍晚 18:00 開店即大排長龍，尖峰時段烤物現烤需等候 30~50 分鐘，建議一開門即入座或先點好外帶；店內席位較緊湊，週末夜宵建議提早安排。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區文化路157號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>18:00 - 00:30（週五、週六延長至 01:00）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 燃手串" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '燃手串（嘉義總店）', '牛肉剝皮辣椒串、豬肉溏心蛋串、酥脆烤手羽、香烤櫛瓜、免費無限熱雞湯', '嘉義市東區文化路157號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="烘焙甜點冰品"
+               data-search="純情專売所（純情雞蛋糕） 嘉義市 東區 烘焙甜點冰品 純牛奶不加水無膨鬆劑整顆半熟蛋雞蛋糕 起士雞蛋燒（包整顆半熟紅仁蛋）、真味珍肉酥起士燒、純情卡士達燒、黑糖麻糬燒 公明路上的超人氣文青雞蛋糕代表。堅持只用純牛奶、新鮮洗選蛋與麵粉製作麵糊，絕不加水與預拌粉；招牌起士雞蛋燒直接打入一整顆紅仁土雞蛋與雙色起士，咬下半熟流心蛋黃與牽絲乳酪爆漿，蛋香極為濃純。 【避坑吃法】每日 13:00 開賣常在 2 小時內被預約完售；強烈建議出發前先至店家官方粉專/line 線上預訂或提早現場取號，避免排隊 40 分鐘以上甚至撲空。 嘉義市東區公明路404號 東區 公明路 純情雞蛋糕 半熟蛋起士燒 人氣甜點"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜純牛奶不加水無膨鬆劑整顆半熟蛋雞蛋糕</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">嘉義文青甜點排隊天花板</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-179</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">純情專売所（純情雞蛋糕）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">起士雞蛋燒（包整顆半熟紅仁蛋）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">真味珍肉酥起士燒</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">純情卡士達燒</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">黑糖麻糬燒</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">公明路上的超人氣文青雞蛋糕代表。堅持只用純牛奶、新鮮洗選蛋與麵粉製作麵糊，絕不加水與預拌粉；招牌起士雞蛋燒直接打入一整顆紅仁土雞蛋與雙色起士，咬下半熟流心蛋黃與牽絲乳酪爆漿，蛋香極為濃純。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】每日 13:00 開賣常在 2 小時內被預約完售；強烈建議出發前先至店家官方粉專/LINE 線上預訂或提早現場取號，避免排隊 40 分鐘以上甚至撲空。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區公明路404號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>13:00 - 18:00（售完為止）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 純情專売所" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '純情專売所（純情雞蛋糕）', '起士雞蛋燒（包整顆半熟紅仁蛋）、真味珍肉酥起士燒、純情卡士達燒、黑糖麻糬燒', '嘉義市東區公明路404號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="西區"
+               data-city-district="嘉義市・西區"
+               data-category="在地小吃"
+               data-search="大陸妹共匪餅 嘉義市 西區 在地小吃 半煎炸金黃酥脆包半熟蛋冬粉之特色共匪餅 招牌鹹共匪餅、花生芝麻甜共匪餅 文化路周邊老字號午後排隊名物。鹹共匪餅外皮半煎炸至金黃酥脆不吸油，內餡包入飽滿爽脆高麗菜、冬粉、絞肉與一整顆半熟流心荷包蛋，胡椒香氣十足；甜餅中空酥脆抹滿花生芝麻糖香，鹹甜各一顆是標準標配。 【避坑吃法】每天僅賣下午 14:00 至 18:30（賣完提早打烊）；剛起鍋時熱油燙口且半熟蛋汁會爆流，品嚐時務必小心燙嘴；現點現煎下午 15:30-17:00 排隊人潮最多。 嘉義市西區民生南路39號 西區 共匪餅 半熟蛋點心 金黃酥脆 排隊下午茶"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜半煎炸金黃酥脆包半熟蛋冬粉之特色共匪餅</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">嘉義文化路商圈傳奇下午茶點心</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-180</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">大陸妹共匪餅</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌鹹共匪餅（包半熟荷包蛋＋冬粉高麗菜）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">花生芝麻甜共匪餅</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">文化路周邊老字號午後排隊名物。鹹共匪餅外皮半煎炸至金黃酥脆不吸油，內餡包入飽滿爽脆高麗菜、冬粉、絞肉與一整顆半熟流心荷包蛋，胡椒香氣十足；甜餅中空酥脆抹滿花生芝麻糖香，鹹甜各一顆是標準標配。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】每天僅賣下午 14:00 至 18:30（賣完提早打烊）；剛起鍋時熱油燙口且半熟蛋汁會爆流，品嚐時務必小心燙嘴；現點現煎下午 15:30-17:00 排隊人潮最多。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市西區民生南路39號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>14:00 - 18:30（售完提早打烊）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市西區 大陸妹共匪餅" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市西區', '大陸妹共匪餅', '招牌鹹共匪餅、花生芝麻甜共匪餅', '嘉義市西區民生南路39號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="宵夜炭烤日料"
+               data-search="葉記牛肉麵（文化路宵夜攤） 嘉義市 東區 宵夜炭烤日料 深夜十點開賣之清燉溫體牛肉麵與牛雜湯 三寶牛肉麵、清燉鮮涮溫體牛肉湯、招牌手切牛肉飯、牛雜切盤 噴水圓環旁寶島眼鏡騎樓下的深夜傳奇。晚間 22:00 才點亮招牌、僅營業 4 小時。湯頭以牛大骨與白蘿蔔清燉，甘甜清亮不油膩；溫體牛肉鮮甜軟嫩，手切牛肉肉燥飯更被老饕盛讚為隱藏版神物。 【避坑吃法】僅營業深夜 22:00 至凌晨 02:00，夜貓子宵夜首選；深夜 22:00 一擺攤即有排隊人龍，招牌牛肉湯與熱門切盤常在午夜 00:30 提前售罄，建議 23:00 前抵達。 嘉義市東區文化路186號（噴水圓環寶島眼鏡騎樓） 東區 文化路夜市 深夜牛肉麵 溫體牛肉湯 噴水圓環"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">宵夜炭烤日料｜深夜十點開賣之清燉溫體牛肉麵與牛雜湯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">文化路圓環深夜四小時傳奇牛肉麵</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-181</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">葉記牛肉麵（文化路宵夜攤）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">三寶牛肉麵（牛筋/牛腩/牛肚）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">清燉鮮涮溫體牛肉湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌手切牛肉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">牛雜切盤</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">噴水圓環旁寶島眼鏡騎樓下的深夜傳奇。晚間 22:00 才點亮招牌、僅營業 4 小時。湯頭以牛大骨與白蘿蔔清燉，甘甜清亮不油膩；溫體牛肉鮮甜軟嫩，手切牛肉肉燥飯更被老饕盛讚為隱藏版神物。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】僅營業深夜 22:00 至凌晨 02:00，夜貓子宵夜首選；深夜 22:00 一擺攤即有排隊人龍，招牌牛肉湯與熱門切盤常在午夜 00:30 提前售罄，建議 23:00 前抵達。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區文化路186號（噴水圓環寶島眼鏡騎樓）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>22:00 - 02:00（售完提早收攤）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 葉記牛肉麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '葉記牛肉麵（文化路宵夜攤）', '三寶牛肉麵、清燉鮮涮溫體牛肉湯、招牌手切牛肉飯、牛雜切盤', '嘉義市東區文化路186號（噴水圓環寶島眼鏡騎樓）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -11636,7 +12077,7 @@
 
   <!-- 底部手冊導覽浮動條 -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (234)</a>
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (243)</a>
     <a href="seaview.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
