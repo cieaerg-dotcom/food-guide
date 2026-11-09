@@ -1,0 +1,232 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+=============================================================================
+社群踩雷爭議與實測審核對照庫 (community_controversy_reference.py)
+-----------------------------------------------------------------------------
+架構原則更新：
+非「強制一刀切黑名單」，而是作為「社群爭議與反向核對基準庫（Reference Dataset）」。
+當未來有新推薦時，先檢索此資料庫提取脆友指控之痛點，再交叉比對 Google 評論與現況，
+以做出客觀、立體、不盲從的綜合判斷。
+=============================================================================
+"""
+
+import json
+import os
+
+BASE_DIR = "/Users/mac/AGY本地工作區/專案資料夾/美食景點整理"
+OUTPUT_FILE = os.path.join(BASE_DIR, "data", "community_controversy_reference.json")
+LEGACY_FILE = os.path.join(BASE_DIR, "data", "blacklist_avoidance_database.json")
+
+CONTROVERSY_ITEMS = [
+    {
+        "id": "REF-TN-01",
+        "name": "億哥牛肉湯後甲店",
+        "aliases": ["億哥牛肉湯", "億哥"],
+        "city": "臺南市",
+        "district": "東區",
+        "category": "牛肉湯/牛肉麵",
+        "communityPainPoints": "脆友指控牛肉柴硬、湯頭味素感重、牛肉麵品質差；除了24小時營業外毫無優點。",
+        "auditFocus": "核查 Google 最新評論中是否有反映肉質乾柴、湯頭死甜或衛生問題；是否純靠深夜時段維持評分。",
+        "judgmentGuideline": "若需收錄，必須明確定位為『深夜應急/24小時營業便利導向』，嚴正提醒切勿專程白天排隊，並註明老饕對湯頭與肉質之保留評價。"
+    },
+    {
+        "id": "REF-TN-02",
+        "name": "香圃麵店",
+        "aliases": ["香圃"],
+        "city": "臺南市",
+        "district": "東區",
+        "category": "麵食小吃/滷味",
+        "communityPainPoints": "脆友 440+ 讚公認麵條軟爛無勁道、調味死鹹油膩，全靠滷味支撐。",
+        "auditFocus": "比對 Google 評論中對『麵體軟硬度』與『整體調味油膩度』的真實評價，確認是否近年品質下滑。",
+        "judgmentGuideline": "老牌名氣大但麵體水準爭議極大，若考慮收錄需將重點放在滷味豆乾切盤，並在 tips 中誠實標註麵條偏軟爛之客觀缺點。"
+    },
+    {
+        "id": "REF-TN-03",
+        "name": "福爾摩沙遊艇酒店 Buffet (威尼斯餐廳)",
+        "aliases": ["福爾摩沙遊艇酒店的Buffet", "福爾摩沙Buffet"],
+        "city": "臺南市",
+        "district": "安平區",
+        "category": "飯店自助餐",
+        "communityPainPoints": "高票價但補餐慢、海鮮新鮮度不足、熟食調味平庸，性價比極低。",
+        "auditFocus": "核查 Google 評論對近期餐期（特別是週末晚餐）的菜色豐富度、補餐速度與海鮮生鮮滿意度。",
+        "judgmentGuideline": "若評估僅適合景觀住宿客應急，非老饕自費聚餐首選；若整體性價比無改善則不列入推薦手冊。"
+    },
+    {
+        "id": "REF-TN-04",
+        "name": "鼎富發豬油拌飯",
+        "aliases": ["鼎富發"],
+        "city": "臺南市",
+        "district": "中西區",
+        "category": "小吃/豬油拌飯",
+        "communityPainPoints": "網美生蛋黃打卡炒作，實質油膩死鹹缺乏古早香氣，排隊時間成本極高。",
+        "auditFocus": "核查 Google 評論中關於排隊時長（30~60分鐘）與實際口味滿意度，是否多為拍照打卡評價。",
+        "judgmentGuideline": "若收錄需標明為『視覺拍照取向』，明確提醒老饕對油膩度的客觀意見，並提供其他傳統古早味豬油拌飯替代選擇。"
+    },
+    {
+        "id": "REF-TN-05",
+        "name": "牛室炙燒牛排 BEEFHOUSE (台南海安店)",
+        "aliases": ["牛室", "牛室炙燒牛排"],
+        "city": "臺南市",
+        "district": "北區",
+        "category": "連鎖牛排/披薩自助吧",
+        "communityPainPoints": "網紅業配過度拉抬，牛排肉質重組感明顯，自助吧披薩與熱食偏粗糙。",
+        "auditFocus": "比對 Google 評論中三星以下真實顧客對『牛排主餐口感』與『自助吧真實水準』的抱怨。",
+        "judgmentGuideline": "屬於大眾家庭粗飽披薩吃到飽定位，非精緻牛排館。若手冊定位於老饕精選，應予以排除；若為家庭聚會則需降級定位。"
+    },
+    {
+        "id": "REF-TN-06",
+        "name": "金禾 / 牛苑 / 牛氓 / 戶羽鍋物 (壓克力寶寶系列)",
+        "aliases": ["金禾", "牛苑", "牛氓", "戶羽鍋物", "壓克力寶寶"],
+        "city": "臺南市",
+        "district": "中西區/東區",
+        "category": "網美日料/燒肉/鍋物",
+        "communityPainPoints": "日韓裝潢與視覺擺盤精緻，但炸物油耗味重、份量少、定價昂貴且收服務費，被指為外行料理。",
+        "auditFocus": "全面檢視 Google 評論中關於『份量與定價對比』、『油炸品質』及『服務費合理性』的真實反饋。",
+        "judgmentGuideline": "嚴格警惕『照片滿分、入口失望』的視覺型行銷，若口味與技術未達專業水準，嚴格避免列入美食推薦。"
+    },
+    {
+        "id": "REF-TN-07",
+        "name": "豆奶宗",
+        "aliases": ["豆奶宗"],
+        "city": "臺南市",
+        "district": "中西區",
+        "category": "傳統宵夜/早餐",
+        "communityPainPoints": "沙茶蛋餅過度油膩死鹹，排隊人潮多但環境與餐點水準平庸，觀光排隊大拜拜。",
+        "auditFocus": "核查 Google 評論中對排隊環境、衛生與沙茶蛋餅油膩度的近期顧客反應。",
+        "judgmentGuideline": "屬於夜間營業的在地老回憶，但對專程排隊的遊客容易造成強烈落差；收錄時需註明油膩度偏高，適合宵夜隨喜而非神店。"
+    },
+    {
+        "id": "REF-TN-08",
+        "name": "Dor,留 義大利麵 (台南友愛街店)",
+        "aliases": ["Dor,留", "Dor留"],
+        "city": "臺南市",
+        "district": "中西區",
+        "category": "手工義大利麵",
+        "communityPainPoints": "手工義大利麵麵醬分離不入味，價位中高但調味平淡。",
+        "auditFocus": "比對 Google 評論中義大利麵各品項（如青醬、奶油、肉醬）之入味度與醬汁濃稠度評價。",
+        "judgmentGuideline": "文青老屋氣氛好，但料理核心水準爭議大；需指引點選特定成功率高的品項，避免盲目推薦全品項。"
+    },
+    {
+        "id": "REF-TN-09",
+        "name": "府城滷味",
+        "aliases": ["府城滷味"],
+        "city": "臺南市",
+        "district": "東區",
+        "category": "加熱滷味",
+        "communityPainPoints": "蔬菜份量極少、醬汁死鹹無中藥香，店員態度惡劣且環境衛生受質疑。",
+        "auditFocus": "核查 Google 評論中有關『份量價格比』、『服務態度』與『店內整潔度』的負評比例。",
+        "judgmentGuideline": "若服務與衛生爭議持續偏高且無改善，應堅持不予推薦，引導至其他在地優質加熱滷味。"
+    },
+    {
+        "id": "REF-TN-10",
+        "name": "開元路土魠魚羹 (開元紅燒土魠魚羹)",
+        "aliases": ["開元路土魠魚羹", "開元土魠魚"],
+        "city": "臺南市",
+        "district": "北區",
+        "category": "在地小吃/土魠魚羹",
+        "communityPainPoints": "必比登推薦後大排長龍，但魚塊乾柴、羹湯死甜發膩，在地人認為品質退步。",
+        "auditFocus": "比對 Google 評論中近期關於『炸魚塊新鮮度與口感』、『羹湯甜度』的南北饕客評價分歧。",
+        "judgmentGuideline": "名店仍有代表性，但必須在 tips 中明確警示：湯頭偏傳統超甜台南風、炸魚塊品質有時飄忽，不耐極甜者請慎入。"
+    },
+    {
+        "id": "REF-TN-11",
+        "name": "朵頤牛排 (Doricious)",
+        "aliases": ["朵頤牛排"],
+        "city": "臺南市",
+        "district": "東區",
+        "category": "西式排餐",
+        "communityPainPoints": "油封鴨腿腥味重，曾有脆友反映食材新鮮度不佳導致腸胃不適。",
+        "auditFocus": "審查 Google 評論中關於食材新鮮度、排餐熟度控制與副餐品質的最新顧客留言。",
+        "judgmentGuideline": "重點考察其生鮮海鮮與禽肉之衛生品管，若食安爭議屢見不鮮則嚴禁收錄。"
+    },
+    {
+        "id": "REF-TN-12",
+        "name": "圓頂西餐廳 (天下南隅 La Cupola)",
+        "aliases": ["圓頂西餐廳", "天下南隅圓頂"],
+        "city": "臺南市",
+        "district": "北區",
+        "category": "老派西餐廳/半自助吧",
+        "communityPainPoints": "飯店翻新後主餐與半自助吧品質低落，價格昂貴，被評為純賣復古裝潢情懷。",
+        "auditFocus": "核查 Google 評論對千元價位下主餐牛排肉質、自助沙拉吧品項豐富度的真實評價。",
+        "judgmentGuideline": "定位為『復古拍照與約會氛圍取向』，明確告知餐點精緻度與價格不成正比，切勿以老饕級牛排館期待前往。"
+    },
+    {
+        "id": "REF-TN-13",
+        "name": "民生路意麵 (民生路無名意麵)",
+        "aliases": ["民生路意麵", "民生意麵"],
+        "city": "臺南市",
+        "district": "中西區",
+        "category": "傳統意麵/滷味",
+        "communityPainPoints": "排隊極長、油耗味重、店家態度傲慢，性價比低。",
+        "auditFocus": "核查 Google 最新評論之服務態度、候位時間（是否動輒40分）及麵體油蔥新鮮度。",
+        "judgmentGuideline": "若店家長期對顧客態度惡劣且排隊成本極高，應誠實揭露排隊痛點，並推薦在地其他如阿鳳、恭仔等意麵替代。"
+    },
+    {
+        "id": "REF-TN-14",
+        "name": "麻花東北鐵鍋燉",
+        "aliases": ["麻花鐵鍋燉", "麻花東北"],
+        "city": "臺南市",
+        "district": "中西區",
+        "category": "東北菜/鐵鍋燉",
+        "communityPainPoints": "湯底死鹹油膩，玉米餅口感怪異，被在地人評為極度踩雷之異國料理。",
+        "auditFocus": "審核 Google 評論對其調味鹹淡度、燉煮食材新鮮度與價格份量比的評價分佈。",
+        "judgmentGuideline": "若調味嚴重脫節且負評集中，不列入推薦名單。"
+    },
+    {
+        "id": "REF-TN-15",
+        "name": "吃道飽火烤兩吃",
+        "aliases": ["吃道飽"],
+        "city": "臺南市",
+        "district": "中西區/南區",
+        "category": "平價火烤吃到飽",
+        "communityPainPoints": "刷五星好評送肉洗評價，實際肉質極差、環境油膩衛生堪憂。",
+        "auditFocus": "深入過濾 Google 評論中『疑似洗星』評論，專注檢閱 1~2 星關於肉質、油煙與餐具清潔的真實負評。",
+        "judgmentGuideline": "凡具明顯五星刷評送食材嫌疑且本質粗劣之店家，堅決不予收錄。"
+    },
+    {
+        "id": "REF-TN-16",
+        "name": "水道場 (特色鍋物)",
+        "aliases": ["水道場"],
+        "city": "臺南市",
+        "district": "中西區",
+        "category": "特色鍋物",
+        "communityPainPoints": "單價極高、全為單點，高價松露牛奶鍋加湯竟加白水或稀湯，被指偷工減料。",
+        "auditFocus": "核查 Google 評論中對加湯品質、肉盤份量與整體人均消費（800~1200元）之性價比評價。",
+        "judgmentGuideline": "若偷工減料或加湯不合理現象屬實，應嚴厲註明避坑；若經改善則需客觀衡量消費門檻。"
+    },
+    {
+        "id": "REF-TN-17",
+        "name": "文章牛肉湯 (安平總店/旗艦店)",
+        "aliases": ["文章牛肉湯", "文章"],
+        "city": "臺南市",
+        "district": "安平區",
+        "category": "溫體牛肉湯",
+        "communityPainPoints": "觀光名氣最大但在地人不吃，肉質與湯頭甜感偏死，排隊大排長龍時間成本高。",
+        "auditFocus": "比對在地老饕 vs 觀光客的評價分化，核查離峰時段與尖峰時段的肉質差異。",
+        "judgmentGuideline": "不可一棍子打死，但**必須在 tips 中破除迷思**：點出安平旗艦店人潮擁擠排隊長，湯頭偏甜，並指引離峰前往或推薦其他在地人私藏之牛肉湯店家。"
+    },
+    {
+        "id": "REF-TN-18",
+        "name": "阿菊食堂",
+        "aliases": ["阿菊食堂"],
+        "city": "臺南市",
+        "district": "歸仁區",
+        "category": "台菜合菜/魯麵",
+        "communityPainPoints": "曾有脆友指控餐點內吃出煙蒂，廚房衛生與品管遭受重大質疑。",
+        "auditFocus": "重點審查 Google 評論與新聞中關於該店『衛生整潔』與『異物投訴』的近期改善狀況。",
+        "judgmentGuideline": "食安為第一紅線，若衛生問題未有具體改善澄清，暫緩列入推薦清單。"
+    }
+]
+
+def main():
+    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(CONTROVERSY_ITEMS, f, ensure_ascii=False, indent=2)
+    # 同時同步更新 legacy 檔案以維持兼容
+    with open(LEGACY_FILE, "w", encoding="utf-8") as f:
+        json.dump(CONTROVERSY_ITEMS, f, ensure_ascii=False, indent=2)
+    print(f"✅ 社群踩雷爭議與實測對照庫已建置：{OUTPUT_FILE} (共 {len(CONTROVERSY_ITEMS)} 間核實對照基準)")
+
+if __name__ == "__main__":
+    main()
