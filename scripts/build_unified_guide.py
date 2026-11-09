@@ -317,7 +317,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
 
   <!-- 底部手冊導覽浮動條 -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (185)</a>
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 ({total_count})</a>
     <a href="全台看海放空旅宿隨身手冊.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
@@ -343,7 +343,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
       }},
       "臺南市": {{
         title: "⚡ 臺南市（新營區／後壁區）3 秒精準避坑指南",
-        html: "• <b>新營區正餐與小吃（{tn_xinying} 間）</b>：溪北飯桌（熟成香料咖哩）、小紅堂（大四喜牛肉麵／清燉豬肉麵）、阿翔蚵仔煎（<b>鎮店之寶是鐵板炒飯與乾煎虱目魚肚</b>）、榮昌雞肉飯（<b>必加半熟煎鴨蛋拌飯</b>）。<br>• <b>新營區甜點與慎入提醒</b>：月の坊（豆腐冰）、惟式（開心果巴斯克）、磐創作陶坊（布丁）；<b>伯恩汕頭意麵份量較精巧，金丘腿庫飯出餐極慢請預留時間</b>。<br>• <b>後壁區秘技（{tn_houbi} 間）</b>：樂檸漢堡（新營服務區北上店）可騎機車走外圍後方秘密便道免上國道進入，穿短褲享升級優惠！"
+        html: "• <b>新營區聚餐與日料推薦（{tn_xinying} 間）</b>：簡餐聚會首推旭更廚房（<b>老件復古美店，建議提前電話訂位</b>）；日料聚餐推禾沐（<b>環境寬敞好訂位</b>）；老屋日料推樸拾（<b>全店僅約10席吧檯位不接電話預訂，招牌火焰鮭魚捲</b>）；高階日料選青鮨（<b>Omakase需預約</b>）；海鮮熱炒首推海口現撈（<b>在地人一生推，附大停車場</b>）與海宴（<b>包廂宴席</b>）。<br>• <b>新營區正餐小吃與甜點</b>：溪北飯桌（咖哩）、小紅堂（牛肉麵）、康樂胚芽意麵（<b>招牌手工大燒賣與黑白切骨頭肉必點</b>）、阿翔蚵仔煎（<b>鐵板炒飯＋乾煎魚肚</b>）、榮昌雞肉飯（<b>必加半熟煎鴨蛋</b>）；伯恩意麵份量精緻、金丘腿庫飯出餐較慢。<br>• <b>後壁區秘技（{tn_houbi} 間）</b>：樂檸漢堡（新營服務區北上店）可騎機車走外圍後方秘密便道免上國道進入，穿短褲享升級優惠！"
       }}
     }};
 
