@@ -1,7 +1,7 @@
 {
   "name": "台灣私房美食避雷隨身手冊",
   "short_name": "美食避雷手冊",
-  "description": "收錄嘉義市與臺南市 264 間在地口碑與避坑指南",
+  "description": "收錄嘉義市與臺南市 265 間在地口碑與避坑指南",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f8fafc",
