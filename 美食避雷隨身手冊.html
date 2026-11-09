@@ -28,7 +28,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 84／西區 63）、嘉義縣（32 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 64 間）共 243 間實測指南
+      收錄嘉義市（東區 86／西區 63）、嘉義縣（34 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 64 間）共 247 間實測指南
     </div>
   </header>
 
@@ -41,17 +41,17 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">243</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">247</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🐓 嘉義市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">147</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">149</span>
         </button>
         <button type="button" data-city-btn="嘉義縣" onclick="selectCity('嘉義縣')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🌲 嘉義縣</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">32</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">34</span>
         </button>
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -65,11 +65,11 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (243)
+          全部鄉鎮市區 (247)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義市・東區 (84)
+          嘉義市・東區 (86)
         </button>
         <button type="button" data-dist-btn="嘉義市・西區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・西區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -86,6 +86,10 @@
         <button type="button" data-dist-btn="嘉義縣・朴子市" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・朴子市')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           嘉義縣・朴子市 (19)
+        </button>
+        <button type="button" data-dist-btn="嘉義縣・民雄鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・民雄鄉')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          嘉義縣・民雄鄉 (2)
         </button>
         <button type="button" data-dist-btn="嘉義縣・水上鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・水上鄉')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -140,7 +144,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">243</b> 間店舖</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">247</b> 間店舖</div>
   </div>
 
   <!-- 預渲染之 103 間店家卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -12052,6 +12056,202 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="烘焙甜點冰品"
+               data-search="morikoohii 森咖啡 嘉義市 東區 烘焙甜點冰品 檜意森活村日式檜木老屋手沖咖啡與煎鬆餅 加拿大楓糖佐有鹽奶油現煎鬆餅、京都宇治抹茶宇治金時刨冰、白冰鑽拿鐵、阿里山手沖高山咖啡 坐落於檜意森活村t12館歷史檜木官舍中。推開木門滿室檜木與烘焙香氣，現點現煎的日式鬆餅膨軟細緻、外皮微酥，搭配京都一保堂抹茶與阿里山高山手沖咖啡，是漫步檜意森活村最愜意的午後落腳點。 【避坑吃法】全店採現場登記候位（無電話預約）；週末午後熱門時段常需等候 40~60 分鐘，建議抵達園區先前往登記電話，在園區散步逛文創小店等候通知。 嘉義市東區共和路199巷1號（檜意森活村t12館） 東區 檜意森活村 日式老宅 手沖咖啡 煎鬆餅"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜檜意森活村日式檜木老屋手沖咖啡與煎鬆餅</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">檜意森活村內氣氛第一名日系喫茶</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-182</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">Morikoohii 森咖啡</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">加拿大楓糖佐有鹽奶油現煎鬆餅</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">京都宇治抹茶宇治金時刨冰</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">白冰鑽拿鐵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">阿里山手沖高山咖啡</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">坐落於檜意森活村T12館歷史檜木官舍中。推開木門滿室檜木與烘焙香氣，現點現煎的日式鬆餅膨軟細緻、外皮微酥，搭配京都一保堂抹茶與阿里山高山手沖咖啡，是漫步檜意森活村最愜意的午後落腳點。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】全店採現場登記候位（無電話預約）；週末午後熱門時段常需等候 40~60 分鐘，建議抵達園區先前往登記電話，在園區散步逛文創小店等候通知。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區共和路199巷1號（檜意森活村T12館）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 18:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 森咖啡 Morikoohii" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', 'Morikoohii 森咖啡', '加拿大楓糖佐有鹽奶油現煎鬆餅、京都宇治抹茶宇治金時刨冰、白冰鑽拿鐵、阿里山手沖高山咖啡', '嘉義市東區共和路199巷1號（檜意森活村T12館）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="早餐早午餐"
+               data-search="綠洲 oasis brunch 嘉義市 東區 早餐早午餐 臺灣時報老報社新生之超大份量豐盛早午餐 橙香咔酥雞肉球大餐盤、豪邁大豐盛早餐盤、厚實味噌醬烤雙雞腿排、焦糖烤布丁 隱身蘭井街「臺灣時報」舊址老宅的質感早午餐。空間保留老宅紅磚天井與綠意，餐盤份量豪邁驚人，招牌咔酥雞肉球外酥內嫩多汁、搭配帶果肉橙香沾醬無比驚艷，水耕蔬菜與自製優格爽口健康。 【避坑吃法】店內座位數不多且不接受預訂，採現場候位；每週四固定公休；尖峰餐期現點現煎需等候 20~30 分鐘，建議 09:30 前或午後 13:30 離峰時段前往。 嘉義市東區蘭井街161號 東區 蘭井街 老宅早午餐 大份量餐盤 咔酥雞肉球"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">早餐早午餐｜臺灣時報老報社新生之超大份量豐盛早午餐</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">在地年輕人與回嘉青年狂推私房早午餐</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-183</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">綠洲 Oasis Brunch</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">橙香咔酥雞肉球大餐盤</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">豪邁大豐盛早餐盤（德腸/可頌/滑蛋/優格）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">厚實味噌醬烤雙雞腿排</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">焦糖烤布丁</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">隱身蘭井街「臺灣時報」舊址老宅的質感早午餐。空間保留老宅紅磚天井與綠意，餐盤份量豪邁驚人，招牌咔酥雞肉球外酥內嫩多汁、搭配帶果肉橙香沾醬無比驚艷，水耕蔬菜與自製優格爽口健康。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】店內座位數不多且不接受預訂，採現場候位；每週四固定公休；尖峰餐期現點現煎需等候 20~30 分鐘，建議 09:30 前或午後 13:30 離峰時段前往。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區蘭井街161號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00 - 17:00（每週四公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 綠洲 Oasis Brunch" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '綠洲 Oasis Brunch', '橙香咔酥雞肉球大餐盤、豪邁大豐盛早餐盤、厚實味噌醬烤雙雞腿排、焦糖烤布丁', '嘉義市東區蘭井街161號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="民雄鄉"
+               data-city-district="嘉義縣・民雄鄉"
+               data-category="正餐主食"
+               data-search="正宗民雄鵝肉亭 嘉義縣 民雄鄉 正餐主食 火車站前鵝肉一條街皮q肉嫩多汁始祖老店 招牌白切鮮嫩鵝肉、高湯鵝米血、鵝油韭菜乾米粉、爽脆鵝腸、鮮甜鵝肝 民雄火車站前「鵝肉一條街」名氣最響亮的老字號。每日現煮大隻肥鵝，切盤厚度豪邁、肉質飽滿滑嫩帶肉汁，沾上特製甜辣醬極度過癮；吸飽鵝油高湯的米血與乾米粉份量十足、cp值極高。 【避坑吃法】假日用餐尖峰人潮洶湧、需排隊等候叫號；店後方備有專屬免費停車場（從和平路側邊巷子駛入）；鵝肉份量非常扎實，2~3人建議點 1/4 隻即足夠，切勿失心瘋點太多。 嘉義縣民雄鄉和平路33號（民雄火車站正對面） 民雄鄉 鵝肉一條街 白切鵝肉 專屬停車場 排隊名店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・民雄鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜火車站前鵝肉一條街皮Q肉嫩多汁始祖老店</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台知名民雄鵝肉一條街排隊始祖</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-184</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">正宗民雄鵝肉亭</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌白切鮮嫩鵝肉（半隻/1/4隻）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">高湯鵝米血</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鵝油韭菜乾米粉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">爽脆鵝腸</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鮮甜鵝肝</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">民雄火車站前「鵝肉一條街」名氣最響亮的老字號。每日現煮大隻肥鵝，切盤厚度豪邁、肉質飽滿滑嫩帶肉汁，沾上特製甜辣醬極度過癮；吸飽鵝油高湯的米血與乾米粉份量十足、CP值極高。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】假日用餐尖峰人潮洶湧、需排隊等候叫號；店後方備有專屬免費停車場（從和平路側邊巷子駛入）；鵝肉份量非常扎實，2~3人建議點 1/4 隻即足夠，切勿失心瘋點太多。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣民雄鄉和平路33號（民雄火車站正對面）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:30 - 20:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣民雄鄉 正宗民雄鵝肉亭" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣民雄鄉', '正宗民雄鵝肉亭', '招牌白切鮮嫩鵝肉、高湯鵝米血、鵝油韭菜乾米粉、爽脆鵝腸、鮮甜鵝肝', '嘉義縣民雄鄉和平路33號（民雄火車站正對面）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="民雄鄉"
+               data-city-district="嘉義縣・民雄鄉"
+               data-category="烘焙甜點冰品"
+               data-search="旺萊山鳳梨酥（民雄文化總店） 嘉義縣 民雄鄉 烘焙甜點冰品 神農獎鳳梨田莊園免費試吃整顆土鳳梨酥 神農獎金牌土鳳梨酥、天然手作鳳梨醋、鮮榨鳳梨冰沙、鳳梨霜淇淋 民雄中正大學旁七百公頃壯闊鳳梨田中的文化莊園。入館即熱情招待完整一整顆金牌土鳳梨酥與一杯阿里山高山茶或鳳梨醋；酥皮帶有帕瑪森起司香氣，土鳳梨內餡微酸甘甜帶纖維，二樓觀景台可眺望連綿鳳梨田。 【避坑吃法】假日遊覽車與觀光人潮眾多，一樓奉茶區若遇人潮需依序排隊入座；園區設有免費專屬大停車場；適合自駕串連中正大學或民雄鵝肉一併順遊。 嘉義縣民雄鄉三興村陳厝寮1-3號 民雄鄉 鳳梨酥 免費試吃整顆 奉茶體驗 神農獎鳳梨"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・民雄鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜神農獎鳳梨田莊園免費試吃整顆土鳳梨酥</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">嘉義民雄必訪神農獎鳳梨綠意莊園</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-185</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">旺萊山鳳梨酥（民雄文化總店）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">神農獎金牌土鳳梨酥（現場入座免費招待一顆＋熱高山茶）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">天然手作鳳梨醋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鮮榨鳳梨冰沙</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鳳梨霜淇淋</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">民雄中正大學旁七百公頃壯闊鳳梨田中的文化莊園。入館即熱情招待完整一整顆金牌土鳳梨酥與一杯阿里山高山茶或鳳梨醋；酥皮帶有帕瑪森起司香氣，土鳳梨內餡微酸甘甜帶纖維，二樓觀景台可眺望連綿鳳梨田。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】假日遊覽車與觀光人潮眾多，一樓奉茶區若遇人潮需依序排隊入座；園區設有免費專屬大停車場；適合自駕串連中正大學或民雄鵝肉一併順遊。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣民雄鄉三興村陳厝寮1-3號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00 - 18:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣民雄鄉 旺萊山鳳梨酥文化園區" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣民雄鄉', '旺萊山鳳梨酥（民雄文化總店）', '神農獎金牌土鳳梨酥、天然手作鳳梨醋、鮮榨鳳梨冰沙、鳳梨霜淇淋', '嘉義縣民雄鄉三興村陳厝寮1-3號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -12068,7 +12268,7 @@
 
   <!-- 底部手冊導覽浮動條 -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (243)</a>
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (247)</a>
     <a href="全台看海放空旅宿隨身手冊.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
