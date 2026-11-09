@@ -28,7 +28,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 77／西區 62）、嘉義縣（3 間）＆ 臺南市（新營區 50／後壁區 1）共 193 間實測指南
+      收錄嘉義市（東區 77／西區 62）、嘉義縣（3 間）＆ 臺南市（新營區 56／後壁／柳營／鹽水共 59 間）共 201 間實測指南
     </div>
   </header>
 
@@ -41,7 +41,7 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">193</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">201</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -56,7 +56,7 @@
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🏛️ 臺南市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">51</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">59</span>
         </button>
       </div>
 
@@ -65,7 +65,7 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (193)
+          全部鄉鎮市區 (201)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -93,7 +93,15 @@
         </button>
         <button type="button" data-dist-btn="臺南市・新營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・新營區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・新營區 (50)
+          臺南市・新營區 (56)
+        </button>
+        <button type="button" data-dist-btn="臺南市・柳營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・柳營區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・柳營區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・鹽水區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・鹽水區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・鹽水區 (1)
         </button>
       </div>
 
@@ -130,7 +138,7 @@
       </div>
       <div id="strategyBody" style="line-height:1.65;">
         • <b>嘉義市（東區 77 間／西區 62 間）</b>：必吃緯英海南雞飯、五千金炒飯、豆豆／京站湯包、黃記／南門白醋涼麵；<b>阿婆烤玉米（東區）與友愛鹹酥雞（西區）為極難買到的排隊魔王</b>；阿霞滷肉飯務必請店家滷汁少一點。<br>
-        • <b>臺南市（新營區 50 間／後壁區 1 間）</b>：正餐首推溪北飯桌、小紅堂牛肉麵、燒蛋一下、阿豪冰糖豬腳；阿翔蚵仔煎必點「鐵板炒飯＋乾煎魚肚」，榮昌雞肉飯必加「半熟煎鴨蛋」；伯恩意麵份量精緻、金丘腿庫飯出餐較慢。
+        • <b>臺南市（新營區 56 間／後壁區 1 間）</b>：正餐首推溪北飯桌、小紅堂牛肉麵、燒蛋一下、阿豪冰糖豬腳；阿翔蚵仔煎必點「鐵板炒飯＋乾煎魚肚」，榮昌雞肉飯必加「半熟煎鴨蛋」；伯恩意麵份量精緻、金丘腿庫飯出餐較慢。
       </div>
     </div>
   </section>
@@ -138,7 +146,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:10px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">193</b> 間店舖</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">201</b> 間店舖</div>
   </div>
 
   <!-- 預渲染之 103 間店家卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -9600,6 +9608,398 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="正餐主食"
+               data-search="卓也灶腳 (卓也灶咖) 臺南市 新營區 正餐主食 庭園質感家常簡餐鍋物 麻油香雞腿（一鍋二吃：先炒手工烏龍麵再加高湯變火鍋）、招牌鍋燒意麵、白帶魚捲套餐、古早味焢肉飯 新營在地老饕一致推薦『好吃又好聊』的隱密庭園餐廳。主打不添加味素的原型食物健康料理。鎮店招牌麻油雞腿上桌先以麻油薑片拌炒帶皮雞腿肉與q彈烏龍麵，乾吃香氣逼人，吃完加入天然清甜高湯秒變暖胃火鍋；鍋燒意麵湯頭蛋香濃郁，配菜細緻入微。 位於東興四街寧靜巷弄內，環境寬敞幽靜且好聊；價位在新營屬中偏高但食材講究。店內桌數有限，**假日家庭聚餐強烈建議提前電話訂位**；每週一固定公休。 臺南市新營區東興四街10號 庭園餐廳 麻油雞一鍋二吃 好吃好聊 原型食物 家庭聚餐"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜庭園質感家常簡餐鍋物</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">4.5 星 Google 高評 / 脆友狂推好吃好聊</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-52</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">卓也灶腳 (卓也灶咖)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">麻油香雞腿（一鍋二吃）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌鍋燒意麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">白帶魚捲套餐</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味焢肉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">原型食物養生套餐</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">新營在地老饕一致推薦『好吃又好聊』的隱密庭園餐廳。主打不添加味素的原型食物健康料理。鎮店招牌麻油雞腿上桌先以麻油薑片拌炒帶皮雞腿肉與Q彈烏龍麵，乾吃香氣逼人，吃完加入天然清甜高湯秒變暖胃火鍋；鍋燒意麵湯頭蛋香濃郁，配菜細緻入微。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>位於東興四街寧靜巷弄內，環境寬敞幽靜且好聊；價位在新營屬中偏高但食材講究。店內桌數有限，**假日家庭聚餐強烈建議提前電話訂位**；每週一固定公休。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區東興四街10號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00-14:00 / 17:00-20:30 (週一公休)</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區東興四街10號 卓也灶腳" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', '卓也灶腳 (卓也灶咖)', '麻油香雞腿（一鍋二吃：先炒手工烏龍麵再加高湯變火鍋）、招牌鍋燒意麵、白帶魚捲套餐、古早味焢肉飯', '臺南市新營區東興四街10號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="宵夜炭烤日料"
+               data-search="日阪駒 (全日制關東煮居酒屋) 臺南市 新營區 宵夜炭烤日料 大阪道地深夜食堂關東煮 入味關東煮大根蘿蔔、魚卵福袋、日式炒麵、醬燒炒飯、手工黑輪、免費續熱高湯 大阪學藝回台的老闆親手打造的深夜食堂。掛著紅燈籠的木質小居酒屋極具氛圍，關東煮湯頭醇厚回甘且熱湯可免費續加，大根蘿蔔透徹入味，價格平易近人，是新營深夜小酌聊天的絕佳去處。 營業時間 17:00 至凌晨 01:00。店內座位數較少（吧檯板前 6 席＋戶外兩小桌），空間較緊湊；調味偏關西道地醬油風味，重口味愛好者首選；週日通常公休。 臺南市新營區武昌街33號 新營宵夜 關東煮居酒屋 大阪道地 深夜食堂 4.7星好評"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">宵夜炭烤日料｜大阪道地深夜食堂關東煮</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">4.7 星 Google 高評 / 營業至凌晨1點</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-53</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">日阪駒 (全日制關東煮居酒屋)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">入味關東煮大根蘿蔔</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">魚卵福袋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">日式炒麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">醬燒炒飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工黑輪/豆腐</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">關東煮熱高湯免費續</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">大阪學藝回台的老闆親手打造的深夜食堂。掛著紅燈籠的木質小居酒屋極具氛圍，關東煮湯頭醇厚回甘且熱湯可免費續加，大根蘿蔔透徹入味，價格平易近人，是新營深夜小酌聊天的絕佳去處。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>營業時間 17:00 至凌晨 01:00。店內座位數較少（吧檯板前 6 席＋戶外兩小桌），空間較緊湊；調味偏關西道地醬油風味，重口味愛好者首選；週日通常公休。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區武昌街33號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>17:00-01:00 (週日公休)</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區武昌街33號 日阪駒" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', '日阪駒 (全日制關東煮居酒屋)', '入味關東煮大根蘿蔔、魚卵福袋、日式炒麵、醬燒炒飯、手工黑輪、免費續熱高湯', '臺南市新營區武昌街33號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="鍋物補湯"
+               data-search="九星級精緻鍋物 (新營總店) 臺南市 新營區 鍋物補湯 高cp值小火鍋吃到飽 剝皮辣椒雞腿鍋、起司牛奶鍋、現切牛肉、王子麵/意麵等多款麵食吃到飽、冰淇淋咖啡無限享用 脆友狂推新營聚餐超高性價比火鍋！百元小火鍋價格卻擁有極具誠意的自助吧，多種泡麵、意麵、冰淇淋、咖啡冷飲無限量供應，湯頭濃郁肉質厚實，座位寬敞舒適，是學生與家庭聚餐常客首選。 用餐尖峰時間人潮極多，店旁與周圍馬路停車尚算便利；食量大或喜愛多種麵食搭配濃郁火鍋湯底的聚餐極度推薦。 臺南市新營區新進路二段356號 新營小火鍋 吃到飽自助吧 高cp值 聚餐飽足 牛奶鍋"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">鍋物補湯｜高CP值小火鍋吃到飽</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">脆友 25 讚狂推 / 4.7 星 Google 好評</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-54</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">九星級精緻鍋物 (新營總店)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">剝皮辣椒雞腿鍋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">香濃起司牛奶鍋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現切安格斯牛肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">多款麵類與冰品吃到飽</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">咖啡牛奶自助吧</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">脆友狂推新營聚餐超高性價比火鍋！百元小火鍋價格卻擁有極具誠意的自助吧，多種泡麵、意麵、冰淇淋、咖啡冷飲無限量供應，湯頭濃郁肉質厚實，座位寬敞舒適，是學生與家庭聚餐常客首選。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>用餐尖峰時間人潮極多，店旁與周圍馬路停車尚算便利；食量大或喜愛多種麵食搭配濃郁火鍋湯底的聚餐極度推薦。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區新進路二段356號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00-14:00 / 17:00-22:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區新進路二段356號 九星級鍋物" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', '九星級精緻鍋物 (新營總店)', '剝皮辣椒雞腿鍋、起司牛奶鍋、現切牛肉、王子麵/意麵等多款麵食吃到飽、冰淇淋咖啡無限享用', '臺南市新營區新進路二段356號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="宵夜炭烤日料"
+               data-search="520窯烤 (復興店) 臺南市 新營區 宵夜炭烤日料 炭香窯烤串燒宵夜 窯烤酥脆雞排、手工豬肉蔥串、碳烤糯米腸、招牌四季豆、甜不辣、豆包 新營復興路與金華路口的熱門窯烤宵夜攤。食材先炸後窯烤，鎖住肉汁同時逼出多餘油脂，帶有濃郁獨特炭香，刷上特調鹹甜醬汁極度涮嘴。老闆為人熱情親切，是好友聚會小酌配串燒的熱門選擇。 宵夜外帶點單量極大，不想現場久候建議先打電話預訂再行取餐；現場小酌聊天亦相當愜意。 臺南市新營區復興路523號 窯烤串燒 新營宵夜 炭烤雞排 好聊小酌 熱情店家"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">宵夜炭烤日料｜炭香窯烤串燒宵夜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">脆友大讚老闆熱情 / 炭香宵夜聚會</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-55</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">520窯烤 (復興店)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">窯烤酥脆雞排</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工豬肉蔥串</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">碳烤糯米腸</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌四季豆</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">烤甜不辣</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">窯烤海鮮</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">新營復興路與金華路口的熱門窯烤宵夜攤。食材先炸後窯烤，鎖住肉汁同時逼出多餘油脂，帶有濃郁獨特炭香，刷上特調鹹甜醬汁極度涮嘴。老闆為人熱情親切，是好友聚會小酌配串燒的熱門選擇。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>宵夜外帶點單量極大，不想現場久候建議先打電話預訂再行取餐；現場小酌聊天亦相當愜意。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區復興路523號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>17:30-00:30 (休假日依店家公告)</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區復興路523號 520窯烤" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', '520窯烤 (復興店)', '窯烤酥脆雞排、手工豬肉蔥串、碳烤糯米腸、招牌四季豆、甜不辣、豆包', '臺南市新營區復興路523號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="手搖咖啡茶飲"
+               data-search="mini.d coffee (新營館) 臺南市 新營區 手搖咖啡茶飲 挑高藝廊風不限時咖啡廳 手沖精品咖啡、法式千層蛋糕、丹麥菠蘿可頌、手工薄皮比薩、法式甜點 多那之集團旗下高端美學咖啡品牌。空間挑高且採光明亮，結合當代藝術展覽與藝廊美學，桌距舒適完全無壓迫感。提供精緻咖啡、鹹甜輕食與披薩，且不限時、部分座位附插座，是新營人喝咖啡聊是非、筆電辦公最舒服的旗艦聚點。 鄰近新營夜市商圈，周邊路邊停車格多，停車非常方便；下午茶時段甜點品項最齊全，聊天久坐極度推薦。 臺南市新營區三民路148-7號 不限時咖啡廳 挑高美學 新營下午茶 好聊舒適 藝廊空間"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">手搖咖啡茶飲｜挑高藝廊風不限時咖啡廳</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">新營最美文青聚會所 / 甜點輕食</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-56</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">MINI.D COFFEE (新營館)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手沖精品咖啡</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">法式千層蛋糕</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">丹麥菠蘿可頌</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工薄皮比薩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鮮果氣泡飲</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">多那之集團旗下高端美學咖啡品牌。空間挑高且採光明亮，結合當代藝術展覽與藝廊美學，桌距舒適完全無壓迫感。提供精緻咖啡、鹹甜輕食與披薩，且不限時、部分座位附插座，是新營人喝咖啡聊是非、筆電辦公最舒服的旗艦聚點。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>鄰近新營夜市商圈，周邊路邊停車格多，停車非常方便；下午茶時段甜點品項最齊全，聊天久坐極度推薦。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區三民路148-7號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:30-22:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區三民路148-7號 MINID COFFEE新營館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', 'MINI.D COFFEE (新營館)', '手沖精品咖啡、法式千層蛋糕、丹麥菠蘿可頌、手工薄皮比薩、法式甜點', '臺南市新營區三民路148-7號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="新營區"
+               data-city-district="臺南市・新營區"
+               data-category="在地小吃"
+               data-search="大口香雞排 (新營總店) 臺南市 新營區 在地小吃 火車站前傳奇噴汁雞肉串 招牌黃金雞肉串（一串5-6大塊爆汁無骨雞肉）、厚切大雞排、炸三角骨、甘梅地瓜 新營火車站前無人不知的傳奇排隊炸物。雖名為雞排店，但鎮店之寶是幾乎人手五串十串起跳的『雞肉串』。裹上薄脆黃金粉漿，高溫油炸封住肉汁，大口咬下滾燙雞汁直接噴出，肉質軟嫩無腥味，冷掉依舊酥香多汁。 極度熱門！下午出爐時間常大排長龍且提早完售；在地內行人都習慣**提前半小時至一小時電話預約**再到現場快速取餐，避免現場苦等。 臺南市新營區大同路14-6號 新營必吃 爆汁雞肉串 火車站美食 排隊秒殺 銅板小吃"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・新營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜火車站前傳奇噴汁雞肉串</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">新營必吃排隊傳奇 / 脆友激推回鄉必吃</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-57</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">大口香雞排 (新營總店)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌黃金雞肉串（每人必點）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">厚切大雞排</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">炸三角骨</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">甘梅地瓜</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">甜不辣</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">新營火車站前無人不知的傳奇排隊炸物。雖名為雞排店，但鎮店之寶是幾乎人手五串十串起跳的『雞肉串』。裹上薄脆黃金粉漿，高溫油炸封住肉汁，大口咬下滾燙雞汁直接噴出，肉質軟嫩無腥味，冷掉依舊酥香多汁。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>極度熱門！下午出爐時間常大排長龍且提早完售；在地內行人都習慣**提前半小時至一小時電話預約**再到現場快速取餐，避免現場苦等。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市新營區大同路14-6號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>14:00-19:00 (售完提早打烊)</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市新營區大同路14-6號 大口香雞排" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市新營區', '大口香雞排 (新營總店)', '招牌黃金雞肉串（一串5-6大塊爆汁無骨雞肉）、厚切大雞排、炸三角骨、甘梅地瓜', '臺南市新營區大同路14-6號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="柳營區"
+               data-city-district="臺南市・柳營區"
+               data-category="正餐主食"
+               data-search="太康食堂 (太康有機農業園區) 臺南市 柳營區 正餐主食 綠色隧道旁有機健康合菜火鍋 有機蔬菜鮮採養生鍋、麻油松阪豬套餐、番茄燉牛肉、太康有機牛蒡茶免費暢飲 座落於台南柳營太康綠色隧道旁的有機園區營運中心2樓。四周綠意盎然視野遼闊，餐點主打園區有機鮮採蔬果，少油少鹽無負擔，肉質扎實湯頭純甘；空間挑高數米極具穿透感，備有超大免費停車場，是新營溪北一帶家庭聚會、長輩出遊聚餐的首選秘境。 開車自新營市區前往僅約 8-10 分鐘，停車極為便利；寵物置於推車內可入內用餐；週末常有團體包場，前往建議先電話訂位確認。 臺南市柳營區義士路三段121號2樓 柳營美食 太康綠色隧道 有機蔬菜鍋 大停車場 家庭聚餐首選"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・柳營區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜綠色隧道旁有機健康合菜火鍋</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">4.6 星千則好評 / 廣大停車場 / 親子寵物友善</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-58</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">太康食堂 (太康有機農業園區)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">有機蔬菜鮮採養生鍋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">麻油松阪豬套餐</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">番茄燉牛肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">太康有機茶飲自助吧</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工有機甜點</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">座落於台南柳營太康綠色隧道旁的有機園區營運中心2樓。四周綠意盎然視野遼闊，餐點主打園區有機鮮採蔬果，少油少鹽無負擔，肉質扎實湯頭純甘；空間挑高數米極具穿透感，備有超大免費停車場，是新營溪北一帶家庭聚會、長輩出遊聚餐的首選秘境。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>開車自新營市區前往僅約 8-10 分鐘，停車極為便利；寵物置於推車內可入內用餐；週末常有團體包場，前往建議先電話訂位確認。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市柳營區義士路三段121號2樓</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00-14:30 (六日全天至19:30，週一公休)</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市柳營區義士路三段121號 太康食堂" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市柳營區', '太康食堂 (太康有機農業園區)', '有機蔬菜鮮採養生鍋、麻油松阪豬套餐、番茄燉牛肉、太康有機牛蒡茶免費暢飲', '臺南市柳營區義士路三段121號2樓')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="鹽水區"
+               data-city-district="臺南市・鹽水區"
+               data-category="正餐主食"
+               data-search="吾業遊民 (家常私房料理) 臺南市 鹽水區 正餐主食 老街巷弄精緻手作定食 極鮮蒜蝦飯定食、酒香紹興去骨醉雞腿、清蒸破布子鱸魚、私房糖醋里肌、手作小菜 隱身在鹽水老街巷弄內的個性文青家常菜小店。店名詼諧幽默，但料理手藝極為驚艷細膩！主廚將台灣家常菜提升至精緻定食水準，蒜蝦飯蝦肉脆甜蒜香濃郁，去骨紹興醉雞皮脆肉嫩酒香撲鼻，米飯與配菜皆極具水準。 位於新營隔壁的鹽水區（車程約8分鐘）；座位數不多且採**不定休**，出發前**務必先上店家官方 facebook / ig 查閱當月公休日**，建議先確認是否有空位再前往。 臺南市鹽水區武廟路78-3號 鹽水美食 文青家常菜 蒜蝦飯 紹興醉雞 4.8星神店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・鹽水區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜老街巷弄精緻手作定食</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">4.8 星 Google 頂級好評 / 巷弄文青名店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-59</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">吾業遊民 (家常私房料理)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">極鮮蒜蝦飯定食</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">酒香紹興去骨醉雞腿</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">清蒸破布子厚鱸魚</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">私房糖醋里肌</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手作開胃小菜三品</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">隱身在鹽水老街巷弄內的個性文青家常菜小店。店名詼諧幽默，但料理手藝極為驚艷細膩！主廚將台灣家常菜提升至精緻定食水準，蒜蝦飯蝦肉脆甜蒜香濃郁，去骨紹興醉雞皮脆肉嫩酒香撲鼻，米飯與配菜皆極具水準。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>位於新營隔壁的鹽水區（車程約8分鐘）；座位數不多且採**不定休**，出發前**務必先上店家官方 Facebook / IG 查閱當月公休日**，建議先確認是否有空位再前往。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市鹽水區武廟路78-3號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30-14:30 / 17:30-20:30 (不定休，依官方公告為準)</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市鹽水區武廟路78-3號 吾業遊民" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市鹽水區', '吾業遊民 (家常私房料理)', '極鮮蒜蝦飯定食、酒香紹興去骨醉雞腿、清蒸破布子鱸魚、私房糖醋里肌、手作小菜', '臺南市鹽水區武廟路78-3號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -9616,7 +10016,7 @@
 
   <!-- 底部手冊導覽浮動條 -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (193)</a>
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (201)</a>
     <a href="全台看海放空旅宿隨身手冊.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
@@ -9630,7 +10030,7 @@
     var STRATEGY_NOTES = {
       "all": {
         title: "⚡ 跨縣市 3 秒精準避坑總覽（點選上方「縣市」與「鄉鎮市區」可快速切換分頁）",
-        html: "• <b>嘉義市（東區 77 間／西區 62 間）</b>：必吃阿宏師火雞片飯＋半熟蛋、桃城三禾、大人味日印珈哩、五千金炒飯、豆豆／京站湯包、黃記／南門白醋涼麵；阿岸米糕附柴魚高湯；<b>阿婆烤玉米、友愛鹹酥雞與大人味咖哩為極難排到的名店</b>。<br>• <b>嘉義縣（3 間）</b>：竹香園甕缸烤雞（中埔）、烘焙旅程手作蜂巢可頌（水上）、朴子第一市場九十年麻糬棟。<br>• <b>臺南市（新營區 50 間／後壁區 1 間）</b>：正餐首推溪北飯桌、小紅堂牛肉麵、燒蛋一下、阿豪冰糖豬腳；阿翔蚵仔煎必點「鐵板炒飯＋乾煎魚肚」，榮昌雞肉飯必加「半熟煎鴨蛋」；伯恩意麵份量精緻、金丘腿庫飯出餐較慢。"
+        html: "• <b>嘉義市（東區 77 間／西區 62 間）</b>：必吃阿宏師火雞片飯＋半熟蛋、桃城三禾、大人味日印珈哩、五千金炒飯、豆豆／京站湯包、黃記／南門白醋涼麵；阿岸米糕附柴魚高湯；<b>阿婆烤玉米、友愛鹹酥雞與大人味咖哩為極難排到的名店</b>。<br>• <b>嘉義縣（3 間）</b>：竹香園甕缸烤雞（中埔）、烘焙旅程手作蜂巢可頌（水上）、朴子第一市場九十年麻糬棟。<br>• <b>臺南市（新營區 56 間／柳營 1／鹽水 1／後壁 1）</b>：聚餐推卓也灶腳（麻油雞一鍋二吃）、旭更廚房（復古簡餐）、日阪駒（大阪關東煮）、禾沐日料、海口現撈；必吃大口香雞排（爆汁雞肉串）、康樂胚芽意麵（大燒賣）、阿翔蚵仔煎（鐵板炒飯）；溪北延伸推柳營太康食堂與鹽水吾業遊民。"
       },
       "嘉義市": {
         title: "⚡ 嘉義市（東區／西區）3 秒精準避坑指南",
@@ -9641,8 +10041,8 @@
         html: "• <b>中埔鄉</b>：竹香園甕缸雞（<b>招牌脆皮烤雞附筍乾大骨湯，炸地瓜酥必沾梅粉，假日人潮極多務必提早訂位</b>）。<br>• <b>水上鄉</b>：烘焙旅程（<b>田園蜂巢手作可頌天花板，建議提早於官方IG預留避免售罄</b>）。<br>• <b>朴子市</b>：麻糬棟（<b>朴子第一市場近百年老攤，招牌鹹綠豆花生手工麻糬冷熱皆軟Q</b>）。"
       },
       "臺南市": {
-        title: "⚡ 臺南市（新營區／後壁區）3 秒精準避坑指南",
-        html: "• <b>新營區聚餐與日料推薦（50 間）</b>：簡餐聚會首推旭更廚房（<b>老件復古美店，建議提前電話訂位</b>）；日料聚餐推禾沐（<b>環境寬敞好訂位</b>）；老屋日料推樸拾（<b>全店僅約10席吧檯位不接電話預訂，招牌火焰鮭魚捲</b>）；高階日料選青鮨（<b>Omakase需預約</b>）；海鮮熱炒首推海口現撈（<b>在地人一生推，附大停車場</b>）與海宴（<b>包廂宴席</b>）。<br>• <b>新營區正餐小吃與甜點</b>：溪北飯桌（咖哩）、小紅堂（牛肉麵）、康樂胚芽意麵（<b>招牌手工大燒賣與黑白切骨頭肉必點</b>）、阿翔蚵仔煎（<b>鐵板炒飯＋乾煎魚肚</b>）、榮昌雞肉飯（<b>必加半熟煎鴨蛋</b>）；伯恩意麵份量精緻、金丘腿庫飯出餐較慢。<br>• <b>後壁區秘技（1 間）</b>：樂檸漢堡（新營服務區北上店）可騎機車走外圍後方秘密便道免上國道進入，穿短褲享升級優惠！"
+        title: "⚡ 臺南市（新營／柳營／鹽水／後壁）3 秒精準避坑指南",
+        html: "• <b>新營區好吃好聊聚餐首選（56 間）</b>：庭園簡餐推<b>卓也灶腳</b>（麻油雞腿一鍋二吃，好聊需訂位）；美學簡餐推<b>旭更廚房</b>（4.8星復古美店）；深夜居酒屋推<b>日阪駒</b>（大阪道地關東煮，營業至凌晨1點）；不限時咖啡推<b>MINI.D COFFEE</b>（挑高藝廊好聊）；火鍋吃到飽推<b>九星級鍋物</b>（多種麵食冰品暢飲）；平價日料推<b>禾沐</b>（環境寬敞好訂位）；老屋板前推<b>樸拾</b>（全店僅約10席吧檯位不接電話預訂，招牌火焰鮭魚捲）；高階日料選<b>青鮨</b>（Omakase需預約）；海鮮熱炒首推<b>海口現撈</b>（在地人一生推，附大停車場）與<b>海宴</b>。<br>• <b>新營區傳奇小吃與特色宵夜</b>：<b>大口香雞排</b>（招牌爆汁雞肉串必點，強烈建議提早電話預約）、<b>520窯烤</b>（炭香串燒配小酌）、<b>康樂胚芽意麵</b>（招牌手工大燒賣與黑白切骨頭肉必點）、溪北飯桌（咖哩）、小紅堂（牛肉麵）、阿翔蚵仔煎（鐵板炒飯＋乾煎魚肚）、榮昌雞肉飯（半熟煎鴨蛋）；伯恩意麵份量精緻、金丘腿庫飯出餐慢。<br>• <b>柳營區亮點（1 間）</b>：<b>太康食堂</b>（太康有機園區2樓，千則4.6星，綠色隧道大片綠意，有機養生鍋物與家常合菜，大停車場好聊）。<br>• <b>鹽水區亮點（1 間）</b>：<b>吾業遊民</b>（4.8星巷弄文青名店，極鮮蒜蝦飯與紹興去骨醉雞腿，不定休出發前必看粉專）。<br>• <b>後壁區秘技（1 間）</b>：樂檸漢堡（新營服務區北上店）可騎機車走外圍後方秘密便道免上國道進入，穿短褲享升級優惠！"
       }
     };
 
