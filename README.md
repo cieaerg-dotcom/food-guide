@@ -48,15 +48,18 @@
 │   ├── manifest.json                   # Web App Manifest
 │   └── sw.js                           # Service Worker 離線快取
 ├── data/                               # 結構化數據庫
-│   ├── taiwan_food_guides_unified.json # 全台美食 185 間統一總表
+│   ├── taiwan_food_guides_unified.json # 全台美食 206 間統一總表
 │   ├── taiwan_seaview_stays_structured.json # 全台看海旅宿 20 間資料
+│   ├── blacklist_avoidance_database.json # 【反向對照】踩雷大賽黑名單數據庫 (18 間公認雷店)
 │   ├── chiayi_stores_structured.json
 │   ├── tainan_xinying_structured.json
 │   ├── threads_chiayi_dinner_structured.json
-│   └── threads_chiayi_masterpiece_structured.json
+│   ├── threads_chiayi_masterpiece_structured.json
+│   └── threads_xinying_fry_banquet_structured.json
 ├── scripts/                            # 自動化建置與部署腳本
 │   ├── build_unified_guide.py          # 美食手冊編譯器
 │   ├── build_seaview_guide.py          # 看海旅宿手冊編譯器
+│   ├── verify_blacklist.py             # 黑名單與雷店自動比對工具
 │   └── deploy_web.py                   # 本地建置並推送 GitHub Pages 部署
 └── .agents/skills/
     └── curated-food-guide-builder/     # 專案自動化工作流規範
