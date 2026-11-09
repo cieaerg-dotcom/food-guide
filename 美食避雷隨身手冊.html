@@ -28,7 +28,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 76／西區 62）、嘉義縣（12 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 64 間）共 214 間實測指南
+      收錄嘉義市（東區 76／西區 62）、嘉義縣（23 間）＆ 臺南市（新營區 61／後壁／柳營／鹽水共 64 間）共 225 間實測指南
     </div>
   </header>
 
@@ -41,7 +41,7 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">214</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">225</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -51,7 +51,7 @@
         <button type="button" data-city-btn="嘉義縣" onclick="selectCity('嘉義縣')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🌲 嘉義縣</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">12</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">23</span>
         </button>
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -65,7 +65,7 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (214)
+          全部鄉鎮市區 (225)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -81,11 +81,11 @@
         </button>
         <button type="button" data-dist-btn="嘉義縣・太保市" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・太保市')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・太保市 (7)
+          嘉義縣・太保市 (10)
         </button>
         <button type="button" data-dist-btn="嘉義縣・朴子市" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・朴子市')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・朴子市 (2)
+          嘉義縣・朴子市 (10)
         </button>
         <button type="button" data-dist-btn="嘉義縣・水上鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・水上鄉')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -140,7 +140,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">214</b> 間店舖</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">225</b> 間店舖</div>
   </div>
 
   <!-- 預渲染之 103 間店家卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -10631,6 +10631,545 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="在地小吃"
+               data-search="真好味鴨肉飯（真好味小吃） 嘉義縣 朴子市 在地小吃 天公壇旁神級鴨魯飯老店 招牌鴨魯飯（半鴨肉半肉燥）、純鴨肉飯、塩菜鴨湯、肉羹湯、魯鴨蛋 朴子天公壇旁名震全台的人氣老店。招牌鴨魯飯結合軟嫩無刺煙燻鴨肉與膠質濃郁的鹹香肉燥，雙重口感一次滿足，搭配酸香甘甜的塩菜鴨湯堪稱絕配。 【避坑吃法】用餐尖峰（11:30-13:00、17:00-18:00）排隊人潮極長，內用外帶皆需依序排隊點餐；週日營業至 16:30 左右提早打烊，建議避開核心餐期提早前往。 嘉義縣朴子市中正路166號（天公壇旁） 朴子市 天公壇 鴨魯飯 煙燻鴨肉 排隊名店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜天公壇旁神級鴨魯飯老店</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">朴子在地呼聲最高排隊首選</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-153</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">真好味鴨肉飯（真好味小吃）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌鴨魯飯（半鴨肉半肉燥）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">純鴨肉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">塩菜鴨湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">肉羹湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">魯鴨蛋</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">朴子天公壇旁名震全台的人氣老店。招牌鴨魯飯結合軟嫩無刺煙燻鴨肉與膠質濃郁的鹹香肉燥，雙重口感一次滿足，搭配酸香甘甜的塩菜鴨湯堪稱絕配。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】用餐尖峰（11:30-13:00、17:00-18:00）排隊人潮極長，內用外帶皆需依序排隊點餐；週日營業至 16:30 左右提早打烊，建議避開核心餐期提早前往。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市中正路166號（天公壇旁）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 18:30（週日營業至 16:30，不定時公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣朴子市 真好味鴨肉飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣朴子市', '真好味鴨肉飯（真好味小吃）', '招牌鴨魯飯（半鴨肉半肉燥）、純鴨肉飯、塩菜鴨湯、肉羹湯、魯鴨蛋', '嘉義縣朴子市中正路166號（天公壇旁）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="烘焙甜點冰品"
+               data-search="顧家麻花工作坊（原顧家雙胞胎） 嘉義縣 朴子市 烘焙甜點冰品 全台天花板現炸雙胞胎與手工麻花捲 招牌現炸雙胞胎、手工麻花捲（原味/芝麻/花生/海苔） 隱身朴子田野間的傳奇老舖，被無數網友與食記譽為全台雙胞胎天花板。外皮金黃極度酥脆，內裡蓬鬆軟q帶甘甜麵香，冷掉吃或氣炸鍋回溫依舊不顯油膩，每人往往一整大袋掃購。 【避坑吃法】現炸出爐常被大單掃空需等候下一鍋（約 10~15 分鐘）；下午 14:00-16:00 為購買高峰期；每週一固定公休；大量購買建議提前電話預約（0919-860181）。 嘉義縣朴子市文化南路305號 朴子市 現炸雙胞胎 手工麻花捲 天花板點心 排隊銅板美食"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜全台天花板現炸雙胞胎與手工麻花捲</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">老饕公認現炸雙胞胎頂標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-154</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">顧家麻花工作坊（原顧家雙胞胎）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌現炸雙胞胎</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工麻花捲（原味/芝麻/花生/海苔）</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">隱身朴子田野間的傳奇老舖，被無數網友與食記譽為全台雙胞胎天花板。外皮金黃極度酥脆，內裡蓬鬆軟Q帶甘甜麵香，冷掉吃或氣炸鍋回溫依舊不顯油膩，每人往往一整大袋掃購。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】現炸出爐常被大單掃空需等候下一鍋（約 10~15 分鐘）；下午 14:00-16:00 為購買高峰期；每週一固定公休；大量購買建議提前電話預約（0919-860181）。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市文化南路305號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30 - 18:00（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣朴子市 顧家麻花工作坊" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣朴子市', '顧家麻花工作坊（原顧家雙胞胎）', '招牌現炸雙胞胎、手工麻花捲（原味/芝麻/花生/海苔）', '嘉義縣朴子市文化南路305號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="在地小吃"
+               data-search="虎兒油飯 嘉義縣 朴子市 在地小吃 創立逾半世紀竹蒸籠傳統油飯 招牌竹蒸籠油飯、香菇肉羹湯、古法涼拌魷魚翅 民國51年創立、走過半世紀的古法油飯老攤。堅持傳統竹蒸籠蒸製，糯米飯粒粒分明飽滿香q不軟爛，淋上特製鹹香肉燥與香菜提味，配上一碗筍絲肉羹與爽脆涼拌魷魚翅極度過癮。 【避坑吃法】營業時間為下午 16:30 開始至深夜，適合當傍晚點心或宵夜；每週二、三固定公休切勿白跑；油飯趁熱吃口感最佳。 嘉義縣朴子市平和路16號 朴子市 竹蒸籠油飯 五十年老店 香菇肉羹 深夜宵夜"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜創立逾半世紀竹蒸籠傳統油飯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">五十年古早味竹蒸籠油飯</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-155</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">虎兒油飯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌竹蒸籠油飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">香菇肉羹湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古法涼拌魷魚翅</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">民國51年創立、走過半世紀的古法油飯老攤。堅持傳統竹蒸籠蒸製，糯米飯粒粒分明飽滿香Q不軟爛，淋上特製鹹香肉燥與香菜提味，配上一碗筍絲肉羹與爽脆涼拌魷魚翅極度過癮。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】營業時間為下午 16:30 開始至深夜，適合當傍晚點心或宵夜；每週二、三固定公休切勿白跑；油飯趁熱吃口感最佳。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市平和路16號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>16:30 - 23:00（每週二、週三公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣朴子市 虎兒油飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣朴子市', '虎兒油飯', '招牌竹蒸籠油飯、香菇肉羹湯、古法涼拌魷魚翅', '嘉義縣朴子市平和路16號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="正餐主食"
+               data-search="廟口小排飯（自然の小排飯） 嘉義縣 朴子市 正餐主食 招牌酥香滷排骨與辦桌級家常便當 招牌小排飯（酥香炸滷排骨）、金黃麻油炸蛋、香菇肉羹、自選手路配菜 朴子在地無人不曉的高cp值排隊便當。招牌小排裹上薄粉炸香後滷透，骨肉輕易分離軟嫩多汁；配菜多達十餘種宛如小型外燴辦桌，必加一顆半熟流心金黃麻油炸蛋。 【避坑吃法】午餐與晚餐開門前即有排隊人潮，建議 11:00 或 16:40 剛開門時抵達，菜色最齊全且排隊時間最短；週六多數公休。 嘉義縣朴子市南通路三段667號 朴子市 炸滷小排 麻油炸蛋 辦桌配菜 超人氣便當"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜招牌酥香滷排骨與辦桌級家常便當</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">朴子在地高CP值便當排隊天王</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-156</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">廟口小排飯（自然の小排飯）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌小排飯（酥香炸滷排骨）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">金黃麻油炸蛋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">香菇肉羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">自選手路配菜（三色蛋/拔絲地瓜）</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">朴子在地無人不曉的高CP值排隊便當。招牌小排裹上薄粉炸香後滷透，骨肉輕易分離軟嫩多汁；配菜多達十餘種宛如小型外燴辦桌，必加一顆半熟流心金黃麻油炸蛋。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】午餐與晚餐開門前即有排隊人潮，建議 11:00 或 16:40 剛開門時抵達，菜色最齊全且排隊時間最短；週六多數公休。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市南通路三段667號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30 - 13:30, 16:30 - 19:30（每週六公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣朴子市 廟口小排飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣朴子市', '廟口小排飯（自然の小排飯）', '招牌小排飯（酥香炸滷排骨）、金黃麻油炸蛋、香菇肉羹、自選手路配菜', '嘉義縣朴子市南通路三段667號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="正餐主食"
+               data-search="華山鵝肉店 嘉義縣 朴子市 正餐主食 皮脆肉嫩多汁燻茶鵝與鮮甜鹹水鵝 特製燻茶鵝、鮮甜鹹水鵝、鵝油香蔥鵝肉飯、極品魯鵝肝、爽脆鵝腸湯 朴子文化南路上的知名鵝肉老字號。燻茶鵝表皮茶香燻透、肉質緊緻鮮嫩免沾醬就很夠味；鹹水鵝底層韭菜豆芽吸滿精華鵝汁極度下飯，綿密無腥味的魯鵝肝更是內行必點。 【避坑吃法】大碗鵝肉飯會額外附帶入味筍乾更划算；店面鄰近麥當勞車流大，建議騎車前往或於文化南路找白線停車；下午時段照常營業不午休。 嘉義縣朴子市文化南路39號 朴子市 燻茶鵝 鹹水鵝 鵝肉飯 魯鵝肝"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜皮脆肉嫩多汁燻茶鵝與鮮甜鹹水鵝</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">朴子老饕私藏鵝肉專門店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-157</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">華山鵝肉店</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製燻茶鵝</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鮮甜鹹水鵝</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鵝油香蔥鵝肉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">極品魯鵝肝</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">爽脆鵝腸湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">朴子文化南路上的知名鵝肉老字號。燻茶鵝表皮茶香燻透、肉質緊緻鮮嫩免沾醬就很夠味；鹹水鵝底層韭菜豆芽吸滿精華鵝汁極度下飯，綿密無腥味的魯鵝肝更是內行必點。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】大碗鵝肉飯會額外附帶入味筍乾更划算；店面鄰近麥當勞車流大，建議騎車前往或於文化南路找白線停車；下午時段照常營業不午休。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市文化南路39號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00 - 20:00（無固定公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣朴子市 華山鵝肉店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣朴子市', '華山鵝肉店', '特製燻茶鵝、鮮甜鹹水鵝、鵝油香蔥鵝肉飯、極品魯鵝肝、爽脆鵝腸湯', '嘉義縣朴子市文化南路39號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="正餐主食"
+               data-search="樸素齋坊（朴子店） 嘉義縣 朴子市 正餐主食 辦桌級豐盛澎湃素食清粥小菜 古早味素香羹、養生當歸麵線、各式手作素菜、地瓜清粥/白飯無限供應 被脆友盛讚「把素食吃成辦桌」的在地素食聖地。每日供應數十道色香味俱全的無肉蔬食手路菜，內用白飯與地瓜清粥免費暢飲，銅板價就能享用豐盛健康的天然美味。 【避坑吃法】採秤重計價，價格親民但夾菜仍請依食量適量夾取；早晨 06:30 即開始供餐，早午餐或晚餐尖峰人潮較多，建議避開正餐尖峰半小時。 嘉義縣朴子市市西路7-3號 朴子市 素食自助餐 清粥小菜 蔬食料理 清晨開賣"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜辦桌級豐盛澎湃素食清粥小菜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">把素食吃成外燴辦桌的平價食堂</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-158</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">樸素齋坊（朴子店）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味素香羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">養生當歸麵線</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">各式手作素菜（三杯猴頭菇/酥炸素卷）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">地瓜清粥/白飯無限供應</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">被脆友盛讚「把素食吃成辦桌」的在地素食聖地。每日供應數十道色香味俱全的無肉蔬食手路菜，內用白飯與地瓜清粥免費暢飲，銅板價就能享用豐盛健康的天然美味。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】採秤重計價，價格親民但夾菜仍請依食量適量夾取；早晨 06:30 即開始供餐，早午餐或晚餐尖峰人潮較多，建議避開正餐尖峰半小時。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市市西路7-3號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>06:30 - 14:00, 16:00 - 19:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣朴子市 樸素齋坊" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣朴子市', '樸素齋坊（朴子店）', '古早味素香羹、養生當歸麵線、各式手作素菜、地瓜清粥/白飯無限供應', '嘉義縣朴子市市西路7-3號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="烘焙甜點冰品"
+               data-search="tinco 庭口金工（朴子水道頭日式喫茶） 嘉義縣 朴子市 烘焙甜點冰品 日式官舍老宅現烤鯛魚燒與貓咪喫茶 現烤香脆鯛魚燒（紫米紅豆/抹茶堅果）、日式糰子串、鯛魚燒聖代杯、日系氣泡飲 坐落於「嘉藝點水道頭文創聚落」歷史日式木造宿舍群中。大片玻璃窗透入綠意，多隻親人店貓悠閒漫步。現烤鯛魚燒外酥內軟餡料豐富，結合手作金工與日式甜品，氛圍極度放鬆。 【避坑吃法】店內座位數有限且鯛魚燒現點現烤需等待 10~15 分鐘；週末午後易客滿建議提早前往；每人設有低消約百元；每週一、二固定公休。 嘉義縣朴子市山通路8號（水道頭文創聚落） 朴子市 水道頭聚落 現烤鯛魚燒 日式老宅 店貓陪伴"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜日式官舍老宅現烤鯛魚燒與貓咪喫茶</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">水道頭文創聚落療癒日系甜點</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-159</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">Tinco 庭口金工（朴子水道頭日式喫茶）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現烤香脆鯛魚燒（紫米紅豆/抹茶堅果）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">日式糰子串</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鯛魚燒聖代杯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">日系氣泡飲</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">坐落於「嘉藝點水道頭文創聚落」歷史日式木造宿舍群中。大片玻璃窗透入綠意，多隻親人店貓悠閒漫步。現烤鯛魚燒外酥內軟餡料豐富，結合手作金工與日式甜品，氛圍極度放鬆。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】店內座位數有限且鯛魚燒現點現烤需等待 10~15 分鐘；週末午後易客滿建議提早前往；每人設有低消約百元；每週一、二固定公休。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市山通路8號（水道頭文創聚落）</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30 - 18:30（每週一、二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣朴子市 Tinco 庭口金工" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣朴子市', 'Tinco 庭口金工（朴子水道頭日式喫茶）', '現烤香脆鯛魚燒（紫米紅豆/抹茶堅果）、日式糰子串、鯛魚燒聖代杯、日系氣泡飲', '嘉義縣朴子市山通路8號（水道頭文創聚落）')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="在地小吃"
+               data-search="米富麵飯館（米富火雞肉飯） 嘉義縣 太保市 在地小吃 脆香油蔥酥靈魂火雞肉飯 火雞肉飯（淋秘製雞油＋酥脆油蔥）、當歸鴨肉麵線、下水湯、特選燙青菜 太保祥和特區的4.8星神級小館。白飯粒粒分明，火雞肉鮮嫩不柴，靈魂在於那一匙濃郁雞油與炸得極為酥脆的特製油蔥酥，香氣爆棚。 【避坑吃法】雞肉飯油蔥香氣重，喜清淡者可提醒店家雞油少淋；營業至 18:30 但熱門品項傍晚常提早賣光，建議中午前往最保險。 嘉義縣太保市祥和一路東段48號 太保市 火雞肉飯 酥脆油蔥酥 高分好評 故宮南院周邊"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜脆香油蔥酥靈魂火雞肉飯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">太保Google高達4.8星寶藏雞肉飯</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-160</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">米富麵飯館（米富火雞肉飯）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">火雞肉飯（淋秘製雞油＋酥脆油蔥）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">當歸鴨肉麵線</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">下水湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特選燙青菜</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">太保祥和特區的4.8星神級小館。白飯粒粒分明，火雞肉鮮嫩不柴，靈魂在於那一匙濃郁雞油與炸得極為酥脆的特製油蔥酥，香氣爆棚。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】雞肉飯油蔥香氣重，喜清淡者可提醒店家雞油少淋；營業至 18:30 但熱門品項傍晚常提早賣光，建議中午前往最保險。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市祥和一路東段48號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30 - 18:30（不定休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 米富麵飯館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '米富麵飯館（米富火雞肉飯）', '火雞肉飯（淋秘製雞油＋酥脆油蔥）、當歸鴨肉麵線、下水湯、特選燙青菜', '嘉義縣太保市祥和一路東段48號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="在地小吃"
+               data-search="丁家滷肉飯 嘉義縣 太保市 在地小吃 滿滿膠質微黏微甜手切滷肉飯 招牌滷肉飯（帶膠質軟爛微甜）、入口即化爌肉飯、香菇肉羹湯、滷筍乾 嘉義縣政府與故宮特區人氣銅板小吃。手切滷肉燥燉到膠質完全釋出，入口微黏嘴唇、鹹香微甘極度下飯；爌肉肥瘦均勻入口即化，肉羹湯筍香四溢。 【避坑吃法】滷汁膠質重偏微甜南部風味，怕肥膩者可點爌肉飯並選偏瘦部位；每週二固定公休；正餐尖峰人潮多，建議外帶或提早 11:30 前內用。 嘉義縣太保市祥和一路東段82號 太保市 膠質滷肉飯 爌肉飯 縣府周邊 銅板美食"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜滿滿膠質微黏微甜手切滷肉飯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">縣府與故宮特區排隊銅板老店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-161</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">丁家滷肉飯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌滷肉飯（帶膠質軟爛微甜）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">入口即化爌肉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">香菇肉羹湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滷筍乾</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">嘉義縣政府與故宮特區人氣銅板小吃。手切滷肉燥燉到膠質完全釋出，入口微黏嘴唇、鹹香微甘極度下飯；爌肉肥瘦均勻入口即化，肉羹湯筍香四溢。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】滷汁膠質重偏微甜南部風味，怕肥膩者可點爌肉飯並選偏瘦部位；每週二固定公休；正餐尖峰人潮多，建議外帶或提早 11:30 前內用。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市祥和一路東段82號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30 - 20:00（每週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 丁家滷肉飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '丁家滷肉飯', '招牌滷肉飯（帶膠質軟爛微甜）、入口即化爌肉飯、香菇肉羹湯、滷筍乾', '嘉義縣太保市祥和一路東段82號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="朴子市"
+               data-city-district="嘉義縣・朴子市"
+               data-category="在地小吃"
+               data-search="北港伯火雞肉飯香菇肉羹 嘉義縣 朴子市 在地小吃 在地三十年母火雞肉與古早味特色涼菜 火雞肉飯（母火雞嫩肉＋祖傳醬汁）、招牌香菇肉羹、滿櫃傳統在地涼菜 在地經營超過30年的早午餐名店，位處太保與朴子交界。老闆堅持每日挑選肉質鮮嫩保水的母火雞肉，搭配祖傳老滷汁；玻璃櫥櫃中數十種新鮮冰鎮涼菜沾蒜蓉白醬是嘉義老派早午餐的靈魂。 【避坑吃法】營業時間為清晨 07:00 至下午 15:00，屬典型早午餐店，晚餐時段不營業；中午時段周邊公務員與醫院員工用餐人潮集中需稍候。 嘉義縣朴子市祥和三路西段193號 朴子市 太保交界 早午餐 母火雞肉飯 在地涼菜"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・朴子市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜在地三十年母火雞肉與古早味特色涼菜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">太保朴子交界三十年早午餐老字號</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-162</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">北港伯火雞肉飯香菇肉羹</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">火雞肉飯（母火雞嫩肉＋祖傳醬汁）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌香菇肉羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滿櫃傳統在地涼菜（苦瓜/花椰菜/涼拌豬皮）</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">在地經營超過30年的早午餐名店，位處太保與朴子交界。老闆堅持每日挑選肉質鮮嫩保水的母火雞肉，搭配祖傳老滷汁；玻璃櫥櫃中數十種新鮮冰鎮涼菜沾蒜蓉白醬是嘉義老派早午餐的靈魂。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】營業時間為清晨 07:00 至下午 15:00，屬典型早午餐店，晚餐時段不營業；中午時段周邊公務員與醫院員工用餐人潮集中需稍候。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣朴子市祥和三路西段193號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>07:00 - 15:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣朴子市 北港伯火雞肉飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣朴子市', '北港伯火雞肉飯香菇肉羹', '火雞肉飯（母火雞嫩肉＋祖傳醬汁）、招牌香菇肉羹、滿櫃傳統在地涼菜', '嘉義縣朴子市祥和三路西段193號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義縣"
+               data-district="太保市"
+               data-city-district="嘉義縣・太保市"
+               data-category="正餐主食"
+               data-search="漢皇極品豬腳 嘉義縣 太保市 正餐主食 香q入味老滷豬腳與青蔥肉燥飯 極品豬腳飯（中節/豬腳蹄）、軟嫩腿庫飯、鮮蔥滷肉飯、排骨筍湯 太保縣府特區低調實力派豬腳名店。老滷慢燉將豬腳皮滷得q彈軟嫩、毫不油膩；滷肉飯特別灑上滿滿生鮮青蔥解膩增香，腿庫肉肥瘦比例恰到好處。 【避坑吃法】每日僅營業中午與傍晚兩短時段（11:00-13:30、16:30-18:30）；每週日固定公休；熱門部位（中節、腿庫）常在營業結束前半小時提早售罄。 嘉義縣太保市太保一路30號 太保市 極品豬腳 腿庫飯 鮮蔥肉燥 老滷膠質"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">嘉義縣・太保市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜香Q入味老滷豬腳與青蔥肉燥飯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">縣府特區老滷膠質豬腳便當</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-163</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">漢皇極品豬腳</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">極品豬腳飯（中節/豬腳蹄）</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">軟嫩腿庫飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鮮蔥滷肉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">排骨筍湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">太保縣府特區低調實力派豬腳名店。老滷慢燉將豬腳皮滷得Q彈軟嫩、毫不油膩；滷肉飯特別灑上滿滿生鮮青蔥解膩增香，腿庫肉肥瘦比例恰到好處。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑吃法】每日僅營業中午與傍晚兩短時段（11:00-13:30、16:30-18:30）；每週日固定公休；熱門部位（中節、腿庫）常在營業結束前半小時提早售罄。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義縣太保市太保一路30號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00 - 13:30, 16:30 - 18:30（每週日公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義縣太保市 漢皇極品豬腳" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義縣太保市', '漢皇極品豬腳', '極品豬腳飯（中節/豬腳蹄）、軟嫩腿庫飯、鮮蔥滷肉飯、排骨筍湯', '嘉義縣太保市太保一路30號')"
+                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製店訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -10647,7 +11186,7 @@
 
   <!-- 底部手冊導覽浮動條 -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);padding:6px 14px;border-radius:30px;display:flex;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);z-index:900;">
-    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (214)</a>
+    <a href="javascript:void(0)" style="color:#ffffff;background:#0284c7;font-weight:600;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;">🍲 美食隨身手冊 (225)</a>
     <a href="全台看海放空旅宿隨身手冊.html" id="seaviewLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:4px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿手冊 (20)</a>
   </div>
 
