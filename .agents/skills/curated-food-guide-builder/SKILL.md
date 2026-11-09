@@ -92,6 +92,18 @@ Threads 前端採用客戶端 Hydration 與 GraphQL API，單純以一般瀏覽�
 > 1. 本地單檔離線 HTML（`美食避雷隨身手冊.html`、`全台看海放空旅宿隨身手冊.html`）。
 > 2. GitHub Pages 靜態網站自動部署（執行 `python3 scripts/deploy_web.py`）。
 
+---
+
+### 【核心作業規則】單店名快速審查與自動收錄閉環工作流 (Single Store Instant Audit & Ingestion)
+當使用者僅丟出單一店名時，背景自主啟動以下自動化閉環處理，無需逐一詢問或等待確認：
+1. **爭議庫快速比對**：執行 `python3 scripts/check_controversy_reference.py "<店名>"`，核查是否命中社群踩雷爭議名單。
+2. **多維度現況核查**：聯網查證 Google 評論與在地評價，核對店家存續狀態、核心必點、價格與真實痛點。
+3. **價值判定與自動收錄**：
+   - 若為重大地雷、衛生食安問題嚴重或已永久歇業，予以排除並回報具體原因。
+   - 若為真實口碑佳、值得收錄之好店，直接以標準結構化格式寫入 `data/taiwan_food_guides_unified.json`（賦予獨立 UID、分類、必點菜色與避坑吃法攻略）。
+4. **自動化編譯與部署**：執行 `python3 scripts/deploy_web.py`，完成單檔離線 HTML 與 GitHub Pages PWA 自動同步發布。
+5. **回報結論**：直接提供核查結果、避坑重點與收錄狀態。
+
 工具腳本：
 ```bash
 python3 scripts/deploy_web.py
