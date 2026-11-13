@@ -57,11 +57,32 @@ def render_card_html(s: Dict[str, Any]) -> str:
     else:
         region_style = "background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;"
 
-    cat_style = (
-        "background-color:#fee2e2;color:#b91c1c;"
-        if is_closed
-        else "background-color:#f1f5f9;color:#475569;"
-    )
+    # 依據類別區分標籤色彩與專屬區塊標題
+    if category == "精選旅宿":
+        cat_style = "background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;"
+        feature_header = "🛏️ 住宿特色與房型亮點"
+        feature_box_border = "#9333ea"
+        feature_title_color = "#7e22ce"
+        pill_bg = "#faf5ff"
+        pill_color = "#6b21a8"
+    elif category == "私房景點":
+        cat_style = "background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;"
+        feature_header = "📸 核心亮點與參觀重點"
+        feature_box_border = "#0284c7"
+        feature_title_color = "#0369a1"
+        pill_bg = "#f0f9ff"
+        pill_color = "#075985"
+    else:
+        cat_style = (
+            "background-color:#fee2e2;color:#b91c1c;"
+            if is_closed
+            else "background-color:#f1f5f9;color:#475569;"
+        )
+        feature_header = "🍴 招牌必點與推薦吃法"
+        feature_box_border = "#d97706"
+        feature_title_color = "#b45309"
+        pill_bg = "#fef3c7"
+        pill_color = "#92400e"
 
     card_bg_style = (
         "background-color:#f8fafc;border:1.5px dashed #cbd5e1;opacity:0.88;"
@@ -70,7 +91,7 @@ def render_card_html(s: Dict[str, Any]) -> str:
     )
 
     dishes_html = "".join(
-        f'<span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">{esc(d)}</span>'
+        f'<span style="display:inline-block;font-size:12.5px;font-weight:700;color:{pill_color};background-color:{pill_bg};padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">{esc(d)}</span>'
         for d in dishes
     )
 
@@ -106,8 +127,8 @@ def render_card_html(s: Dict[str, Any]) -> str:
           <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">{esc(name)}</h2>
         </div>
 
-        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
-          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+        <div style="background-color:#fffbeb;border-left:3.5px solid {feature_box_border};padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:{feature_title_color};margin-bottom:4px;">{feature_header}</div>
           <div style="display:flex;flex-wrap:wrap;gap:4px;">{dishes_html}</div>
         </div>
 
@@ -129,8 +150,8 @@ def render_card_html(s: Dict[str, Any]) -> str:
             📍 Google 地圖導航
           </a>
           <button type="button" onclick="copyStore('{js_region}', '{js_name}', '{js_dish}', '{js_addr}')"
-                  style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
-            📋 複製店訊
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
           </button>
         </div>
       </article>"""
@@ -213,7 +234,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>台灣私房美食避雷隨身手冊 ｜ 手機離線獨立版</title>
+  <title>台灣私房美食・景點・住宿避雷隨身手冊 ｜ 手機離線獨立版</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#b45309">
@@ -233,7 +254,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
 
   <!-- 三大主題跨手冊切換列 -->
   <div style="background-color:#0f172a;padding:8px 12px;display:flex;justify-content:center;gap:8px;font-size:12.5px;font-weight:700;">
-    <a href="美食避雷隨身手冊.html" style="color:#ffffff;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #d97706;background:#b45309;">🍱 美食避雷手冊</a>
+    <a href="美食避雷隨身手冊.html" style="color:#ffffff;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #d97706;background:#b45309;">🍱 美食・景點・住宿手冊</a>
     <a href="全台美拍私房景點隨身手冊.html" style="color:#cbd5e1;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #334155;background:#1e293b;">📸 私房美拍景點</a>
     <a href="全台看海放空旅宿隨身手冊.html" style="color:#cbd5e1;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid #334155;background:#1e293b;">🌊 看海放空旅宿</a>
   </div>
@@ -243,9 +264,9 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     <div style="display:inline-block;background-color:rgba(255,255,255,0.2);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.3);">
       ✈️ 手機離線獨立版 ｜ 免網路・免伺服器隨點隨開
     </div>
-    <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食避雷隨身手冊</h1>
+    <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食・景點・住宿避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 {cy_east}／西區 {cy_west}）、嘉義縣（{cx_count} 間）＆ 臺南市（新營區 {tn_xinying}／後壁／柳營／鹽水共 {tn_total} 間）共 {total_count} 間實測指南
+      收錄嘉義市（東區 {cy_east}／西區 {cy_west}）、嘉義縣（{cx_count} 筆）＆ 臺南市（{tn_total} 筆）共 {total_count} 筆實測避雷指南
     </div>
   </header>
 
@@ -256,7 +277,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
       <!-- 核心主題大分頁導航（美食・景點・旅宿） -->
       <div style="display:flex;gap:6px;margin-bottom:10px;padding-bottom:10px;border-bottom:1.5px solid #f1f5f9;overflow-x:auto;" class="no-scrollbar">
         <a href="美食避雷隨身手冊.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:800;background:#b45309;color:#ffffff;box-shadow:0 2px 6px rgba(180,83,9,0.25);">
-          🍱 美食避雷 ({total_count})
+          🍱 全能避雷手冊 ({total_count})
         </a>
         <a href="全台美拍私房景點隨身手冊.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:700;background:#f8fafc;color:#475569;border:1px solid #cbd5e1;">
           📸 私房景點 (22)
@@ -280,7 +301,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
       <!-- 搜尋框 -->
       <div style="position:relative;margin-bottom:9px;">
         <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;color:#64748b;">🔍</span>
-        <input type="text" id="searchInput" placeholder="搜尋店名、鄉鎮市區、必點菜色（如：湯包、涼麵、炒飯、巴斯克、牛肉麵）..."
+        <input type="text" id="searchInput" placeholder="搜尋店名、鄉鎮市區、特色必點、景點、旅宿（如：火雞肉飯、智選、花磚、阿里山、涼麵）..."
                style="width:100%;padding:9px 34px 9px 36px;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;background-color:#f8fafc;color:#0f172a;outline:none;box-sizing:border-box;">
         <button type="button" id="clearBtn" onclick="clearSearchInput()"
                 style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;border:none;background-color:#cbd5e1;color:#334155;font-size:12px;cursor:pointer;display:none;align-items:center;justify-content:center;">✕</button>
@@ -291,6 +312,8 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
         <button type="button" data-cat-btn="all" onclick="selectCat('all')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #d97706;background-color:#d97706;color:#ffffff;font-size:12.5px;font-weight:700;cursor:pointer;">🍽️ 全部類型</button>
         <button type="button" data-cat-btn="正餐主食" onclick="selectCat('正餐主食')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍱 正餐主食</button>
         <button type="button" data-cat-btn="在地小吃" onclick="selectCat('在地小吃')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍜 在地小吃</button>
+        <button type="button" data-cat-btn="私房景點" onclick="selectCat('私房景點')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">📸 私房景點</button>
+        <button type="button" data-cat-btn="精選旅宿" onclick="selectCat('精選旅宿')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🏨 精選旅宿</button>
         <button type="button" data-cat-btn="麵點湯包" onclick="selectCat('麵點湯包')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🥟 麵點湯包</button>
         <button type="button" data-cat-btn="早餐早午餐" onclick="selectCat('早餐早午餐')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍳 早餐早午餐</button>
         <button type="button" data-cat-btn="宵夜炭烤日料" onclick="selectCat('宵夜炭烤日料')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🌙 宵夜炭烤日料</button>
@@ -304,10 +327,10 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">{total_count}</b> 間店舖</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">{total_count}</b> 筆資料</div>
   </div>
 
-  <!-- 預渲染之 103 間店家卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
+  <!-- 預渲染卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
   <main id="storesGrid" style="display:flex;flex-direction:column;gap:14px;padding:10px 14px;max-width:1200px;margin:0 auto;">
 {cards_prerendered}
   </main>
@@ -315,18 +338,18 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
   <!-- 查無結果提示框（預設隱藏） -->
   <div id="emptyState" style="display:none;text-align:center;padding:56px 20px;color:#64748b;max-width:1200px;margin:0 auto;">
     <div style="font-size:38px;margin-bottom:10px;">🔍</div>
-    <div style="font-weight:800;font-size:16px;margin-bottom:4px;color:#0f172a;">在此區域或分類下找不到相符的店家</div>
+    <div style="font-weight:800;font-size:16px;margin-bottom:4px;color:#0f172a;">在此區域或分類下找不到相符的項目</div>
     <div style="font-size:13px;">請嘗試切換上方「縣市／鄉鎮市區」分頁或清除搜尋關鍵字</div>
   </div>
 
   <!-- 複製成功提示 Toast -->
   <div id="toast" style="position:fixed;bottom:64px;left:50%;transform:translateX(-50%) translateY(120px);background-color:rgba(15,23,42,0.95);color:#ffffff;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.2);transition:transform 0.25s ease;z-index:999;pointer-events:none;">
-    已複製店舖資訊！
+    已複製資訊！
   </div>
 
   <!-- 底部手冊導覽浮動條（三大手冊常駐置底切換） -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.94);backdrop-filter:blur(10px);padding:6px 10px;border-radius:30px;display:flex;gap:6px;box-shadow:0 10px 25px rgba(0,0,0,0.35);z-index:900;max-width:96vw;white-space:nowrap;">
-    <a href="美食避雷隨身手冊.html" style="color:#ffffff;background:#b45309;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🍱 美食手冊 ({total_count})</a>
+    <a href="美食避雷隨身手冊.html" style="color:#ffffff;background:#b45309;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🍱 全能手冊 ({total_count})</a>
     <a href="全台美拍私房景點隨身手冊.html" id="attractionsBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">📸 私房景點 (22)</a>
     <a href="全台看海放空旅宿隨身手冊.html" id="seaviewBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿 (20)</a>
   </div>
@@ -451,15 +474,15 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     }}
 
     function copyStore(region, name, dish, address) {{
-      var text = "【" + region + "】" + name + "\\n必點：" + dish + "\\n地址：" + address;
+      var text = "【" + region + "】" + name + "\\n特色/必點：" + dish + "\\n地址：" + address;
       if (navigator.clipboard && navigator.clipboard.writeText) {{
         navigator.clipboard.writeText(text).then(function() {{
-          showToast("已複製：" + name);
+          showToast("已複製資訊：" + name);
         }}).catch(function() {{
-          showToast("已複製：" + name);
+          showToast("已複製資訊：" + name);
         }});
       }} else {{
-        showToast("已複製：" + name);
+        showToast("已複製資訊：" + name);
       }}
     }}
 
@@ -502,9 +525,9 @@ def main() -> None:
         f.write(web_index_html)
 
     manifest_data = {
-        "name": "台灣私房美食避雷隨身手冊",
-        "short_name": "美食避雷手冊",
-        "description": f"收錄嘉義市與臺南市 {len(all_stores)} 間在地口碑與避坑指南",
+        "name": "台灣私房美食・景點・住宿避雷隨身手冊",
+        "short_name": "避雷隨身手冊",
+        "description": f"收錄嘉義縣市與臺南市 {len(all_stores)} 筆在地實測美食・景點・住宿避雷指南",
         "start_url": "./index.html",
         "display": "standalone",
         "background_color": "#f8fafc",
