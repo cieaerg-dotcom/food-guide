@@ -50,9 +50,9 @@
         </a>
       </div>
 
-      <!-- 第一層與第二層：下拉式選單（直轄市/縣 ➔ 鄉鎮市區） -->
+      <!-- 第一層與第二層與第三層：下拉式選單（直轄市/縣 ➔ 鄉鎮市區 ➔ 類型分類） -->
       <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:140px;">
+        <div style="flex:1;min-width:130px;">
           <label for="citySelect" style="display:block;font-size:11px;font-weight:800;color:#64748b;margin-bottom:4px;">🏛️ （直轄市）縣：</label>
           <select id="citySelect" onchange="onCitySelectChange(this.value)"
                   style="width:100%;padding:9px 12px;border-radius:12px;border:1.5px solid #cbd5e1;background-color:#ffffff;color:#0f172a;font-size:13.5px;font-weight:700;outline:none;box-shadow:0 1px 3px rgba(0,0,0,0.04);cursor:pointer;">
@@ -64,7 +64,7 @@
           </select>
         </div>
 
-        <div style="flex:1;min-width:140px;">
+        <div style="flex:1;min-width:130px;">
           <label for="districtSelect" style="display:block;font-size:11px;font-weight:800;color:#64748b;margin-bottom:4px;">📍 鄉鎮市區：</label>
           <select id="districtSelect" onchange="onDistrictSelectChange(this.value)"
                   style="width:100%;padding:9px 12px;border-radius:12px;border:1.5px solid #cbd5e1;background-color:#ffffff;color:#0f172a;font-size:13.5px;font-weight:700;outline:none;box-shadow:0 1px 3px rgba(0,0,0,0.04);cursor:pointer;">
@@ -109,31 +109,35 @@
 <option value="雲林縣・西螺鎮" data-city="雲林縣">雲林縣・西螺鎮 (3)</option>
           </select>
         </div>
+
+        <div style="flex:1;min-width:130px;">
+          <label for="categorySelect" style="display:block;font-size:11px;font-weight:800;color:#64748b;margin-bottom:4px;">🍽️ 類型分類：</label>
+          <select id="categorySelect" onchange="onCategorySelectChange(this.value)"
+                  style="width:100%;padding:9px 12px;border-radius:12px;border:1.5px solid #cbd5e1;background-color:#ffffff;color:#0f172a;font-size:13.5px;font-weight:700;outline:none;box-shadow:0 1px 3px rgba(0,0,0,0.04);cursor:pointer;">
+            <option value="all">🍽️ 全部類型 (379)</option>
+            <option value="正餐主食">🍱 正餐主食</option>
+            <option value="在地小吃">🍜 在地小吃</option>
+            <option value="異國料理">🍕 異國特色</option>
+            <option value="私房景點">📸 私房景點</option>
+            <option value="精選旅宿">🏨 精選旅宿</option>
+            <option value="麵點湯包">🥟 麵點湯包</option>
+            <option value="早餐早午餐">🍳 早餐早午餐</option>
+            <option value="宵夜炭烤日料">🌙 宵夜炭烤日料</option>
+            <option value="鍋物補湯">🍲 鍋物補湯</option>
+            <option value="烘焙甜點冰品">🍰 烘焙甜點冰品</option>
+            <option value="手搖咖啡茶飲">🥤 手搖咖啡茶飲</option>
+            <option value="已歇業提醒">⚠️ 已歇業</option>
+          </select>
+        </div>
       </div>
 
       <!-- 搜尋框 -->
-      <div style="position:relative;margin-bottom:9px;">
+      <div style="position:relative;margin-bottom:4px;">
         <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;color:#64748b;">🔍</span>
         <input type="text" id="searchInput" placeholder="搜尋店名、鄉鎮市區、特色必點、景點、旅宿（如：火雞肉飯、智選、花磚、阿里山、涼麵）..."
                style="width:100%;padding:9px 34px 9px 36px;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;background-color:#f8fafc;color:#0f172a;outline:none;box-sizing:border-box;">
         <button type="button" id="clearBtn" onclick="clearSearchInput()"
                 style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;border:none;background-color:#cbd5e1;color:#334155;font-size:12px;cursor:pointer;display:none;align-items:center;justify-content:center;">✕</button>
-      </div>
-
-      <!-- 第三層：餐點分類膠囊 -->
-      <div id="catScroll" class="no-scrollbar" style="display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;">
-        <button type="button" data-cat-btn="all" onclick="selectCat('all')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #d97706;background-color:#d97706;color:#ffffff;font-size:12.5px;font-weight:700;cursor:pointer;">🍽️ 全部類型</button>
-        <button type="button" data-cat-btn="正餐主食" onclick="selectCat('正餐主食')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍱 正餐主食</button>
-        <button type="button" data-cat-btn="在地小吃" onclick="selectCat('在地小吃')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍜 在地小吃</button>
-        <button type="button" data-cat-btn="異國料理" onclick="selectCat('異國料理')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍕 異國特色</button>
-        <button type="button" data-cat-btn="私房景點" onclick="selectCat('私房景點')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">📸 私房景點</button>
-        <button type="button" data-cat-btn="精選旅宿" onclick="selectCat('精選旅宿')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🏨 精選旅宿</button>
-        <button type="button" data-cat-btn="麵點湯包" onclick="selectCat('麵點湯包')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🥟 麵點湯包</button>
-        <button type="button" data-cat-btn="早餐早午餐" onclick="selectCat('早餐早午餐')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍳 早餐早午餐</button>
-        <button type="button" data-cat-btn="宵夜炭烤日料" onclick="selectCat('宵夜炭烤日料')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🌙 宵夜炭烤日料</button>
-        <button type="button" data-cat-btn="鍋物補湯" onclick="selectCat('鍋物補湯')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍲 鍋物補湯</button>
-        <button type="button" data-cat-btn="烘焙甜點冰品" onclick="selectCat('烘焙甜點冰品')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍰 烘焙甜點冰品</button>
-        <button type="button" data-cat-btn="手搖咖啡茶飲" onclick="selectCat('手搖咖啡茶飲')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🥤 手搖咖啡茶飲</button>
       </div>
     </div>
   </nav>
@@ -18791,6 +18795,11 @@
 
     function onDistrictSelectChange(dist) {
       currentDistrict = dist;
+      applyFilters();
+    }
+
+    function onCategorySelectChange(cat) {
+      currentCat = cat;
       applyFilters();
     }
 
