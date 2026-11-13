@@ -314,7 +314,6 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
             <option value="鍋物補湯">🍲 鍋物補湯</option>
             <option value="烘焙甜點冰品">🍰 烘焙甜點冰品</option>
             <option value="手搖咖啡茶飲">🥤 手搖咖啡茶飲</option>
-            <option value="已歇業提醒">⚠️ 已歇業</option>
           </select>
         </div>
       </div>
