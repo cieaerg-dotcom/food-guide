@@ -35,7 +35,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食・景點・住宿避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（169 筆）、嘉義縣（46 筆）、臺南市（121 筆）＆ 雲林縣（30 筆）共 366 筆實測避雷指南
+      收錄嘉義市（171 筆）、嘉義縣（46 筆）、臺南市（128 筆）＆ 雲林縣（34 筆）共 379 筆實測避雷指南
     </div>
   </header>
 
@@ -46,7 +46,7 @@
       <!-- 核心主題大分頁導航（美食・景點・旅宿） -->
       <div style="display:flex;gap:6px;margin-bottom:10px;padding-bottom:10px;border-bottom:1.5px solid #f1f5f9;overflow-x:auto;" class="no-scrollbar">
         <a href="美食避雷隨身手冊.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:800;background:#b45309;color:#ffffff;box-shadow:0 2px 6px rgba(180,83,9,0.25);">
-          🍱 全能避雷手冊 (366)
+          🍱 全能避雷手冊 (379)
         </a>
         <a href="全台美拍私房景點隨身手冊.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:700;background:#f8fafc;color:#475569;border:1px solid #cbd5e1;">
           📸 私房景點 (22)
@@ -61,12 +61,12 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">366</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">379</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🐓 嘉義市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">169</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">171</span>
         </button>
         <button type="button" data-city-btn="嘉義縣" onclick="selectCity('嘉義縣')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -76,12 +76,12 @@
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🏛️ 臺南市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">121</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">128</span>
         </button>
         <button type="button" data-city-btn="雲林縣" onclick="selectCity('雲林縣')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🌾 雲林縣</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">30</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">34</span>
         </button>
       </div>
 
@@ -90,15 +90,15 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (366)
+          全部鄉鎮市區 (379)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義市・東區 (97)
+          嘉義市・東區 (98)
         </button>
         <button type="button" data-dist-btn="嘉義市・西區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・西區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義市・西區 (72)
+          嘉義市・西區 (73)
         </button>
         <button type="button" data-dist-btn="嘉義縣・中埔鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・中埔鄉')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -142,7 +142,7 @@
         </button>
         <button type="button" data-dist-btn="臺南市・中西區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・中西區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・中西區 (14)
+          臺南市・中西區 (18)
         </button>
         <button type="button" data-dist-btn="臺南市・仁德區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・仁德區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -154,7 +154,7 @@
         </button>
         <button type="button" data-dist-btn="臺南市・北區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・北區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・北區 (4)
+          臺南市・北區 (5)
         </button>
         <button type="button" data-dist-btn="臺南市・善化區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・善化區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -179,6 +179,10 @@
         <button type="button" data-dist-btn="臺南市・新營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・新營區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           臺南市・新營區 (73)
+        </button>
+        <button type="button" data-dist-btn="臺南市・東區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・東區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・東區 (2)
         </button>
         <button type="button" data-dist-btn="臺南市・東山區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・東山區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -226,15 +230,15 @@
         </button>
         <button type="button" data-dist-btn="雲林縣・土庫鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・土庫鎮')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・土庫鎮 (2)
+          雲林縣・土庫鎮 (3)
         </button>
         <button type="button" data-dist-btn="雲林縣・斗六市" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・斗六市')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・斗六市 (8)
+          雲林縣・斗六市 (10)
         </button>
         <button type="button" data-dist-btn="雲林縣・虎尾鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・虎尾鎮')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・虎尾鎮 (5)
+          雲林縣・虎尾鎮 (6)
         </button>
         <button type="button" data-dist-btn="雲林縣・西螺鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・西螺鎮')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -256,6 +260,7 @@
         <button type="button" data-cat-btn="all" onclick="selectCat('all')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #d97706;background-color:#d97706;color:#ffffff;font-size:12.5px;font-weight:700;cursor:pointer;">🍽️ 全部類型</button>
         <button type="button" data-cat-btn="正餐主食" onclick="selectCat('正餐主食')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍱 正餐主食</button>
         <button type="button" data-cat-btn="在地小吃" onclick="selectCat('在地小吃')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍜 在地小吃</button>
+        <button type="button" data-cat-btn="異國料理" onclick="selectCat('異國料理')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🍕 異國特色</button>
         <button type="button" data-cat-btn="私房景點" onclick="selectCat('私房景點')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">📸 私房景點</button>
         <button type="button" data-cat-btn="精選旅宿" onclick="selectCat('精選旅宿')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🏨 精選旅宿</button>
         <button type="button" data-cat-btn="麵點湯包" onclick="selectCat('麵點湯包')" style="flex-shrink:0;padding:5px 12px;border-radius:999px;border:1px solid #e2e8f0;background-color:#ffffff;color:#64748b;font-size:12.5px;font-weight:600;cursor:pointer;">🥟 麵點湯包</button>
@@ -271,7 +276,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">366</b> 筆資料</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">379</b> 筆資料</div>
   </div>
 
   <!-- 預渲染卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -1653,13 +1658,13 @@
                data-city="嘉義市"
                data-district="西區"
                data-city-district="嘉義市・西區"
-               data-category="正餐主食"
-               data-search="盛食咖哩店 嘉義市 西區 正餐主食 異國料理 印度香料咖哩、手作印度烤餅 (naan) 嘉義印度香料咖哩名店代表！香料堆疊層次深邃濃郁，大推現烤起司或大蒜烤餅，撕開沾咖哩醬吃極度銷魂。 裝潢極美是打卡與聚餐熱門店，建議提前訂位。 嘉義市西區延平街443號 印度咖哩 手作烤餅 香料層次"
+               data-category="異國料理"
+               data-search="盛食咖哩店 嘉義市 西區 異國料理 異國料理 印度香料咖哩、手作印度烤餅 (naan) 嘉義印度香料咖哩名店代表！香料堆疊層次深邃濃郁，大推現烤起司或大蒜烤餅，撕開沾咖哩醬吃極度銷魂。 裝潢極美是打卡與聚餐熱門店，建議提前訂位。 嘉義市西區延平街443號 印度咖哩 手作烤餅 香料層次 異國料理"
                style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
             <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・西區</span>
-            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜異國料理</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜異國料理</span>
           </div>
           <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">印度香料咖哩名店</span>
         </div>
@@ -5279,13 +5284,13 @@
                data-city="嘉義市"
                data-district="東區"
                data-city-district="嘉義市・東區"
-               data-category="正餐主食"
-               data-search="大人味 日•印珈哩 嘉義市 東區 正餐主食 日式歐風與香料熟成咖哩 日式漢堡排珈哩、大人味牛肋珈哩、香料炸雞珈哩、冰鮮奶茶 嘉義市指標級日式老宅咖哩專賣店，主廚一人作業，每天午晚餐各僅限量18份（全天36份）。以牛肉蔬果為基底慢火熟成熬煮，漢堡排扎實多汁、牛肋軟嫩入味，附薑黃飯與特調飲品。 【避坑與內行吃法】1. **每日午晚各限量僅18份**，極難排到，通常營業前1小時即有排隊人潮，不接受電話預約。2. 所有咖哩醬汁皆含牛肉高湯底，不吃牛者切勿前往。3. 週六日固定公休。 嘉義市東區成仁街94號 日式咖哩 限量美食 老宅餐廳 一人作業 漢堡排"
+               data-category="異國料理"
+               data-search="大人味 日•印珈哩 嘉義市 東區 異國料理 日式歐風與香料熟成咖哩 日式漢堡排珈哩、大人味牛肋珈哩、香料炸雞珈哩、冰鮮奶茶 嘉義市指標級日式老宅咖哩專賣店，主廚一人作業，每天午晚餐各僅限量18份（全天36份）。以牛肉蔬果為基底慢火熟成熬煮，漢堡排扎實多汁、牛肋軟嫩入味，附薑黃飯與特調飲品。 【避坑與內行吃法】1. **每日午晚各限量僅18份**，極難排到，通常營業前1小時即有排隊人潮，不接受電話預約。2. 所有咖哩醬汁皆含牛肉高湯底，不吃牛者切勿前往。3. 週六日固定公休。 嘉義市東區成仁街94號 日式咖哩 限量美食 老宅餐廳 一人作業 漢堡排 異國料理"
                style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
             <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
-            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜日式歐風與香料熟成咖哩</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜日式歐風與香料熟成咖哩</span>
           </div>
           <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">每日限量36份・回訪5次以上私房名店</span>
         </div>
@@ -18210,6 +18215,643 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="東區"
+               data-city-district="嘉義市・東區"
+               data-category="異國料理"
+               data-search="山越拉麵 嘉義市 東區 異國料理 文化路旁嘉義小勝王・濃厚膠質豚骨與八幡屋七味拉麵 濃厚豚骨拉麵、八幡屋七味豚骨拉麵、炙燒厚叉燒、糖心蛋 位於文化路夜市旁中正路上，被拉麵圈譽為「嘉義小勝王」。堅持熬煮出濃郁厚實且帶有天然骨膠質的白濁豚骨湯底，麵條硬度與湯頭濃度可客製；招牌八幡屋七味豚骨辛香有層次，炙燒低溫叉燒肉軟嫩多汁。 【排隊避雷】店內座位僅約十多席，營業時間未到門口即有排隊人潮，假日尖峰常需等候 30~50 分鐘；建議中午 11:30 或下午 17:00 開店初前往；文化路周邊不好停車，請停外圍收費場。 嘉義市東區中正路380號 東區 異國料理 日式拉麵 濃厚豚骨 文化路商圈"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ffedd5;color:#c2410c;border:1px solid #fed7aa;">嘉義市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜文化路旁嘉義小勝王・濃厚膠質豚骨與八幡屋七味拉麵</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">PTT嘉義板拉麵愛好者首選名店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-194</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">山越拉麵</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">濃厚豚骨拉麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">八幡屋七味豚骨拉麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">炙燒厚叉燒</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">糖心蛋</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">位於文化路夜市旁中正路上，被拉麵圈譽為「嘉義小勝王」。堅持熬煮出濃郁厚實且帶有天然骨膠質的白濁豚骨湯底，麵條硬度與湯頭濃度可客製；招牌八幡屋七味豚骨辛香有層次，炙燒低溫叉燒肉軟嫩多汁。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【排隊避雷】店內座位僅約十多席，營業時間未到門口即有排隊人潮，假日尖峰常需等候 30~50 分鐘；建議中午 11:30 或下午 17:00 開店初前往；文化路周邊不好停車，請停外圍收費場。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>嘉義市東區中正路380號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30 - 14:00, 17:00 - 20:30（每週二、週三公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市東區 山越拉麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市東區', '山越拉麵', '濃厚豚骨拉麵、八幡屋七味豚骨拉麵、炙燒厚叉燒、糖心蛋', '嘉義市東區中正路380號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="嘉義市"
+               data-district="西區"
+               data-city-district="嘉義市・西區"
+               data-category="異國料理"
+               data-search="sagas 拉麵 嘉義市 西區 異國料理 日本職人潮流黑色系拉麵・焦香黑蒜油特濃豚骨與低溫吊燒叉燒 黑蒜油豚骨拉麵、魚介鹽味清湯拉麵、極黑唐揚炸雞、吊燒五花叉燒 嘉義車站周邊極具話題性的日式潮流拉麵館。全黑現代極簡風格，由日本拉麵團隊指導。招牌黑蒜油豚骨拉麵香氣深沉厚重，黑蒜焦香與大骨湯完美融合；特製吊燒叉燒帶有迷人煙燻氣息，肉質細嫩化口。 【客製建議】湯頭偏日本正統重口味，不習慣太鹹太濃者建議選擇「台灣淡口」或「普通濃度」；店內無法預約，採現場掃碼候位。 雲林縣 / 嘉義市西區仁愛路228號 西區 異國料理 黑蒜油拉麵 日式職人 近火車站"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;">嘉義市・西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜日本職人潮流黑色系拉麵・焦香黑蒜油特濃豚骨與低溫吊燒叉燒</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">嘉義視覺與硬核味覺兼具之日式拉麵前段班</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">CY-195</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">SAGAS 拉麵</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">黑蒜油豚骨拉麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">魚介鹽味清湯拉麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">極黑唐揚炸雞</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">吊燒五花叉燒</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">嘉義車站周邊極具話題性的日式潮流拉麵館。全黑現代極簡風格，由日本拉麵團隊指導。招牌黑蒜油豚骨拉麵香氣深沉厚重，黑蒜焦香與大骨湯完美融合；特製吊燒叉燒帶有迷人煙燻氣息，肉質細嫩化口。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【客製建議】湯頭偏日本正統重口味，不習慣太鹹太濃者建議選擇「台灣淡口」或「普通濃度」；店內無法預約，採現場掃碼候位。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣 / 嘉義市西區仁愛路228號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00 - 22:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=嘉義市西區 SAGAS 拉麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('嘉義市西區', 'SAGAS 拉麵', '黑蒜油豚骨拉麵、魚介鹽味清湯拉麵、極黑唐揚炸雞、吊燒五花叉燒', '雲林縣 / 嘉義市西區仁愛路228號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="北區"
+               data-city-district="臺南市・北區"
+               data-category="異國料理"
+               data-search="中華そば 寶來軒 臺南市 北區 異國料理 府城日式豚骨拉麵天花板・特濃博多骨膠質重擊與硬細麵 特濃豚骨拉麵、中華そば (醬油魚介)、炙燒角煮肉塊、博多極細硬麵 台南市區極具傳奇色彩的日式職人拉麵。堅持大鍋長時間不間斷翻炒熬煮豬大骨與豬背脂，湯底濃郁到幾乎能在嘴唇留下黏唇膠質；博多極細麵咬勁脆爽，低溫舒肥大片叉燒與炙燒厚塊角煮肉鹹香四溢。 【重口味愛好者首選・避雷提醒】特濃豚骨極為厚重濃郁，對平時習慣台式清淡湯頭者而言可能會覺得油脂過重；排隊人潮極長，必須全員到齊方可登記候位，每人低消一碗麵。 臺南市北區公園南路206號 北區 異國料理 日式拉麵 特濃豚骨 拉麵名店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・北區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜府城日式豚骨拉麵天花板・特濃博多骨膠質重擊與硬細麵</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">PTT台南板拉麵愛好者公認無可取代之重厚派霸主</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-108</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">中華そば 寶來軒</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特濃豚骨拉麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">中華そば (醬油魚介)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">炙燒角煮肉塊</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">博多極細硬麵</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">台南市區極具傳奇色彩的日式職人拉麵。堅持大鍋長時間不間斷翻炒熬煮豬大骨與豬背脂，湯底濃郁到幾乎能在嘴唇留下黏唇膠質；博多極細麵咬勁脆爽，低溫舒肥大片叉燒與炙燒厚塊角煮肉鹹香四溢。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【重口味愛好者首選・避雷提醒】特濃豚骨極為厚重濃郁，對平時習慣台式清淡湯頭者而言可能會覺得油脂過重；排隊人潮極長，必須全員到齊方可登記候位，每人低消一碗麵。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市北區公園南路206號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30 - 14:00, 17:30 - 20:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市北區 寶來軒拉麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市北區', '中華そば 寶來軒', '特濃豚骨拉麵、中華そば (醬油魚介)、炙燒角煮肉塊、博多極細硬麵', '臺南市北區公園南路206號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="東區"
+               data-city-district="臺南市・東區"
+               data-category="異國料理"
+               data-search="覺丸拉麵 臺南市 東區 異國料理 細緻魚介豚骨高湯・高客製化湯頭濃度與大片炙燒叉燒 魚介豚骨拉麵、原味豚骨拉麵、超厚炙燒叉燒、特製溏心蛋 成大周邊排隊人潮從未間斷的日式拉麵。招牌魚介豚骨將柴魚、小魚乾的鮮鹹海味與醇厚大骨完美平衡，湯頭甘醇鮮美而不死鹹膩；厚切叉燒經高溫炙燒逼出油香，入口軟嫩帶焦香，內用可免費加麵半球。 【排隊機制注意】店內僅十個座位，採現場登記排隊，平日晚上常需候位 30 分鐘，週末建議提早在下午 16:30 開店前先至門口領取登記號碼。 臺南市東區東興路274號 東區 異國料理 魚介豚骨 成大商圈 職人拉麵"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜細緻魚介豚骨高湯・高客製化湯頭濃度與大片炙燒叉燒</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">東區成大商圈回訪率最高之日式拉麵店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-109</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">覺丸拉麵</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">魚介豚骨拉麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">原味豚骨拉麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">超厚炙燒叉燒</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製溏心蛋</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">成大周邊排隊人潮從未間斷的日式拉麵。招牌魚介豚骨將柴魚、小魚乾的鮮鹹海味與醇厚大骨完美平衡，湯頭甘醇鮮美而不死鹹膩；厚切叉燒經高溫炙燒逼出油香，入口軟嫩帶焦香，內用可免費加麵半球。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【排隊機制注意】店內僅十個座位，採現場登記排隊，平日晚上常需候位 30 分鐘，週末建議提早在下午 16:30 開店前先至門口領取登記號碼。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市東區東興路274號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30 - 14:00, 17:00 - 20:00（每週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市東區 覺丸拉麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市東區', '覺丸拉麵', '魚介豚骨拉麵、原味豚骨拉麵、超厚炙燒叉燒、特製溏心蛋', '臺南市東區東興路274號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="異國料理"
+               data-search="abc burger 臺南市 中西區 異國料理 正統美式手打厚牛漢堡・職棒球星指定爆汁花生培根牛與手切脆薯 招牌花生醬培根牛肉堡 由前美式餐車起家、落腳中西區的超人氣美式漢堡店。手打牛肉排厚度驚人，鐵板高溫壓煎鎖住豐沛肉汁；招牌花生培根牛抹上顆粒花生醬，鹹甜濃郁與焦香培根完美搭配，連職棒洋將都曾在賽後公開大推為全台最愛漢堡。 【預約與等候提醒】漢堡現點現煎需耐心等候 15~20 分鐘；週末內用人潮極多，建議提早於線上預約或開店時抵達；尊王路周邊不易停車，建議停海安路地下停車場。 臺南市中西區尊王路110號 中西區 異國料理 美式漢堡 手打厚牛 肉汁爆棚"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜正統美式手打厚牛漢堡・職棒球星指定爆汁花生培根牛與手切脆薯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">台南美式漢堡天花板・肉汁飽滿非網美擺拍</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-110</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">ABC Burger</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌花生醬培根牛肉堡</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">四川麻辣牛肉堡</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手切松露脆薯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">洋蔥圈</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">由前美式餐車起家、落腳中西區的超人氣美式漢堡店。手打牛肉排厚度驚人，鐵板高溫壓煎鎖住豐沛肉汁；招牌花生培根牛抹上顆粒花生醬，鹹甜濃郁與焦香培根完美搭配，連職棒洋將都曾在賽後公開大推為全台最愛漢堡。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【預約與等候提醒】漢堡現點現煎需耐心等候 15~20 分鐘；週末內用人潮極多，建議提早於線上預約或開店時抵達；尊王路周邊不易停車，建議停海安路地下停車場。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區尊王路110號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30 - 20:00（每週一、週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 ABC Burger" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', 'ABC Burger', '招牌花生醬培根牛肉堡', '臺南市中西區尊王路110號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="異國料理"
+               data-search="小古巴 (little cuba) 臺南市 中西區 異國料理 古巴主廚親自操刀・正統柑橘香料mojo手撕豬漢堡與古巴三明治 mojo香料手撕豬肉漢堡、經典熱壓古巴三明治、古巴炸起司條、特調莫希托薄荷飲 由真正的古巴籍主廚掌廚。招牌「mojo 手撕豬」使用柳橙、檸檬、大蒜與多種拉丁香料慢火燉烤數小時，豬肉纖維吸飽果香醬汁軟嫩化口，完全不乾柴；熱壓古巴三明治外皮酥脆、熔岩起司與酸黃瓜提味極致到位。 【巷弄探索提醒】位於城隍街寧靜巷弄內，店面小巧溫馨，座位不多；餐點皆為現點慢做，適合喜愛探索非大眾異國風味的饕客；附近路窄請停外圍大馬路公有停車格。 臺南市中西區城隍街48號 中西區 異國料理 古巴三明治 手撕豬肉 拉丁風味"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜古巴主廚親自操刀・正統柑橘香料Mojo手撕豬漢堡與古巴三明治</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">府城巷弄少見純道地拉丁美洲靈魂料理</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-111</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">小古巴 (Little Cuba)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">Mojo香料手撕豬肉漢堡</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">經典熱壓古巴三明治</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古巴炸起司條</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特調莫希托薄荷飲</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">由真正的古巴籍主廚掌廚。招牌「Mojo 手撕豬」使用柳橙、檸檬、大蒜與多種拉丁香料慢火燉烤數小時，豬肉纖維吸飽果香醬汁軟嫩化口，完全不乾柴；熱壓古巴三明治外皮酥脆、熔岩起司與酸黃瓜提味極致到位。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【巷弄探索提醒】位於城隍街寧靜巷弄內，店面小巧溫馨，座位不多；餐點皆為現點慢做，適合喜愛探索非大眾異國風味的饕客；附近路窄請停外圍大馬路公有停車格。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區城隍街48號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00 - 14:00, 17:00 - 20:00（每週日、週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 小古巴Little Cuba" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '小古巴 (Little Cuba)', 'Mojo香料手撕豬肉漢堡、經典熱壓古巴三明治、古巴炸起司條、特調莫希托薄荷飲', '臺南市中西區城隍街48號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="異國料理"
+               data-search="咖哩鬥陣 (curry dojin) 臺南市 中西區 異國料理 隱身普濟殿旁老街・印度與巴基斯坦熟成香料咖哩與自製烤餅 雙拼綜合香料咖哩、慢燉香料牛肉咖哩、爐烤蒜香印度烤餅、印度香料奶茶 原為巷弄神秘排隊餐車，現落腳普濟殿旁老宅。店主對香料鑽研極深，親手烘焙研磨二十餘種天然辛香料，不使用市售咖哩塊與人工勾芡；咖哩醬汁充滿辛香、草本與果酸多重層次，搭配蓬鬆焦脆的現烤印度烤餅，極度過癮。 【營業時間特別注意】每週僅營業特定數天（多為週四至週日，出發前強烈建議查閱店家最新公告）；店內空間不大且不接受訂位，建議開店前 15 分鐘至現場候位。 臺南市中西區普濟街53號 中西區 異國料理 香料咖哩 印度烤餅 老宅熟成"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜隱身普濟殿旁老街・印度與巴基斯坦熟成香料咖哩與自製烤餅</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">台南香料咖哩狂熱愛好者公認第一神殿</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-112</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">咖哩鬥陣 (Curry Dojin)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">雙拼綜合香料咖哩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">慢燉香料牛肉咖哩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">爐烤蒜香印度烤餅</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">印度香料奶茶</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">原為巷弄神秘排隊餐車，現落腳普濟殿旁老宅。店主對香料鑽研極深，親手烘焙研磨二十餘種天然辛香料，不使用市售咖哩塊與人工勾芡；咖哩醬汁充滿辛香、草本與果酸多重層次，搭配蓬鬆焦脆的現烤印度烤餅，極度過癮。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【營業時間特別注意】每週僅營業特定數天（多為週四至週日，出發前強烈建議查閱店家最新公告）；店內空間不大且不接受訂位，建議開店前 15 分鐘至現場候位。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區普濟街53號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30 - 14:00, 17:30 - 20:00 (每週公休日依公告)</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 咖哩鬥陣" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '咖哩鬥陣 (Curry Dojin)', '雙拼綜合香料咖哩、慢燉香料牛肉咖哩、爐烤蒜香印度烤餅、印度香料奶茶', '臺南市中西區普濟街53號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="異國料理"
+               data-search="小丘披薩 (chiu pizza) 臺南市 中西區 異國料理 正統拿坡里柴燒手作披薩・450度高溫秒烤q彈空氣感豹紋餅皮 經典瑪格麗特 (水牛起司)、松露生火腿水牛披薩、蒜香四種起司披薩、手作提拉米蘇 堅持義大利傳統拿坡里披薩工法。麵糰使用義大利天然小麥粉經過 24 小時以上低溫發酵，放入特製高溫窯爐以龍眼木大火高溫快速烘烤 90 秒起鍋。餅皮外圈帶有漂亮的「豹紋斑點」，外脆內濕潤q彈且小麥麥香極濃。 【內行提醒】拿坡里披薩特色為餅皮中心薄軟水潤、外圈蓬鬆，需摺疊後以手拿取食用，非美式硬脆餅皮；建議熱騰騰上桌立刻食用，風味最佳；店內披薩現烤限量，建議提早電話預約訂位。 臺南市中西區正興街周邊 (海安商圈巷內) 中西區 異國料理 拿坡里披薩 義式窯烤 豹紋餅皮"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜正統拿坡里柴燒手作披薩・450度高溫秒烤Q彈空氣感豹紋餅皮</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">府城義式窯烤披薩圈水準極高之職人名店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-113</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">小丘披薩 (Chiu Pizza)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">經典瑪格麗特 (水牛起司)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">松露生火腿水牛披薩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">蒜香四種起司披薩</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手作提拉米蘇</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">堅持義大利傳統拿坡里披薩工法。麵糰使用義大利天然小麥粉經過 24 小時以上低溫發酵，放入特製高溫窯爐以龍眼木大火高溫快速烘烤 90 秒起鍋。餅皮外圈帶有漂亮的「豹紋斑點」，外脆內濕潤Q彈且小麥麥香極濃。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【內行提醒】拿坡里披薩特色為餅皮中心薄軟水潤、外圈蓬鬆，需摺疊後以手拿取食用，非美式硬脆餅皮；建議熱騰騰上桌立刻食用，風味最佳；店內披薩現烤限量，建議提早電話預約訂位。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區正興街周邊 (海安商圈巷內)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30 - 15:00, 17:30 - 21:00（每週一、週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 小丘披薩" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '小丘披薩 (Chiu Pizza)', '經典瑪格麗特 (水牛起司)、松露生火腿水牛披薩、蒜香四種起司披薩、手作提拉米蘇', '臺南市中西區正興街周邊 (海安商圈巷內)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="東區"
+               data-city-district="臺南市・東區"
+               data-category="鍋物補湯"
+               data-search="毛房 蔥鍋・冷藏肉專門 (maofun) 臺南市 東區 鍋物補湯 老洋樓綠建築精緻鍋物・日本冷藏無毒黑豚肉與原型小農野菜 日本信州冷藏頂級黑豚肉、雲林黑羽土雞腿肉、大量產地直送無毒野菜皿、純天然昆布大骨高湯 由六十年老洋樓改裝，為全台少數堅持「完全無加工食品丸餃」的質感鍋物。全店採用日本進口手造純銅鍋，導熱均勻極快；肉品嚴選冷藏熟成黑豚與土雞，肉質甘甜無腥；滿滿一整盤小農契作無毒生鮮蔬菜，湯頭越煮越甘甜健康。 【訂位提醒】高質感精緻火鍋，假日常常客滿，強烈建議提前 1~2 週透過線上訂位；食材純天然清爽無負擔，適合帶長輩或注重健康質感的饕客。 臺南市東區府東街148號 東區 精緻鍋物 冷藏肉專門 原型食物 老洋樓改建"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・東區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">鍋物補湯｜老洋樓綠建築精緻鍋物・日本冷藏無毒黑豚肉與原型小農野菜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">絕非普通網美店・台南食材與肉品水準最高火鍋代表</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-114</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">毛房 蔥鍋・冷藏肉專門 (MaoFun)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">日本信州冷藏頂級黑豚肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">雲林黑羽土雞腿肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">大量產地直送無毒野菜皿</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">純天然昆布大骨高湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">由六十年老洋樓改裝，為全台少數堅持「完全無加工食品丸餃」的質感鍋物。全店採用日本進口手造純銅鍋，導熱均勻極快；肉品嚴選冷藏熟成黑豚與土雞，肉質甘甜無腥；滿滿一整盤小農契作無毒生鮮蔬菜，湯頭越煮越甘甜健康。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【訂位提醒】高質感精緻火鍋，假日常常客滿，強烈建議提前 1~2 週透過線上訂位；食材純天然清爽無負擔，適合帶長輩或注重健康質感的饕客。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市東區府東街148號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30 - 14:00, 17:30 - 21:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市東區 毛房蔥鍋冷藏肉專門" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市東區', '毛房 蔥鍋・冷藏肉專門 (MaoFun)', '日本信州冷藏頂級黑豚肉、雲林黑羽土雞腿肉、大量產地直送無毒野菜皿、純天然昆布大骨高湯', '臺南市東區府東街148號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="正餐主食"
+               data-search="烹小鮮 雲林縣 斗六市 正餐主食 小農無毒契作原型食材・文青木質手作定食與現蒸鮮魚乾麵 小農香煎現撈時令鮮魚定食、古法手工滷肉乾拌麵、自製豆乳味噌湯、季節有機燙野菜 位於雲林科技大學旁八德路上，由在地青年創立。堅持使用雲林在地小農友善耕作蔬菜、天然非基改黃豆與台灣優質豬肉，絕不使用人工味精與半成品料理包；煎魚金黃酥香、小菜清脆回甘，是雲林極少數兼具文青質感與頂級原型食材硬實力的好店。 【用餐避雷】餐點皆現點現做，出餐時間稍長需耐心等候；店內座位不算多，用餐尖峰時段經常滿座，建議於開店初 11:30 或晚上 17:30 抵達；週一、週二公休。 雲林縣斗六市八德路88號 斗六市 原型食物 小農契作 健康定食 雲科大商圈"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜小農無毒契作原型食材・文青木質手作定食與現蒸鮮魚乾麵</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">雲科大學生與在地鄉民口中健康無負擔美食天花板</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-17</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">烹小鮮</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">小農香煎現撈時令鮮魚定食</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古法手工滷肉乾拌麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">自製豆乳味噌湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">季節有機燙野菜</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">位於雲林科技大學旁八德路上，由在地青年創立。堅持使用雲林在地小農友善耕作蔬菜、天然非基改黃豆與台灣優質豬肉，絕不使用人工味精與半成品料理包；煎魚金黃酥香、小菜清脆回甘，是雲林極少數兼具文青質感與頂級原型食材硬實力的好店。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【用餐避雷】餐點皆現點現做，出餐時間稍長需耐心等候；店內座位不算多，用餐尖峰時段經常滿座，建議於開店初 11:30 或晚上 17:30 抵達；週一、週二公休。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市八德路88號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:30 - 14:00, 17:30 - 20:00（每週一、週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 烹小鮮" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '烹小鮮', '小農香煎現撈時令鮮魚定食、古法手工滷肉乾拌麵、自製豆乳味噌湯、季節有機燙野菜', '雲林縣斗六市八德路88號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="虎尾鎮"
+               data-city-district="雲林縣・虎尾鎮"
+               data-category="烘焙甜點冰品"
+               data-search="虎珍堂 菓寮店 雲林縣 虎尾鎮 烘焙甜點冰品 雲林黃金地瓜創意點心之光・現烤虎月燒與憨吉濃濃乳酪 現烤虎月燒 (地瓜乳酪+萬丹紅豆)、憨吉濃濃乳酪蛋糕、地瓜脆片、宇治抹茶虎月燒 將雲林產量第一的地瓜（台語：憨吉）融入精緻烘焙。菓寮店隱身虎尾中山路老街巷弄，由百年老屋改建；招牌「虎月燒」現點現烤，外皮微焦鬆軟如銅鑼燒，內餡包裹手工地瓜泥與無添加水乳酪，綿密香醇甜度極為柔和。 【現烤與保存】「虎月燒」為現烤點心，強烈建議現場趁熱食用最為美味；「憨吉濃濃乳酪蛋糕」為冷凍冷藏伴手禮，純地瓜與純乳酪無麵粉添加，需保冷攜帶。 雲林縣虎尾鎮中山路10號 (菓寮店) / 自強街223號 (本舖) 虎尾鎮 地瓜甜點 虎月燒 憨吉乳酪 雲林之光"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・虎尾鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜雲林黃金地瓜創意點心之光・現烤虎月燒與憨吉濃濃乳酪</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">將台灣地瓜提升至日式和菓子高度之伴手禮驕傲</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-18</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">虎珍堂 菓寮店</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現烤虎月燒 (地瓜乳酪+萬丹紅豆)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">憨吉濃濃乳酪蛋糕</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">地瓜脆片</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">宇治抹茶虎月燒</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">將雲林產量第一的地瓜（台語：憨吉）融入精緻烘焙。菓寮店隱身虎尾中山路老街巷弄，由百年老屋改建；招牌「虎月燒」現點現烤，外皮微焦鬆軟如銅鑼燒，內餡包裹手工地瓜泥與無添加水乳酪，綿密香醇甜度極為柔和。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【現烤與保存】「虎月燒」為現烤點心，強烈建議現場趁熱食用最為美味；「憨吉濃濃乳酪蛋糕」為冷凍冷藏伴手禮，純地瓜與純乳酪無麵粉添加，需保冷攜帶。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣虎尾鎮中山路10號 (菓寮店) / 自強街223號 (本舖)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 18:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣虎尾鎮 虎珍堂菓寮店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣虎尾鎮', '虎珍堂 菓寮店', '現烤虎月燒 (地瓜乳酪+萬丹紅豆)、憨吉濃濃乳酪蛋糕、地瓜脆片、宇治抹茶虎月燒', '雲林縣虎尾鎮中山路10號 (菓寮店) / 自強街223號 (本舖)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="土庫鎮"
+               data-city-district="雲林縣・土庫鎮"
+               data-category="在地小吃"
+               data-search="土庫怪人花枝鱔魚麵 雲林縣 土庫鎮 在地小吃 雲林特有濃郁微酸羹汁・大塊厚切生炒花枝鱔魚麵大氣豪邁 花枝鱔魚綜合麵 (大羹湯底)、生炒花枝麵、生炒鱔魚羹、乾炒花枝鱔魚 創始老闆因少了一隻手卻大火爆炒極其神速，被鄉親親切稱為「怪人」。不同於台南炒鱔魚的極甜，土庫做法採用微酸蒜香的濃稠羹汁，大塊花枝厚實爽脆、鱔魚片彈牙無腥味，大火鑊氣十足，份量澎湃飽足。 【口味對比提醒】此店為雲林在地的「羹汁」炒鱔魚，羹湯勾芡較重且帶有蒜香與微醋酸香，與台南偏甜偏焦香的乾炒風格大不相同；週末中午用餐人潮極多，需在門口稍候。 雲林縣土庫鎮中正路144號 土庫鎮 怪人花枝鱔魚 特色羹汁 大塊厚脆 老字號"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・土庫鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜雲林特有濃郁微酸羹汁・大塊厚切生炒花枝鱔魚麵大氣豪邁</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">土庫鎮無人不曉之怪人傳奇特色老店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-19</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">土庫怪人花枝鱔魚麵</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">花枝鱔魚綜合麵 (大羹湯底)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">生炒花枝麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">生炒鱔魚羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾炒花枝鱔魚</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">創始老闆因少了一隻手卻大火爆炒極其神速，被鄉親親切稱為「怪人」。不同於台南炒鱔魚的極甜，土庫做法採用微酸蒜香的濃稠羹汁，大塊花枝厚實爽脆、鱔魚片彈牙無腥味，大火鑊氣十足，份量澎湃飽足。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【口味對比提醒】此店為雲林在地的「羹汁」炒鱔魚，羹湯勾芡較重且帶有蒜香與微醋酸香，與台南偏甜偏焦香的乾炒風格大不相同；週末中午用餐人潮極多，需在門口稍候。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣土庫鎮中正路144號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 19:30（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣土庫鎮 土庫怪人花枝鱔魚麵" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣土庫鎮', '土庫怪人花枝鱔魚麵', '花枝鱔魚綜合麵 (大羹湯底)、生炒花枝麵、生炒鱔魚羹、乾炒花枝鱔魚', '雲林縣土庫鎮中正路144號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="異國料理"
+               data-search="日沐美式早午餐 (ri mu) 雲林縣 斗六市 異國料理 斗六手打純牛肉厚漢堡・經典班尼迪克蛋與美式豐盛拼盤 經典手打厚切牛肉堡、煙燻鮭魚班尼迪克蛋、美式大拼盤、金黃酥脆薯條 斗六市區深受年輕族群與家庭喜愛的美式早午餐。手工拍打厚切牛肉排在鐵板上煎出誘人焦痕，肉香濃郁且肉汁豐富，自烤漢堡麵包鬆軟有彈性；班尼迪克蛋水波蛋戳破後流淌金黃荷蘭醬，用料扎實大方。 【訂位提醒】週末早午餐時段經常滿座，建議提前電話預訂；武昌路周邊路邊車位有限，可停至斗六火車站後站公有停車場步行約 5 分鐘。 雲林縣斗六市武昌路151號 斗六市 異國料理 美式漢堡 手打厚牛 早午餐"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">異國料理｜斗六手打純牛肉厚漢堡・經典班尼迪克蛋與美式豐盛拼盤</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">斗六在地高評價之實力派美式漢堡早午餐</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-20</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">日沐美式早午餐 (Ri Mu)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">經典手打厚切牛肉堡</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">煙燻鮭魚班尼迪克蛋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">美式大拼盤</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">金黃酥脆薯條</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">斗六市區深受年輕族群與家庭喜愛的美式早午餐。手工拍打厚切牛肉排在鐵板上煎出誘人焦痕，肉香濃郁且肉汁豐富，自烤漢堡麵包鬆軟有彈性；班尼迪克蛋水波蛋戳破後流淌金黃荷蘭醬，用料扎實大方。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【訂位提醒】週末早午餐時段經常滿座，建議提前電話預訂；武昌路周邊路邊車位有限，可停至斗六火車站後站公有停車場步行約 5 分鐘。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市武昌路151號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00 - 16:30（每週三公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 日沐美式早午餐" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '日沐美式早午餐 (Ri Mu)', '經典手打厚切牛肉堡、煙燻鮭魚班尼迪克蛋、美式大拼盤、金黃酥脆薯條', '雲林縣斗六市武昌路151號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -18226,7 +18868,7 @@
 
   <!-- 底部手冊導覽浮動條（三大手冊常駐置底切換） -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.94);backdrop-filter:blur(10px);padding:6px 10px;border-radius:30px;display:flex;gap:6px;box-shadow:0 10px 25px rgba(0,0,0,0.35);z-index:900;max-width:96vw;white-space:nowrap;">
-    <a href="美食避雷隨身手冊.html" style="color:#ffffff;background:#b45309;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🍱 全能手冊 (366)</a>
+    <a href="美食避雷隨身手冊.html" style="color:#ffffff;background:#b45309;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🍱 全能手冊 (379)</a>
     <a href="全台美拍私房景點隨身手冊.html" id="attractionsBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">📸 私房景點 (22)</a>
     <a href="全台看海放空旅宿隨身手冊.html" id="seaviewBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿 (20)</a>
   </div>
