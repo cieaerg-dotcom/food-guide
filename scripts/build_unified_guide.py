@@ -54,8 +54,12 @@ def render_card_html(s: Dict[str, Any]) -> str:
         region_style = "background-color:#fef3c7;color:#b45309;border:1px solid #fde68a;"
     elif city == "嘉義縣":
         region_style = "background-color:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;"
-    else:
+    elif city == "雲林縣":
+        region_style = "background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;"
+    elif city == "臺南市":
         region_style = "background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;"
+    else:
+        region_style = "background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;"
 
     # 依據類別區分標籤色彩與專屬區塊標題
     if category == "精選旅宿":
@@ -171,6 +175,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
         "嘉義市": "🐓",
         "嘉義縣": "🌲",
         "臺南市": "🏛️",
+        "雲林縣": "🌾",
         "高雄市": "⚓",
         "臺中市": "☀️",
         "臺北市": "🏙️"
@@ -184,7 +189,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
           <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">{total_count}</span>
         </button>"""
     ]
-    ordered_cities = ["嘉義市", "嘉義縣", "臺南市"] + [c for c in city_counts if c not in ["嘉義市", "嘉義縣", "臺南市"]]
+    ordered_cities = ["嘉義市", "嘉義縣", "臺南市", "雲林縣"] + [c for c in city_counts if c not in ["嘉義市", "嘉義縣", "臺南市", "雲林縣"]]
     for c in ordered_cities:
         if c in city_counts:
             icon = city_icons.get(c, "📍")
@@ -205,7 +210,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
           全部鄉鎮市區 ({total_count})
         </button>"""
     ]
-    city_sort_order = {"嘉義市": 0, "嘉義縣": 1, "臺南市": 2}
+    city_sort_order = {"嘉義市": 0, "嘉義縣": 1, "臺南市": 2, "雲林縣": 3}
     sorted_dists = sorted(
         dist_counts.items(),
         key=lambda x: (city_sort_order.get(x[0][0], 99), x[0][1])
@@ -228,6 +233,8 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     tn_yanshui = dist_counts.get(("臺南市", "鹽水區"), 0)
     tn_total = city_counts.get("臺南市", 0)
     cx_count = city_counts.get("嘉義縣", 0)
+    yl_total = city_counts.get("雲林縣", 0)
+    cy_total = cy_east + cy_west
 
     return f"""<!DOCTYPE html>
 <html lang="zh-TW">
@@ -266,7 +273,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食・景點・住宿避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 {cy_east}／西區 {cy_west}）、嘉義縣（{cx_count} 筆）＆ 臺南市（{tn_total} 筆）共 {total_count} 筆實測避雷指南
+      收錄嘉義市（{cy_total} 筆）、嘉義縣（{cx_count} 筆）、臺南市（{tn_total} 筆）＆ 雲林縣（{yl_total} 筆）共 {total_count} 筆實測避雷指南
     </div>
   </header>
 

@@ -44,7 +44,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食・景點・住宿避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 97／西區 72）、嘉義縣（46 筆）＆ 臺南市（121 筆）共 336 筆實測避雷指南
+      收錄嘉義市（169 筆）、嘉義縣（46 筆）、臺南市（121 筆）＆ 雲林縣（30 筆）共 366 筆實測避雷指南
     </div>
   </header>
 
@@ -55,7 +55,7 @@
       <!-- 核心主題大分頁導航（美食・景點・旅宿） -->
       <div style="display:flex;gap:6px;margin-bottom:10px;padding-bottom:10px;border-bottom:1.5px solid #f1f5f9;overflow-x:auto;" class="no-scrollbar">
         <a href="index.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:800;background:#b45309;color:#ffffff;box-shadow:0 2px 6px rgba(180,83,9,0.25);">
-          🍱 全能避雷手冊 (336)
+          🍱 全能避雷手冊 (366)
         </a>
         <a href="attractions.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:700;background:#f8fafc;color:#475569;border:1px solid #cbd5e1;">
           📸 私房景點 (22)
@@ -70,7 +70,7 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">336</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">366</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -87,6 +87,11 @@
           <span>🏛️ 臺南市</span>
           <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">121</span>
         </button>
+        <button type="button" data-city-btn="雲林縣" onclick="selectCity('雲林縣')"
+                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
+          <span>🌾 雲林縣</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">30</span>
+        </button>
       </div>
 
       <!-- 第二層：鄉鎮市區子分頁 -->
@@ -94,7 +99,7 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (336)
+          全部鄉鎮市區 (366)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -216,6 +221,34 @@
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           臺南市・麻豆區 (3)
         </button>
+        <button type="button" data-dist-btn="雲林縣・北港鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・北港鎮')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          雲林縣・北港鎮 (7)
+        </button>
+        <button type="button" data-dist-btn="雲林縣・口湖鄉" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・口湖鄉')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          雲林縣・口湖鄉 (1)
+        </button>
+        <button type="button" data-dist-btn="雲林縣・古坑鄉" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・古坑鄉')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          雲林縣・古坑鄉 (4)
+        </button>
+        <button type="button" data-dist-btn="雲林縣・土庫鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・土庫鎮')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          雲林縣・土庫鎮 (2)
+        </button>
+        <button type="button" data-dist-btn="雲林縣・斗六市" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・斗六市')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          雲林縣・斗六市 (8)
+        </button>
+        <button type="button" data-dist-btn="雲林縣・虎尾鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・虎尾鎮')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          雲林縣・虎尾鎮 (5)
+        </button>
+        <button type="button" data-dist-btn="雲林縣・西螺鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・西螺鎮')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          雲林縣・西螺鎮 (3)
+        </button>
       </div>
 
       <!-- 搜尋框 -->
@@ -247,7 +280,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">336</b> 筆資料</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">366</b> 筆資料</div>
   </div>
 
   <!-- 預渲染卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -16716,6 +16749,1476 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="正餐主食"
+               data-search="阿賜豬腳飯 雲林縣 斗六市 正餐主食 在地深夜排隊傳奇・梅干豬腳軟爛膠質黏嘴 梅干豬腳飯、香菇肉羹、特製炒扁食、滷鴨蛋 斗六市區傍晚開賣一路熱賣到深夜的傳奇老店。招牌梅干豬腳長時間文火煨燉，豬皮入口即化、滿滿膠質黏嘴，搭配吸飽肉汁的微酸鹹香梅干菜，極度開胃下飯；現炸炒扁食淋上特製辣醬也是人手一盤。 【排隊避雷】營業時間 16:00 - 22:00（每週六公休），晚餐尖峰與宵夜時段排隊人龍極長，建議傍晚 16:30 開店初或晚上 20:30 後前往；梅干菜風味偏重鹹香，怕油者可請店家挑選中段偏瘦肉。 雲林縣斗六市公正路34號 斗六市 豬腳飯 梅干菜 宵夜名店 膠質黏嘴"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜在地深夜排隊傳奇・梅干豬腳軟爛膠質黏嘴</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">PTT鄉民公認斗六宵夜場第一指名</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-01</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿賜豬腳飯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">梅干豬腳飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">香菇肉羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製炒扁食</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滷鴨蛋</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">斗六市區傍晚開賣一路熱賣到深夜的傳奇老店。招牌梅干豬腳長時間文火煨燉，豬皮入口即化、滿滿膠質黏嘴，搭配吸飽肉汁的微酸鹹香梅干菜，極度開胃下飯；現炸炒扁食淋上特製辣醬也是人手一盤。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【排隊避雷】營業時間 16:00 - 22:00（每週六公休），晚餐尖峰與宵夜時段排隊人龍極長，建議傍晚 16:30 開店初或晚上 20:30 後前往；梅干菜風味偏重鹹香，怕油者可請店家挑選中段偏瘦肉。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市公正路34號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>16:00 - 22:00（每週六公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 阿賜豬腳飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '阿賜豬腳飯', '梅干豬腳飯、香菇肉羹、特製炒扁食、滷鴨蛋', '雲林縣斗六市公正路34號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="在地小吃"
+               data-search="老街碗粿 雲林縣 斗六市 在地小吃 太平老街經典古早味・金黃厚厚炒蛋飯與在來米碗粿 招牌古早味蛋飯 坐落於斗六太平老街上的數十年老鋪。最受老饕推崇的不是碗粿，而是招牌「蛋飯」——大碗白飯上鋪滿炒至金黃香脆的碎炒蛋，淋上古早味不死鹹的甘醇醬油，看似純樸無華卻香氣逼人，幾乎每桌必點一大碗。 【內行提醒】手工碗粿數量有限，通常中午 12:30~13:00 就可能售罄；店內空間傳統簡樸，翻桌速度極快；老街道路車流多不易停車，建議停周邊公有停車場步行前往。 雲林縣斗六市太平路122號 斗六市 太平老街 蛋飯 古早味碗粿 銅板美食"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜太平老街經典古早味・金黃厚厚炒蛋飯與在來米碗粿</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">斗六太平老街回訪率最高平價神店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-02</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">老街碗粿</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌古早味蛋飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工米香碗粿</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">大骨蛋湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合關東煮</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">坐落於斗六太平老街上的數十年老鋪。最受老饕推崇的不是碗粿，而是招牌「蛋飯」——大碗白飯上鋪滿炒至金黃香脆的碎炒蛋，淋上古早味不死鹹的甘醇醬油，看似純樸無華卻香氣逼人，幾乎每桌必點一大碗。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【內行提醒】手工碗粿數量有限，通常中午 12:30~13:00 就可能售罄；店內空間傳統簡樸，翻桌速度極快；老街道路車流多不易停車，建議停周邊公有停車場步行前往。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市太平路122號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30 - 14:20, 16:30 - 19:30（每週日公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 老街碗粿" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '老街碗粿', '招牌古早味蛋飯', '雲林縣斗六市太平路122號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="在地小吃"
+               data-search="阿國獅魷魚嘴羹 雲林縣 斗六市 在地小吃 斗六八十年創始老字號・金黃扁魚大白菜魷魚羹 招牌魷魚嘴羹 (油麵/米粉)、爌肉飯、虱目魚皮、滷豆腐 斗六在地特色「魷魚嘴羹」的創始名店。選用新鮮魷魚嘴入鍋爆炒，羹湯以大白菜、香菇、扁魚與蛋花勾芡，湯頭甘醇微甜，魷魚嘴口感q彈脆韌，是雲林最具辨識度的傳統風味。 【初吃必讀・避坑重要提醒】魷魚嘴內部帶有一片「黑色堅硬嘴喙」（龍珠軟骨殼），食用時需在口中將硬殼咬出吐在骨盤內，切勿整顆硬吞咬碎避免卡喉或傷牙！大同路店門口紅線切勿違停，後方有收費停車場。 雲林縣斗六市大同路112號 斗六市 魷魚嘴羹 老字號 名產地標 注意吐殼"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜斗六八十年創始老字號・金黃扁魚大白菜魷魚羹</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">斗六最富全國知名度之特產小吃地標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-03</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿國獅魷魚嘴羹</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌魷魚嘴羹 (油麵/米粉)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">爌肉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">虱目魚皮</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滷豆腐</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">斗六在地特色「魷魚嘴羹」的創始名店。選用新鮮魷魚嘴入鍋爆炒，羹湯以大白菜、香菇、扁魚與蛋花勾芡，湯頭甘醇微甜，魷魚嘴口感Q彈脆韌，是雲林最具辨識度的傳統風味。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【初吃必讀・避坑重要提醒】魷魚嘴內部帶有一片「黑色堅硬嘴喙」（龍珠軟骨殼），食用時需在口中將硬殼咬出吐在骨盤內，切勿整顆硬吞咬碎避免卡喉或傷牙！大同路店門口紅線切勿違停，後方有收費停車場。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市大同路112號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00 - 19:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 阿國獅魷魚嘴羹" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '阿國獅魷魚嘴羹', '招牌魷魚嘴羹 (油麵/米粉)、爌肉飯、虱目魚皮、滷豆腐', '雲林縣斗六市大同路112號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="在地小吃"
+               data-search="西市場鄧肉圓 (登邑肉圓) 雲林縣 斗六市 在地小吃 斗六西市場一甲子老攤・低溫溫油炸透粉紅甜米醬 傳統手工肉圓 (一份兩粒)、綜合湯 (貢丸+豆腐)、特製大辣醬 藏身在斗六西市場內的近七十年肉圓老店。外皮以地瓜粉與在來米漿調製，低溫油鍋慢慢浸炸至軟q微透；內餡包裹扎實溫體豬後腿肉丁與鮮脆筍丁，淋上自製粉紅甜米醬與蒜泥，一口咬下外皮彈牙肉汁四溢。 【吃法與停車】桌上備有特製辣醬，辣度強勁建議先加微量提味；西市場內巷弄極窄，開車族切勿嘗試開入，務必停在興華街或民生南路停車場再步行進入。 雲林縣斗六市興華街24-8號 (西市場內) 斗六市 西市場 傳統肉圓 甜米醬 六十年老店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜斗六西市場一甲子老攤・低溫溫油炸透粉紅甜米醬</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">在地斗六人從小吃到大之正宗肉圓回憶</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-04</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">西市場鄧肉圓 (登邑肉圓)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">傳統手工肉圓 (一份兩粒)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合湯 (貢丸+豆腐)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製大辣醬</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">藏身在斗六西市場內的近七十年肉圓老店。外皮以地瓜粉與在來米漿調製，低溫油鍋慢慢浸炸至軟Q微透；內餡包裹扎實溫體豬後腿肉丁與鮮脆筍丁，淋上自製粉紅甜米醬與蒜泥，一口咬下外皮彈牙肉汁四溢。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【吃法與停車】桌上備有特製辣醬，辣度強勁建議先加微量提味；西市場內巷弄極窄，開車族切勿嘗試開入，務必停在興華街或民生南路停車場再步行進入。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市興華街24-8號 (西市場內)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>07:30 - 21:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 西市場鄧肉圓" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '西市場鄧肉圓 (登邑肉圓)', '傳統手工肉圓 (一份兩粒)、綜合湯 (貢丸+豆腐)、特製大辣醬', '雲林縣斗六市興華街24-8號 (西市場內)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="烘焙甜點冰品"
+               data-search="長興圓仔冰 雲林縣 斗六市 烘焙甜點冰品 七十年純手工糯米湯圓・熱騰騰雙拼燒麻糬與綜合挫冰 綜合燒麻糬 (芝麻+花生)、綜合圓仔冰、米糕粥 (冬季)、紅豆芋圓湯 傳承三代的中華路老字號冰品店。堅持古法純糯米磨漿製作，糖水大鍋慢火熬煮的燒麻糬熱騰騰起鍋，一口咬下軟糯拉絲且毫不黏牙，外層裹滿厚實香濃的花生粉與黑芝麻粉；綜合圓仔冰加入手工紅白湯圓與蜜大豆，沁涼透心。 【內行推薦】燒麻糬「芝麻＋花生雙拼」是每桌必點；夏天午後吃冰人潮常排到人行道，翻桌極快約等候 5~10 分鐘；冬天則推薦熱呼呼桂圓米糕粥。 雲林縣斗六市中華路136號 斗六市 燒麻糬 古早味圓仔冰 純糯米 三代老店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜七十年純手工糯米湯圓・熱騰騰雙拼燒麻糬與綜合挫冰</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">斗六甜品界無可動搖之古早味天花板</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-05</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">長興圓仔冰</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合燒麻糬 (芝麻+花生)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合圓仔冰</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">米糕粥 (冬季)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">紅豆芋圓湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">傳承三代的中華路老字號冰品店。堅持古法純糯米磨漿製作，糖水大鍋慢火熬煮的燒麻糬熱騰騰起鍋，一口咬下軟糯拉絲且毫不黏牙，外層裹滿厚實香濃的花生粉與黑芝麻粉；綜合圓仔冰加入手工紅白湯圓與蜜大豆，沁涼透心。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【內行推薦】燒麻糬「芝麻＋花生雙拼」是每桌必點；夏天午後吃冰人潮常排到人行道，翻桌極快約等候 5~10 分鐘；冬天則推薦熱呼呼桂圓米糕粥。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市中華路136號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30 - 21:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 長興圓仔冰" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '長興圓仔冰', '綜合燒麻糬 (芝麻+花生)、綜合圓仔冰、米糕粥 (冬季)、紅豆芋圓湯', '雲林縣斗六市中華路136號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="北港鎮"
+               data-city-district="雲林縣・北港鎮"
+               data-category="在地小吃"
+               data-search="北港福安鴨肉飯 雲林縣 北港鎮 在地小吃 朝天宮廟前老街半世紀地標・紅蔥鴨油鹹甜爆汁鴨肉飯 招牌鴨肉飯、下水湯、現切鴨肉切盤、燉鴨湯、滷鴨蛋 北港朝天宮廟門正前方最著名的小吃。手切帶皮鴨肉絲鋪滿白飯，澆淋上長時間提煉的紅蔥鴨油與古早味醬汁，鹹甜濃郁油脂浸透米粒，香氣極其霸道；下水湯湯頭甘美，胗與脆腸火候剛好彈牙爽脆。 【進香排隊避雷】農曆過年、媽祖誕辰與週末中午人潮極其洶湧，排隊常需 20~30 分鐘；中山路老街為徒步熱區嚴禁車輛進入，自駕務必停至北港溪河堤公有大停車場再步行前往。 雲林縣北港鎮中山路37號 北港鎮 朝天宮廟口 鴨肉飯 紅蔥鴨油 人氣地標"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・北港鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜朝天宮廟前老街半世紀地標・紅蔥鴨油鹹甜爆汁鴨肉飯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">北港朝天宮廟口香客與老饕必訪代表</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-06</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">北港福安鴨肉飯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌鴨肉飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">下水湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現切鴨肉切盤</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">燉鴨湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滷鴨蛋</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">北港朝天宮廟門正前方最著名的小吃。手切帶皮鴨肉絲鋪滿白飯，澆淋上長時間提煉的紅蔥鴨油與古早味醬汁，鹹甜濃郁油脂浸透米粒，香氣極其霸道；下水湯湯頭甘美，胗與脆腸火候剛好彈牙爽脆。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【進香排隊避雷】農曆過年、媽祖誕辰與週末中午人潮極其洶湧，排隊常需 20~30 分鐘；中山路老街為徒步熱區嚴禁車輛進入，自駕務必停至北港溪河堤公有大停車場再步行前往。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣北港鎮中山路37號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00 - 19:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣北港鎮 福安鴨肉飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣北港鎮', '北港福安鴨肉飯', '招牌鴨肉飯、下水湯、現切鴨肉切盤、燉鴨湯、滷鴨蛋', '雲林縣北港鎮中山路37號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="北港鎮"
+               data-city-district="雲林縣・北港鎮"
+               data-category="在地小吃"
+               data-search="北港老受鴨肉飯 雲林縣 北港鎮 在地小吃 在地遊子心靈寄託回鄉飯・肉質軟嫩清爽不膩老字號 濃郁回鄉飯 (鴨肉飯)、燉鴨湯、手工鴨血糕、鴨肉切盤 同樣位於朝天宮老街上的老受，招牌「回鄉飯」象徵離鄉遊子返鄉的慰藉。相比福安的重油重香，老受的調味更顯溫潤甘醇，鴨肉撕成細絲口感細緻不柴，手工鴨血糕軟糯沾醬油膏薑絲極佳，耐吃度更高。 【內行選擇】若吃不慣太甜太油的鴨油醬汁，老受是極佳的清爽替代方案；店面內用座位有限，遇尖峰時段需稍候或併桌。 雲林縣北港鎮中山路104號 北港鎮 回鄉飯 鴨肉飯 清爽耐吃 老饕私房"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・北港鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜在地遊子心靈寄託回鄉飯・肉質軟嫩清爽不膩老字號</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">在地北港人更偏好之細緻清雅老店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-07</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">北港老受鴨肉飯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">濃郁回鄉飯 (鴨肉飯)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">燉鴨湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工鴨血糕</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鴨肉切盤</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">同樣位於朝天宮老街上的老受，招牌「回鄉飯」象徵離鄉遊子返鄉的慰藉。相比福安的重油重香，老受的調味更顯溫潤甘醇，鴨肉撕成細絲口感細緻不柴，手工鴨血糕軟糯沾醬油膏薑絲極佳，耐吃度更高。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【內行選擇】若吃不慣太甜太油的鴨油醬汁，老受是極佳的清爽替代方案；店面內用座位有限，遇尖峰時段需稍候或併桌。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣北港鎮中山路104號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30 - 19:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣北港鎮 老受鴨肉飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣北港鎮', '北港老受鴨肉飯', '濃郁回鄉飯 (鴨肉飯)、燉鴨湯、手工鴨血糕、鴨肉切盤', '雲林縣北港鎮中山路104號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="北港鎮"
+               data-city-district="雲林縣・北港鎮"
+               data-category="早餐早午餐"
+               data-search="阿豐麵線糊 雲林縣 北港鎮 早餐早午餐 全台獨特白麵線糊打生蛋黃・滷蛋白丁黑白交織神級早餐 麵線糊加蛋、滷蛋白丁、古早味油飯、蝦仁湯 北港最具特色的傳統早餐。非一般紅褐色蚵仔麵線，而是以純白手工麵線熬煮至入口即化的濃郁米白色糊狀；點餐時老闆在大碗內打上一顆生蛋黃，迅速舀入滾燙麵線糊將蛋黃燙熟拌勻，再淋上老滷肉燥與切碎的黑金「滷蛋白丁」，滑順香濃無比。 【特色吃法提醒】不敢吃生蛋黃者可請店家做不加蛋版，但加蛋黃才是靈魂所在；白麵線糊易飽足，營業時間清晨 06:00 - 13:00（每週三公休），通常中午前就售完。 雲林縣北港鎮中正路24號 北港鎮 白麵線糊 加蛋黃 滷蛋白 在地特色早餐"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・北港鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">早餐早午餐｜全台獨特白麵線糊打生蛋黃・滷蛋白丁黑白交織神級早餐</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">北港人無可取代之靈魂特色早餐</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-08</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿豐麵線糊</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">麵線糊加蛋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滷蛋白丁</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味油飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">蝦仁湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">北港最具特色的傳統早餐。非一般紅褐色蚵仔麵線，而是以純白手工麵線熬煮至入口即化的濃郁米白色糊狀；點餐時老闆在大碗內打上一顆生蛋黃，迅速舀入滾燙麵線糊將蛋黃燙熟拌勻，再淋上老滷肉燥與切碎的黑金「滷蛋白丁」，滑順香濃無比。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【特色吃法提醒】不敢吃生蛋黃者可請店家做不加蛋版，但加蛋黃才是靈魂所在；白麵線糊易飽足，營業時間清晨 06:00 - 13:00（每週三公休），通常中午前就售完。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣北港鎮中正路24號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>06:00 - 13:00（每週三公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣北港鎮 阿豐麵線糊" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣北港鎮', '阿豐麵線糊', '麵線糊加蛋、滷蛋白丁、古早味油飯、蝦仁湯', '雲林縣北港鎮中正路24號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="北港鎮"
+               data-city-district="雲林縣・北港鎮"
+               data-category="早餐早午餐"
+               data-search="陳家煎盤粿 雲林縣 北港鎮 早餐早午餐 鐵板現煎焦脆手工粿・米腸大腸米醬綜合澎湃大盤 綜合煎盤粿 (粿+米腸+大腸+香腸)、特製甜米醬、免費大骨柴魚清湯 純在來米手工炊製的純白米粿，在滾燙大鐵板上以豬油煎至表面金黃焦脆。一盤綜合煎盤粿包含脆皮煎粿、古早味糯米腸、滷大腸與香腸，淋上特調甜米醬與蒜汁，外酥內嫩；店家還免費提供大鍋柴魚大骨高湯自行取用。 【早鳥避雷】上午 06:00 開賣，限量手工製作，通常上午 11:30~12:00 就全數賣光，想吃請務必於上午 10:30 前抵達；現場油煙味稍重，可選擇外帶。 雲林縣北港鎮光明路46號 北港鎮 煎盤粿 脆皮米粿 早鳥限定 免費大骨湯"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・北港鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">早餐早午餐｜鐵板現煎焦脆手工粿・米腸大腸米醬綜合澎湃大盤</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">北港三大早鳥傳統點心指標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-09</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">陳家煎盤粿</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合煎盤粿 (粿+米腸+大腸+香腸)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製甜米醬</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">免費大骨柴魚清湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">純在來米手工炊製的純白米粿，在滾燙大鐵板上以豬油煎至表面金黃焦脆。一盤綜合煎盤粿包含脆皮煎粿、古早味糯米腸、滷大腸與香腸，淋上特調甜米醬與蒜汁，外酥內嫩；店家還免費提供大鍋柴魚大骨高湯自行取用。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【早鳥避雷】上午 06:00 開賣，限量手工製作，通常上午 11:30~12:00 就全數賣光，想吃請務必於上午 10:30 前抵達；現場油煙味稍重，可選擇外帶。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣北港鎮光明路46號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>06:30 - 12:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣北港鎮 陳家煎盤粿" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣北港鎮', '陳家煎盤粿', '綜合煎盤粿 (粿+米腸+大腸+香腸)、特製甜米醬、免費大骨柴魚清湯', '雲林縣北港鎮光明路46號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="北港鎮"
+               data-city-district="雲林縣・北港鎮"
+               data-category="在地小吃"
+               data-search="北港圓環紅燒青蛙湯 雲林縣 北港鎮 在地小吃 全台罕見整隻青蛙特色料理・紅燒炸酥外皮與清燉蒜頭 紅燒青蛙湯、清清青蛙湯 (清燉蒜頭)、排骨酥湯、油飯 北港文化路圓環最具視覺衝擊的傳統補湯。將農場養殖的水雞（青蛙）整隻帶皮裹粉大火油炸後，加入香菇、紅蔥與高湯紅燒，肉質細嫩如同極嫩土雞肉，滿滿天然膠原蛋白；清湯款則加入大量蒜頭燉煮，湯頭辛香甘甜。 【心理門檻避雷】青蛙料理為整隻完整保留四肢外觀上桌，初次嘗試者強烈建議點「紅燒」款，炸過的外皮較看不出原貌且口感酥香；若完全不敢嘗試青蛙，店內亦有紅燒排骨酥湯與油飯可選。 雲林縣北港鎮文化路42-2號 (文化路圓環) 北港鎮 青蛙湯 特色鄉土料理 膠原蛋白 視覺震撼"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・北港鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜全台罕見整隻青蛙特色料理・紅燒炸酥外皮與清燉蒜頭</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">北港最具鄉土獵奇特色之百年食補老字號</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-10</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">北港圓環紅燒青蛙湯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">紅燒青蛙湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">清清青蛙湯 (清燉蒜頭)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">排骨酥湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">油飯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">北港文化路圓環最具視覺衝擊的傳統補湯。將農場養殖的水雞（青蛙）整隻帶皮裹粉大火油炸後，加入香菇、紅蔥與高湯紅燒，肉質細嫩如同極嫩土雞肉，滿滿天然膠原蛋白；清湯款則加入大量蒜頭燉煮，湯頭辛香甘甜。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【心理門檻避雷】青蛙料理為整隻完整保留四肢外觀上桌，初次嘗試者強烈建議點「紅燒」款，炸過的外皮較看不出原貌且口感酥香；若完全不敢嘗試青蛙，店內亦有紅燒排骨酥湯與油飯可選。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣北港鎮文化路42-2號 (文化路圓環)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>07:30 - 17:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣北港鎮 北港圓環紅燒青蛙湯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣北港鎮', '北港圓環紅燒青蛙湯', '紅燒青蛙湯、清清青蛙湯 (清燉蒜頭)、排骨酥湯、油飯', '雲林縣北港鎮文化路42-2號 (文化路圓環)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="西螺鎮"
+               data-city-district="雲林縣・西螺鎮"
+               data-category="早餐早午餐"
+               data-search="西螺黃家九層炊 雲林縣 西螺鎮 早餐早午餐 純在來米手工九層慢炊・香酥油蔥醬汁涼食米糕 招牌九層炊 (大/小)、綜合肉羹湯、乾麵、椪皮豆腐湯 西螺濁水溪好米孕育出的米食奇蹟。純在來米漿分次倒入蒸籠，每一層蒸熟後再鋪上一層特炒紅蔥頭肉燥，反覆九次費時六小時炊成。切開時呈現黑白相間的九道細紋，放涼後食用口感q彈如布丁，淋上甜醬油膏與大量酥脆油蔥酥，香醇無比。 【營業時間避雷】清晨 05:30 開賣，是西螺人的傳統早餐，因純手工製作數量有限，通常上午 10:30~11:00 就全數售罄！週一公休；九層炊為常溫涼食，切勿要求店家微波加熱以免破壞米香q度。 雲林縣西螺鎮建興路286號 西螺鎮 九層炊 濁水溪米 百年小吃 早鳥售罄"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・西螺鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">早餐早午餐｜純在來米手工九層慢炊・香酥油蔥醬汁涼食米糕</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">西螺延平老街近百年米食天花板</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-11</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">西螺黃家九層炊</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌九層炊 (大/小)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合肉羹湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">椪皮豆腐湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">西螺濁水溪好米孕育出的米食奇蹟。純在來米漿分次倒入蒸籠，每一層蒸熟後再鋪上一層特炒紅蔥頭肉燥，反覆九次費時六小時炊成。切開時呈現黑白相間的九道細紋，放涼後食用口感Q彈如布丁，淋上甜醬油膏與大量酥脆油蔥酥，香醇無比。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【營業時間避雷】清晨 05:30 開賣，是西螺人的傳統早餐，因純手工製作數量有限，通常上午 10:30~11:00 就全數售罄！週一公休；九層炊為常溫涼食，切勿要求店家微波加熱以免破壞米香Q度。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣西螺鎮建興路286號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>05:30 - 11:00（每週一公休，售完為止）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣西螺鎮 西螺黃家九層炊" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣西螺鎮', '西螺黃家九層炊', '招牌九層炊 (大/小)、綜合肉羹湯、乾麵、椪皮豆腐湯', '雲林縣西螺鎮建興路286號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="西螺鎮"
+               data-city-district="雲林縣・西螺鎮"
+               data-category="烘焙甜點冰品"
+               data-search="西螺麻糬大王 (程文照創始店) 雲林縣 西螺鎮 烘焙甜點冰品 濁水溪純糯米片狀手沾粉・慢火炒香糖粉花生芝麻 原味diy片狀沾粉麻糬、現包花生麻糬、現包芝麻麻糬、綜合包餡 源自西螺埔心、全台片狀麻糬的真正創始者。堅持使用自家栽種濁水溪純糯米製作，炊煮熟透後手工揉打成晶瑩扁平片狀，質地軟q不黏牙；附上慢火細炒的花生碎粉與砂糖，吃多少沾多少，米香與花生香在舌尖爆開。 【保存避雷指南】純糯米製作無防腐劑，常溫保存僅限 2～3 天，**絕對不可放進冰箱冷藏**（冷藏會迅速硬化失去口感）；若當天吃不完需直接冷凍，食用前自然解凍回軟。 雲林縣西螺鎮福興路144號 西螺鎮 片狀麻糬 創始老店 濁水溪糯米 必買伴手禮"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・西螺鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜濁水溪純糯米片狀手沾粉・慢火炒香糖粉花生芝麻</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台片狀麻糬始祖・不黏牙伴手禮指標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-12</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">西螺麻糬大王 (程文照創始店)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">原味DIY片狀沾粉麻糬</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現包花生麻糬</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現包芝麻麻糬</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合包餡</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">源自西螺埔心、全台片狀麻糬的真正創始者。堅持使用自家栽種濁水溪純糯米製作，炊煮熟透後手工揉打成晶瑩扁平片狀，質地軟Q不黏牙；附上慢火細炒的花生碎粉與砂糖，吃多少沾多少，米香與花生香在舌尖爆開。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【保存避雷指南】純糯米製作無防腐劑，常溫保存僅限 2～3 天，**絕對不可放進冰箱冷藏**（冷藏會迅速硬化失去口感）；若當天吃不完需直接冷凍，食用前自然解凍回軟。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣西螺鎮福興路144號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00 - 18:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣西螺鎮 西螺麻糬大王程文照創始店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣西螺鎮', '西螺麻糬大王 (程文照創始店)', '原味DIY片狀沾粉麻糬、現包花生麻糬、現包芝麻麻糬、綜合包餡', '雲林縣西螺鎮福興路144號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="虎尾鎮"
+               data-city-district="雲林縣・虎尾鎮"
+               data-category="在地小吃"
+               data-search="虎尾王家當歸鴨肉麵線 雲林縣 虎尾鎮 在地小吃 半世紀溫補當歸藥膳高湯・紅麵線吸附鴨汁軟嫩多汁 當歸鴨肉麵線、乾拌米血糕、鴨肉切盤、當歸鴨腿麵線 (限量) 虎尾市區近六十年名店。多種溫和中藥材慢火燉煮的當歸高湯，湯色深醇卻溫潤回甘、絲毫無苦澀藥味；鴨肉燉至軟嫩不柴，手工紅麵線吸飽湯汁滑順入口，搭配手工鴨血沾特調蒜泥油膏，冬天夏天喝都極為舒暢。 【避坑提醒】限量「鴨腿麵線」通常上午或中午前即賣完；民生路路幅較窄，自駕請將車輛停在虎尾圓環周邊或收費停車場再步行前往。 雲林縣虎尾鎮民生路37-8號 虎尾鎮 當歸鴨 藥膳高湯 六十年老店 在地老饕"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・虎尾鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜半世紀溫補當歸藥膳高湯・紅麵線吸附鴨汁軟嫩多汁</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">虎尾市區在地鄉民狂推之當歸老字號</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-13</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">虎尾王家當歸鴨肉麵線</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">當歸鴨肉麵線</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾拌米血糕</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鴨肉切盤</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">當歸鴨腿麵線 (限量)</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">虎尾市區近六十年名店。多種溫和中藥材慢火燉煮的當歸高湯，湯色深醇卻溫潤回甘、絲毫無苦澀藥味；鴨肉燉至軟嫩不柴，手工紅麵線吸飽湯汁滑順入口，搭配手工鴨血沾特調蒜泥油膏，冬天夏天喝都極為舒暢。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑提醒】限量「鴨腿麵線」通常上午或中午前即賣完；民生路路幅較窄，自駕請將車輛停在虎尾圓環周邊或收費停車場再步行前往。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣虎尾鎮民生路37-8號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:30 - 21:00（每週五公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣虎尾鎮 虎尾王家當歸鴨肉麵線" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣虎尾鎮', '虎尾王家當歸鴨肉麵線', '當歸鴨肉麵線、乾拌米血糕、鴨肉切盤、當歸鴨腿麵線 (限量)', '雲林縣虎尾鎮民生路37-8號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="虎尾鎮"
+               data-city-district="雲林縣・虎尾鎮"
+               data-category="烘焙甜點冰品"
+               data-search="虎尾中正路碳烤鴨蛋糕 雲林縣 虎尾鎮 烘焙甜點冰品 全台少數純木炭古法現烤・可愛小鴨外脆內彈銅板點心 現烤炭火鴨蛋糕 (純木炭慢烤)、純麵糊蛋香點心 隱身在第一銀行前超過半世紀的阿伯老攤。全台罕見依舊堅持使用「純龍眼木炭火」人工手動翻轉鐵模現烤，麵糊僅以新鮮雞蛋、麵粉與糖調和，完全不加水與化學膨鬆劑；烤出的可愛鴨子造型蛋糕外層焦香微脆，內裡扎實如蜂蜜蛋糕，充滿淡淡木炭香。 【排隊與限購提醒】下午 14:30 擺攤開賣，通常未出爐前就已有排隊人潮；炭火烘烤需細心控制時間翻面，每梯次出爐需等候，假日常需等候 20~30 分鐘，遇人潮多時每人有限購包數。 雲林縣虎尾鎮中正路50號 (第一銀行前攤位) 虎尾鎮 木炭烤鴨蛋糕 古法碳烤 銅板點心 秒殺老攤"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・虎尾鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜全台少數純木炭古法現烤・可愛小鴨外脆內彈銅板點心</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">虎尾下午茶秒殺排隊傳奇老攤</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-14</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">虎尾中正路碳烤鴨蛋糕</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現烤炭火鴨蛋糕 (純木炭慢烤)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">純麵糊蛋香點心</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">隱身在第一銀行前超過半世紀的阿伯老攤。全台罕見依舊堅持使用「純龍眼木炭火」人工手動翻轉鐵模現烤，麵糊僅以新鮮雞蛋、麵粉與糖調和，完全不加水與化學膨鬆劑；烤出的可愛鴨子造型蛋糕外層焦香微脆，內裡扎實如蜂蜜蛋糕，充滿淡淡木炭香。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【排隊與限購提醒】下午 14:30 擺攤開賣，通常未出爐前就已有排隊人潮；炭火烘烤需細心控制時間翻面，每梯次出爐需等候，假日常需等候 20~30 分鐘，遇人潮多時每人有限購包數。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣虎尾鎮中正路50號 (第一銀行前攤位)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>06:30 - 15:30（午後出爐通常兩小時內售罄）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣虎尾鎮 虎尾中正路碳烤鴨蛋糕" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣虎尾鎮', '虎尾中正路碳烤鴨蛋糕', '現烤炭火鴨蛋糕 (純木炭慢烤)、純麵糊蛋香點心', '雲林縣虎尾鎮中正路50號 (第一銀行前攤位)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="土庫鎮"
+               data-city-district="雲林縣・土庫鎮"
+               data-category="在地小吃"
+               data-search="土庫阿海師當歸鴨肉麵線 雲林縣 土庫鎮 在地小吃 土庫七十年媽祖廟旁老字號・當歸紅棗甘醇濃郁湯頭 當歸鴨肉麵線、手工米血糕、鴨肉切盤、當歸下水湯、鴨肉冬粉 土庫順天宮媽祖廟前的七十年老店。以土番鴨與當歸、川芎、紅棗等多味中藥材熬煮數小時，湯頭濃香撲鼻、溫潤厚實帶有天然甘味；鴨肉鮮甜扎實，紅麵線久煮不爛，店面經過現代化改裝，室內明亮乾淨且有冷氣。 【內行提醒】週末香客與返鄉遊客極多，中午 12:00~13:30 需候位；土庫老街路面較小，開車可停在順天宮周邊或外圍中山路停車格。 雲林縣土庫鎮中正路137號 土庫鎮 當歸鴨 順天宮老街 七十年老店 有冷氣"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・土庫鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜土庫七十年媽祖廟旁老字號・當歸紅棗甘醇濃郁湯頭</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">土庫鎮最具代表性之藥膳鴨肉地標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-15</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">土庫阿海師當歸鴨肉麵線</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">當歸鴨肉麵線</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工米血糕</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鴨肉切盤</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">當歸下水湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鴨肉冬粉</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">土庫順天宮媽祖廟前的七十年老店。以土番鴨與當歸、川芎、紅棗等多味中藥材熬煮數小時，湯頭濃香撲鼻、溫潤厚實帶有天然甘味；鴨肉鮮甜扎實，紅麵線久煮不爛，店面經過現代化改裝，室內明亮乾淨且有冷氣。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【內行提醒】週末香客與返鄉遊客極多，中午 12:00~13:30 需候位；土庫老街路面較小，開車可停在順天宮周邊或外圍中山路停車格。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣土庫鎮中正路137號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:00 - 19:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣土庫鎮 阿海師當歸鴨肉麵線" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣土庫鎮', '土庫阿海師當歸鴨肉麵線', '當歸鴨肉麵線、手工米血糕、鴨肉切盤、當歸下水湯、鴨肉冬粉', '雲林縣土庫鎮中正路137號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="古坑鄉"
+               data-city-district="雲林縣・古坑鄉"
+               data-category="手搖咖啡茶飲"
+               data-search="古坑巴登咖啡 (華山總店) 雲林縣 古坑鄉 手搖咖啡茶飲 台灣本土咖啡始祖農莊・自家荷苞山產地豆純黑咖啡 古坑荷苞山原生黑咖啡、手工咖啡凍、咖啡胡椒餅、曼巴經典咖啡 1984年創立於古坑荷苞山，被譽為台灣產地咖啡復興的先驅。老闆堅持深耕在地咖啡莊園，手沖黑咖啡酸度柔和、尾韻帶有濃郁堅果與黑巧克力回甘香氣，完全不需加糖奶即可品嘗最純淨的台灣高山咖啡風土。 【古坑避雷提醒】華山景觀區有大量純賣夜景但使用廉價商用混豆或料理包的網美店；若想真正喝到古坑自產高水準咖啡，巴登與山峰焙煎才是真正老牌專門莊園；山區道路會車需慢行。 雲林縣古坑鄉荷苞村小坑5-2號 古坑鄉 台灣咖啡始祖 荷苞山咖啡 自家莊園豆 老饕私房"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・古坑鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">手搖咖啡茶飲｜台灣本土咖啡始祖農莊・自家荷苞山產地豆純黑咖啡</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">避開華山商業景觀店之真正咖啡老饕起點</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">YL-16</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">古坑巴登咖啡 (華山總店)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古坑荷苞山原生黑咖啡</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">手工咖啡凍</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">咖啡胡椒餅</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">曼巴經典咖啡</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">1984年創立於古坑荷苞山，被譽為台灣產地咖啡復興的先驅。老闆堅持深耕在地咖啡莊園，手沖黑咖啡酸度柔和、尾韻帶有濃郁堅果與黑巧克力回甘香氣，完全不需加糖奶即可品嘗最純淨的台灣高山咖啡風土。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【古坑避雷提醒】華山景觀區有大量純賣夜景但使用廉價商用混豆或料理包的網美店；若想真正喝到古坑自產高水準咖啡，巴登與山峰焙煎才是真正老牌專門莊園；山區道路會車需慢行。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣古坑鄉荷苞村小坑5-2號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:30 - 22:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣古坑鄉 巴登咖啡總店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣古坑鄉', '古坑巴登咖啡 (華山總店)', '古坑荷苞山原生黑咖啡、手工咖啡凍、咖啡胡椒餅、曼巴經典咖啡', '雲林縣古坑鄉荷苞村小坑5-2號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="精選旅宿"
+               data-search="三好國際酒店 (sun hao international hotel) 雲林縣 斗六市 精選旅宿 三好米集團投資雲林規模最大星級飯店・戶外泳池與超大停車場 雲林最大星級飯店規模、挑高寬敞客房與浴缸、戶外露天景觀泳池、附設超大型地下平面停車庫 由知名米業「三好米」億東纖維投資興建，鄰近斗六棒球場。為雲林縣內規模最宏偉的現代星級酒店，客房大坪數且挑高明亮，隔音良好；館內設有露天戶外泳池、蒸氣三溫暖與健身房，早餐提供豐富在地熱菜與稀飯小菜。 【位置機能提醒】距離斗六火車站與市中心圓環車程約 5~7 分鐘，周邊夜間步行機能稍弱，建議自駕或搭計程車前往市區吃小吃；自備超大停車場，自駕停車極度無憂。 雲林縣斗六市斗六五路35號 斗六市 星級飯店 泳池設施 房間寬敞 大型停車場"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜三好米集團投資雲林規模最大星級飯店・戶外泳池與超大停車場</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">雲林星級設施最齊全之商務家庭首選</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-YL-01</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">三好國際酒店 (Sun Hao International Hotel)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">雲林最大星級飯店規模</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">挑高寬敞客房與浴缸</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">戶外露天景觀泳池</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">附設超大型地下平面停車庫</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">由知名米業「三好米」億東纖維投資興建，鄰近斗六棒球場。為雲林縣內規模最宏偉的現代星級酒店，客房大坪數且挑高明亮，隔音良好；館內設有露天戶外泳池、蒸氣三溫暖與健身房，早餐提供豐富在地熱菜與稀飯小菜。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【位置機能提醒】距離斗六火車站與市中心圓環車程約 5~7 分鐘，周邊夜間步行機能稍弱，建議自駕或搭計程車前往市區吃小吃；自備超大停車場，自駕停車極度無憂。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市斗六五路35號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 三好國際酒店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '三好國際酒店 (Sun Hao International Hotel)', '雲林最大星級飯店規模、挑高寬敞客房與浴缸、戶外露天景觀泳池、附設超大型地下平面停車庫', '雲林縣斗六市斗六五路35號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="精選旅宿"
+               data-search="緻麗伯爵酒店 (grand earl hotel) 雲林縣 斗六市 精選旅宿 市中心圓環旁地段極佳・步行吃遍斗六小吃夜市 下樓即斗六市中心圓環商圈、步行太平老街美食5分鐘、頂樓露天觀景酒吧咖啡、商務家庭舒適老牌飯店 位處斗六市區核心圓環旁，從飯店出發步行即可抵達阿賜豬腳、老街碗粿與西市場。老牌飯店維護得宜，房間乾淨整潔、床鋪支撐性佳；頂樓設有景觀露台可遠眺斗六市區夜景，生活機能極為便利。 【停車避雷提醒】飯店自備平面車位有限，地下多為機械車位；開大型休旅車或休旅車高度較高者，建議於下午 15:00~16:00 提早抵達停放戶外平面區，客滿時需停外圍特約停車場。 雲林縣斗六市中山路6號 斗六市 圓環商圈 近火車站 生活機能佳 老牌商旅"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜市中心圓環旁地段極佳・步行吃遍斗六小吃夜市</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">斗六火車站商圈交通與生活機能之王</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-YL-02</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">緻麗伯爵酒店 (Grand Earl Hotel)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">下樓即斗六市中心圓環商圈</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">步行太平老街美食5分鐘</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">頂樓露天觀景酒吧咖啡</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">商務家庭舒適老牌飯店</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">位處斗六市區核心圓環旁，從飯店出發步行即可抵達阿賜豬腳、老街碗粿與西市場。老牌飯店維護得宜，房間乾淨整潔、床鋪支撐性佳；頂樓設有景觀露台可遠眺斗六市區夜景，生活機能極為便利。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【停車避雷提醒】飯店自備平面車位有限，地下多為機械車位；開大型休旅車或休旅車高度較高者，建議於下午 15:00~16:00 提早抵達停放戶外平面區，客滿時需停外圍特約停車場。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市中山路6號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 緻麗伯爵酒店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '緻麗伯爵酒店 (Grand Earl Hotel)', '下樓即斗六市中心圓環商圈、步行太平老街美食5分鐘、頂樓露天觀景酒吧咖啡、商務家庭舒適老牌飯店', '雲林縣斗六市中山路6號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="北港鎮"
+               data-city-district="雲林縣・北港鎮"
+               data-category="精選旅宿"
+               data-search="朝聖酒店 (saint hotel) 雲林縣 北港鎮 精選旅宿 正對北港朝天宮廟門口・歐式復古宮廷風與下樓即老街小吃 走出大廳即朝天宮正門、歐式新古典復古裝潢、下樓吃遍鴨肉飯與麵線糊、地下專屬大型停車場 座落於北港朝天宮正前方「朝聖高第」大樓，是全台距離媽祖廟最近的四星級設計飯店。室內採新歐式古典與神話棋盤元素裝潢，挑高氣派；走出大廳即是熱鬧非凡的北港中山路老街，吃鴨肉飯、麵線糊與買大餅下樓即達。 【進香期交通管制避雷】農曆過年、媽祖誕辰（農曆三月）與週末連假期間，廟前老街萬頭鑽動並實施交通管制；自駕車輛必須配合交管警力與飯店指引，由特定便道進入地下室停車場，請務必先致電櫃檯詢問即時動線。 雲林縣北港鎮中山路146號3樓 北港鎮 朝天宮正門 拜拜首選 老街核心 歐式復古"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・北港鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜正對北港朝天宮廟門口・歐式復古宮廷風與下樓即老街小吃</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">北港拜拜朝聖與吃貨首選之最高地標旅店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-YL-03</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">朝聖酒店 (Saint Hotel)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">走出大廳即朝天宮正門</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">歐式新古典復古裝潢</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">下樓吃遍鴨肉飯與麵線糊</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">地下專屬大型停車場</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">座落於北港朝天宮正前方「朝聖高第」大樓，是全台距離媽祖廟最近的四星級設計飯店。室內採新歐式古典與神話棋盤元素裝潢，挑高氣派；走出大廳即是熱鬧非凡的北港中山路老街，吃鴨肉飯、麵線糊與買大餅下樓即達。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【進香期交通管制避雷】農曆過年、媽祖誕辰（農曆三月）與週末連假期間，廟前老街萬頭鑽動並實施交通管制；自駕車輛必須配合交管警力與飯店指引，由特定便道進入地下室停車場，請務必先致電櫃檯詢問即時動線。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣北港鎮中山路146號3樓</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣北港鎮 朝聖酒店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣北港鎮', '朝聖酒店 (Saint Hotel)', '走出大廳即朝天宮正門、歐式新古典復古裝潢、下樓吃遍鴨肉飯與麵線糊、地下專屬大型停車場', '雲林縣北港鎮中山路146號3樓')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="虎尾鎮"
+               data-city-district="雲林縣・虎尾鎮"
+               data-category="精選旅宿"
+               data-search="虎尾春秋文創設計旅店 (huwei hotel) 雲林縣 虎尾鎮 精選旅宿 全台唯一布袋戲主題設計旅宿・復古工業風金屬鐵件與頂樓酒吧 全台唯一生旦淨末丑房型、復古金屬工業鐵件設計、頂樓沐澄sky lounge景觀酒吧、步行至虎尾合同廳舍與鐵橋 前身為雲林第一棟電梯大樓「金夜大飯店」，改裝為全台唯一的布袋戲主題文創飯店。以「生、旦、淨、末、丑」五大角色性格打造專屬房型，巧妙融入灰泥牆面、復古花磚與黃銅鐵件；頂樓設有虎尾少見的露天高空酒吧，步行可達虎尾日治歷史建築群。 【空間與停車提醒】老建築翻新，部分低樓層標準房型空間稍緊湊、採光較為隱蔽；飯店專屬停車位數量較少，客滿時需停放於外圍合作收費停車場步行約 3~5 分鐘。 雲林縣虎尾鎮信義路69號 虎尾鎮 布袋戲主題 文創設計 工業風 頂樓酒吧"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・虎尾鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜全台唯一布袋戲主題設計旅宿・復古工業風金屬鐵件與頂樓酒吧</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">文青與布袋戲迷指名度最高之文化風格旅宿</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-YL-04</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">虎尾春秋文創設計旅店 (Huwei Hotel)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">全台唯一生旦淨末丑房型</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">復古金屬工業鐵件設計</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">頂樓沐澄Sky Lounge景觀酒吧</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">步行至虎尾合同廳舍與鐵橋</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">前身為雲林第一棟電梯大樓「金夜大飯店」，改裝為全台唯一的布袋戲主題文創飯店。以「生、旦、淨、末、丑」五大角色性格打造專屬房型，巧妙融入灰泥牆面、復古花磚與黃銅鐵件；頂樓設有虎尾少見的露天高空酒吧，步行可達虎尾日治歷史建築群。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【空間與停車提醒】老建築翻新，部分低樓層標準房型空間稍緊湊、採光較為隱蔽；飯店專屬停車位數量較少，客滿時需停放於外圍合作收費停車場步行約 3~5 分鐘。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣虎尾鎮信義路69號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣虎尾鎮 虎尾春秋文創設計旅店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣虎尾鎮', '虎尾春秋文創設計旅店 (Huwei Hotel)', '全台唯一生旦淨末丑房型、復古金屬工業鐵件設計、頂樓沐澄Sky Lounge景觀酒吧、步行至虎尾合同廳舍與鐵橋', '雲林縣虎尾鎮信義路69號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="古坑鄉"
+               data-city-district="雲林縣・古坑鄉"
+               data-category="精選旅宿"
+               data-search="華山觀止虫二行館 (bug-two villa) 雲林縣 古坑鄉 精選旅宿 清水模極簡現代建築・遠眺嘉南平原絕美落日與璀璨夜景 清水模極簡現代美學建築、俯瞰嘉南平原萬家燈火夜景、客房專屬觀景大浴缸、精緻手作主廚套餐 坐落於古坑華山制高點山頭，由苗栗泰安觀止團隊打造。整棟建築採用未經修飾的清水模混凝土、原木與大片玻璃帷幕，與周邊茶園綠林完美交融；房內設有大型景觀浴缸，黃昏時分在露台欣賞夕陽染紅天際，入夜俯瞰嘉南平原萬家燈火，極具極致療癒感。 【山區路況與價格避雷】房價屬高價位精品行館；前往華山山路最後一段會車較窄且夜間無路燈，強烈建議在下午 16:30 前抵達；山區夜間氣溫驟降且濕氣較重，請備妥保暖外套。 雲林縣古坑鄉華山村松林路54-5號 古坑鄉 清水模 平原夜景 頂級度假 避世放空"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・古坑鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜清水模極簡現代建築・遠眺嘉南平原絕美落日與璀璨夜景</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">雲林高山頂級避世度假放空首選</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-YL-05</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">華山觀止虫二行館 (Bug-Two Villa)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">清水模極簡現代美學建築</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">俯瞰嘉南平原萬家燈火夜景</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">客房專屬觀景大浴缸</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">精緻手作主廚套餐</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">坐落於古坑華山制高點山頭，由苗栗泰安觀止團隊打造。整棟建築採用未經修飾的清水模混凝土、原木與大片玻璃帷幕，與周邊茶園綠林完美交融；房內設有大型景觀浴缸，黃昏時分在露台欣賞夕陽染紅天際，入夜俯瞰嘉南平原萬家燈火，極具極致療癒感。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【山區路況與價格避雷】房價屬高價位精品行館；前往華山山路最後一段會車較窄且夜間無路燈，強烈建議在下午 16:30 前抵達；山區夜間氣溫驟降且濕氣較重，請備妥保暖外套。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣古坑鄉華山村松林路54-5號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣古坑鄉 華山觀止虫二行館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣古坑鄉', '華山觀止虫二行館 (Bug-Two Villa)', '清水模極簡現代美學建築、俯瞰嘉南平原萬家燈火夜景、客房專屬觀景大浴缸、精緻手作主廚套餐', '雲林縣古坑鄉華山村松林路54-5號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="古坑鄉"
+               data-city-district="雲林縣・古坑鄉"
+               data-category="精選旅宿"
+               data-search="劍湖山渡假大飯店 雲林縣 古坑鄉 精選旅宿 緊鄰劍湖山世界主題樂園・挑高中庭花園與親子專屬遊樂設施 步行專屬通道直達劍湖山世界、挑高中庭熱帶雨林花園、大型室內兒童遊戲球池、附設超大戶外平面免費停車場 緊鄰台灣老牌主題樂園「劍湖山世界」，房客享有專屬步道直通樂園。挑高氣派的中庭花園綠意盎然，館內設有專屬攀岩區、兒童遊戲球池與多間中西式餐廳，非常適合專程帶小朋友暢玩摩天輪與遊樂設施的家庭旅客。 【飯店年代感提醒】飯店經營歷史悠久，客房裝潢與衛浴設備偏傳統老派，非現代文青網美風格；但環境維護乾淨、服務親切，是主攻遊樂園行程的最佳便利據點。 雲林縣古坑鄉大湖口67之8號 古坑鄉 劍湖山世界 親子度假 遊樂園直通 超大停車場"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・古坑鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜緊鄰劍湖山世界主題樂園・挑高中庭花園與親子專屬遊樂設施</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全家暢玩劍湖山世界最省力省時住宿</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-YL-06</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">劍湖山渡假大飯店</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">步行專屬通道直達劍湖山世界</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">挑高中庭熱帶雨林花園</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">大型室內兒童遊戲球池</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">附設超大戶外平面免費停車場</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">緊鄰台灣老牌主題樂園「劍湖山世界」，房客享有專屬步道直通樂園。挑高氣派的中庭花園綠意盎然，館內設有專屬攀岩區、兒童遊戲球池與多間中西式餐廳，非常適合專程帶小朋友暢玩摩天輪與遊樂設施的家庭旅客。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【飯店年代感提醒】飯店經營歷史悠久，客房裝潢與衛浴設備偏傳統老派，非現代文青網美風格；但環境維護乾淨、服務親切，是主攻遊樂園行程的最佳便利據點。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣古坑鄉大湖口67之8號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣古坑鄉 劍湖山渡假大飯店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣古坑鄉', '劍湖山渡假大飯店', '步行專屬通道直達劍湖山世界、挑高中庭熱帶雨林花園、大型室內兒童遊戲球池、附設超大戶外平面免費停車場', '雲林縣古坑鄉大湖口67之8號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="北港鎮"
+               data-city-district="雲林縣・北港鎮"
+               data-category="私房景點"
+               data-search="北港朝天宮 雲林縣 北港鎮 私房景點 全台媽祖信仰核心國定古蹟・大師陳應彬木雕八卦藻井藝術殿堂 大木作大師陳應彬八卦藻井、三川殿精湛交趾陶與剪黏、乾隆御賜慈雲灑潤古匾、正殿三百年媽祖聖像神威 建於清康熙三十三年（1694年），為全台分靈最多、香火最鼎盛的國定古蹟。廟宇建築本身就是一座民間藝術博物館，三川殿與拜殿的重簷歇山式八卦藻井由名匠陳應彬督造，斗栱層層交疊完全不用一根釘子；殿內石雕、交趾陶保存極其精美，文化震撼力極高。 【參拜避雷指南】假日香客萬頭鑽動、香煙裊裊，攜帶嬰幼兒或氣管敏感者請備妥口罩；廟前老街若有路人熱情引導停車並推銷昂貴金紙香燭，可禮貌婉拒，廟內皆有公費金香可自由添油香領取。 雲林縣北港鎮中山路178號 北港鎮 國定古蹟 媽祖信仰核心 陳應彬藻井 歷史殿堂"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・北港鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜全台媽祖信仰核心國定古蹟・大師陳應彬木雕八卦藻井藝術殿堂</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台灣民間宗教藝術與歷史底蘊最高代表</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-YL-01</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">北港朝天宮</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">大木作大師陳應彬八卦藻井</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">三川殿精湛交趾陶與剪黏</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾隆御賜慈雲灑潤古匾</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">正殿三百年媽祖聖像神威</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">建於清康熙三十三年（1694年），為全台分靈最多、香火最鼎盛的國定古蹟。廟宇建築本身就是一座民間藝術博物館，三川殿與拜殿的重簷歇山式八卦藻井由名匠陳應彬督造，斗栱層層交疊完全不用一根釘子；殿內石雕、交趾陶保存極其精美，文化震撼力極高。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【參拜避雷指南】假日香客萬頭鑽動、香煙裊裊，攜帶嬰幼兒或氣管敏感者請備妥口罩；廟前老街若有路人熱情引導停車並推銷昂貴金紙香燭，可禮貌婉拒，廟內皆有公費金香可自由添油香領取。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣北港鎮中山路178號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>04:30 - 24:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣北港鎮 北港朝天宮" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣北港鎮', '北港朝天宮', '大木作大師陳應彬八卦藻井、三川殿精湛交趾陶與剪黏、乾隆御賜慈雲灑潤古匾、正殿三百年媽祖聖像神威', '雲林縣北港鎮中山路178號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="虎尾鎮"
+               data-city-district="雲林縣・虎尾鎮"
+               data-category="私房景點"
+               data-search="雲林布袋戲館 ＆ 虎尾合同廳舍（誠品星巴克） 雲林縣 虎尾鎮 私房景點 日治虎尾郡役所紅磚木構官舍・全台掌中戲文史典藏與消防鐘樓老建築 日治虎尾郡役所紅磚拱門、珍藏黃海岱大師掌中木偶歷史、合同廳舍四層樓日治高聳望樓、星巴克誠品進駐之老消防局洗石子空間 日治時期虎尾郡役所改建，為典雅的西洋古典英式紅磚木構建築，完整展示台灣布袋戲鼻祖黃海岱至今的流派偶戲珍藏；正對面的「虎尾合同廳舍」原為日治消防局與派出所，內部保留高聳望樓與出勤滑竿，現由誠品與星巴克進駐，老建築氛圍極具韻味。 【公休日提醒】布袋戲館每週一、週二休館，其餘時間免門票參觀；對街的合同廳舍星巴克與誠品無公休日，假日午後人潮多，建議上午前往拍照較為清幽。 雲林縣虎尾鎮林森路一段498號 虎尾鎮 日治古蹟 布袋戲發源 合同廳舍 文青散步"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・虎尾鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜日治虎尾郡役所紅磚木構官舍・全台掌中戲文史典藏與消防鐘樓老建築</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">日治官舍建築活化與在地偶戲文化最高地標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-YL-02</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">雲林布袋戲館 ＆ 虎尾合同廳舍（誠品星巴克）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">日治虎尾郡役所紅磚拱門</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">珍藏黃海岱大師掌中木偶歷史</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">合同廳舍四層樓日治高聳望樓</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">星巴克誠品進駐之老消防局洗石子空間</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">日治時期虎尾郡役所改建，為典雅的西洋古典英式紅磚木構建築，完整展示台灣布袋戲鼻祖黃海岱至今的流派偶戲珍藏；正對面的「虎尾合同廳舍」原為日治消防局與派出所，內部保留高聳望樓與出勤滑竿，現由誠品與星巴克進駐，老建築氛圍極具韻味。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【公休日提醒】布袋戲館每週一、週二休館，其餘時間免門票參觀；對街的合同廳舍星巴克與誠品無公休日，假日午後人潮多，建議上午前往拍照較為清幽。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣虎尾鎮林森路一段498號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 18:00（每週一、週二休館）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣虎尾鎮 雲林布袋戲館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣虎尾鎮', '雲林布袋戲館 ＆ 虎尾合同廳舍（誠品星巴克）', '日治虎尾郡役所紅磚拱門、珍藏黃海岱大師掌中木偶歷史、合同廳舍四層樓日治高聳望樓、星巴克誠品進駐之老消防局洗石子空間', '雲林縣虎尾鎮林森路一段498號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="虎尾鎮"
+               data-city-district="雲林縣・虎尾鎮"
+               data-category="私房景點"
+               data-search="虎尾鐵橋 ＆ 虎尾糖廠冰品部 雲林縣 虎尾鎮 私房景點 百年英日鋼骨花梁糖鐵大橋・全台唯二運轉五分車與古早味紅豆酵母冰 三段不同年代高聳鋼骨桁架鐵橋、虎尾溪夕陽金黃倒影、糖廠老樹庭園吃古早味冰棒、製糖季(12月-3月)限定蒸汽柴油五分車 興建於1907年的百年鋼桁架花梁鐵橋，橫跨虎尾溪，由英國與日本工匠以鋼骨鉚釘技術建造，造型極具工業線條美感。漫步鐵橋可遠眺夕陽晚霞，過橋後可至建於1906年的虎尾糖廠老樹林蔭下品嘗紅豆牛奶冰，感受台灣糖業黃金時代的歷史脈動。 【季節與防曬提醒】鐵橋全長無遮蔭，正午陽光熾熱，強烈建議在傍晚 16:30~18:00 前往散步看夕陽；虎尾糖廠是全台僅存仍在運轉製糖的糖廠，每年 12 月至隔年 3 月「製糖季」期間才能在鎮上平交道看到載運甘蔗的五分車行駛。 雲林縣虎尾鎮中山路底 (同心公園旁) 虎尾鎮 百年鋼鐵橋 糖業鐵道 五分車 糖廠冰品"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・虎尾鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜百年英日鋼骨花梁糖鐵大橋・全台唯二運轉五分車與古早味紅豆酵母冰</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">百年糖業鐵道工業遺產與黃昏水岸漫步首選</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-YL-03</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">虎尾鐵橋 ＆ 虎尾糖廠冰品部</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">三段不同年代高聳鋼骨桁架鐵橋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">虎尾溪夕陽金黃倒影</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">糖廠老樹庭園吃古早味冰棒</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">製糖季(12月-3月)限定蒸汽柴油五分車</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">興建於1907年的百年鋼桁架花梁鐵橋，橫跨虎尾溪，由英國與日本工匠以鋼骨鉚釘技術建造，造型極具工業線條美感。漫步鐵橋可遠眺夕陽晚霞，過橋後可至建於1906年的虎尾糖廠老樹林蔭下品嘗紅豆牛奶冰，感受台灣糖業黃金時代的歷史脈動。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【季節與防曬提醒】鐵橋全長無遮蔭，正午陽光熾熱，強烈建議在傍晚 16:30~18:00 前往散步看夕陽；虎尾糖廠是全台僅存仍在運轉製糖的糖廠，每年 12 月至隔年 3 月「製糖季」期間才能在鎮上平交道看到載運甘蔗的五分車行駛。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣虎尾鎮中山路底 (同心公園旁)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>全天開放（糖廠冰品部 09:00 - 17:30）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣虎尾鎮 虎尾鐵橋" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣虎尾鎮', '虎尾鐵橋 ＆ 虎尾糖廠冰品部', '三段不同年代高聳鋼骨桁架鐵橋、虎尾溪夕陽金黃倒影、糖廠老樹庭園吃古早味冰棒、製糖季(12月-3月)限定蒸汽柴油五分車', '雲林縣虎尾鎮中山路底 (同心公園旁)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="西螺鎮"
+               data-city-district="雲林縣・西螺鎮"
+               data-category="私房景點"
+               data-search="西螺大橋 ＆ 延平老街（丸莊醬油觀光工廠） 雲林縣 西螺鎮 私房景點 遠東第一大紅鐵桁架長橋・日治巴洛克洋樓老街與百年古法蔭油瓦缸 全紅鋼骨桁架大橋壯麗線條、延平老街洗石子巴洛克老宅立面、丸莊醬油百年純黑豆日曬瓦缸廠、西螺泰成中藥房與老茶莊 1952年完工時為僅次於舊金山金門大橋的世界第二大橋、遠東第一長橋，大紅色的鋼桁架橫跨濁水溪，極度宏偉。橋旁的延平老街保存了數十棟1930年代巴洛克裝飾風格的洗石子洋樓；街上的丸莊醬油工廠後院排滿上百口古法黑豆天然日曬蔭油大瓦缸，醬香撲鼻。 【步行與老街營業時間】西螺大橋平日為一般道路，步行參觀請務必走專屬人行便道；延平老街為純樸老市街，多數文創店與傳統醬油老鋪傍晚 17:00 前即打烊，建議安排在日間上午或午後造訪。 雲林縣西螺鎮大同路與延平路周邊 西螺鎮 遠東第一橋 巴洛克老街 純釀醬油 濁水溪地標"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・西螺鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜遠東第一大紅鐵桁架長橋・日治巴洛克洋樓老街與百年古法蔭油瓦缸</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">台灣歷史工程地標與手工純釀醬油文史深度聖地</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-YL-04</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">西螺大橋 ＆ 延平老街（丸莊醬油觀光工廠）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">全紅鋼骨桁架大橋壯麗線條</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">延平老街洗石子巴洛克老宅立面</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">丸莊醬油百年純黑豆日曬瓦缸廠</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">西螺泰成中藥房與老茶莊</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">1952年完工時為僅次於舊金山金門大橋的世界第二大橋、遠東第一長橋，大紅色的鋼桁架橫跨濁水溪，極度宏偉。橋旁的延平老街保存了數十棟1930年代巴洛克裝飾風格的洗石子洋樓；街上的丸莊醬油工廠後院排滿上百口古法黑豆天然日曬蔭油大瓦缸，醬香撲鼻。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【步行與老街營業時間】西螺大橋平日為一般道路，步行參觀請務必走專屬人行便道；延平老街為純樸老市街，多數文創店與傳統醬油老鋪傍晚 17:00 前即打烊，建議安排在日間上午或午後造訪。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣西螺鎮大同路與延平路周邊</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>全天開放（醬油工廠 08:00 - 20:00）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣西螺鎮 西螺大橋" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣西螺鎮', '西螺大橋 ＆ 延平老街（丸莊醬油觀光工廠）', '全紅鋼骨桁架大橋壯麗線條、延平老街洗石子巴洛克老宅立面、丸莊醬油百年純黑豆日曬瓦缸廠、西螺泰成中藥房與老茶莊', '雲林縣西螺鎮大同路與延平路周邊')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="斗六市"
+               data-city-district="雲林縣・斗六市"
+               data-category="私房景點"
+               data-search="斗六太平老街 ＆ 雲中街文創聚落 雲林縣 斗六市 私房景點 日治大正巴洛克裝飾藝術老宅・日式警察官舍黑瓦木造林蔭散步 大正昭和洗石子山牆與生動雕飾、雲中街黑瓦日式木造警察宿舍群、老街吃老街碗粿與阿賜豬腳、行啟記念館紅磚歷史講堂 斗六太平老街長達六百公尺，保存了八十多棟日治大正時期受歐洲巴洛克風格影響的老街屋，立面上刻有屋主姓氏、天使雕塑與幾何紋樣，建築細節繁複精美；鄰近的雲中街則是日治時期警察宿舍聚落，老榕樹與黑瓦日式木造房舍交織，氣候清幽悠閒。 【安全避雷提醒】太平老街為正常通車幹道，人車並行且兩側停放機車，步行抬頭欣賞山牆立面時請特別注意來往汽機車；雲中街聚落多數咖啡小店週一公休。 雲林縣斗六市太平路與雲中街周邊 斗六市 巴洛克建築 日式宿舍群 文創老街 市區散步"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・斗六市</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜日治大正巴洛克裝飾藝術老宅・日式警察官舍黑瓦木造林蔭散步</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">斗六市區漫步吃美食與閱讀歷史建築最佳廊道</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-YL-05</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">斗六太平老街 ＆ 雲中街文創聚落</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">大正昭和洗石子山牆與生動雕飾</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">雲中街黑瓦日式木造警察宿舍群</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">老街吃老街碗粿與阿賜豬腳</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">行啟記念館紅磚歷史講堂</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">斗六太平老街長達六百公尺，保存了八十多棟日治大正時期受歐洲巴洛克風格影響的老街屋，立面上刻有屋主姓氏、天使雕塑與幾何紋樣，建築細節繁複精美；鄰近的雲中街則是日治時期警察宿舍聚落，老榕樹與黑瓦日式木造房舍交織，氣候清幽悠閒。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【安全避雷提醒】太平老街為正常通車幹道，人車並行且兩側停放機車，步行抬頭欣賞山牆立面時請特別注意來往汽機車；雲中街聚落多數咖啡小店週一公休。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣斗六市太平路與雲中街周邊</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>全天開放（文創聚落店家依各自時間）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣斗六市 斗六太平老街" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣斗六市', '斗六太平老街 ＆ 雲中街文創聚落', '大正昭和洗石子山牆與生動雕飾、雲中街黑瓦日式木造警察宿舍群、老街吃老街碗粿與阿賜豬腳、行啟記念館紅磚歷史講堂', '雲林縣斗六市太平路與雲中街周邊')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="古坑鄉"
+               data-city-district="雲林縣・古坑鄉"
+               data-category="私房景點"
+               data-search="古坑綠色隧道 ＆ 華山小天梯情人橋 雲林縣 古坑鄉 私房景點 數公里老芒果樹綠蔭天幕・高山雙索情人吊橋與茶園溪谷 兩側五十年老芒果樹天然綠蔭天幕、華山雙索鋼索情人木棧吊橋、小天梯階梯式高山吊橋遠眺茶山、大草坪假日小農與草地野餐 古坑平原上的「綠色隧道」由數百棵五十年歷史的老芒果樹交織而成，枝葉繁茂形成數公里長的天然林蔭綠色遮陽棚，旁有大片綠草坪與假日農夫市集；驅車往上至華山風景區，則有隱身山谷的小天梯與一次限通行兩人的單人雙索「情人橋」，穿梭於綠油油的茶園與杉林中，極為清涼透心。 【人潮與體力避雷】1. 綠色隧道假日人潮與攤販極為擁擠，若喜愛寧靜建議平日或週末上午 09:00 前前往；2. 華山情人橋與小天梯步道略有階梯陡坡，請穿著防滑運動鞋，雨後木棧道較濕滑需慢行。 雲林縣古坑鄉湳仔村湳仔路 (綠色隧道) / 華山風景區 (情人橋) 古坑鄉 芒果樹林蔭 華山情人橋 茶園溪谷 自然健行"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・古坑鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜數公里老芒果樹綠蔭天幕・高山雙索情人吊橋與茶園溪谷</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">雲林平原綠蔭散步與高山避暑親近自然雙體驗</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-YL-06</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">古坑綠色隧道 ＆ 華山小天梯情人橋</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">兩側五十年老芒果樹天然綠蔭天幕</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">華山雙索鋼索情人木棧吊橋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">小天梯階梯式高山吊橋遠眺茶山</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">大草坪假日小農與草地野餐</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">古坑平原上的「綠色隧道」由數百棵五十年歷史的老芒果樹交織而成，枝葉繁茂形成數公里長的天然林蔭綠色遮陽棚，旁有大片綠草坪與假日農夫市集；驅車往上至華山風景區，則有隱身山谷的小天梯與一次限通行兩人的單人雙索「情人橋」，穿梭於綠油油的茶園與杉林中，極為清涼透心。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【人潮與體力避雷】1. 綠色隧道假日人潮與攤販極為擁擠，若喜愛寧靜建議平日或週末上午 09:00 前前往；2. 華山情人橋與小天梯步道略有階梯陡坡，請穿著防滑運動鞋，雨後木棧道較濕滑需慢行。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣古坑鄉湳仔村湳仔路 (綠色隧道) / 華山風景區 (情人橋)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>全天開放</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣古坑鄉 古坑綠色隧道公園" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣古坑鄉', '古坑綠色隧道 ＆ 華山小天梯情人橋', '兩側五十年老芒果樹天然綠蔭天幕、華山雙索鋼索情人木棧吊橋、小天梯階梯式高山吊橋遠眺茶山、大草坪假日小農與草地野餐', '雲林縣古坑鄉湳仔村湳仔路 (綠色隧道) / 華山風景區 (情人橋)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="口湖鄉"
+               data-city-district="雲林縣・口湖鄉"
+               data-category="私房景點"
+               data-search="成龍溼地 雲林縣 口湖鄉 私房景點 地層下陷由滄桑轉生國際藝術濕地・水鳥倒影與竹編水上地景 漂浮於水面上的國際竹編環境藝術、冬候鳥黑面琵鷺與水鳥棲息、夕陽晚霞染紅無邊際水天一色、木棧觀景平台與濕地賞鳥解說亭 因地層下陷與颱風海水倒灌形成的天然濕地。經過當地村民與藝術家長年努力，轉化為國際環境藝術季與黑面琵鷺、白鷺鷥的越冬天堂。漂浮在水上的大型竹編裝置藝術與舊房舍水下倒影交織，入暮時夕陽倒映在波光粼粼的水面上，滄桑而壯麗。 【濱海風候避雷】位處沿海空曠地區，無大型樹蔭遮蔽，冬季東北季風極為強勁，務必戴帽子並穿著防風防寒外套；周邊無便利超商或繁華商圈，出發前請備妥飲用水與輕食。 雲林縣口湖鄉成龍村 (縣道164線旁) 口湖鄉 水上藝術 生態濕地 夕陽絕景 環境共生"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・口湖鄉</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜地層下陷由滄桑轉生國際藝術濕地・水鳥倒影與竹編水上地景</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台灣最感人且純淨之水上生態藝術地景</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-YL-07</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">成龍溼地</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">漂浮於水面上的國際竹編環境藝術</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">冬候鳥黑面琵鷺與水鳥棲息</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">夕陽晚霞染紅無邊際水天一色</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">木棧觀景平台與濕地賞鳥解說亭</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">因地層下陷與颱風海水倒灌形成的天然濕地。經過當地村民與藝術家長年努力，轉化為國際環境藝術季與黑面琵鷺、白鷺鷥的越冬天堂。漂浮在水上的大型竹編裝置藝術與舊房舍水下倒影交織，入暮時夕陽倒映在波光粼粼的水面上，滄桑而壯麗。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【濱海風候避雷】位處沿海空曠地區，無大型樹蔭遮蔽，冬季東北季風極為強勁，務必戴帽子並穿著防風防寒外套；周邊無便利超商或繁華商圈，出發前請備妥飲用水與輕食。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣口湖鄉成龍村 (縣道164線旁)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>全天開放（建議傍晚日落前 1 小時抵達）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣口湖鄉 成龍溼地" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣口湖鄉', '成龍溼地', '漂浮於水面上的國際竹編環境藝術、冬候鳥黑面琵鷺與水鳥棲息、夕陽晚霞染紅無邊際水天一色、木棧觀景平台與濕地賞鳥解說亭', '雲林縣口湖鄉成龍村 (縣道164線旁)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="雲林縣"
+               data-district="土庫鎮"
+               data-city-district="雲林縣・土庫鎮"
+               data-category="私房景點"
+               data-search="土庫順天宮 ＆ 庄役場日式歷史建築 雲林縣 土庫鎮 私房景點 雲林海線百年塗褲媽古廟・全台少見日本觀音神像避難歷史文化走廊 順天宮百年媽祖神像與古石碑、日治庄役場洗石子裝飾立面、古早味老中藥房與老餅鋪街屋、走訪阿海師當歸鴨傳統老街 土庫順天宮創建於清代，是在地人口中的「塗褲媽」。日治時期皇民化運動摧毀寺廟神像時，廟方迎請日本高野山真言宗黑面觀世音菩薩入廟供奉，成為全台少數逃過拆毀劫難的古老媽祖廟；廟旁的土庫庄役場與百年中藥行老街，散發純樸未經商業過度包裝的府縣風情。 【文化旅遊提醒】土庫為安靜的傳統鄉鎮老街，適合喜愛放慢步調、探索傳統藥膳、糕餅與古蹟歷史的知性旅人；周邊停車便利，可在順天宮周邊白線處順向停放。 雲林縣土庫鎮中正路109號 土庫鎮 百年媽祖廟 土庫庄役場 古樸老街 知性歷史"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#fefce8;color:#854d0e;border:1px solid #fef08a;">雲林縣・土庫鎮</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜雲林海線百年塗褲媽古廟・全台少見日本觀音神像避難歷史文化走廊</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">避開觀光喧鬧之質樸百年歷史文化聚落</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-YL-08</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">土庫順天宮 ＆ 庄役場日式歷史建築</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">順天宮百年媽祖神像與古石碑</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">日治庄役場洗石子裝飾立面</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味老中藥房與老餅鋪街屋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">走訪阿海師當歸鴨傳統老街</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">土庫順天宮創建於清代，是在地人口中的「塗褲媽」。日治時期皇民化運動摧毀寺廟神像時，廟方迎請日本高野山真言宗黑面觀世音菩薩入廟供奉，成為全台少數逃過拆毀劫難的古老媽祖廟；廟旁的土庫庄役場與百年中藥行老街，散發純樸未經商業過度包裝的府縣風情。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【文化旅遊提醒】土庫為安靜的傳統鄉鎮老街，適合喜愛放慢步調、探索傳統藥膳、糕餅與古蹟歷史的知性旅人；周邊停車便利，可在順天宮周邊白線處順向停放。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>雲林縣土庫鎮中正路109號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>06:00 - 21:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=雲林縣土庫鎮 土庫順天宮" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('雲林縣土庫鎮', '土庫順天宮 ＆ 庄役場日式歷史建築', '順天宮百年媽祖神像與古石碑、日治庄役場洗石子裝飾立面、古早味老中藥房與老餅鋪街屋、走訪阿海師當歸鴨傳統老街', '雲林縣土庫鎮中正路109號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -16732,7 +18235,7 @@
 
   <!-- 底部手冊導覽浮動條（三大手冊常駐置底切換） -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.94);backdrop-filter:blur(10px);padding:6px 10px;border-radius:30px;display:flex;gap:6px;box-shadow:0 10px 25px rgba(0,0,0,0.35);z-index:900;max-width:96vw;white-space:nowrap;">
-    <a href="index.html" style="color:#ffffff;background:#b45309;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🍱 全能手冊 (336)</a>
+    <a href="index.html" style="color:#ffffff;background:#b45309;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🍱 全能手冊 (366)</a>
     <a href="attractions.html" id="attractionsBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">📸 私房景點 (22)</a>
     <a href="seaview.html" id="seaviewBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿 (20)</a>
   </div>
