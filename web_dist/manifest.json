@@ -1,7 +1,7 @@
 {
   "name": "台灣私房美食・景點・住宿避雷隨身手冊",
   "short_name": "避雷隨身手冊",
-  "description": "收錄嘉義縣市與臺南市 306 筆在地實測美食・景點・住宿避雷指南",
+  "description": "收錄嘉義縣市與臺南市 336 筆在地實測美食・景點・住宿避雷指南",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f8fafc",

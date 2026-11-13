@@ -44,7 +44,7 @@
     </div>
     <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食・景點・住宿避雷隨身手冊</h1>
     <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（東區 97／西區 72）、嘉義縣（46 筆）＆ 臺南市（91 筆）共 306 筆實測避雷指南
+      收錄嘉義市（東區 97／西區 72）、嘉義縣（46 筆）＆ 臺南市（121 筆）共 336 筆實測避雷指南
     </div>
   </header>
 
@@ -55,7 +55,7 @@
       <!-- 核心主題大分頁導航（美食・景點・旅宿） -->
       <div style="display:flex;gap:6px;margin-bottom:10px;padding-bottom:10px;border-bottom:1.5px solid #f1f5f9;overflow-x:auto;" class="no-scrollbar">
         <a href="index.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:800;background:#b45309;color:#ffffff;box-shadow:0 2px 6px rgba(180,83,9,0.25);">
-          🍱 全能避雷手冊 (306)
+          🍱 全能避雷手冊 (336)
         </a>
         <a href="attractions.html" style="flex:1;min-width:fit-content;text-align:center;text-decoration:none;padding:7px 12px;border-radius:10px;font-size:13px;font-weight:700;background:#f8fafc;color:#475569;border:1px solid #cbd5e1;">
           📸 私房景點 (22)
@@ -70,7 +70,7 @@
         <button type="button" data-city-btn="all" onclick="selectCity('all')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">306</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">336</span>
         </button>
         <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
@@ -85,7 +85,7 @@
         <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
                 style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
           <span>🏛️ 臺南市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">91</span>
+          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">121</span>
         </button>
       </div>
 
@@ -94,7 +94,7 @@
         <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
         <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (306)
+          全部鄉鎮市區 (336)
         </button>
         <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -144,13 +144,33 @@
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           臺南市・下營區 (1)
         </button>
+        <button type="button" data-dist-btn="臺南市・中西區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・中西區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・中西區 (14)
+        </button>
+        <button type="button" data-dist-btn="臺南市・仁德區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・仁德區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・仁德區 (4)
+        </button>
         <button type="button" data-dist-btn="臺南市・六甲區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・六甲區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           臺南市・六甲區 (1)
         </button>
+        <button type="button" data-dist-btn="臺南市・北區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・北區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・北區 (4)
+        </button>
         <button type="button" data-dist-btn="臺南市・善化區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・善化區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           臺南市・善化區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・安南區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・安南區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・安南區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・安平區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・安平區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・安平區 (2)
         </button>
         <button type="button" data-dist-btn="臺南市・山上區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・山上區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
@@ -172,13 +192,29 @@
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           臺南市・柳營區 (2)
         </button>
+        <button type="button" data-dist-btn="臺南市・歸仁區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・歸仁區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・歸仁區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・永康區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・永康區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・永康區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・玉井區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・玉井區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・玉井區 (1)
+        </button>
+        <button type="button" data-dist-btn="臺南市・白河區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・白河區')"
+                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
+          臺南市・白河區 (1)
+        </button>
         <button type="button" data-dist-btn="臺南市・鹽水區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・鹽水區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
           臺南市・鹽水區 (5)
         </button>
         <button type="button" data-dist-btn="臺南市・麻豆區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・麻豆區')"
                 style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・麻豆區 (2)
+          臺南市・麻豆區 (3)
         </button>
       </div>
 
@@ -211,7 +247,7 @@
   <!-- 篩選狀態統計列 -->
   <div style="max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#64748b;">
     <div id="breadcrumbText">目前分頁：<b style="color:#b45309;">全部縣市 ▸ 全部鄉鎮市區</b></div>
-    <div>顯示中：<b id="storeCount" style="color:#b45309;">306</b> 筆資料</div>
+    <div>顯示中：<b id="storeCount" style="color:#b45309;">336</b> 筆資料</div>
   </div>
 
   <!-- 預渲染卡片列表（即使禁用 JS 亦可 100% 呈現所有卡片與完整排版） -->
@@ -15210,6 +15246,1476 @@
           </button>
         </div>
       </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="北區"
+               data-city-district="臺南市・北區"
+               data-category="在地小吃"
+               data-search="西羅殿牛肉湯 臺南市 北區 在地小吃 大骨牛骨蔬果高湯・自製牛油辣椒醬靈魂老字號 牛肉湯 (附肉燥飯)、特製牛油辣椒醬、牛腩湯、炒麻油牛肉 老台南人清晨與上午的在地愛店。牛骨大骨高湯加入蔬果熬煮，甘甜順口不口渴；手切本土溫體牛川燙至粉嫩，肉質軟嫩帶有天然甜味。點湯即附贈一碗香濃肉燥飯。 【老饕吃法與避坑】1. 必加桌上的店家自炒「牛油辣椒醬」，沾牛肉或拌肉燥飯香氣瞬間昇華；2. 營業時間清晨 04:30 開賣至中午 13:00（每週二公休），尖峰時段內用需稍微候位，但翻桌速度快。 臺南市北區公園南路98號 北區 牛肉湯 溫體牛 老饕私房 附肉燥飯"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・北區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜大骨牛骨蔬果高湯・自製牛油辣椒醬靈魂老字號</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">PTT台南板老饕與在地人私房清單首選</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-92</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">西羅殿牛肉湯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">牛肉湯 (附肉燥飯)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製牛油辣椒醬</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">牛腩湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">炒麻油牛肉</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">老台南人清晨與上午的在地愛店。牛骨大骨高湯加入蔬果熬煮，甘甜順口不口渴；手切本土溫體牛川燙至粉嫩，肉質軟嫩帶有天然甜味。點湯即附贈一碗香濃肉燥飯。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【老饕吃法與避坑】1. 必加桌上的店家自炒「牛油辣椒醬」，沾牛肉或拌肉燥飯香氣瞬間昇華；2. 營業時間清晨 04:30 開賣至中午 13:00（每週二公休），尖峰時段內用需稍微候位，但翻桌速度快。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市北區公園南路98號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>04:30 - 13:00（每週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市北區 西羅殿牛肉湯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市北區', '西羅殿牛肉湯', '牛肉湯 (附肉燥飯)、特製牛油辣椒醬、牛腩湯、炒麻油牛肉', '臺南市北區公園南路98號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="宵夜炭烤日料"
+               data-search="鬍鬚忠牛肉湯 臺南市 中西區 宵夜炭烤日料 台南深夜宵夜救星・手切花紋溫體牛與大火蒜頭牛 花紋牛肉湯、頂級牛肉湯、大火蒜頭牛肉、牛燥飯 營業時間從傍晚一路開到翌日清晨，是台南市區極具口碑的宵夜場霸主。提供不同部位分級，招牌「花紋牛肉湯」油花細緻分佈均勻，肉質極度軟嫩滑順；大火蒜頭牛肉蒜香爆棚，大火鑊氣十足。 【避坑提醒】越夜越熱鬧，深夜 22:00 至凌晨 01:00 常出現排隊人潮，建議傍晚 17:00 開店初或深夜 02:00 後離峰前往；民族路周邊夜間紅線極多且科技執法嚴格，自駕切勿違停。 臺南市中西區民族路三段91號 中西區 牛肉湯 宵夜推薦 花紋牛 蒜頭牛肉"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">宵夜炭烤日料｜台南深夜宵夜救星・手切花紋溫體牛與大火蒜頭牛</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">中西區夜貓族老饕首選宵夜牛肉湯</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-93</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">鬍鬚忠牛肉湯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">花紋牛肉湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">頂級牛肉湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">大火蒜頭牛肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">牛燥飯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">營業時間從傍晚一路開到翌日清晨，是台南市區極具口碑的宵夜場霸主。提供不同部位分級，招牌「花紋牛肉湯」油花細緻分佈均勻，肉質極度軟嫩滑順；大火蒜頭牛肉蒜香爆棚，大火鑊氣十足。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑提醒】越夜越熱鬧，深夜 22:00 至凌晨 01:00 常出現排隊人潮，建議傍晚 17:00 開店初或深夜 02:00 後離峰前往；民族路周邊夜間紅線極多且科技執法嚴格，自駕切勿違停。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區民族路三段91號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>17:00 - 翌日06:00（每週一休至17:00開）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 鬍鬚忠牛肉湯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '鬍鬚忠牛肉湯', '花紋牛肉湯、頂級牛肉湯、大火蒜頭牛肉、牛燥飯', '臺南市中西區民族路三段91號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="永康區"
+               data-city-district="臺南市・永康區"
+               data-category="在地小吃"
+               data-search="鴻品牛肉湯 (永康旗艦店 / 鹽行店) 臺南市 永康區 在地小吃 原台南縣永康老饕霸主・極品肉盤手工厚切與滑蛋牛肉 極品牛肉湯、滑蛋牛肉、蔥爆牛肉、酸白菜牛肉 原台南縣永康在地深耕多年的牛肉指標名店。選用每日產地新鮮直送溫體牛，手工厚切去筋膜，極品肉質油花媲美黑毛和牛，涮高湯 3 秒即起，肉香奶香兼具；熱炒類「滑蛋牛肉」蛋香滑嫩更是每桌必點。 【避坑提醒】極品肉盤每日限量，晚到容易只剩一般牛肉湯；旗艦店附設專屬停車場，非常適合自駕家庭前往，避開市區中西區窄巷塞車地獄。 臺南市永康區大灣路561號 永康區 溫體牛 極品肉盤 滑蛋牛肉 自備停車場"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・永康區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜原台南縣永康老饕霸主・極品肉盤手工厚切與滑蛋牛肉</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">原台南縣區老饕一致推崇溫體牛代表</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-94</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">鴻品牛肉湯 (永康旗艦店 / 鹽行店)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">極品牛肉湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滑蛋牛肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">蔥爆牛肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">酸白菜牛肉</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">原台南縣永康在地深耕多年的牛肉指標名店。選用每日產地新鮮直送溫體牛，手工厚切去筋膜，極品肉質油花媲美黑毛和牛，涮高湯 3 秒即起，肉香奶香兼具；熱炒類「滑蛋牛肉」蛋香滑嫩更是每桌必點。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑提醒】極品肉盤每日限量，晚到容易只剩一般牛肉湯；旗艦店附設專屬停車場，非常適合自駕家庭前往，避開市區中西區窄巷塞車地獄。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市永康區大灣路561號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>16:00 - 22:00（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市永康區 鴻品牛肉湯大灣店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市永康區', '鴻品牛肉湯 (永康旗艦店 / 鹽行店)', '極品牛肉湯、滑蛋牛肉、蔥爆牛肉、酸白菜牛肉', '臺南市永康區大灣路561號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="仁德區"
+               data-city-district="臺南市・仁德區"
+               data-category="鍋物補湯"
+               data-search="阿裕牛肉涮涮鍋 (崑崙旗艦店) 臺南市 仁德區 鍋物補湯 千坪純白豪宅旗艦園區・全台溫體手切牛涮涮鍋天花板 特優頂級手切溫體牛、牛骨蔬果清甜高湯鍋底、免費肉燥飯吃到飽、牛雜拼盤 仁德千坪莊園旗艦店，環境挑高氣派。老師傅在玻璃櫥窗內現切溫體牛肉，部位依當日肉質隨機出盤，肉片在蔬果牛大骨熬煮的高湯中輕涮 3 秒，呈粉紅色即可入口，脆嫩鮮甜無比，店內肉燥飯香氣濃郁免費續加。 【排隊避雷攻略】假日無法電話預約，必須現場抽號碼牌！週末中午 10:30、下午 16:30 即開始發號碼牌，建議開店前 20 分鐘抵達抽號；附設超大型免費停車場，自駕停車極度便利。 臺南市仁德區崑崙路733-1號 仁德區 溫體牛火鍋 旗艦店 好停車 肉燥飯吃到飽"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・仁德區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">鍋物補湯｜千坪純白豪宅旗艦園區・全台溫體手切牛涮涮鍋天花板</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台老饕朝聖之溫體牛火鍋旗艦地標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-95</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿裕牛肉涮涮鍋 (崑崙旗艦店)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特優頂級手切溫體牛</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">牛骨蔬果清甜高湯鍋底</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">免費肉燥飯吃到飽</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">牛雜拼盤</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">仁德千坪莊園旗艦店，環境挑高氣派。老師傅在玻璃櫥窗內現切溫體牛肉，部位依當日肉質隨機出盤，肉片在蔬果牛大骨熬煮的高湯中輕涮 3 秒，呈粉紅色即可入口，脆嫩鮮甜無比，店內肉燥飯香氣濃郁免費續加。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【排隊避雷攻略】假日無法電話預約，必須現場抽號碼牌！週末中午 10:30、下午 16:30 即開始發號碼牌，建議開店前 20 分鐘抵達抽號；附設超大型免費停車場，自駕停車極度便利。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市仁德區崑崙路733-1號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00 - 14:00, 17:00 - 21:00（每週一晚間至週二中午公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市仁德區 阿裕牛肉涮涮鍋崑崙店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市仁德區', '阿裕牛肉涮涮鍋 (崑崙旗艦店)', '特優頂級手切溫體牛、牛骨蔬果清甜高湯鍋底、免費肉燥飯吃到飽、牛雜拼盤', '臺南市仁德區崑崙路733-1號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="北區"
+               data-city-district="臺南市・北區"
+               data-category="在地小吃"
+               data-search="開元路無名虱目魚肉燥飯 臺南市 北區 在地小吃 米其林必比登推薦・大塊無刺魚肚與膠質爆棚肉燥飯 無刺虱目魚肚湯、肉燥飯 (加半熟荷包蛋)、乾煎魚腸 (限量)、魚皮湯加魚丸 開元路上無招牌卻天天排隊的傳奇老店。虱目魚肚肉厚肥美、油脂豐腴且完全無刺，大骨魚湯鮮美不腥；肉燥飯以手工切塊肥肉丁老滷熬製，膠質黏嘴，戳破一顆半熟蛋黃拌入，鹹甜油脂香濃到極致。 【早鳥避雷提醒】限量煎魚腸通常早上 06:30~07:00 就售罄！店家清晨 05:20 開賣至中午 13:30，不想排長隊建議早上 07:00 前前往；開車請停周邊收費停車場，開元路主幹道常有拖吊執法。 臺南市北區開元路313號 北區 虱目魚 肉燥飯 必比登 排隊老店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・北區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜米其林必比登推薦・大塊無刺魚肚與膠質爆棚肉燥飯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">老台南人清晨日常早餐最高指標之一</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-96</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">開元路無名虱目魚肉燥飯</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">無刺虱目魚肚湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">肉燥飯 (加半熟荷包蛋)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾煎魚腸 (限量)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">魚皮湯加魚丸</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">開元路上無招牌卻天天排隊的傳奇老店。虱目魚肚肉厚肥美、油脂豐腴且完全無刺，大骨魚湯鮮美不腥；肉燥飯以手工切塊肥肉丁老滷熬製，膠質黏嘴，戳破一顆半熟蛋黃拌入，鹹甜油脂香濃到極致。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【早鳥避雷提醒】限量煎魚腸通常早上 06:30~07:00 就售罄！店家清晨 05:20 開賣至中午 13:30，不想排長隊建議早上 07:00 前前往；開車請停周邊收費停車場，開元路主幹道常有拖吊執法。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市北區開元路313號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>05:20 - 13:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市北區 開元路無名虱目魚肉燥飯" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市北區', '開元路無名虱目魚肉燥飯', '無刺虱目魚肚湯、肉燥飯 (加半熟荷包蛋)、乾煎魚腸 (限量)、魚皮湯加魚丸', '臺南市北區開元路313號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="在地小吃"
+               data-search="阿興虱目魚 臺南市 中西區 在地小吃 全台獨創炒蒜頭飯・無刺鮮甜魚皮與魚肚湯 特製蒜頭飯、魚皮湯 (沾芥末醬油膏)、乾煎無刺魚肚、骨肉湯 中西區在地人深愛的早午餐老店。全台少見的「蒜頭飯」以大量蒜頭油爆大火炒透，飯粒油亮金黃、蒜香撲鼻卻毫不嗆辣；配上一碗帶肉厚切魚皮湯與香脆煎魚肚，是最純正的府城在地早午餐。 【內行吃法】蒜頭飯味道濃郁，搭配魚皮湯沾特調芥末醬油膏極為契合；營業時間 07:00 - 14:00，避開 11:30~12:30 上班族外帶時段即可輕鬆入座。 臺南市中西區文賢路252號 中西區 蒜頭飯 虱目魚皮 在地早午餐 免排長龍"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜全台獨創炒蒜頭飯・無刺鮮甜魚皮與魚肚湯</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">中西區在地人低調私房早餐神組合</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-97</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿興虱目魚</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製蒜頭飯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">魚皮湯 (沾芥末醬油膏)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾煎無刺魚肚</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">骨肉湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">中西區在地人深愛的早午餐老店。全台少見的「蒜頭飯」以大量蒜頭油爆大火炒透，飯粒油亮金黃、蒜香撲鼻卻毫不嗆辣；配上一碗帶肉厚切魚皮湯與香脆煎魚肚，是最純正的府城在地早午餐。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【內行吃法】蒜頭飯味道濃郁，搭配魚皮湯沾特調芥末醬油膏極為契合；營業時間 07:00 - 14:00，避開 11:30~12:30 上班族外帶時段即可輕鬆入座。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區文賢路252號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>07:00 - 14:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 阿興虱目魚" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '阿興虱目魚', '特製蒜頭飯、魚皮湯 (沾芥末醬油膏)、乾煎無刺魚肚、骨肉湯', '臺南市中西區文賢路252號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="在地小吃"
+               data-search="進福炒鱔魚專家 臺南市 中西區 在地小吃 近五十年大火爆炒鑊氣・厚切生炒鱔魚與麻油腰花 生炒鱔魚意麵、麻油炒腰花、乾炒花枝、鱔魚湯 府前路近半世紀名店，師傅爐火純青的大火爆炒，幾秒鐘起鍋鎖住鱔魚鮮度。鱔魚切得厚實、口感爽脆帶勁，意麵吸收濃稠酸甜醬汁與焦香鑊氣；麻油腰花熟度剛好，厚脆多汁。 【甜度避雷提醒】此店為正統府城偏甜酸勾芡風味，若不習慣台南傳統重甜口味，點餐時可直接主動告知店家「炒酸一點、少糖」；價格屬中高價位，但份量與鱔魚厚度均屬上乘。 臺南市中西區府前路一段46號 中西區 炒鱔魚 鱔魚意麵 鑊氣十足 麻油腰花"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜近五十年大火爆炒鑊氣・厚切生炒鱔魚與麻油腰花</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">府城大火快炒炒鱔魚厚脆指標名店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-98</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">進福炒鱔魚專家</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">生炒鱔魚意麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">麻油炒腰花</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾炒花枝</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鱔魚湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">府前路近半世紀名店，師傅爐火純青的大火爆炒，幾秒鐘起鍋鎖住鱔魚鮮度。鱔魚切得厚實、口感爽脆帶勁，意麵吸收濃稠酸甜醬汁與焦香鑊氣；麻油腰花熟度剛好，厚脆多汁。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【甜度避雷提醒】此店為正統府城偏甜酸勾芡風味，若不習慣台南傳統重甜口味，點餐時可直接主動告知店家「炒酸一點、少糖」；價格屬中高價位，但份量與鱔魚厚度均屬上乘。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區府前路一段46號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>11:00 - 24:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 進福炒鱔魚專家" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '進福炒鱔魚專家', '生炒鱔魚意麵、麻油炒腰花、乾炒花枝、鱔魚湯', '臺南市中西區府前路一段46號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="在地小吃"
+               data-search="阿江炒鱔魚 臺南市 中西區 在地小吃 老鋪炭火焦香黑胡椒・乾炒鱔魚意麵老派硬實力 乾炒鱔魚意麵、鱔魚意麵 (羹湯)、清湯鱔魚 民族路三段上的老字號店面，店內陳設極具歲月感。阿江師大火快炒時鍋氣四溢，特製黑胡椒粉與洋蔥大火乾炒，鱔魚彈脆無土味，乾炒意麵吸附焦香醬汁，微辣開胃，甜度比一般羹湯款更加平衡耐吃。 【避坑提醒】店內座位較少、通風較簡樸，夏天較為悶熱；下午 17:00 開賣至深夜 24:00，營業時間偶有臨時公休，出發前建議確認。乾炒鱔魚單價較高但鑊氣遠勝羹湯款。 臺南市中西區民族路三段89號 中西區 乾炒鱔魚 黑胡椒焦香 老字號 深夜美食"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜老鋪炭火焦香黑胡椒・乾炒鱔魚意麵老派硬實力</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">在地深夜老饕公認鑊氣焦香最足老鋪</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-99</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿江炒鱔魚</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">乾炒鱔魚意麵</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">鱔魚意麵 (羹湯)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">清湯鱔魚</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">民族路三段上的老字號店面，店內陳設極具歲月感。阿江師大火快炒時鍋氣四溢，特製黑胡椒粉與洋蔥大火乾炒，鱔魚彈脆無土味，乾炒意麵吸附焦香醬汁，微辣開胃，甜度比一般羹湯款更加平衡耐吃。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑提醒】店內座位較少、通風較簡樸，夏天較為悶熱；下午 17:00 開賣至深夜 24:00，營業時間偶有臨時公休，出發前建議確認。乾炒鱔魚單價較高但鑊氣遠勝羹湯款。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區民族路三段89號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>17:00 - 24:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 阿江炒鱔魚" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '阿江炒鱔魚', '乾炒鱔魚意麵、鱔魚意麵 (羹湯)、清湯鱔魚', '臺南市中西區民族路三段89號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="在地小吃"
+               data-search="保安路米糕 (原下大道米糕) 臺南市 中西區 在地小吃 三代古法檜木蒸籠炊飯・老滷肉燥旗魚鬆經典府城米糕 傳統古早味米糕、四神豬肚湯、滷鴨蛋、扁食湯 台南米糕經典標竿。嚴選陳年舊糯米以檜木蒸籠蒸熟，粒粒分明飽滿有嚼勁，澆淋熬煮數小時的黑金帶皮肉燥，鋪上特製細炒旗魚鬆、花生與清脆醃小黃瓜，搭配一碗中藥香醇厚的四神湯，層次極其豐富。 【避坑提醒】保安路美食一級戰區人潮眾多，店內座位不多，假日常需排隊 15~20 分鐘；糯米消化較慢，建議細嚼慢嚥，可搭配無糖茶飲。 臺南市中西區保安路16號 中西區 台南米糕 保安路商圈 四神湯 必比登"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜三代古法檜木蒸籠炊飯・老滷肉燥旗魚鬆經典府城米糕</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">米其林必比登推薦・傳承半世紀米糕代表</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-100</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">保安路米糕 (原下大道米糕)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">傳統古早味米糕</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">四神豬肚湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">滷鴨蛋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">扁食湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">台南米糕經典標竿。嚴選陳年舊糯米以檜木蒸籠蒸熟，粒粒分明飽滿有嚼勁，澆淋熬煮數小時的黑金帶皮肉燥，鋪上特製細炒旗魚鬆、花生與清脆醃小黃瓜，搭配一碗中藥香醇厚的四神湯，層次極其豐富。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑提醒】保安路美食一級戰區人潮眾多，店內座位不多，假日常需排隊 15~20 分鐘；糯米消化較慢，建議細嚼慢嚥，可搭配無糖茶飲。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區保安路16號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 22:00（每週三公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 保安路米糕" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '保安路米糕 (原下大道米糕)', '傳統古早味米糕、四神豬肚湯、滷鴨蛋、扁食湯', '臺南市中西區保安路16號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="在地小吃"
+               data-search="一味品碗粿魚羹 臺南市 中西區 在地小吃 國華街老饕分流勝地・黑褐火燒蝦肉燥古法純米碗粿 古早味碗粿、浮水魚羹、特製蒜泥與辣椒膏 富盛號同源親戚獨立開業。純在來米磨漿混入肉燥汁，顏色呈誘人黑褐色，內餡包含大塊瘦肉、火燒蝦與肉燥香菇，質地軟q帶有米香彈性，搭配淋在上面的特調甘醇油膏與生蒜泥，風味扎實。 【內行選擇】對面的富盛號多為遊覽車與初次遊客排隊，在地老饕更偏好到一味品用餐，排隊時間短且口味穩定；吃碗粿記得用竹籤或小叉子沿碗緣劃開成十字形再舀起食用。 臺南市中西區國華街三段177號 中西區 國華街 碗粿 在來米 老饕私房"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜國華街老饕分流勝地・黑褐火燒蝦肉燥古法純米碗粿</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">在地鄉民推崇勝過對面觀光大排長龍店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-101</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">一味品碗粿魚羹</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味碗粿</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">浮水魚羹</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製蒜泥與辣椒膏</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">富盛號同源親戚獨立開業。純在來米磨漿混入肉燥汁，顏色呈誘人黑褐色，內餡包含大塊瘦肉、火燒蝦與肉燥香菇，質地軟Q帶有米香彈性，搭配淋在上面的特調甘醇油膏與生蒜泥，風味扎實。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【內行選擇】對面的富盛號多為遊覽車與初次遊客排隊，在地老饕更偏好到一味品用餐，排隊時間短且口味穩定；吃碗粿記得用竹籤或小叉子沿碗緣劃開成十字形再舀起食用。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區國華街三段177號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>05:00 - 17:00（每週二公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 一味品碗粿" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '一味品碗粿魚羹', '古早味碗粿、浮水魚羹、特製蒜泥與辣椒膏', '臺南市中西區國華街三段177號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="在地小吃"
+               data-search="阿明豬心冬粉 (金華店) 臺南市 中西區 在地小吃 隔水鋼杯川燙極致脆嫩・二代冷氣寬敞分流旗艦 豬心冬粉、麻油豬肝、蒜頭豬腳、骨髓湯 保安路排隊傳奇阿明的二代分店。秉持老店經典「鋁杯隔水加熱」手法，精準控制秒數將豬心燙至最佳熟度，脆嫩多汁完全無腥味；湯頭清甜帶有冬粉吸汁的滑順，蒜頭豬腳皮q黏糯沾醬極香。 【排隊避坑密技】保安路本店天天人潮擠爆且無冷氣，極耗時間體力；強烈建議改來金華店，室內冷氣充足、座位寬敞乾淨，口味完全傳承，排隊時間通常比本店少一半以上。 臺南市中西區金華路四段47號 中西區 豬心冬粉 有冷氣 宵夜排隊 分流首選"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地小吃｜隔水鋼杯川燙極致脆嫩・二代冷氣寬敞分流旗艦</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">免受保安路老店酷暑排隊之聰明選擇</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-102</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿明豬心冬粉 (金華店)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">豬心冬粉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">麻油豬肝</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">蒜頭豬腳</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">骨髓湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">保安路排隊傳奇阿明的二代分店。秉持老店經典「鋁杯隔水加熱」手法，精準控制秒數將豬心燙至最佳熟度，脆嫩多汁完全無腥味；湯頭清甜帶有冬粉吸汁的滑順，蒜頭豬腳皮Q黏糯沾醬極香。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【排隊避坑密技】保安路本店天天人潮擠爆且無冷氣，極耗時間體力；強烈建議改來金華店，室內冷氣充足、座位寬敞乾淨，口味完全傳承，排隊時間通常比本店少一半以上。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區金華路四段47號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>17:00 - 24:00（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 阿明豬心冬粉金華店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '阿明豬心冬粉 (金華店)', '豬心冬粉、麻油豬肝、蒜頭豬腳、骨髓湯', '臺南市中西區金華路四段47號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="烘焙甜點冰品"
+               data-search="太陽牌冰品 臺南市 中西區 烘焙甜點冰品 一甲子正宗草湖芋仔冰・招牌紅豆牛乳霜綿密古早味 草湖芋仔冰 (芋頭/花生/紅豆/百香果)、紅豆牛乳霜、芒果牛乳霜、酸梅冰棒 走過超過六十年歲月的民權路老字號冰店。招牌草湖芋仔冰切成四方小塊，口感冰涼扎實、芋香濃郁不甜膩；另一招牌紅豆牛乳霜以古法製冰機打出細緻綿密牛奶雪霜，鋪上大顆熬煮至軟糯的萬丹紅豆，淋上煉乳極度銷魂。 【內行推薦】芋仔冰一份五顆可任選綜合口味，外帶提供保麗龍盒保冷；店內座位不算多，下午尖峰時段需等候幾分鐘，翻桌速度快。 臺南市中西區民權路一段41號 中西區 古早味冰品 草湖芋仔冰 紅豆牛乳霜 六十年老店"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜一甲子正宗草湖芋仔冰・招牌紅豆牛乳霜綿密古早味</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">台南在地數十年老派冰品天花板</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-103</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">太陽牌冰品</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">草湖芋仔冰 (芋頭/花生/紅豆/百香果)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">紅豆牛乳霜</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">芒果牛乳霜</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">酸梅冰棒</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">走過超過六十年歲月的民權路老字號冰店。招牌草湖芋仔冰切成四方小塊，口感冰涼扎實、芋香濃郁不甜膩；另一招牌紅豆牛乳霜以古法製冰機打出細緻綿密牛奶雪霜，鋪上大顆熬煮至軟糯的萬丹紅豆，淋上煉乳極度銷魂。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【內行推薦】芋仔冰一份五顆可任選綜合口味，外帶提供保麗龍盒保冷；店內座位不算多，下午尖峰時段需等候幾分鐘，翻桌速度快。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區民權路一段41號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 21:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 太陽牌冰品" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '太陽牌冰品', '草湖芋仔冰 (芋頭/花生/紅豆/百香果)、紅豆牛乳霜、芒果牛乳霜、酸梅冰棒', '臺南市中西區民權路一段41號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="手搖咖啡茶飲"
+               data-search="波哥茶飲 (台南南寧創始店 / 各門市) 臺南市 中西區 手搖咖啡茶飲 台南專屬在地手搖回憶・綜合新味與炒糖鮮奶茶 綜合新味 (綠茶+檸檬+小紫蘇+大小珍珠)、炒糖鮮奶茶、艾斯蜜桃、玄米煎茶 1991年發源於台南南一中商圈，是在地五六七八年級生的共同青春記憶。經典招牌「綜合新味」以清爽茉香綠茶為底，加入鮮榨檸檬汁，搭配小紫蘇（羅勒子）的脆爽與大小雙色珍珠，酸甜解膩、口感層次爆炸豐富。 【點餐建議】「綜合新味」本身帶有檸檬酸度，建議點「半糖微冰」風味最為平衡；若想喝濃郁奶茶，炒糖鮮奶茶香氣厚實也是在地招牌。 臺南市中西區南寧街2號 中西區 台南手搖 綜合新味 在地限定 青春回憶"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">手搖咖啡茶飲｜台南專屬在地手搖回憶・綜合新味與炒糖鮮奶茶</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">出外遊子回台南必喝本土手搖霸主</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-104</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">波哥茶飲 (台南南寧創始店 / 各門市)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">綜合新味 (綠茶+檸檬+小紫蘇+大小珍珠)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">炒糖鮮奶茶</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">艾斯蜜桃</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">玄米煎茶</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">1991年發源於台南南一中商圈，是在地五六七八年級生的共同青春記憶。經典招牌「綜合新味」以清爽茉香綠茶為底，加入鮮榨檸檬汁，搭配小紫蘇（羅勒子）的脆爽與大小雙色珍珠，酸甜解膩、口感層次爆炸豐富。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【點餐建議】「綜合新味」本身帶有檸檬酸度，建議點「半糖微冰」風味最為平衡；若想喝濃郁奶茶，炒糖鮮奶茶香氣厚實也是在地招牌。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區南寧街2號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:00 - 22:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 波哥茶飲南寧店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '波哥茶飲 (台南南寧創始店 / 各門市)', '綜合新味 (綠茶+檸檬+小紫蘇+大小珍珠)、炒糖鮮奶茶、艾斯蜜桃、玄米煎茶', '臺南市中西區南寧街2號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="麻豆區"
+               data-city-district="臺南市・麻豆區"
+               data-category="在地名產"
+               data-search="助仔碗粿 (麻豆中央市場) 臺南市 麻豆區 在地名產 隱身老市場近百年古早味・油蔥蝦米肉燥老饕指定 招牌手工碗粿、花生豬腳湯、肉羹湯 隱藏在麻豆中央市場內的四代傳承老店。純在來米舊米研磨，米漿裡拌入炒香的紅蔥頭與蝦米肉燥，蒸出自然彈性與米香；內餡料好實在，搭配溫體花生燉煮的豬腳湯膠質飽滿，是在地內行老饕的真正私房。 【營業時間提醒】營業時間清晨 06:00 開賣，限量手工製作，通常上午 11:30~12:00 即全數售罄！想吃務必早起到麻豆老市場；每週二公休。 臺南市麻豆區中正路29號 (中央市場內) 麻豆區 老市場碗粿 早鳥限定 百年傳承 在地老饕"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・麻豆區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">在地名產｜隱身老市場近百年古早味・油蔥蝦米肉燥老饕指定</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">原台南縣老饕公認勝過交流道觀光大店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-105</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">助仔碗粿 (麻豆中央市場)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招牌手工碗粿</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">花生豬腳湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">肉羹湯</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">隱藏在麻豆中央市場內的四代傳承老店。純在來米舊米研磨，米漿裡拌入炒香的紅蔥頭與蝦米肉燥，蒸出自然彈性與米香；內餡料好實在，搭配溫體花生燉煮的豬腳湯膠質飽滿，是在地內行老饕的真正私房。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【營業時間提醒】營業時間清晨 06:00 開賣，限量手工製作，通常上午 11:30~12:00 即全數售罄！想吃務必早起到麻豆老市場；每週二公休。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市麻豆區中正路29號 (中央市場內)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>06:00 - 12:30（每週二公休，售完為止）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市麻豆區 助仔碗粿" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市麻豆區', '助仔碗粿 (麻豆中央市場)', '招牌手工碗粿、花生豬腳湯、肉羹湯', '臺南市麻豆區中正路29號 (中央市場內)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="歸仁區"
+               data-city-district="臺南市・歸仁區"
+               data-category="正餐主食"
+               data-search="阿菊食堂 臺南市 歸仁區 正餐主食 總鋪師傳奇辦桌手路菜・紅蟳米糕筍絲封肉老台菜 紅蟳米糕、筍絲大腸、古早味封肉、八寶丸、黑白切黑香腸 歸仁最具代表性的總鋪師辦桌老店。台南傳統辦桌精華手路菜應有盡有，紅蟳米糕蟹黃飽滿、糯米吸飽蟹香油蔥香；筍絲封肉燉至入口即化、肥而不膩；手工現炸八寶丸外酥內扎實，是在地家族聚餐最愛。 【避坑提醒】週末假日聚餐人潮極多，強烈建議提前數天電話訂位；紅蟳米糕需視產季與現場貨況供應，想吃特定大菜建議訂位時預留。附設專屬停車場。 臺南市歸仁區保大路二段1號 歸仁區 辦桌手路菜 紅蟳米糕 合菜聚餐 老字號"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・歸仁區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">正餐主食｜總鋪師傳奇辦桌手路菜・紅蟳米糕筍絲封肉老台菜</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">原台南縣家庭聚餐與傳統辦桌菜口碑指標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-106</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">阿菊食堂</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">紅蟳米糕</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">筍絲大腸</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">古早味封肉</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">八寶丸</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">黑白切黑香腸</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">歸仁最具代表性的總鋪師辦桌老店。台南傳統辦桌精華手路菜應有盡有，紅蟳米糕蟹黃飽滿、糯米吸飽蟹香油蔥香；筍絲封肉燉至入口即化、肥而不膩；手工現炸八寶丸外酥內扎實，是在地家族聚餐最愛。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑提醒】週末假日聚餐人潮極多，強烈建議提前數天電話訂位；紅蟳米糕需視產季與現場貨況供應，想吃特定大菜建議訂位時預留。附設專屬停車場。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市歸仁區保大路二段1號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:30 - 14:00, 16:30 - 20:00（每週一公休）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市歸仁區 阿菊食堂" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市歸仁區', '阿菊食堂', '紅蟳米糕、筍絲大腸、古早味封肉、八寶丸、黑白切黑香腸', '臺南市歸仁區保大路二段1號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="玉井區"
+               data-city-district="臺南市・玉井區"
+               data-category="烘焙甜點冰品"
+               data-search="玉井有間冰舖芒果冰 臺南市 玉井區 烘焙甜點冰品 芒果產地直送爆量芒果無雙・手工愛文雪花與酸甜情人果 芒果無雙 (大碗)、純愛文芒果雪花冰、現切新鮮芒果、特製情人果 位於芒果之鄉玉井中正路冰舖一條街的創始名店。招牌「芒果無雙」基底採用新鮮愛文芒果汁製成芒果冰磚削成雪花冰，上頭鋪滿大塊現切爆量甜美愛文芒果，再點綴酸脆手工醃情人果與冰淇淋，淋上香濃煉乳，份量驚人。 【產季與停車避雷】每年 5～9 月為愛文芒果產季，風味最為頂級；夏季週末排隊人潮極長，建議平日或假日上午 11 點前抵達；開車請停至玉井公有停車場再步行進入老街，街內路窄無法停車。 臺南市玉井區中正路154號 玉井區 芒果冰 芒果無雙 產地直送 夏季必吃"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・玉井區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f1f5f9;color:#475569;">烘焙甜點冰品｜芒果產地直送爆量芒果無雙・手工愛文雪花與酸甜情人果</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台芒果冰發源聖地之元祖排隊名店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">TN-107</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">玉井有間冰舖芒果冰</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #d97706;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">🍴 招牌必點與推薦吃法</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">芒果無雙 (大碗)</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">純愛文芒果雪花冰</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現切新鮮芒果</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#92400e;background-color:#fef3c7;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">特製情人果</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">位於芒果之鄉玉井中正路冰舖一條街的創始名店。招牌「芒果無雙」基底採用新鮮愛文芒果汁製成芒果冰磚削成雪花冰，上頭鋪滿大塊現切爆量甜美愛文芒果，再點綴酸脆手工醃情人果與冰淇淋，淋上香濃煉乳，份量驚人。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【產季與停車避雷】每年 5～9 月為愛文芒果產季，風味最為頂級；夏季週末排隊人潮極長，建議平日或假日上午 11 點前抵達；開車請停至玉井公有停車場再步行進入老街，街內路窄無法停車。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市玉井區中正路154號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00 - 19:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市玉井區 有間冰舖芒果冰" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市玉井區', '玉井有間冰舖芒果冰', '芒果無雙 (大碗)、純愛文芒果雪花冰、現切新鮮芒果、特製情人果', '臺南市玉井區中正路154號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="精選旅宿"
+               data-search="台南晶英酒店 (silks place tainan) 臺南市 中西區 精選旅宿 晶華旗艦五星奢華標竿・露天恆溫泳池與現沖牛肉湯早餐 中西區核心步行吃小吃、露天恆溫戶外泳池、席夢思頂級床品好眠、現沖牛肉湯與海鮮粥早餐 台南中西區五星級標竿飯店。客房挑高寬敞，融入閩式紅磚與現代低調奢華美學，床品與隔音水準居府城之冠；4樓設有戶外露天恆溫泳池與池畔酒吧，早餐提供現沖溫體牛肉湯、虱目魚皮湯與府城肉燥米糕，誠意十足。 【避坑提醒】1. 週末與連假房價高昂且滿房極快；2. 地下停車場週末與隔壁新光三越商場共用進出車道，週六午後進場車潮較大，建議避開 14:30~16:00 商場車流高峰抵達。 臺南市中西區和意路1號 中西區 五星級 泳池飯店 早餐牛肉湯 奢華度假"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜晶華旗艦五星奢華標竿・露天恆溫泳池與現沖牛肉湯早餐</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">台南市區五星級飯店綜合評分最高霸主</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-TN-01</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">台南晶英酒店 (Silks Place Tainan)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">中西區核心步行吃小吃</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">露天恆溫戶外泳池</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">席夢思頂級床品好眠</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">現沖牛肉湯與海鮮粥早餐</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">台南中西區五星級標竿飯店。客房挑高寬敞，融入閩式紅磚與現代低調奢華美學，床品與隔音水準居府城之冠；4樓設有戶外露天恆溫泳池與池畔酒吧，早餐提供現沖溫體牛肉湯、虱目魚皮湯與府城肉燥米糕，誠意十足。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑提醒】1. 週末與連假房價高昂且滿房極快；2. 地下停車場週末與隔壁新光三越商場共用進出車道，週六午後進場車潮較大，建議避開 14:30~16:00 商場車流高峰抵達。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區和意路1號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 16:00 ｜ 退房 12:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 台南晶英酒店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '台南晶英酒店 (Silks Place Tainan)', '中西區核心步行吃小吃、露天恆溫戶外泳池、席夢思頂級床品好眠、現沖牛肉湯與海鮮粥早餐', '臺南市中西區和意路1號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="精選旅宿"
+               data-search="友愛街旅館 (u.i.j hotel &amp; hostel) 臺南市 中西區 精選旅宿 黑膠音樂與工業復古美學・全台設計感青旅與精品飯店天花板 黑膠唱片大廳試聽體驗、24小時無人選文書店、超大共享廚房與空中露台、走出巷口即友愛街小吃 結合設計型精品客房與背包客艙的複合旅店。大廳播放典雅黑膠唱片，3樓設有全台最美的共享廚房「你好沙龍」與綠意露台；房間配備手沖咖啡壺與特調豆，細節品味滿分，走出旅館就是友愛街深夜美食小吃街。 【停車與隔音避雷】1. 旅館專屬停車位極少（採先到先停不可預約），車位客滿時需停至外圍收費特約停車場再步行前往；2. 背包客艙隔音視當晚同房室友素質而定，極度淺眠者強烈建議直接預訂獨立客房型。 臺南市中西區友愛街115巷5號 中西區 設計旅店 黑膠音樂 友愛街商圈 露台沙龍"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜黑膠音樂與工業復古美學・全台設計感青旅與精品飯店天花板</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">文青與年輕旅客指名度第一之生活風格旅宿</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-TN-02</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">友愛街旅館 (U.I.J Hotel &amp; Hostel)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">黑膠唱片大廳試聽體驗</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">24小時無人選文書店</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">超大共享廚房與空中露台</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">走出巷口即友愛街小吃</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">結合設計型精品客房與背包客艙的複合旅店。大廳播放典雅黑膠唱片，3樓設有全台最美的共享廚房「你好沙龍」與綠意露台；房間配備手沖咖啡壺與特調豆，細節品味滿分，走出旅館就是友愛街深夜美食小吃街。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【停車與隔音避雷】1. 旅館專屬停車位極少（採先到先停不可預約），車位客滿時需停至外圍收費特約停車場再步行前往；2. 背包客艙隔音視當晚同房室友素質而定，極度淺眠者強烈建議直接預訂獨立客房型。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區友愛街115巷5號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 友愛街旅館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '友愛街旅館 (U.I.J Hotel &amp; Hostel)', '黑膠唱片大廳試聽體驗、24小時無人選文書店、超大共享廚房與空中露台、走出巷口即友愛街小吃', '臺南市中西區友愛街115巷5號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="精選旅宿"
+               data-search="煙波大飯店 台南館 (lakeshore hotel tainan) 臺南市 中西區 精選旅宿 南美二館正對面極致核心地段・附設男女三溫暖與露天泳池 正對台南美術館二館、男女分開大浴場三溫暖、戶外露天景觀泳池、步行5分吃遍府城核心 坐落於台南中西區最精華地段，正對南美二館與司法博物館。走路 5~10 分鐘即可吃遍國華街、保安路與友愛街；館內附設設備完善的男女裸湯三溫暖與戶外泳池，逛完古蹟泡湯極度放鬆，客房舒適乾淨且價格合理。 【避坑提醒】全館客房數高達數百間，週末入住人潮極大；週六下午 15:00~16:00 check-in 與隔日早餐尖峰時段電梯等候時間較長，建議提早辦理入住手續或錯開早餐尖峰。 臺南市中西區永福路一段269號 中西區 南美二館對面 三溫暖大浴場 高cp值 美食步行圈"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜南美二館正對面極致核心地段・附設男女三溫暖與露天泳池</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">中西區地理位置無敵且性價比極高商旅飯店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-TN-03</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">煙波大飯店 台南館 (Lakeshore Hotel Tainan)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">正對台南美術館二館</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">男女分開大浴場三溫暖</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">戶外露天景觀泳池</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">步行5分吃遍府城核心</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">坐落於台南中西區最精華地段，正對南美二館與司法博物館。走路 5~10 分鐘即可吃遍國華街、保安路與友愛街；館內附設設備完善的男女裸湯三溫暖與戶外泳池，逛完古蹟泡湯極度放鬆，客房舒適乾淨且價格合理。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑提醒】全館客房數高達數百間，週末入住人潮極大；週六下午 15:00~16:00 Check-in 與隔日早餐尖峰時段電梯等候時間較長，建議提早辦理入住手續或錯開早餐尖峰。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區永福路一段269號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 煙波大飯店台南館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '煙波大飯店 台南館 (Lakeshore Hotel Tainan)', '正對台南美術館二館、男女分開大浴場三溫暖、戶外露天景觀泳池、步行5分吃遍府城核心', '臺南市中西區永福路一段269號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="北區"
+               data-city-district="臺南市・北區"
+               data-category="精選旅宿"
+               data-search="天下南隅 (provintia hotel) 臺南市 北區 精選旅宿 三十年老飯店華麗轉身・台歐復古摩登美學與圓頂西餐廳景觀 台歐復古摩登深色木質調、頂樓圓頂西餐廳天際線、步行赤嵌樓文化商圈、b1特色圖書館與酒吧 前身為天下大飯店，由知名團隊操刀改裝為復古摩登設計飯店。深色木質、磨石子與黃銅細節交織出老派優雅氛圍；頂樓的「圓頂西餐廳」是台南歷史最悠久的西餐廳之一，用餐可俯瞰府城市區天際線，地理位置鄰近赤嵌樓。 【停車與空間避雷】1. 老建築改建，部分標準房型空間稍顯緊湊，攜帶大件行李箱建議預訂高級房以上；2. 飯店附設為機械停車塔，高度與車寬受限，休旅車或底盤過低車輛需改停至周邊公有停車格（飯店有補助）。 臺南市北區成功路202號 北區 復古摩登 赤嵌樓周邊 圓頂西餐廳 老屋改建"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・北區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜三十年老飯店華麗轉身・台歐復古摩登美學與圓頂西餐廳景觀</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">復古摩登設計控狂推之全新改裝老字號</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-TN-04</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">天下南隅 (Provintia Hotel)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">台歐復古摩登深色木質調</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">頂樓圓頂西餐廳天際線</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">步行赤嵌樓文化商圈</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">B1特色圖書館與酒吧</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">前身為天下大飯店，由知名團隊操刀改裝為復古摩登設計飯店。深色木質、磨石子與黃銅細節交織出老派優雅氛圍；頂樓的「圓頂西餐廳」是台南歷史最悠久的西餐廳之一，用餐可俯瞰府城市區天際線，地理位置鄰近赤嵌樓。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【停車與空間避雷】1. 老建築改建，部分標準房型空間稍顯緊湊，攜帶大件行李箱建議預訂高級房以上；2. 飯店附設為機械停車塔，高度與車寬受限，休旅車或底盤過低車輛需改停至周邊公有停車格（飯店有補助）。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市北區成功路202號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市北區 天下南隅" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市北區', '天下南隅 (Provintia Hotel)', '台歐復古摩登深色木質調、頂樓圓頂西餐廳天際線、步行赤嵌樓文化商圈、B1特色圖書館與酒吧', '臺南市北區成功路202號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="仁德區"
+               data-city-district="臺南市・仁德區"
+               data-category="精選旅宿"
+               data-search="捷絲旅 台南虎山館 (just sleep tainan hushan) 臺南市 仁德區 精選旅宿 緊鄰奇美博物館與十鼓仁糖・挑高工業糖廠風與露天渡假泳池 步行十鼓仁糖園區2分鐘、戶外露天網美景觀泳池、糖廠鐵道復古工業設計、附設大型平面停車場 晶華國際酒店集團旗下品牌。緊鄰十鼓仁糖文創園區與奇美博物館，以舊糖廠工業風為設計主軸，融入復古鐵道元素。戶外設有絕美露天泳池，空間寬敞無壓迫感，好停車且上下台86線快速道路極為便利。 【周邊機能提醒】位於仁德郊區，周邊無步行可達之熱鬧夜市商圈，夜間若需宵夜建議在市區買齊帶回，或依賴館內餐廳「捷食驛」與外送平台。 臺南市仁德區文華路二段300號 仁德區 奇美博物館旁 十鼓園區旁 泳池度假 自駕好停車"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・仁德區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜緊鄰奇美博物館與十鼓仁糖・挑高工業糖廠風與露天渡假泳池</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">自駕族避開市區塞車地獄首選親子度假飯店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-TN-05</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">捷絲旅 台南虎山館 (Just Sleep Tainan Hushan)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">步行十鼓仁糖園區2分鐘</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">戶外露天網美景觀泳池</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">糖廠鐵道復古工業設計</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">附設大型平面停車場</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">晶華國際酒店集團旗下品牌。緊鄰十鼓仁糖文創園區與奇美博物館，以舊糖廠工業風為設計主軸，融入復古鐵道元素。戶外設有絕美露天泳池，空間寬敞無壓迫感，好停車且上下台86線快速道路極為便利。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【周邊機能提醒】位於仁德郊區，周邊無步行可達之熱鬧夜市商圈，夜間若需宵夜建議在市區買齊帶回，或依賴館內餐廳「捷食驛」與外送平台。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市仁德區文華路二段300號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 16:00 ｜ 退房 12:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市仁德區 捷絲旅台南虎山館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市仁德區', '捷絲旅 台南虎山館 (Just Sleep Tainan Hushan)', '步行十鼓仁糖園區2分鐘、戶外露天網美景觀泳池、糖廠鐵道復古工業設計、附設大型平面停車場', '臺南市仁德區文華路二段300號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="安平區"
+               data-city-district="臺南市・安平區"
+               data-category="精選旅宿"
+               data-search="台南大員皇冠假日酒店 (crowne plaza tainan) 臺南市 安平區 精選旅宿 ihg洲際連鎖品質保證・鹽水溪出海口夕陽水岸第一排 出海口紅樹林水岸景觀、室內溫水恆溫大型泳池、超大坪數客房與獨立浴缸、元素全日餐廳豐盛自助 坐落於安平水岸最末端，坐擁鹽水溪出海口紅樹林與台江國家公園夕陽景觀。客房坪數極大且挑高，隔音優異安靜無干擾，配備大型獨立景觀浴缸；館內設有室內溫水泳池與三溫暖，是遠離市區塵囂的純度假首選。 【交通位置注意】離台南中西區市中心車程約 20~25 分鐘，若主要行程為市區吃小吃需預留交通時間；適合自駕客或安排安平古蹟、四草綠隧慢活行程的旅客。 臺南市安平區州平路289號 安平區 ihg連鎖 水岸景觀 大坪數客房 安靜度假"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・安平區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#f3e8ff;color:#7e22ce;border:1px solid #e9d5ff;">精選旅宿｜IHG洲際連鎖品質保證・鹽水溪出海口夕陽水岸第一排</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">安平慢活度假放空首選之國際五星飯店</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">ST-TN-06</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">台南大員皇冠假日酒店 (Crowne Plaza Tainan)</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #9333ea;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#7e22ce;margin-bottom:4px;">🛏️ 住宿特色與房型亮點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">出海口紅樹林水岸景觀</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">室內溫水恆溫大型泳池</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">超大坪數客房與獨立浴缸</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#6b21a8;background-color:#faf5ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">元素全日餐廳豐盛自助</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">坐落於安平水岸最末端，坐擁鹽水溪出海口紅樹林與台江國家公園夕陽景觀。客房坪數極大且挑高，隔音優異安靜無干擾，配備大型獨立景觀浴缸；館內設有室內溫水泳池與三溫暖，是遠離市區塵囂的純度假首選。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【交通位置注意】離台南中西區市中心車程約 20~25 分鐘，若主要行程為市區吃小吃需預留交通時間；適合自駕客或安排安平古蹟、四草綠隧慢活行程的旅客。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市安平區州平路289號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>入住 15:00 ｜ 退房 11:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市安平區 台南大員皇冠假日酒店" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市安平區', '台南大員皇冠假日酒店 (Crowne Plaza Tainan)', '出海口紅樹林水岸景觀、室內溫水恆溫大型泳池、超大坪數客房與獨立浴缸、元素全日餐廳豐盛自助', '臺南市安平區州平路289號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="私房景點"
+               data-search="臺南市美術館二館（南美二館） 臺南市 中西區 私房景點 坂茂建築大師碎形遮陽屋頂・當代白色幾何藝術殿堂 五角形碎形幾何遮陽屋頂、戶外純白階梯立體動線、挑高明亮展覽藝廊空間、頂樓南美春室 the pool 普立茲克建築獎得主坂茂與石昭永共同設計。以台南代表鳳凰花轉化為五角形碎形屋頂，模擬陽光穿透樹葉的光影變化。內部挑高垂直交錯，展覽水準高，冷氣舒適宜人，頂樓春室玻璃屋咖啡館亦極具美感。 【參觀與停車避雷】1. 地下收費停車場週末常客滿且收費偏高，可停至周邊公有停車場；2. 戶外純白階梯拍照正午極度曬熱無遮蔽，建議清晨或傍晚夕陽時分在戶外散步拍照，正午留給室內吹冷氣看展。 臺南市中西區忠義路二段1號 中西區 美術館 坂茂建築 室內避暑 文青美拍"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜坂茂建築大師碎形遮陽屋頂・當代白色幾何藝術殿堂</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">台南當代美學與建築空間天花板</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-TN-01</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">臺南市美術館二館（南美二館）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">五角形碎形幾何遮陽屋頂</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">戶外純白階梯立體動線</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">挑高明亮展覽藝廊空間</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">頂樓南美春室 The POOL</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">普立茲克建築獎得主坂茂與石昭永共同設計。以台南代表鳳凰花轉化為五角形碎形屋頂，模擬陽光穿透樹葉的光影變化。內部挑高垂直交錯，展覽水準高，冷氣舒適宜人，頂樓春室玻璃屋咖啡館亦極具美感。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【參觀與停車避雷】1. 地下收費停車場週末常客滿且收費偏高，可停至周邊公有停車場；2. 戶外純白階梯拍照正午極度曬熱無遮蔽，建議清晨或傍晚夕陽時分在戶外散步拍照，正午留給室內吹冷氣看展。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區忠義路二段1號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 18:00（每週六延長至21:00，週一休館）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 臺南市美術館二館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '臺南市美術館二館（南美二館）', '五角形碎形幾何遮陽屋頂、戶外純白階梯立體動線、挑高明亮展覽藝廊空間、頂樓南美春室 The POOL', '臺南市中西區忠義路二段1號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="中西區"
+               data-city-district="臺南市・中西區"
+               data-category="私房景點"
+               data-search="台南司法博物館（原台南地方法院） 臺南市 中西區 私房景點 日治全台三大經典巴洛克建築・免門票莊嚴法庭與拘留所體驗 西洋巴洛克華麗圓頂與圓柱、日治原始法庭與法袍體驗、昔日真實拘留所狹窄走道、採光井與神秘貓道天塔 與總統府、國立台灣博物館並列為日治台灣三大經典法院建築。由森山松之助設計，壯麗的巴洛克式圓頂、門廊愛奧尼克柱式雕花保存極其完整；內部完整展示舊法庭、保險庫與拘留所，免門票即可沉浸式體驗司法歷史建築之美。 【避坑提醒】每週一公休；參觀免門票；著名的「天塔貓道」導覽每日有人數梯次限制，需在現場服務台領取號碼牌，想參觀貓道建議一早開館前來排號。 臺南市中西區府前路一段307號 中西區 巴洛克建築 免門票 森山松之助 深度古蹟"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・中西區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜日治全台三大經典巴洛克建築・免門票莊嚴法庭與拘留所體驗</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">文化歷史深度極高之免門票古蹟地標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-TN-02</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">台南司法博物館（原台南地方法院）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">西洋巴洛克華麗圓頂與圓柱</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">日治原始法庭與法袍體驗</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">昔日真實拘留所狹窄走道</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">採光井與神秘貓道天塔</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">與總統府、國立台灣博物館並列為日治台灣三大經典法院建築。由森山松之助設計，壯麗的巴洛克式圓頂、門廊愛奧尼克柱式雕花保存極其完整；內部完整展示舊法庭、保險庫與拘留所，免門票即可沉浸式體驗司法歷史建築之美。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【避坑提醒】每週一公休；參觀免門票；著名的「天塔貓道」導覽每日有人數梯次限制，需在現場服務台領取號碼牌，想參觀貓道建議一早開館前來排號。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市中西區府前路一段307號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00 - 17:00（每週一休館）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市中西區 台南司法博物館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市中西區', '台南司法博物館（原台南地方法院）', '西洋巴洛克華麗圓頂與圓柱、日治原始法庭與法袍體驗、昔日真實拘留所狹窄走道、採光井與神秘貓道天塔', '臺南市中西區府前路一段307號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="安平區"
+               data-city-district="臺南市・安平區"
+               data-category="私房景點"
+               data-search="安平古堡與安平樹屋（德記洋行） 臺南市 安平區 私房景點 百年老榕樹與十九世紀洋行盤根共生・空中木棧道奇幻綠蔭 老榕樹氣根盤據紅磚牆面、穿梭樹冠之立體空中木棧道、德記洋行純白長廊拱門、朱玖瑩故宮書法館 原為英商德記洋行倉庫，歷經百年廢棄後被老榕樹氣根完全吞噬包覆，形成「樹中有牆、牆中有樹」的奇幻共生景觀。沿著木棧道登上樹冠頂端俯瞰安平港水道，林蔭遮天、光影灑落，極具大自然神秘震撼力。 【防蚊防曬避雷】樹屋內部綠蔭茂密、靠近水岸，小黑蚊與蚊蟲極多，入場前務必噴塗強效防蚊液；週末正午高溫悶熱，建議安排在上午 08:30~10:00 或午後 16:00 前往。 臺南市安平區古堡街108號 安平區 安平樹屋 德記洋行 歷史洋行 自然共生"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・安平區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜百年老榕樹與十九世紀洋行盤根共生・空中木棧道奇幻綠蔭</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">自然生命力與歷史滄桑感交融之經典地標</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-TN-03</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">安平古堡與安平樹屋（德記洋行）</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">老榕樹氣根盤據紅磚牆面</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">穿梭樹冠之立體空中木棧道</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">德記洋行純白長廊拱門</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">朱玖瑩故宮書法館</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">原為英商德記洋行倉庫，歷經百年廢棄後被老榕樹氣根完全吞噬包覆，形成「樹中有牆、牆中有樹」的奇幻共生景觀。沿著木棧道登上樹冠頂端俯瞰安平港水道，林蔭遮天、光影灑落，極具大自然神秘震撼力。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【防蚊防曬避雷】樹屋內部綠蔭茂密、靠近水岸，小黑蚊與蚊蟲極多，入場前務必噴塗強效防蚊液；週末正午高溫悶熱，建議安排在上午 08:30~10:00 或午後 16:00 前往。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市安平區古堡街108號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:30 - 17:30</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市安平區 安平樹屋" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市安平區', '安平古堡與安平樹屋（德記洋行）', '老榕樹氣根盤據紅磚牆面、穿梭樹冠之立體空中木棧道、德記洋行純白長廊拱門、朱玖瑩故宮書法館', '臺南市安平區古堡街108號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="安南區"
+               data-city-district="臺南市・安南區"
+               data-category="私房景點"
+               data-search="四草綠色隧道 臺南市 安南區 私房景點 台版袖珍亞馬遜河・搭乘膠筏穿梭百年生態紅樹林綠廊 低頭穿越水上紅樹林綠蔭隧道、波平如鏡的天使之吻水面倒影、招潮蟹與彈塗魚濕地生態、四草大眾廟旁碼頭出發 被譽為台灣版袖珍亞馬遜河。百年前的原竹筏港水道兩旁生長著茂密的紅樹林（海茄苳、五梨跤），枝椏交錯在水面上形成天然綠色樹冠穹頂，水道倒映著翠綠林蔭宛如綠寶石鏡面，隨船導覽解說濕地生態非常生動。 【排隊與防曬避雷】1. 航程約 30 分鐘，乘船規定需穿著救生衣並戴斗笠；船上無遮蔽，夏季烈日極曬，強烈建議搭乘第一班（08:30）或下午 15:30 離峰航班；2. 週末散客常需排隊 30~50 分鐘，務必提早抽號買票。 臺南市安南區大眾路360號 (四草大眾廟旁) 安南區 生態隧道 搭膠筏 水上森林 世界級景觀"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・安南區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜台版袖珍亞馬遜河・搭乘膠筏穿梭百年生態紅樹林綠廊</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台唯一水上綠色生態水下倒影奇景</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-TN-04</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">四草綠色隧道</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">低頭穿越水上紅樹林綠蔭隧道</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">波平如鏡的天使之吻水面倒影</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">招潮蟹與彈塗魚濕地生態</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">四草大眾廟旁碼頭出發</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">被譽為台灣版袖珍亞馬遜河。百年前的原竹筏港水道兩旁生長著茂密的紅樹林（海茄苳、五梨跤），枝椏交錯在水面上形成天然綠色樹冠穹頂，水道倒映著翠綠林蔭宛如綠寶石鏡面，隨船導覽解說濕地生態非常生動。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【排隊與防曬避雷】1. 航程約 30 分鐘，乘船規定需穿著救生衣並戴斗笠；船上無遮蔽，夏季烈日極曬，強烈建議搭乘第一班（08:30）或下午 15:30 離峰航班；2. 週末散客常需排隊 30~50 分鐘，務必提早抽號買票。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市安南區大眾路360號 (四草大眾廟旁)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>08:30 - 17:00</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市安南區 四草綠色隧道" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市安南區', '四草綠色隧道', '低頭穿越水上紅樹林綠蔭隧道、波平如鏡的天使之吻水面倒影、招潮蟹與彈塗魚濕地生態、四草大眾廟旁碼頭出發', '臺南市安南區大眾路360號 (四草大眾廟旁)')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="仁德區"
+               data-city-district="臺南市・仁德區"
+               data-category="私房景點"
+               data-search="奇美博物館 臺南市 仁德區 私房景點 全台西洋美學殿堂天花板・阿波羅噴泉水岸歐風都會公園 阿波羅噴泉大理石雕塑群、奧林帕斯眾神白石橋、世界頂級名琴與樂器廳、全亞洲最大西洋兵器與動物標本館 企業家許文龍先生傾注一生創立的文化殿堂。壯麗古典的希臘神殿式純白建築，跨越奧林帕斯橋與阿波羅噴泉，戶外佔地數十公頃都會公園天鵝優游；館內典藏羅丹雕塑、西洋古典繪畫、全球稀有兵器與全亞洲最完整的動物化石標本，展覽水準震懾人心。 【購票與參觀避雷】1. 常設展與國際特展極度熱門，週末務必提前上官網預約購票，現場排隊常大排長龍；2. 館藏量極為龐大，走馬看花至少需 3 小時，建議租借個人語音導覽機；戶外園區免門票，傍晚散步落日極美。 臺南市仁德區文華路二段66號 仁德區 西洋美學 世界級博物館 阿波羅噴泉 家庭知性首選"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・仁德區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜全台西洋美學殿堂天花板・阿波羅噴泉水岸歐風都會公園</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台私立博物館世界級規格最高榮譽</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-TN-05</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">奇美博物館</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">阿波羅噴泉大理石雕塑群</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">奧林帕斯眾神白石橋</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">世界頂級名琴與樂器廳</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">全亞洲最大西洋兵器與動物標本館</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">企業家許文龍先生傾注一生創立的文化殿堂。壯麗古典的希臘神殿式純白建築，跨越奧林帕斯橋與阿波羅噴泉，戶外佔地數十公頃都會公園天鵝優游；館內典藏羅丹雕塑、西洋古典繪畫、全球稀有兵器與全亞洲最完整的動物化石標本，展覽水準震懾人心。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【購票與參觀避雷】1. 常設展與國際特展極度熱門，週末務必提前上官網預約購票，現場排隊常大排長龍；2. 館藏量極為龐大，走馬看花至少需 3 小時，建議租借個人語音導覽機；戶外園區免門票，傍晚散步落日極美。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市仁德區文華路二段66號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:30 - 17:30（每週三休館）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市仁德區 奇美博物館" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市仁德區', '奇美博物館', '阿波羅噴泉大理石雕塑群、奧林帕斯眾神白石橋、世界頂級名琴與樂器廳、全亞洲最大西洋兵器與動物標本館', '臺南市仁德區文華路二段66號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="仁德區"
+               data-city-district="臺南市・仁德區"
+               data-category="私房景點"
+               data-search="十鼓仁糖文創園區 臺南市 仁德區 私房景點 百年日治糖廠工業廢墟重生・高空極限滑梯與十鼓磅礡定目劇 五層樓高極限透明旋轉滑梯、舊糖蜜罐空中糖晶落體、十鼓打擊樂團震撼定目劇、工業風哈利波特魔法魔法書店 將建於1909年的車路墘製糖所閒置廠房活化，完美保留老機具、大型生鏽壓榨機與巨大糖蜜罐。結合高空極限攀岩、高空滑索與魔法工廠造景，入夜後打上工業奇幻燈光宛如賽博龐克廢墟；每日定時演出的十鼓打擊樂震撼人心。 【票價與時間避雷】全票價格較高（約400多元），強烈建議購買午後傍晚的「星光套票」或下午入場，兼具日間高空設施與夜間絕美工業廢墟燈光秀；部分極限高空滑梯有體重與年齡限制。 臺南市仁德區文華路二段326號 仁德區 糖廠活化 極限挑戰 夜景奇幻 十鼓定目劇"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・仁德區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜百年日治糖廠工業廢墟重生・高空極限滑梯與十鼓磅礡定目劇</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">日夜皆震撼之工業奇幻魔法冒險樂園</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-TN-06</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">十鼓仁糖文創園區</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">五層樓高極限透明旋轉滑梯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">舊糖蜜罐空中糖晶落體</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">十鼓打擊樂團震撼定目劇</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">工業風哈利波特魔法魔法書店</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">將建於1909年的車路墘製糖所閒置廠房活化，完美保留老機具、大型生鏽壓榨機與巨大糖蜜罐。結合高空極限攀岩、高空滑索與魔法工廠造景，入夜後打上工業奇幻燈光宛如賽博龐克廢墟；每日定時演出的十鼓打擊樂震撼人心。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【票價與時間避雷】全票價格較高（約400多元），強烈建議購買午後傍晚的「星光套票」或下午入場，兼具日間高空設施與夜間絕美工業廢墟燈光秀；部分極限高空滑梯有體重與年齡限制。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市仁德區文華路二段326號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>10:00 - 20:20（週六日延長至20:30）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市仁德區 十鼓仁糖文創園區" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市仁德區', '十鼓仁糖文創園區', '五層樓高極限透明旋轉滑梯、舊糖蜜罐空中糖晶落體、十鼓打擊樂團震撼定目劇、工業風哈利波特魔法魔法書店', '臺南市仁德區文華路二段326號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="北區"
+               data-city-district="臺南市・北區"
+               data-category="私房景點"
+               data-search="北門井仔腳瓦盤鹽田 臺南市 北區 私房景點 全台現存最古老二百年瓦盤鹽田・夕陽火燒雲倒影絕景 幾何棋盤瓦片鹽田地景、純白錐狀結晶鹽堆倒影、落日火燒雲粉橘天際線、免費體驗人工曬鹽收鹽工具 興建於1818年，是台灣現存歷史最悠久的瓦盤鹽田。以碎瓦片人工拼貼鋪設於結晶池底，避免鹽巴沾染黑泥，陽光照射下結晶鹽堆呈現純白金字塔造型。傍晚夕陽西沉時，天空火燒雲彩與幾何鹽池水面交相輝映，景色動人心魄。 【風勢與時間避雷】1. 最佳觀賞時間為「日落前 40 分鐘至日落後 20 分鐘」，請先查詢當日中央氣象署日落時刻表；2. 濱海地區風勢強勁且海風帶有鹽分，請備妥防風防寒衣物與相機鏡頭清潔用品。 臺南市北門區永華里井仔腳64號 北門區 歷史鹽田 夕陽絕景 瓦盤鹽池 免費體驗"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・北區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜全台現存最古老二百年瓦盤鹽田・夕陽火燒雲倒影絕景</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台灣夕陽倒影攝影聖地之三大夕照之一</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-TN-07</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">北門井仔腳瓦盤鹽田</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">幾何棋盤瓦片鹽田地景</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">純白錐狀結晶鹽堆倒影</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">落日火燒雲粉橘天際線</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">免費體驗人工曬鹽收鹽工具</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">興建於1818年，是台灣現存歷史最悠久的瓦盤鹽田。以碎瓦片人工拼貼鋪設於結晶池底，避免鹽巴沾染黑泥，陽光照射下結晶鹽堆呈現純白金字塔造型。傍晚夕陽西沉時，天空火燒雲彩與幾何鹽池水面交相輝映，景色動人心魄。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【風勢與時間避雷】1. 最佳觀賞時間為「日落前 40 分鐘至日落後 20 分鐘」，請先查詢當日中央氣象署日落時刻表；2. 濱海地區風勢強勁且海風帶有鹽分，請備妥防風防寒衣物與相機鏡頭清潔用品。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市北門區永華里井仔腳64號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>09:00 - 18:00 (夏季至19:00)</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市北門區 井仔腳瓦盤鹽田" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市北區', '北門井仔腳瓦盤鹽田', '幾何棋盤瓦片鹽田地景、純白錐狀結晶鹽堆倒影、落日火燒雲粉橘天際線、免費體驗人工曬鹽收鹽工具', '臺南市北門區永華里井仔腳64號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
+
+      <article class="store-card"
+               data-city="臺南市"
+               data-district="白河區"
+               data-city-district="臺南市・白河區"
+               data-category="私房景點"
+               data-search="白河關子嶺水火同源與泥漿溫泉 臺南市 白河區 私房景點 全台罕見黑色泥漿天然溫泉・水火共生三百年地質奇觀 天然氣與泉水共生水火同源、黑色弱鹼性泥漿溫泉泡湯、嶺頂公園日治桂花樹林、關子嶺脆皮桶仔雞聚落 日治時期即被列為台灣四大名湯之一。由地底湧出夾帶豐富礦物質的灰黑色弱鹼性碳酸泥漿泉，泉質細滑無比，泡完皮膚滑順如絲；附近的「水火同源」崖壁天然氣與泉水同時湧出，火焰燃燒於水面三百年不熄，為全台地質奇景。 【泡湯避雷提醒】1. 泥漿溫泉含有天然礦物黑泥，強烈建議穿著深色或舊泳衣前往，避免淺色泳衣染色難以洗淨；2. 上山行經 172 線山路彎道較多，請放慢車速；沿途有多家桶仔雞合菜可供用餐。 臺南市白河區關嶺里水火洞10之5號 白河區 泥漿溫泉 水火同源 名湯避暑 桶仔雞"
+               style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:0 4px 10px -2px rgba(15,23,42,0.05);display:flex;flex-direction:column;margin-bottom:4px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:800;padding:2.5px 8px;border-radius:6px;background-color:#ecfdf5;color:#047857;border:1px solid #a7f3d0;">臺南市・白河區</span>
+            <span style="font-size:11px;font-weight:600;padding:2.5px 8px;border-radius:6px;background-color:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">私房景點｜全台罕見黑色泥漿天然溫泉・水火共生三百年地質奇觀</span>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#b45309;background-color:#fffbeb;border:1px solid #fde68a;padding:2px 8px;border-radius:6px;">全台四大溫泉之一・珍稀弱鹼性碳酸泥漿泉</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span style="font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;background-color:#0f172a;color:#ffffff;flex-shrink:0;">AT-TN-08</span>
+          <h2 style="font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;margin:0;">白河關子嶺水火同源與泥漿溫泉</h2>
+        </div>
+
+        <div style="background-color:#fffbeb;border-left:3.5px solid #0284c7;padding:8px 11px;border-radius:0 10px 10px 0;margin-bottom:10px;">
+          <div style="font-size:11px;font-weight:800;color:#0369a1;margin-bottom:4px;">📸 核心亮點與參觀重點</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;"><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">天然氣與泉水共生水火同源</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">黑色弱鹼性泥漿溫泉泡湯</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">嶺頂公園日治桂花樹林</span><span style="display:inline-block;font-size:12.5px;font-weight:700;color:#075985;background-color:#f0f9ff;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;">關子嶺脆皮桶仔雞聚落</span></div>
+        </div>
+
+        <div style="font-size:13.5px;color:#334155;margin-bottom:10px;line-height:1.55;flex:1;">日治時期即被列為台灣四大名湯之一。由地底湧出夾帶豐富礦物質的灰黑色弱鹼性碳酸泥漿泉，泉質細滑無比，泡完皮膚滑順如絲；附近的「水火同源」崖壁天然氣與泉水同時湧出，火焰燃燒於水面三百年不熄，為全台地質奇景。</div>
+
+        <div style="background-color:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:8px 11px;margin-bottom:11px;font-size:12.5px;color:#9f1239;display:flex;align-items:flex-start;gap:6px;line-height:1.5;">
+          <span style="flex-shrink:0;">⚠️</span>
+          <div><b style="font-weight:800;">避坑與內行提醒：</b>【泡湯避雷提醒】1. 泥漿溫泉含有天然礦物黑泥，強烈建議穿著深色或舊泳衣前往，避免淺色泳衣染色難以洗淨；2. 上山行經 172 線山路彎道較多，請放慢車速；沿途有多家桶仔雞合菜可供用餐。</div>
+        </div>
+
+        <div style="border-top:1px solid #f1f5f9;padding-top:9px;margin-bottom:12px;font-size:12px;color:#64748b;display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>📍</span><span>臺南市白河區關嶺里水火洞10之5號</span></div>
+          <div style="display:flex;align-items:flex-start;gap:5px;"><span>🕒</span><span>全天開放（各溫泉會館開放時間依店家）</span></div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:auto;">
+          <a href="https://www.google.com/maps/search/?api=1&query=臺南市白河區 關子嶺水火同源" target="_blank" rel="noopener noreferrer"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#d97706;color:#ffffff;border:1px solid #d97706;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📍 Google 地圖導航
+          </a>
+          <button type="button" onclick="copyStore('臺南市白河區', '白河關子嶺水火同源與泥漿溫泉', '天然氣與泉水共生水火同源、黑色弱鹼性泥漿溫泉泡湯、嶺頂公園日治桂花樹林、關子嶺脆皮桶仔雞聚落', '臺南市白河區關嶺里水火洞10之5號')"
+             style="flex:1;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;background-color:#f8fafc;color:#475569;border:1px solid #e2e8f0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;">
+            📋 複製資訊
+          </button>
+        </div>
+      </article>
   </main>
 
   <!-- 查無結果提示框（預設隱藏） -->
@@ -15226,7 +16732,7 @@
 
   <!-- 底部手冊導覽浮動條（三大手冊常駐置底切換） -->
   <div style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.94);backdrop-filter:blur(10px);padding:6px 10px;border-radius:30px;display:flex;gap:6px;box-shadow:0 10px 25px rgba(0,0,0,0.35);z-index:900;max-width:96vw;white-space:nowrap;">
-    <a href="index.html" style="color:#ffffff;background:#b45309;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🍱 全能手冊 (306)</a>
+    <a href="index.html" style="color:#ffffff;background:#b45309;font-weight:700;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;">🍱 全能手冊 (336)</a>
     <a href="attractions.html" id="attractionsBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">📸 私房景點 (22)</a>
     <a href="seaview.html" id="seaviewBottomLink" style="color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 12px;border-radius:20px;transition:all 0.2s;">🌊 看海旅宿 (20)</a>
   </div>
