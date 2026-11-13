@@ -181,34 +181,31 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
         "臺北市": "🏙️"
     }
 
-    # 動態產生縣市分頁按鈕
-    city_tab_buttons = [
-        f"""        <button type="button" data-city-btn="all" onclick="selectCity('all')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">{total_count}</span>
-        </button>"""
+    # 動態產生縣市下拉式選項
+    city_options = [
+        f'<option value="all">🗺️ 全部（直轄市）縣 ({total_count})</option>'
     ]
     ordered_cities = ["嘉義市", "嘉義縣", "臺南市", "雲林縣"] + [c for c in city_counts if c not in ["嘉義市", "嘉義縣", "臺南市", "雲林縣"]]
     for c in ordered_cities:
         if c in city_counts:
             icon = city_icons.get(c, "📍")
             cnt = city_counts[c]
-            city_tab_buttons.append(
-                f"""        <button type="button" data-city-btn="{esc(c)}" onclick="selectCity('{esc(c)}')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>{icon} {esc(c)}</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">{cnt}</span>
-        </button>"""
-            )
-    city_tabs_html = "\n".join(city_tab_buttons)
+            city_options.append(f'<option value="{esc(c)}">{icon} {esc(c)} ({cnt})</option>')
+    city_select_options_html = "\n".join(city_options)
 
-    # 動態產生鄉鎮市區按鈕
-    dist_buttons = [
-        f"""        <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 ({total_count})
-        </button>"""
+    # 建立縣市與鄉鎮市區層級關係字典供前端聯動使用
+    city_districts_map = {}
+    for (c, d), cnt in dist_counts.items():
+        if c not in city_districts_map:
+            city_districts_map[c] = []
+        city_districts_map[c].append({"district": d, "count": cnt})
+    for c in city_districts_map:
+        city_districts_map[c].sort(key=lambda x: x["district"])
+    city_districts_json = json.dumps(city_districts_map, ensure_ascii=False)
+
+    # 動態產生預設鄉鎮市區下拉選項
+    dist_options = [
+        f'<option value="all">📍 全部鄉鎮市區 ({total_count})</option>'
     ]
     city_sort_order = {"嘉義市": 0, "嘉義縣": 1, "臺南市": 2, "雲林縣": 3}
     sorted_dists = sorted(
@@ -217,13 +214,8 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     )
     for (c, d), cnt in sorted_dists:
         dist_key = f"{c}・{d}"
-        dist_buttons.append(
-            f"""        <button type="button" data-dist-btn="{esc(dist_key)}" data-dist-city="{esc(c)}" onclick="selectDistrict('{esc(dist_key)}')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          {esc(dist_key)} ({cnt})
-        </button>"""
-        )
-    district_bar_html = "\n".join(dist_buttons)
+        dist_options.append(f'<option value="{esc(dist_key)}" data-city="{esc(c)}">{esc(c)}・{esc(d)} ({cnt})</option>')
+    district_select_options_html = "\n".join(dist_options)
 
     cy_east = dist_counts.get(("嘉義市", "東區"), 0)
     cy_west = dist_counts.get(("嘉義市", "西區"), 0)
@@ -288,15 +280,23 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
         </a>
       </div>
 
-      <!-- 第一層：台灣縣市分頁 -->
-      <div id="cityTabs" class="no-scrollbar" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:9px;padding-bottom:2px;">
-{city_tabs_html}
-      </div>
+      <!-- 第一層與第二層：下拉式選單（直轄市/縣 ➔ 鄉鎮市區） -->
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:140px;">
+          <label for="citySelect" style="display:block;font-size:11px;font-weight:800;color:#64748b;margin-bottom:4px;">🏛️ （直轄市）縣：</label>
+          <select id="citySelect" onchange="onCitySelectChange(this.value)"
+                  style="width:100%;padding:9px 12px;border-radius:12px;border:1.5px solid #cbd5e1;background-color:#ffffff;color:#0f172a;font-size:13.5px;font-weight:700;outline:none;box-shadow:0 1px 3px rgba(0,0,0,0.04);cursor:pointer;">
+{city_select_options_html}
+          </select>
+        </div>
 
-      <!-- 第二層：鄉鎮市區子分頁 -->
-      <div id="districtBar" class="no-scrollbar" style="display:flex;align-items:center;gap:6px;overflow-x:auto;margin-bottom:9px;padding:6px 10px;background-color:#f1f5f9;border-radius:10px;">
-        <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
-{district_bar_html}
+        <div style="flex:1;min-width:140px;">
+          <label for="districtSelect" style="display:block;font-size:11px;font-weight:800;color:#64748b;margin-bottom:4px;">📍 鄉鎮市區：</label>
+          <select id="districtSelect" onchange="onDistrictSelectChange(this.value)"
+                  style="width:100%;padding:9px 12px;border-radius:12px;border:1.5px solid #cbd5e1;background-color:#ffffff;color:#0f172a;font-size:13.5px;font-weight:700;outline:none;box-shadow:0 1px 3px rgba(0,0,0,0.04);cursor:pointer;">
+{district_select_options_html}
+          </select>
+        </div>
       </div>
 
       <!-- 搜尋框 -->
@@ -362,6 +362,7 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     var currentDistrict = "all";
     var currentCat = "all";
     var searchQuery = "";
+    var cityDistrictsMap = {city_districts_json};
 
     function applyFilters() {{
       var cards = document.querySelectorAll(".store-card");
@@ -371,12 +372,13 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
       for (var i = 0; i < cards.length; i++) {{
         var card = cards[i];
         var cCity = card.getAttribute("data-city");
+        var cDistrict = card.getAttribute("data-district");
         var cCityDist = card.getAttribute("data-city-district");
         var cCat = card.getAttribute("data-category");
         var cSearch = card.getAttribute("data-search") || "";
 
         var matchCity = (currentCity === "all" || cCity === currentCity);
-        var matchDist = (currentDistrict === "all" || cCityDist === currentDistrict);
+        var matchDist = (currentDistrict === "all" || cCityDist === currentDistrict || cDistrict === currentDistrict);
         var matchCat = (currentCat === "all" || cCat === currentCat);
         var matchQ = (!q || cSearch.indexOf(q) !== -1);
 
@@ -398,35 +400,58 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
         '目前分頁：<b style="color:#b45309;">' + cityText + " ▸ " + distText + catText + "</b>";
     }}
 
-    function updateTabStyles() {{
-      // 更新縣市分頁按鈕樣式
-      var cityBtns = document.querySelectorAll("[data-city-btn]");
-      for (var i = 0; i < cityBtns.length; i++) {{
-        var btn = cityBtns[i];
-        var isAct = (btn.getAttribute("data-city-btn") === currentCity);
-        btn.style.backgroundColor = isAct ? "#0f172a" : "#f8fafc";
-        btn.style.color = isAct ? "#ffffff" : "#475569";
-        btn.style.borderColor = isAct ? "#0f172a" : "#e2e8f0";
-      }}
+    function onCitySelectChange(city) {{
+      currentCity = city;
+      currentDistrict = "all";
+      updateDistrictSelectOptions();
+      applyFilters();
+    }}
 
-      // 更新鄉鎮市區按鈕顯示與樣式
-      var distBtns = document.querySelectorAll("[data-dist-btn]");
-      for (var j = 0; j < distBtns.length; j++) {{
-        var dBtn = distBtns[j];
-        var dVal = dBtn.getAttribute("data-dist-btn");
-        var dCity = dBtn.getAttribute("data-dist-city");
-        if (dVal === "all" || currentCity === "all" || dCity === currentCity) {{
-          dBtn.style.display = "inline-block";
-        }} else {{
-          dBtn.style.display = "none";
+    function onDistrictSelectChange(dist) {{
+      currentDistrict = dist;
+      applyFilters();
+    }}
+
+    function updateDistrictSelectOptions() {{
+      var distSelect = document.getElementById("districtSelect");
+      distSelect.innerHTML = "";
+
+      var defaultOpt = document.createElement("option");
+      defaultOpt.value = "all";
+
+      if (currentCity === "all") {{
+        defaultOpt.textContent = "📍 全部鄉鎮市區 ({total_count})";
+        distSelect.appendChild(defaultOpt);
+
+        for (var c in cityDistrictsMap) {{
+          var list = cityDistrictsMap[c];
+          for (var i = 0; i < list.length; i++) {{
+            var item = list[i];
+            var opt = document.createElement("option");
+            opt.value = c + "・" + item.district;
+            opt.textContent = c + "・" + item.district + " (" + item.count + ")";
+            distSelect.appendChild(opt);
+          }}
         }}
-        var isDistAct = (dVal === currentDistrict);
-        dBtn.style.backgroundColor = isDistAct ? "#ffffff" : "transparent";
-        dBtn.style.color = isDistAct ? "#b45309" : "#475569";
-        dBtn.style.borderColor = isDistAct ? "#cbd5e1" : "transparent";
-        dBtn.style.fontWeight = isDistAct ? "700" : "600";
-      }}
+      }} else {{
+        var list = cityDistrictsMap[currentCity] || [];
+        var citySum = 0;
+        for (var i = 0; i < list.length; i++) {{ citySum += list[i].count; }}
+        defaultOpt.textContent = "📍 全部" + currentCity + "行政區 (" + citySum + ")";
+        distSelect.appendChild(defaultOpt);
 
+        for (var i = 0; i < list.length; i++) {{
+          var item = list[i];
+          var opt = document.createElement("option");
+          opt.value = item.district;
+          opt.textContent = item.district + " (" + item.count + ")";
+          distSelect.appendChild(opt);
+        }}
+      }}
+      distSelect.value = "all";
+    }}
+
+    function updateTabStyles() {{
       // 更新餐點分類按鈕樣式
       var catBtns = document.querySelectorAll("[data-cat-btn]");
       for (var k = 0; k < catBtns.length; k++) {{
@@ -440,16 +465,15 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
     }}
 
     function selectCity(city) {{
-      currentCity = city;
-      currentDistrict = "all";
-      updateTabStyles();
-      applyFilters();
+      var citySelect = document.getElementById("citySelect");
+      if (citySelect) {{ citySelect.value = city; }}
+      onCitySelectChange(city);
     }}
 
     function selectDistrict(dist) {{
-      currentDistrict = dist;
-      updateTabStyles();
-      applyFilters();
+      var distSelect = document.getElementById("districtSelect");
+      if (distSelect) {{ distSelect.value = dist; }}
+      onDistrictSelectChange(dist);
     }}
 
     function selectCat(cat) {{

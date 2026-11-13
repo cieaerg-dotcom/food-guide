@@ -50,194 +50,65 @@
         </a>
       </div>
 
-      <!-- 第一層：台灣縣市分頁 -->
-      <div id="cityTabs" class="no-scrollbar" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:9px;padding-bottom:2px;">
-        <button type="button" data-city-btn="all" onclick="selectCity('all')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #0f172a;background-color:#0f172a;color:#ffffff;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>🗺️ 全部縣市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(255,255,255,0.22);color:#ffffff;">379</span>
-        </button>
-        <button type="button" data-city-btn="嘉義市" onclick="selectCity('嘉義市')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>🐓 嘉義市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">171</span>
-        </button>
-        <button type="button" data-city-btn="嘉義縣" onclick="selectCity('嘉義縣')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>🌲 嘉義縣</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">46</span>
-        </button>
-        <button type="button" data-city-btn="臺南市" onclick="selectCity('臺南市')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>🏛️ 臺南市</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">128</span>
-        </button>
-        <button type="button" data-city-btn="雲林縣" onclick="selectCity('雲林縣')"
-                style="flex:1;min-width:fit-content;padding:8px 14px;border-radius:12px;border:1.5px solid #e2e8f0;background-color:#f8fafc;color:#475569;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;">
-          <span>🌾 雲林縣</span>
-          <span style="font-size:11.5px;padding:1px 7px;border-radius:999px;background-color:rgba(100,116,139,0.15);color:inherit;">34</span>
-        </button>
-      </div>
+      <!-- 第一層與第二層：下拉式選單（直轄市/縣 ➔ 鄉鎮市區） -->
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:140px;">
+          <label for="citySelect" style="display:block;font-size:11px;font-weight:800;color:#64748b;margin-bottom:4px;">🏛️ （直轄市）縣：</label>
+          <select id="citySelect" onchange="onCitySelectChange(this.value)"
+                  style="width:100%;padding:9px 12px;border-radius:12px;border:1.5px solid #cbd5e1;background-color:#ffffff;color:#0f172a;font-size:13.5px;font-weight:700;outline:none;box-shadow:0 1px 3px rgba(0,0,0,0.04);cursor:pointer;">
+<option value="all">🗺️ 全部（直轄市）縣 (379)</option>
+<option value="嘉義市">🐓 嘉義市 (171)</option>
+<option value="嘉義縣">🌲 嘉義縣 (46)</option>
+<option value="臺南市">🏛️ 臺南市 (128)</option>
+<option value="雲林縣">🌾 雲林縣 (34)</option>
+          </select>
+        </div>
 
-      <!-- 第二層：鄉鎮市區子分頁 -->
-      <div id="districtBar" class="no-scrollbar" style="display:flex;align-items:center;gap:6px;overflow-x:auto;margin-bottom:9px;padding:6px 10px;background-color:#f1f5f9;border-radius:10px;">
-        <span style="font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;margin-right:2px;">📍 鄉鎮市區：</span>
-        <button type="button" data-dist-btn="all" onclick="selectDistrict('all')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid #cbd5e1;background-color:#ffffff;color:#b45309;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
-          全部鄉鎮市區 (379)
-        </button>
-        <button type="button" data-dist-btn="嘉義市・東區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・東區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義市・東區 (98)
-        </button>
-        <button type="button" data-dist-btn="嘉義市・西區" data-dist-city="嘉義市" onclick="selectDistrict('嘉義市・西區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義市・西區 (73)
-        </button>
-        <button type="button" data-dist-btn="嘉義縣・中埔鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・中埔鄉')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・中埔鄉 (1)
-        </button>
-        <button type="button" data-dist-btn="嘉義縣・六腳鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・六腳鄉')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・六腳鄉 (1)
-        </button>
-        <button type="button" data-dist-btn="嘉義縣・太保市" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・太保市')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・太保市 (11)
-        </button>
-        <button type="button" data-dist-btn="嘉義縣・朴子市" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・朴子市')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・朴子市 (21)
-        </button>
-        <button type="button" data-dist-btn="嘉義縣・梅山鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・梅山鄉')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・梅山鄉 (3)
-        </button>
-        <button type="button" data-dist-btn="嘉義縣・民雄鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・民雄鄉')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・民雄鄉 (5)
-        </button>
-        <button type="button" data-dist-btn="嘉義縣・水上鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・水上鄉')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・水上鄉 (1)
-        </button>
-        <button type="button" data-dist-btn="嘉義縣・阿里山鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・阿里山鄉')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・阿里山鄉 (2)
-        </button>
-        <button type="button" data-dist-btn="嘉義縣・鹿草鄉" data-dist-city="嘉義縣" onclick="selectDistrict('嘉義縣・鹿草鄉')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          嘉義縣・鹿草鄉 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・下營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・下營區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・下營區 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・中西區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・中西區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・中西區 (18)
-        </button>
-        <button type="button" data-dist-btn="臺南市・仁德區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・仁德區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・仁德區 (4)
-        </button>
-        <button type="button" data-dist-btn="臺南市・六甲區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・六甲區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・六甲區 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・北區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・北區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・北區 (5)
-        </button>
-        <button type="button" data-dist-btn="臺南市・善化區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・善化區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・善化區 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・安南區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・安南區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・安南區 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・安平區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・安平區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・安平區 (2)
-        </button>
-        <button type="button" data-dist-btn="臺南市・山上區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・山上區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・山上區 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・後壁區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・後壁區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・後壁區 (2)
-        </button>
-        <button type="button" data-dist-btn="臺南市・新營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・新營區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・新營區 (73)
-        </button>
-        <button type="button" data-dist-btn="臺南市・東區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・東區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・東區 (2)
-        </button>
-        <button type="button" data-dist-btn="臺南市・東山區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・東山區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・東山區 (3)
-        </button>
-        <button type="button" data-dist-btn="臺南市・柳營區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・柳營區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・柳營區 (2)
-        </button>
-        <button type="button" data-dist-btn="臺南市・歸仁區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・歸仁區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・歸仁區 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・永康區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・永康區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・永康區 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・玉井區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・玉井區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・玉井區 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・白河區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・白河區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・白河區 (1)
-        </button>
-        <button type="button" data-dist-btn="臺南市・鹽水區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・鹽水區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・鹽水區 (5)
-        </button>
-        <button type="button" data-dist-btn="臺南市・麻豆區" data-dist-city="臺南市" onclick="selectDistrict('臺南市・麻豆區')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          臺南市・麻豆區 (3)
-        </button>
-        <button type="button" data-dist-btn="雲林縣・北港鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・北港鎮')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・北港鎮 (7)
-        </button>
-        <button type="button" data-dist-btn="雲林縣・口湖鄉" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・口湖鄉')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・口湖鄉 (1)
-        </button>
-        <button type="button" data-dist-btn="雲林縣・古坑鄉" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・古坑鄉')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・古坑鄉 (4)
-        </button>
-        <button type="button" data-dist-btn="雲林縣・土庫鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・土庫鎮')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・土庫鎮 (3)
-        </button>
-        <button type="button" data-dist-btn="雲林縣・斗六市" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・斗六市')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・斗六市 (10)
-        </button>
-        <button type="button" data-dist-btn="雲林縣・虎尾鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・虎尾鎮')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・虎尾鎮 (6)
-        </button>
-        <button type="button" data-dist-btn="雲林縣・西螺鎮" data-dist-city="雲林縣" onclick="selectDistrict('雲林縣・西螺鎮')"
-                style="flex-shrink:0;padding:4px 11px;border-radius:8px;border:1px solid transparent;background-color:transparent;color:#475569;font-size:12.5px;font-weight:600;cursor:pointer;">
-          雲林縣・西螺鎮 (3)
-        </button>
+        <div style="flex:1;min-width:140px;">
+          <label for="districtSelect" style="display:block;font-size:11px;font-weight:800;color:#64748b;margin-bottom:4px;">📍 鄉鎮市區：</label>
+          <select id="districtSelect" onchange="onDistrictSelectChange(this.value)"
+                  style="width:100%;padding:9px 12px;border-radius:12px;border:1.5px solid #cbd5e1;background-color:#ffffff;color:#0f172a;font-size:13.5px;font-weight:700;outline:none;box-shadow:0 1px 3px rgba(0,0,0,0.04);cursor:pointer;">
+<option value="all">📍 全部鄉鎮市區 (379)</option>
+<option value="嘉義市・東區" data-city="嘉義市">嘉義市・東區 (98)</option>
+<option value="嘉義市・西區" data-city="嘉義市">嘉義市・西區 (73)</option>
+<option value="嘉義縣・中埔鄉" data-city="嘉義縣">嘉義縣・中埔鄉 (1)</option>
+<option value="嘉義縣・六腳鄉" data-city="嘉義縣">嘉義縣・六腳鄉 (1)</option>
+<option value="嘉義縣・太保市" data-city="嘉義縣">嘉義縣・太保市 (11)</option>
+<option value="嘉義縣・朴子市" data-city="嘉義縣">嘉義縣・朴子市 (21)</option>
+<option value="嘉義縣・梅山鄉" data-city="嘉義縣">嘉義縣・梅山鄉 (3)</option>
+<option value="嘉義縣・民雄鄉" data-city="嘉義縣">嘉義縣・民雄鄉 (5)</option>
+<option value="嘉義縣・水上鄉" data-city="嘉義縣">嘉義縣・水上鄉 (1)</option>
+<option value="嘉義縣・阿里山鄉" data-city="嘉義縣">嘉義縣・阿里山鄉 (2)</option>
+<option value="嘉義縣・鹿草鄉" data-city="嘉義縣">嘉義縣・鹿草鄉 (1)</option>
+<option value="臺南市・下營區" data-city="臺南市">臺南市・下營區 (1)</option>
+<option value="臺南市・中西區" data-city="臺南市">臺南市・中西區 (18)</option>
+<option value="臺南市・仁德區" data-city="臺南市">臺南市・仁德區 (4)</option>
+<option value="臺南市・六甲區" data-city="臺南市">臺南市・六甲區 (1)</option>
+<option value="臺南市・北區" data-city="臺南市">臺南市・北區 (5)</option>
+<option value="臺南市・善化區" data-city="臺南市">臺南市・善化區 (1)</option>
+<option value="臺南市・安南區" data-city="臺南市">臺南市・安南區 (1)</option>
+<option value="臺南市・安平區" data-city="臺南市">臺南市・安平區 (2)</option>
+<option value="臺南市・山上區" data-city="臺南市">臺南市・山上區 (1)</option>
+<option value="臺南市・後壁區" data-city="臺南市">臺南市・後壁區 (2)</option>
+<option value="臺南市・新營區" data-city="臺南市">臺南市・新營區 (73)</option>
+<option value="臺南市・東區" data-city="臺南市">臺南市・東區 (2)</option>
+<option value="臺南市・東山區" data-city="臺南市">臺南市・東山區 (3)</option>
+<option value="臺南市・柳營區" data-city="臺南市">臺南市・柳營區 (2)</option>
+<option value="臺南市・歸仁區" data-city="臺南市">臺南市・歸仁區 (1)</option>
+<option value="臺南市・永康區" data-city="臺南市">臺南市・永康區 (1)</option>
+<option value="臺南市・玉井區" data-city="臺南市">臺南市・玉井區 (1)</option>
+<option value="臺南市・白河區" data-city="臺南市">臺南市・白河區 (1)</option>
+<option value="臺南市・鹽水區" data-city="臺南市">臺南市・鹽水區 (5)</option>
+<option value="臺南市・麻豆區" data-city="臺南市">臺南市・麻豆區 (3)</option>
+<option value="雲林縣・北港鎮" data-city="雲林縣">雲林縣・北港鎮 (7)</option>
+<option value="雲林縣・口湖鄉" data-city="雲林縣">雲林縣・口湖鄉 (1)</option>
+<option value="雲林縣・古坑鄉" data-city="雲林縣">雲林縣・古坑鄉 (4)</option>
+<option value="雲林縣・土庫鎮" data-city="雲林縣">雲林縣・土庫鎮 (3)</option>
+<option value="雲林縣・斗六市" data-city="雲林縣">雲林縣・斗六市 (10)</option>
+<option value="雲林縣・虎尾鎮" data-city="雲林縣">雲林縣・虎尾鎮 (6)</option>
+<option value="雲林縣・西螺鎮" data-city="雲林縣">雲林縣・西螺鎮 (3)</option>
+          </select>
+        </div>
       </div>
 
       <!-- 搜尋框 -->
@@ -18873,6 +18744,7 @@
     var currentDistrict = "all";
     var currentCat = "all";
     var searchQuery = "";
+    var cityDistrictsMap = {"嘉義市": [{"district": "東區", "count": 98}, {"district": "西區", "count": 73}], "臺南市": [{"district": "下營區", "count": 1}, {"district": "中西區", "count": 18}, {"district": "仁德區", "count": 4}, {"district": "六甲區", "count": 1}, {"district": "北區", "count": 5}, {"district": "善化區", "count": 1}, {"district": "安南區", "count": 1}, {"district": "安平區", "count": 2}, {"district": "山上區", "count": 1}, {"district": "後壁區", "count": 2}, {"district": "新營區", "count": 73}, {"district": "東區", "count": 2}, {"district": "東山區", "count": 3}, {"district": "柳營區", "count": 2}, {"district": "歸仁區", "count": 1}, {"district": "永康區", "count": 1}, {"district": "玉井區", "count": 1}, {"district": "白河區", "count": 1}, {"district": "鹽水區", "count": 5}, {"district": "麻豆區", "count": 3}], "嘉義縣": [{"district": "中埔鄉", "count": 1}, {"district": "六腳鄉", "count": 1}, {"district": "太保市", "count": 11}, {"district": "朴子市", "count": 21}, {"district": "梅山鄉", "count": 3}, {"district": "民雄鄉", "count": 5}, {"district": "水上鄉", "count": 1}, {"district": "阿里山鄉", "count": 2}, {"district": "鹿草鄉", "count": 1}], "雲林縣": [{"district": "北港鎮", "count": 7}, {"district": "口湖鄉", "count": 1}, {"district": "古坑鄉", "count": 4}, {"district": "土庫鎮", "count": 3}, {"district": "斗六市", "count": 10}, {"district": "虎尾鎮", "count": 6}, {"district": "西螺鎮", "count": 3}]};
 
     function applyFilters() {
       var cards = document.querySelectorAll(".store-card");
@@ -18882,12 +18754,13 @@
       for (var i = 0; i < cards.length; i++) {
         var card = cards[i];
         var cCity = card.getAttribute("data-city");
+        var cDistrict = card.getAttribute("data-district");
         var cCityDist = card.getAttribute("data-city-district");
         var cCat = card.getAttribute("data-category");
         var cSearch = card.getAttribute("data-search") || "";
 
         var matchCity = (currentCity === "all" || cCity === currentCity);
-        var matchDist = (currentDistrict === "all" || cCityDist === currentDistrict);
+        var matchDist = (currentDistrict === "all" || cCityDist === currentDistrict || cDistrict === currentDistrict);
         var matchCat = (currentCat === "all" || cCat === currentCat);
         var matchQ = (!q || cSearch.indexOf(q) !== -1);
 
@@ -18909,35 +18782,58 @@
         '目前分頁：<b style="color:#b45309;">' + cityText + " ▸ " + distText + catText + "</b>";
     }
 
-    function updateTabStyles() {
-      // 更新縣市分頁按鈕樣式
-      var cityBtns = document.querySelectorAll("[data-city-btn]");
-      for (var i = 0; i < cityBtns.length; i++) {
-        var btn = cityBtns[i];
-        var isAct = (btn.getAttribute("data-city-btn") === currentCity);
-        btn.style.backgroundColor = isAct ? "#0f172a" : "#f8fafc";
-        btn.style.color = isAct ? "#ffffff" : "#475569";
-        btn.style.borderColor = isAct ? "#0f172a" : "#e2e8f0";
-      }
+    function onCitySelectChange(city) {
+      currentCity = city;
+      currentDistrict = "all";
+      updateDistrictSelectOptions();
+      applyFilters();
+    }
 
-      // 更新鄉鎮市區按鈕顯示與樣式
-      var distBtns = document.querySelectorAll("[data-dist-btn]");
-      for (var j = 0; j < distBtns.length; j++) {
-        var dBtn = distBtns[j];
-        var dVal = dBtn.getAttribute("data-dist-btn");
-        var dCity = dBtn.getAttribute("data-dist-city");
-        if (dVal === "all" || currentCity === "all" || dCity === currentCity) {
-          dBtn.style.display = "inline-block";
-        } else {
-          dBtn.style.display = "none";
+    function onDistrictSelectChange(dist) {
+      currentDistrict = dist;
+      applyFilters();
+    }
+
+    function updateDistrictSelectOptions() {
+      var distSelect = document.getElementById("districtSelect");
+      distSelect.innerHTML = "";
+
+      var defaultOpt = document.createElement("option");
+      defaultOpt.value = "all";
+
+      if (currentCity === "all") {
+        defaultOpt.textContent = "📍 全部鄉鎮市區 (379)";
+        distSelect.appendChild(defaultOpt);
+
+        for (var c in cityDistrictsMap) {
+          var list = cityDistrictsMap[c];
+          for (var i = 0; i < list.length; i++) {
+            var item = list[i];
+            var opt = document.createElement("option");
+            opt.value = c + "・" + item.district;
+            opt.textContent = c + "・" + item.district + " (" + item.count + ")";
+            distSelect.appendChild(opt);
+          }
         }
-        var isDistAct = (dVal === currentDistrict);
-        dBtn.style.backgroundColor = isDistAct ? "#ffffff" : "transparent";
-        dBtn.style.color = isDistAct ? "#b45309" : "#475569";
-        dBtn.style.borderColor = isDistAct ? "#cbd5e1" : "transparent";
-        dBtn.style.fontWeight = isDistAct ? "700" : "600";
-      }
+      } else {
+        var list = cityDistrictsMap[currentCity] || [];
+        var citySum = 0;
+        for (var i = 0; i < list.length; i++) { citySum += list[i].count; }
+        defaultOpt.textContent = "📍 全部" + currentCity + "行政區 (" + citySum + ")";
+        distSelect.appendChild(defaultOpt);
 
+        for (var i = 0; i < list.length; i++) {
+          var item = list[i];
+          var opt = document.createElement("option");
+          opt.value = item.district;
+          opt.textContent = item.district + " (" + item.count + ")";
+          distSelect.appendChild(opt);
+        }
+      }
+      distSelect.value = "all";
+    }
+
+    function updateTabStyles() {
       // 更新餐點分類按鈕樣式
       var catBtns = document.querySelectorAll("[data-cat-btn]");
       for (var k = 0; k < catBtns.length; k++) {
@@ -18951,16 +18847,15 @@
     }
 
     function selectCity(city) {
-      currentCity = city;
-      currentDistrict = "all";
-      updateTabStyles();
-      applyFilters();
+      var citySelect = document.getElementById("citySelect");
+      if (citySelect) { citySelect.value = city; }
+      onCitySelectChange(city);
     }
 
     function selectDistrict(dist) {
-      currentDistrict = dist;
-      updateTabStyles();
-      applyFilters();
+      var distSelect = document.getElementById("districtSelect");
+      if (distSelect) { distSelect.value = dist; }
+      onDistrictSelectChange(dist);
     }
 
     function selectCat(cat) {
