@@ -267,14 +267,8 @@ def build_offline_standalone_html(stores: List[Dict[str, Any]]) -> str:
   </div>
 
   <!-- 頂部橫幅（全內嵌 Inline CSS） -->
-  <header style="background:linear-gradient(135deg,#78350f 0%,#b45309 50%,#d97706 100%);background-color:#b45309;color:#ffffff;padding:24px 16px 18px;text-align:center;box-shadow:0 4px 14px rgba(180,83,9,0.22);">
-    <div style="display:inline-block;background-color:rgba(255,255,255,0.2);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.3);">
-      ✈️ 手機離線獨立版 ｜ 免網路・免伺服器隨點隨開
-    </div>
-    <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0 0 6px 0;color:#ffffff;">台灣私房美食・景點・住宿避雷隨身手冊</h1>
-    <div style="font-size:13px;opacity:0.92;max-width:640px;margin:0 auto;color:#fffbeb;">
-      收錄嘉義市（{cy_total} 筆）、嘉義縣（{cx_count} 筆）、臺南市（{tn_total} 筆）＆ 雲林縣（{yl_total} 筆）共 {total_count} 筆實測避雷指南
-    </div>
+  <header style="background:linear-gradient(135deg,#78350f 0%,#b45309 50%,#d97706 100%);background-color:#b45309;color:#ffffff;padding:18px 16px 16px;text-align:center;box-shadow:0 4px 14px rgba(180,83,9,0.22);">
+    <h1 style="font-size:22px;font-weight:800;letter-spacing:0.3px;margin:0;color:#ffffff;">台灣私房美食・景點・住宿避雷隨身手冊</h1>
   </header>
 
   <!-- 黏性三層分頁導覽列（全內嵌 Inline CSS） -->
