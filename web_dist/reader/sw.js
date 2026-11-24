@@ -1,4 +1,4 @@
-const CACHE_NAME = 'novel-pwa-shell-v4';
+const CACHE_NAME = 'novel-pwa-shell-v5';
 const ASSETS = [
   './',
   './index.html',
@@ -26,17 +26,14 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(req.url);
   if (url.pathname.startsWith('/api/')) return;
 
-  // 導航與靜態殼採用 Cache-First (確保電腦關機或無網路時 0.1 秒秒開)
+  // Network-First：有網路優先取得最新版，離線或無法連線時立即回傳本機快取
   event.respondWith(
-    caches.match(req).then((cached) => {
-      const fetchPromise = fetch(req).then((netRes) => {
-        if (netRes && netRes.status === 200) {
-          const clone = netRes.clone();
-          caches.open(CACHE_NAME).then((c) => c.put(req, clone));
-        }
-        return netRes;
-      }).catch(() => cached);
-      return cached || fetchPromise;
-    })
+    fetch(req).then((netRes) => {
+      if (netRes && netRes.status === 200) {
+        const clone = netRes.clone();
+        caches.open(CACHE_NAME).then((c) => c.put(req, clone));
+      }
+      return netRes;
+    }).catch(() => caches.match(req))
   );
 });
