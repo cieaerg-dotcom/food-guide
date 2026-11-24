@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="小說閱讀器">
 <link rel="manifest" href="./manifest.json">
 <title>小說離線閱覽與分類系統</title>
@@ -265,9 +265,8 @@
   }
 
   #topbar {
-    height: 48px;
-    min-height: 48px;
-    padding: 0 14px;
+    min-height: calc(50px + env(safe-area-inset-top, 0px));
+    padding: env(safe-area-inset-top, 0px) 14px 0 14px;
     background: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
     display: flex;
@@ -275,6 +274,27 @@
     justify-content: space-between;
     z-index: 50;
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hud-restore-fab {
+    display: none;
+    position: fixed;
+    right: 14px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.78);
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 60;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+  body.hud-hidden .hud-restore-fab {
+    display: flex;
   }
 
   .topbar-left {
@@ -521,9 +541,10 @@
     #sidebar {
       position: fixed;
       top: 0; left: 0; bottom: 0;
-      width: 85%;
+      width: 86%;
       max-width: 340px;
       min-width: unset;
+      padding-top: env(safe-area-inset-top, 0px);
       transform: translateX(-100%);
       transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 8px 0 24px rgba(0,0,0,0.6);
@@ -558,27 +579,16 @@
         <span id="total-count-badge" style="font-size: 12px; color: var(--text-secondary);"></span>
       </div>
       
-      <!-- 離線資料庫與雙軌同步面板 -->
+      <!-- 精簡離線與同步工具列 -->
       <div class="offline-panel">
         <div class="offline-status-row">
           <span><span id="sync-status-icon">📴</span> <span id="sync-status-text">檢查中...</span></span>
-          <span id="offline-cache-count" style="color:#10b981; font-size:11px;">尚未載入離線庫</span>
+          <span id="offline-cache-count" style="color:#10b981; font-size:11px;">尚未載入</span>
         </div>
         <div class="offline-btn-row">
-          <button class="offline-btn primary" onclick="triggerFileSelect()">
-            📂 1. 從手機檔案載入離線包
-          </button>
-          <button id="btn-offline-download" class="offline-btn" onclick="downloadOfflineBundle()">
-            📡 從區網Mac載入
-          </button>
-        </div>
-        <div class="offline-btn-row">
-          <button id="btn-export-cloud" class="offline-btn warn" onclick="exportPendingRatingsToFile()">
-            ☁️ 2. 匯出標記至iCloud (<span id="pending-count-label">0</span>)
-          </button>
-          <button id="btn-lan-sync" class="offline-btn" onclick="triggerLanFormSync()">
-            🔄 區網直連同步
-          </button>
+          <button class="offline-btn primary" onclick="triggerFileSelect()">📂 載入離線包</button>
+          <button id="btn-export-cloud" class="offline-btn warn" onclick="exportPendingRatingsToFile()">☁️ 同步iCloud(<span id="pending-count-label">0</span>)</button>
+          <button id="btn-lan-sync" class="offline-btn" onclick="triggerLanFormSync()" title="同Wi-Fi區網同步">🔄 區網</button>
         </div>
       </div>
 
@@ -690,6 +700,7 @@
     </button>
   </div>
 
+  <button class="hud-restore-fab" onclick="restoreHud()" title="顯示選單與分類按鈕">☰</button>
   <div id="toast">已儲存</div>
 
 <script>
@@ -1478,11 +1489,16 @@
   }
 
   function handleReaderTap(e) {
+    if (window.innerWidth > 768) return; // 桌機永遠保留頂部選單與分類按鈕
     if (e.target.tagName === 'BUTTON' || e.target.tagName === 'CODE' || e.target.closest('.empty-onboarding')) return;
     const selection = window.getSelection();
     if (selection && selection.toString().length > 0) return;
     hudVisible = !hudVisible;
     document.body.classList.toggle('hud-hidden', !hudVisible);
+  }
+  function restoreHud() {
+    hudVisible = true;
+    document.body.classList.remove('hud-hidden');
   }
 
   function showInfoToast() {
