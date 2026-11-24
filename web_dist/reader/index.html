@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="小說閱讀器">
+<link rel="manifest" href="./manifest.json">
+<title>小說離線閱覽與分類系統</title>
+
+<style>
+  :root {
+    --bg-primary: #0f1115;
+    --bg-secondary: #171a21;
+    --bg-card: #20242e;
+    --border-color: #2b323e;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #3b82f6;
+    --like-color: #ef4444;
+    --neutral-color: #f59e0b;
+    --dislike-color: #6b7280;
+    --font-size: 19px;
+    --line-height: 1.85;
+  }
+
+  body.theme-light {
+    --bg-primary: #f6f8fa;
+    --bg-secondary: #ffffff;
+    --bg-card: #f0f3f6;
+    --border-color: #d0d7de;
+    --text-primary: #1f2328;
+    --text-secondary: #656d76;
+    --accent: #2563eb;
+  }
+
+  body.theme-sepia {
+    --bg-primary: #f4ecd8;
+    --bg-secondary: #fbf5e6;
+    --bg-card: #ebe0c6;
+    --border-color: #d9cca8;
+    --text-primary: #3d2f1d;
+    --text-secondary: #7e6951;
+    --accent: #b45309;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  }
+
+  body {
+    display: flex;
+    position: relative;
+  }
+
+  #sidebar {
+    width: 370px;
+    min-width: 370px;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    z-index: 100;
+  }
+
+  .sidebar-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .sidebar-title {
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .stats-bar {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .progress-container {
+    height: 5px;
+    background: var(--border-color);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.3s;
+  }
+
+  /* 離線資料包與同步控制面板 */
+  .offline-panel {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.28);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .offline-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+  }
+  .offline-btn-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .offline-btn {
+    flex: 1;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .offline-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .offline-btn.warn {
+    background: #d97706;
+    border-color: #d97706;
+    color: #fff;
+  }
+  .offline-btn.success {
+    background: #10b981;
+    border-color: #10b981;
+    color: #fff;
+  }
+
+  .tabs-row {
+    display: flex;
+    background: var(--bg-card);
+    padding: 3px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border: 1px solid var(--border-color);
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .tab-btn.active {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .filter-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 7px 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 13px;
+    outline: none;
+  }
+  .select-row {
+    display: flex;
+    gap: 6px;
+  }
+  select {
+    flex: 1;
+    padding: 5px 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 12px;
+    outline: none;
+  }
+
+  #novel-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+  }
+  .novel-item {
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .novel-item:hover { background: var(--bg-card); }
+  .novel-item.active { background: var(--bg-card); border-color: var(--accent); }
+  .novel-info { flex: 1; min-width: 0; margin-right: 8px; }
+  .novel-name {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .novel-meta {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+    display: flex;
+    gap: 6px;
+  }
+  .badge {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-like { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+  .badge-neutral { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+  .badge-dislike { background: rgba(107, 114, 128, 0.2); color: #9ca3af; }
+  .badge-unrated { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+
+  #main-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #topbar {
+    height: 48px;
+    min-height: 48px;
+    padding: 0 14px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 50;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .nav-icon-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .pending-dot {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #f59e0b;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 10px;
+    display: none;
+  }
+
+  .current-title-area {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .current-title {
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25;
+  }
+  .current-subtitle {
+    font-size: 11px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+  }
+
+  .desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .btn {
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    user-select: none;
+  }
+  .btn-like { border-color: rgba(239, 68, 68, 0.4); }
+  .btn-like.active, .btn-like:hover { background: #ef4444; color: #fff; }
+  .btn-neutral { border-color: rgba(245, 158, 11, 0.4); }
+  .btn-neutral.active, .btn-neutral:hover { background: #f59e0b; color: #fff; }
+  .btn-dislike { border-color: rgba(107, 114, 128, 0.4); }
+  .btn-dislike.active, .btn-dislike:hover { background: #4b5563; color: #fff; }
+
+  .shortcut-tag {
+    font-size: 10px;
+    padding: 1px 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+  }
+
+  .settings-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  #reader-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 48px 120px 48px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  #novel-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    white-space: pre-wrap;
+    word-break: break-word;
+    letter-spacing: 0.5px;
+  }
+
+  .mobile-bottom-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(23, 26, 33, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-color);
+    padding: 8px 16px max(10px, env(safe-area-inset-bottom)) 16px;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 50;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.3);
+  }
+
+  .m-btn {
+    flex: 1;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .m-btn:active { transform: scale(0.94); }
+  .m-btn.nav-step { flex: 0.75; font-size: 11px; background: rgba(255,255,255,0.03); }
+  .m-btn.m-like { border-color: rgba(239, 68, 68, 0.35); }
+  .m-btn.m-like.active { background: #ef4444; color: #fff; }
+  .m-btn.m-neutral { border-color: rgba(245, 158, 11, 0.35); }
+  .m-btn.m-neutral.active { background: #f59e0b; color: #fff; }
+  .m-btn.m-dislike { border-color: rgba(107, 114, 128, 0.35); }
+  .m-btn.m-dislike.active { background: #4b5563; color: #fff; }
+
+  body.hud-hidden #topbar { transform: translateY(-100%); }
+  body.hud-hidden .mobile-bottom-bar { transform: translateY(100%); }
+
+  #toast {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    padding: 9px 16px;
+    background: rgba(32, 36, 46, 0.96);
+    color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 200;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+    max-width: 92%;
+    text-align: center;
+    white-space: pre-line;
+  }
+  #toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 80;
+    backdrop-filter: blur(2px);
+  }
+
+  /* 離線歡迎引導卡片 */
+  .empty-onboarding {
+    max-width: 540px;
+    margin: 24px auto;
+    padding: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    line-height: 1.75;
+  }
+  .empty-onboarding h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #60a5fa;
+  }
+  .empty-onboarding ol {
+    padding-left: 20px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  .empty-onboarding li {
+    margin-bottom: 8px;
+  }
+  .big-action-btn {
+    display: block;
+    width: 100%;
+    padding: 13px 16px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    #sidebar {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: 85%;
+      max-width: 340px;
+      min-width: unset;
+      transform: translateX(-100%);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 8px 0 24px rgba(0,0,0,0.6);
+    }
+    #sidebar.open { transform: translateX(0); }
+    .sidebar-overlay.open { display: block; }
+    #topbar { padding: 0 12px; background: rgba(23, 26, 33, 0.92); backdrop-filter: blur(16px); }
+    .desktop-actions { display: none !important; }
+    .mobile-bottom-bar { display: flex; }
+    #reader-container { padding: 16px 18px 110px 18px; }
+    .current-title { font-size: 15px; }
+    .current-subtitle { font-size: 11px; }
+    #novel-content { font-size: 18px; line-height: 1.8; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- 隱藏的本地檔案選取器 (不限制 accept 以免 iOS 將 .gz 變灰) -->
+  <input type="file" id="bundle-file-input" style="display:none" onchange="handleBundleFileSelect(event)">
+
+  <!-- 隱藏的跨協定表單 (用於從 HTTPS PWA 直接將標記 POST 回區網 HTTP Mac，繞過 Mixed Content 限制) -->
+  <form id="lan-sync-form" method="POST" target="_blank" style="display:none">
+    <input type="hidden" name="payload" id="lan-sync-payload">
+  </form>
+
+  <!-- 左側抽屜選單 -->
+  <div id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">
+        <span>📚 小說離線分類系統</span>
+        <span id="total-count-badge" style="font-size: 12px; color: var(--text-secondary);"></span>
+      </div>
+      
+      <!-- 離線資料庫與雙軌同步面板 -->
+      <div class="offline-panel">
+        <div class="offline-status-row">
+          <span><span id="sync-status-icon">📴</span> <span id="sync-status-text">檢查中...</span></span>
+          <span id="offline-cache-count" style="color:#10b981; font-size:11px;">尚未載入離線庫</span>
+        </div>
+        <div class="offline-btn-row">
+          <button class="offline-btn primary" onclick="triggerFileSelect()">
+            📂 1. 從手機檔案載入離線包
+          </button>
+          <button id="btn-offline-download" class="offline-btn" onclick="downloadOfflineBundle()">
+            📡 從區網Mac載入
+          </button>
+        </div>
+        <div class="offline-btn-row">
+          <button id="btn-export-cloud" class="offline-btn warn" onclick="exportPendingRatingsToFile()">
+            ☁️ 2. 匯出標記至iCloud (<span id="pending-count-label">0</span>)
+          </button>
+          <button id="btn-lan-sync" class="offline-btn" onclick="triggerLanFormSync()">
+            🔄 區網直連同步
+          </button>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <span>未分類: <b id="stat-unrated" style="color: #60a5fa;">0</b></span>
+        <span>❤️ <b id="stat-like">0</b></span>
+        <span>😐 <b id="stat-neutral">0</b></span>
+        <span>❌ <b id="stat-dislike">0</b></span>
+      </div>
+      
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-fill"></div>
+      </div>
+
+      <div class="tabs-row">
+        <button id="tab-inbox" class="tab-btn active" onclick="setMode('inbox')">
+          📥 待處理（未分類）
+        </button>
+        <button id="tab-all" class="tab-btn" onclick="setMode('all')">
+          📑 全部小說
+        </button>
+      </div>
+
+      <div class="filter-controls">
+        <input type="text" id="search-box" class="search-input" placeholder="🔍 搜尋書名或作者..." oninput="filterNovels()">
+        <div class="select-row">
+          <select id="folder-filter" onchange="filterNovels()"><option value="all">所有資料夾</option></select>
+          <select id="status-filter" onchange="filterNovels()">
+            <option value="all">全部狀態</option>
+            <option value="unrated" selected>僅未分類</option>
+            <option value="like">❤️ 喜歡</option>
+            <option value="neutral">😐 一般</option>
+            <option value="dislike">❌ 討厭</option>
+          </select>
+        </div>
+        <input type="checkbox" id="auto-move-checkbox" checked style="display:none">
+      </div>
+    </div>
+
+    <div id="novel-list"></div>
+  </div>
+
+  <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar(false)"></div>
+
+  <!-- 主閱讀視圖 -->
+  <div id="main-view">
+    <div id="topbar">
+      <div class="topbar-left">
+        <button class="nav-icon-btn" onclick="toggleSidebar()" title="開啟清單">
+          ☰
+          <span id="menu-pending-dot" class="pending-dot">0</span>
+        </button>
+        <div class="current-title-area" onclick="showInfoToast()">
+          <div id="current-title" class="current-title">準備中...</div>
+          <div id="current-subtitle" class="current-subtitle">點擊查看資訊</div>
+        </div>
+      </div>
+
+      <div class="desktop-actions">
+        <button id="btn-like" class="btn btn-like" onclick="rateCurrent('like')">
+          ❤️ 喜歡 <span class="shortcut-tag">1 / L</span>
+        </button>
+        <button id="btn-neutral" class="btn btn-neutral" onclick="rateCurrent('neutral')">
+          😐 一般 <span class="shortcut-tag">2 / N</span>
+        </button>
+        <button id="btn-dislike" class="btn btn-dislike" onclick="rateCurrent('dislike')">
+          ❌ 討厭 <span class="shortcut-tag">3 / D</span>
+        </button>
+        <div style="width: 1px; height: 20px; background: var(--border-color); margin: 0 4px;"></div>
+        <button class="btn" onclick="prevNovel()">⬅️ <span class="shortcut-tag">↑/J</span></button>
+        <button class="btn" onclick="nextNovel()">➡️ <span class="shortcut-tag">↓/K</span></button>
+        <button class="btn" onclick="randomNovel()">🎲 <span class="shortcut-tag">R</span></button>
+      </div>
+
+      <div class="settings-group">
+        <button class="nav-icon-btn" onclick="exportPendingRatingsToFile()" title="匯出標記至 iCloud 自動同步">☁️</button>
+        <button class="nav-icon-btn" onclick="adjustFontSize(-1)" title="字體縮小">A-</button>
+        <button class="nav-icon-btn" onclick="adjustFontSize(1)" title="字體放大">A+</button>
+        <button class="nav-icon-btn" onclick="toggleTheme()" title="切換配色">🎨</button>
+      </div>
+    </div>
+
+    <div id="reader-container" onclick="handleReaderTap(event)">
+      <div id="novel-content">載入中...</div>
+    </div>
+  </div>
+
+  <!-- 手機底部操作列 -->
+  <div class="mobile-bottom-bar">
+    <button class="m-btn nav-step" onclick="prevNovel()">
+      <span style="font-size: 15px;">⬅️</span>
+      <span>上一篇</span>
+    </button>
+    <button id="m-btn-like" class="m-btn m-like" onclick="rateCurrent('like')">
+      <span style="font-size: 16px;">❤️</span>
+      <span>喜歡</span>
+    </button>
+    <button id="m-btn-neutral" class="m-btn m-neutral" onclick="rateCurrent('neutral')">
+      <span style="font-size: 16px;">😐</span>
+      <span>一般</span>
+    </button>
+    <button id="m-btn-dislike" class="m-btn m-dislike" onclick="rateCurrent('dislike')">
+      <span style="font-size: 16px;">❌</span>
+      <span>討厭</span>
+    </button>
+    <button class="m-btn nav-step" onclick="nextNovel()">
+      <span style="font-size: 15px;">➡️</span>
+      <span>下一篇</span>
+    </button>
+  </div>
+
+  <div id="toast">已儲存</div>
+
+<script>
+  // 註冊 Service Worker (讓 HTTPS PWA 在電腦關機或飛航模式下也能 0.1 秒秒開)
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch((err) => console.warn('SW register skip:', err));
+    });
+  }
+
+  let novels = [];
+  let currentIndex = -1;
+  let viewMode = 'inbox';
+  let themes = ['', 'theme-light', 'theme-sepia'];
+  let currentThemeIdx = 0;
+  let fontSize = 18;
+  let hudVisible = true;
+  let isOnlineWithMac = false;
+  let db = null;
+
+  /* ================= IndexedDB 永久離線儲存系統 ================= */
+  function openDB() {
+    return new Promise((resolve) => {
+      try {
+        if (!window.indexedDB) return resolve(null);
+        const req = indexedDB.open('NovelOfflineDB_v3', 1);
+        req.onupgradeneeded = (e) => {
+          try {
+            const d = e.target.result;
+            if (!d.objectStoreNames.contains('contents')) d.createObjectStore('contents', { keyPath: 'rel_path' });
+            if (!d.objectStoreNames.contains('novels_meta')) d.createObjectStore('novels_meta', { keyPath: 'rel_path' });
+            if (!d.objectStoreNames.contains('pending_ratings')) d.createObjectStore('pending_ratings', { keyPath: 'rel_path' });
+          } catch (err) {}
+        };
+        req.onsuccess = (e) => { db = e.target.result; resolve(db); };
+        req.onerror = () => resolve(null);
+        setTimeout(() => resolve(db), 1200);
+      } catch (err) {
+        resolve(null);
+      }
+    });
+  }
+
+  async function getCachedContent(rel_path) {
+    if (!db) await openDB();
+    if (!db) return null;
+    try {
+      return new Promise((resolve) => {
+        const tx = db.transaction('contents', 'readonly');
+        const req = tx.objectStore('contents').get(rel_path);
+        req.onsuccess = () => resolve(req.result ? req.result.content : null);
+        req.onerror = () => resolve(null);
+      });
+    } catch (e) { return null; }
+  }
+
+  async function getAllOfflineMeta() {
+    if (!db) await openDB();
+    if (!db) return [];
+    try {
+      return new Promise((resolve) => {
+        const tx = db.transaction('novels_meta', 'readonly');
+        const req = tx.objectStore('novels_meta').getAll();
+        req.onsuccess = () => resolve(req.result || []);
+        req.onerror = () => resolve([]);
+      });
+    } catch (e) { return []; }
+  }
+
+  async function savePendingRating(rel_path, rating) {
+    try {
+      const cur = JSON.parse(localStorage.getItem('pending_ratings_v3') || '[]');
+      const filtered = cur.filter(x => x.rel_path !== rel_path);
+      filtered.push({ rel_path, rating, timestamp: Date.now() });
+      localStorage.setItem('pending_ratings_v3', JSON.stringify(filtered));
+    } catch(e) {}
+
+    if (db) {
+      try {
+        const tx = db.transaction(['pending_ratings', 'novels_meta'], 'readwrite');
+        tx.objectStore('pending_ratings').put({ rel_path, rating, timestamp: Date.now() });
+        const mStore = tx.objectStore('novels_meta');
+        const gReq = mStore.get(rel_path);
+        gReq.onsuccess = () => {
+          if (gReq.result) {
+            gReq.result.rating = rating;
+            mStore.put(gReq.result);
+          }
+        };
+      } catch (e) {}
+    }
+    updatePendingBadgeUI();
+  }
+
+  async function getPendingRatings() {
+    let map = new Map();
+    try {
+      const ls = JSON.parse(localStorage.getItem('pending_ratings_v3') || '[]');
+      ls.forEach(item => map.set(item.rel_path, item));
+    } catch(e) {}
+
+    if (db) {
+      try {
+        const dbList = await new Promise((resolve) => {
+          const tx = db.transaction('pending_ratings', 'readonly');
+          const req = tx.objectStore('pending_ratings').getAll();
+          req.onsuccess = () => resolve(req.result || []);
+          req.onerror = () => resolve([]);
+        });
+        dbList.forEach(item => map.set(item.rel_path, item));
+      } catch (e) {}
+    }
+    return Array.from(map.values());
+  }
+
+  async function clearPendingRatings(keys) {
+    try {
+      let cur = JSON.parse(localStorage.getItem('pending_ratings_v3') || '[]');
+      cur = cur.filter(x => !keys.includes(x.rel_path));
+      localStorage.setItem('pending_ratings_v3', JSON.stringify(cur));
+    } catch(e) {}
+
+    if (db) {
+      try {
+        const tx = db.transaction('pending_ratings', 'readwrite');
+        const store = tx.objectStore('pending_ratings');
+        keys.forEach(k => store.delete(k));
+      } catch (e) {}
+    }
+    updatePendingBadgeUI();
+  }
+
+  async function updatePendingBadgeUI() {
+    const pendings = await getPendingRatings();
+    const cnt = pendings.length;
+    const lbl = document.getElementById('pending-count-label');
+    if (lbl) lbl.textContent = cnt;
+    const dot = document.getElementById('menu-pending-dot');
+    if (dot) {
+      dot.textContent = cnt;
+      dot.style.display = cnt > 0 ? 'inline-block' : 'none';
+    }
+  }
+
+  /* ================= 方案1：從手機本地檔案 (iCloud Drive / Google Drive) 載入離線包 ================= */
+  function triggerFileSelect() {
+    document.getElementById('bundle-file-input').click();
+  }
+
+  async function handleBundleFileSelect(event) {
+    const file = event.target.files && event.target.files[0];
+    if (!file) return;
+    showToast(`正在讀取並解壓離線包 (${(file.size / (1024*1024)).toFixed(1)} MB)...`);
+
+    try {
+      const buf = await file.arrayBuffer();
+      const u8 = new Uint8Array(buf);
+      let jsonText = '';
+
+      // 檢查是否為 Gzip 格式 (Magic Number: 0x1f 0x8b)
+      if (u8.length > 2 && u8[0] === 0x1f && u8[1] === 0x8b) {
+        if (typeof DecompressionStream === 'undefined') {
+          throw new Error('您的瀏覽器版本不支援 Gzip 解壓，請改選 .json 格式');
+        }
+        const ds = new DecompressionStream('gzip');
+        const decompressedStream = new Blob([buf]).stream().pipeThrough(ds);
+        jsonText = await new Response(decompressedStream).text();
+      } else {
+        jsonText = new TextDecoder('utf-8').decode(u8);
+      }
+
+      const list = JSON.parse(jsonText);
+      await saveBundleListToIndexedDB(list);
+    } catch (e) {
+      showToast('載入檔案失敗: ' + e.message);
+    } finally {
+      event.target.value = '';
+    }
+  }
+
+  /* 將解析後的離線小說包寫入手機 IndexedDB (保留本地已標記狀態) */
+  async function saveBundleListToIndexedDB(list) {
+    if (!Array.isArray(list) || list.length === 0) {
+      showToast('離線包內容為空');
+      return;
+    }
+    showToast(`正在將 ${list.length} 篇小說寫入手機永久資料庫...`);
+
+    const pendings = await getPendingRatings();
+    const pendingMap = {};
+    pendings.forEach(p => { pendingMap[p.rel_path] = p.rating; });
+
+    const newNovelsMeta = [];
+    for (let i = 0; i < list.length; i++) {
+      const item = list[i];
+      const rel = item.rel_path;
+      const fn = item.filename || rel.split('/').pop();
+      const folder = item.folder || (rel.includes('/') ? rel.split('/')[0] : '未分類');
+      const nameNoExt = fn.replace(/\.(txt|TXT)$/, '');
+      let title = item.title;
+      let author = item.author;
+      if (!title) {
+        if (nameNoExt.includes('-')) {
+          const parts = nameNoExt.split('-');
+          author = parts.pop();
+          title = parts.join('-');
+        } else {
+          title = nameNoExt;
+          author = '未標註';
+        }
+      }
+      const sizeKb = item.size_kb || Math.round(((item.content || '').length * 2) / 1024 * 10) / 10;
+      const rating = pendingMap[rel] || item.rating || 'none';
+
+      newNovelsMeta.push({
+        rel_path: rel,
+        folder: folder,
+        filename: fn,
+        title: title.trim(),
+        author: (author || '未標註').trim(),
+        size_kb: sizeKb,
+        rating: rating
+      });
+    }
+
+    if (!db) await openDB();
+    if (db) {
+      await new Promise((resolve, reject) => {
+        const tx = db.transaction(['contents', 'novels_meta'], 'readwrite');
+        const cStore = tx.objectStore('contents');
+        const mStore = tx.objectStore('novels_meta');
+
+        for (let i = 0; i < list.length; i++) {
+          cStore.put({ rel_path: list[i].rel_path, content: list[i].content });
+        }
+        for (let i = 0; i < newNovelsMeta.length; i++) {
+          mStore.put(newNovelsMeta[i]);
+        }
+        tx.oncomplete = () => resolve();
+        tx.onerror = (e) => reject(e);
+      });
+    }
+
+    novels = newNovelsMeta;
+    updateStats();
+    populateFolders();
+    renderList();
+
+    const cacheLabel = document.getElementById('offline-cache-count');
+    if (cacheLabel) cacheLabel.textContent = `✅ 已儲存 ${list.length} 篇`;
+
+    const filtered = getFilteredNovels();
+    if (filtered.length > 0) {
+      selectNovel(novels.indexOf(filtered[0]));
+    }
+    showToast(`🎉 成功載入 ${list.length} 篇小說至手機！\n即使電腦關機或無網路也可隨時閱讀與標記`);
+  }
+
+  /* 從區網 Mac 下載離線包 */
+  async function downloadOfflineBundle() {
+    const btn = document.getElementById('btn-offline-download');
+    if (btn) { btn.disabled = true; btn.textContent = '⏳ 下載中...'; }
+    showToast('正在向區網 Mac 下載離線閱讀包...');
+
+    try {
+      const res = await fetch('/api/bundle');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const list = await res.json();
+      await saveBundleListToIndexedDB(list);
+      if (btn) { btn.textContent = '✅ 已更新離線庫'; btn.disabled = false; }
+    } catch (e) {
+      if (btn) { btn.disabled = false; btn.textContent = '📡 從區網Mac載入'; }
+      showToast('無法直接連線區網 Mac，請點擊左方「📂 從手機檔案載入離線包」選取 iCloud Drive 中的 offline_bundle.json.gz');
+    }
+  }
+
+  /* ================= 方案2：匯出標記檔至 iCloud Drive / Google Drive 自動同步 ================= */
+  async function exportPendingRatingsToFile() {
+    const pendings = await getPendingRatings();
+    if (pendings.length === 0) {
+      showToast('目前沒有待同步的離線標記');
+      return;
+    }
+
+    const payloadObj = {
+      exported_at: new Date().toISOString(),
+      count: pendings.length,
+      ratings: pendings
+    };
+    const jsonStr = JSON.stringify(payloadObj, null, 2);
+    const fileName = 'mobile_ratings.json';
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+
+    // 優先使用 iOS / Android 原生分享面板 (可直接點擊「儲存到檔案 -> iCloud Drive -> 小說整理同步」)
+    if (navigator.canShare && typeof File !== 'undefined') {
+      try {
+        const file = new File([blob], fileName, { type: 'application/json' });
+        if (navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            title: '小說標記同步檔',
+            text: `共 ${pendings.length} 筆標記，請儲存至 iCloud Drive「小說整理同步」資料夾`,
+            files: [file]
+          });
+          showToast(`☁️ 已喚起分享選單！\n請存至 iCloud Drive「小說整理同步」，Mac 開機即會自動分類歸檔`);
+          return;
+        }
+      } catch (err) {
+        if (err.name === 'AbortError') return;
+      }
+    }
+
+    // 備用：直接觸發瀏覽器下載 mobile_ratings.json
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast(`☁️ 已下載 ${fileName} (${pendings.length} 筆標記)！\n放入 iCloud Drive / Google Drive「小說整理同步」後 Mac 將自動歸檔`);
+  }
+
+  /* 透過跨協定表單將標記直接送回區網 Mac (繞過 HTTPS Mixed Content 限制) */
+  async function triggerLanFormSync() {
+    const pendings = await getPendingRatings();
+    if (pendings.length === 0) {
+      showToast('目前沒有待同步的標記');
+      return;
+    }
+
+    if (isOnlineWithMac) {
+      await syncPendingRatings();
+      return;
+    }
+
+    const savedHost = localStorage.getItem('mac_lan_host') || 'http://Ciear-Apple.local:8765';
+    const targetHost = prompt('請確認 Mac 區網網址 (需與 Mac 同 Wi-Fi 或熱點):', savedHost);
+    if (!targetHost) return;
+    const cleanHost = targetHost.replace(/\/$/, '');
+    localStorage.setItem('mac_lan_host', cleanHost);
+
+    const form = document.getElementById('lan-sync-form');
+    const input = document.getElementById('lan-sync-payload');
+    form.action = cleanHost + '/api/form_sync';
+    input.value = JSON.stringify({ ratings: pendings, auto_move: true });
+    form.submit();
+
+    // 詢問是否清空手機待同步佇列
+    setTimeout(async () => {
+      if (confirm(`已發送 ${pendings.length} 筆標記至 Mac！若新分頁顯示「同步成功」，請按確定以清除手機上的待同步佇列：`)) {
+        await clearPendingRatings(pendings.map(p => p.rel_path));
+        showToast('✅ 已清除待同步佇列');
+      }
+    }, 1500);
+  }
+
+  /* 同源區網自動同步 */
+  async function syncPendingRatings() {
+    const pendings = await getPendingRatings();
+    if (!pendings || pendings.length === 0) return;
+
+    try {
+      const res = await fetch('/api/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ratings: pendings, auto_move: true })
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data.status === 'ok') {
+        await clearPendingRatings(pendings.map(p => p.rel_path));
+        showToast(`🔄 自動同步成功！已將 ${data.synced_count} 筆標記同步回 Mac 並完成實體歸檔`);
+        await fetchNovels();
+        renderList();
+      }
+    } catch (e) {}
+  }
+
+  async function checkConnection() {
+    // 若在 GitHub Pages HTTPS 上，預設為獨立離線 PWA 模式
+    if (location.hostname.endsWith('github.io')) {
+      setOnlineStatus(false, true);
+      return;
+    }
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1800);
+      const res = await fetch('/api/ping', { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        setOnlineStatus(true, false);
+        syncPendingRatings();
+      } else {
+        setOnlineStatus(false, false);
+      }
+    } catch (e) {
+      setOnlineStatus(false, false);
+    }
+  }
+
+  function setOnlineStatus(online, isCloudPwa) {
+    isOnlineWithMac = online;
+    const icon = document.getElementById('sync-status-icon');
+    const text = document.getElementById('sync-status-text');
+    if (icon && text) {
+      if (online) {
+        icon.textContent = '🟢';
+        text.textContent = '已連線 Mac';
+      } else if (isCloudPwa) {
+        icon.textContent = '📱';
+        text.textContent = '手機獨立離線版';
+      } else {
+        icon.textContent = '📴';
+        text.textContent = '離線模式';
+      }
+    }
+  }
+
+  /* ================= 應用程式初始化 ================= */
+  async function init() {
+    await openDB();
+    await updatePendingBadgeUI();
+
+    // 檢查手機 IndexedDB 是否已有離線小說庫
+    const cachedMeta = await getAllOfflineMeta();
+    const pendings = await getPendingRatings();
+    const pendingMap = {};
+    pendings.forEach(p => { pendingMap[p.rel_path] = p.rating; });
+
+    if (db) {
+      try {
+        const tx = db.transaction('contents', 'readonly');
+        const cReq = tx.objectStore('contents').count();
+        cReq.onsuccess = () => {
+          const cacheLabel = document.getElementById('offline-cache-count');
+          if (cReq.result > 0 && cacheLabel) {
+            cacheLabel.textContent = `✅ 已儲存 ${cReq.result} 篇`;
+          }
+        };
+      } catch(e) {}
+    }
+
+    // 1. 若有 SSR 內嵌資料 (直接連 Mac 時)
+    if (window.INITIAL_NOVELS && window.INITIAL_NOVELS.length > 0) {
+      novels = window.INITIAL_NOVELS;
+      novels.forEach(n => { if (pendingMap[n.rel_path]) n.rating = pendingMap[n.rel_path]; });
+    } else if (cachedMeta && cachedMeta.length > 0) {
+      // 2. 從手機本地 IndexedDB 直接載入 (電腦關機/重啟/戶外離線時 0.1 秒秒開！)
+      novels = cachedMeta;
+      novels.forEach(n => { if (pendingMap[n.rel_path]) n.rating = pendingMap[n.rel_path]; });
+      novels.sort((a, b) => {
+        const rA = a.rating === 'none' ? 0 : 1;
+        const rB = b.rating === 'none' ? 0 : 1;
+        if (rA !== rB) return rA - rB;
+        return (a.title || '').localeCompare(b.title || '');
+      });
+    } else if (!location.hostname.endsWith('github.io')) {
+      try {
+        await fetchNovels();
+      } catch (e) {}
+    }
+
+    if (novels && novels.length > 0) {
+      updateStats();
+      populateFolders();
+      renderList();
+
+      // 恢復上次閱讀位置
+      const lastRel = localStorage.getItem('last_read_rel_path');
+      const filtered = getFilteredNovels();
+      let targetNovel = filtered.find(x => x.rel_path === lastRel) || filtered[0];
+      if (targetNovel) {
+        const idx = novels.indexOf(targetNovel);
+        if (idx === 0 && window.INITIAL_FIRST_CONTENT) {
+          currentIndex = 0;
+          document.getElementById('current-title').textContent = targetNovel.title;
+          document.getElementById('current-subtitle').textContent = `${targetNovel.folder} · ${targetNovel.author || '未標註'} · ${targetNovel.size_kb} KB`;
+          updateRatingUI(targetNovel.rating);
+          document.getElementById('novel-content').textContent = window.INITIAL_FIRST_CONTENT;
+        } else {
+          selectNovel(idx);
+        }
+      }
+    } else {
+      // 尚未匯入離線包時的友善引導畫面
+      document.getElementById('current-title').textContent = '歡迎使用手機獨立離線版';
+      document.getElementById('current-subtitle').textContent = '載入一次離線包，電腦關機也能隨時閱讀與標記';
+      document.getElementById('novel-content').innerHTML = `
+        <div class="empty-onboarding">
+          <h2>📱 手機 100% 獨立離線閱讀與標記設定</h2>
+          <p style="margin-bottom:12px;">本網頁已啟用 <b>HTTPS Service Worker 永久離線快取</b>，就算電腦關機、重啟或切換網路，手機上的資料與標記也<b>永遠不會失效</b>。</p>
+          <ol>
+            <li>點擊下方按鈕，從手機「檔案」App 的 <b>iCloud Drive ➔ AGY工作區i ➔ 小說整理同步</b>（或 Google Drive）選取 <code>offline_bundle.json.gz</code>。</li>
+            <li>載入完成後，1,630 篇小說即永久保存在手機內，隨時可離線閱讀並標記「❤️喜歡 / 😐一般 / ❌討厭」。</li>
+            <li>標記完畢後，點擊頂部 <b>☁️ 按鈕</b> 將 <code>mobile_ratings.json</code> 存回 iCloud 同步資料夾，Mac 開機時就會<b>全自動將電腦裡的實體檔案分類歸檔</b>！</li>
+          </ol>
+          <button class="big-action-btn" onclick="triggerFileSelect()">📂 立即從手機檔案載入 offline_bundle.json.gz</button>
+        </div>
+      `;
+    }
+
+    setupShortcuts();
+    setupTouchGestures();
+
+    window.addEventListener('online', checkConnection);
+    window.addEventListener('focus', checkConnection);
+    setInterval(checkConnection, 15000);
+    checkConnection();
+  }
+
+  async function fetchNovels() {
+    const res = await fetch('/api/novels');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    novels = await res.json();
+    updateStats();
+    if (db) {
+      try {
+        const tx = db.transaction('novels_meta', 'readwrite');
+        const store = tx.objectStore('novels_meta');
+        novels.forEach(n => store.put(n));
+      } catch(e) {}
+    }
+  }
+
+  function setMode(mode) {
+    viewMode = mode;
+    document.getElementById('tab-inbox').classList.toggle('active', mode === 'inbox');
+    document.getElementById('tab-all').classList.toggle('active', mode === 'all');
+    document.getElementById('status-filter').value = (mode === 'inbox') ? 'unrated' : 'all';
+    renderList();
+    const filtered = getFilteredNovels();
+    if (filtered.length > 0) selectNovel(novels.indexOf(filtered[0]));
+  }
+
+  function populateFolders() {
+    const folders = [...new Set(novels.map(n => n.folder))].sort();
+    const sel = document.getElementById('folder-filter');
+    sel.innerHTML = '<option value="all">所有資料夾</option>';
+    folders.forEach(f => {
+      const opt = document.createElement('option');
+      opt.value = f;
+      opt.textContent = f;
+      sel.appendChild(opt);
+    });
+  }
+
+  function updateStats() {
+    const total = novels.length;
+    const unrated = novels.filter(n => n.rating === 'none').length;
+    const liked = novels.filter(n => n.rating === 'like').length;
+    const neutral = novels.filter(n => n.rating === 'neutral').length;
+    const disliked = novels.filter(n => n.rating === 'dislike').length;
+    const rated = liked + neutral + disliked;
+
+    document.getElementById('total-count-badge').textContent = `共 ${total} 部`;
+    document.getElementById('stat-unrated').textContent = unrated;
+    document.getElementById('stat-like').textContent = liked;
+    document.getElementById('stat-neutral').textContent = neutral;
+    document.getElementById('stat-dislike').textContent = disliked;
+    document.getElementById('progress-bar').style.width = total > 0 ? `${(rated/total)*100}%` : '0%';
+  }
+
+  function getFilteredNovels() {
+    const q = (document.getElementById('search-box').value || '').trim().toLowerCase();
+    const folder = document.getElementById('folder-filter').value;
+    const status = document.getElementById('status-filter').value;
+
+    return novels.filter(n => {
+      if (q) {
+        const matchTitle = (n.title || '').toLowerCase().includes(q);
+        const matchAuthor = (n.author || '').toLowerCase().includes(q);
+        const matchFile = (n.filename || '').toLowerCase().includes(q);
+        if (!matchTitle && !matchAuthor && !matchFile) return false;
+      }
+      if (folder !== 'all' && n.folder !== folder) return false;
+      if (status === 'unrated' && n.rating !== 'none') return false;
+      if (status === 'like' && n.rating !== 'like') return false;
+      if (status === 'neutral' && n.rating !== 'neutral') return false;
+      if (status === 'dislike' && n.rating !== 'dislike') return false;
+      return true;
+    });
+  }
+
+  function filterNovels() { renderList(); }
+
+  function renderList() {
+    const listEl = document.getElementById('novel-list');
+    const prevScroll = listEl.scrollTop;
+    listEl.innerHTML = '';
+    const filtered = getFilteredNovels();
+
+    filtered.forEach((n) => {
+      const globalIdx = novels.indexOf(n);
+      const item = document.createElement('div');
+      item.className = 'novel-item' + (globalIdx === currentIndex ? ' active' : '');
+      item.onclick = () => {
+        selectNovel(globalIdx);
+        toggleSidebar(false);
+      };
+
+      let badgeHtml = '';
+      if (n.rating === 'like') badgeHtml = '<span class="badge badge-like">❤️ 喜歡</span>';
+      else if (n.rating === 'neutral') badgeHtml = '<span class="badge badge-neutral">😐 一般</span>';
+      else if (n.rating === 'dislike') badgeHtml = '<span class="badge badge-dislike">❌ 討厭</span>';
+      else badgeHtml = '<span class="badge badge-unrated">待處理</span>';
+
+      item.innerHTML = `
+        <div class="novel-info">
+          <div class="novel-name">${escapeHtml(n.title)}</div>
+          <div class="novel-meta">
+            <span>${escapeHtml(n.author || '未標註')}</span>
+            <span>·</span>
+            <span>${n.folder}</span>
+            <span>·</span>
+            <span>${n.size_kb} KB</span>
+          </div>
+        </div>
+        <div>${badgeHtml}</div>
+      `;
+      listEl.appendChild(item);
+    });
+
+    listEl.scrollTop = prevScroll;
+  }
+
+  async function selectNovel(index) {
+    if (index < 0 || index >= novels.length) return;
+    currentIndex = index;
+    const n = novels[currentIndex];
+
+    try { localStorage.setItem('last_read_rel_path', n.rel_path); } catch(e) {}
+
+    document.getElementById('current-title').textContent = n.title;
+    document.getElementById('current-subtitle').textContent = `${n.folder} · ${n.author || '未標註'} · ${n.size_kb} KB`;
+    updateRatingUI(n.rating);
+
+    document.querySelectorAll('.novel-item').forEach(el => el.classList.remove('active'));
+    renderList();
+
+    const contentEl = document.getElementById('novel-content');
+    contentEl.textContent = '載入中...';
+    document.getElementById('reader-container').scrollTop = 0;
+
+    // 1. 優先從手機本地 IndexedDB 讀取全文 (0 網路依賴)
+    const cached = await getCachedContent(n.rel_path);
+    if (cached) {
+      contentEl.textContent = cached;
+      return;
+    }
+
+    // 2. 若未快取且連線 Mac，從 API 讀取
+    try {
+      const res = await fetch(`/api/content?path=${encodeURIComponent(n.rel_path)}`);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      contentEl.textContent = data.content || '(內容為空)';
+    } catch (e) {
+      contentEl.innerHTML = `
+        <div class="empty-onboarding">
+          <h2>📴 目前處於離線狀態，且本篇尚未載入離線包</h2>
+          <p>請點擊下方按鈕，從手機「檔案」App (iCloud Drive ➔ 小說整理同步) 選取 <code>offline_bundle.json.gz</code>，即可一次載入全部 1,630 篇小說全文。</p>
+          <button class="big-action-btn" onclick="triggerFileSelect()">📂 從手機檔案載入 offline_bundle.json.gz</button>
+        </div>
+      `;
+    }
+  }
+
+  function updateRatingUI(rating) {
+    ['btn-like', 'btn-neutral', 'btn-dislike', 'm-btn-like', 'm-btn-neutral', 'm-btn-dislike'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('active');
+    });
+    if (rating === 'like') {
+      const d = document.getElementById('btn-like'); if (d) d.classList.add('active');
+      const m = document.getElementById('m-btn-like'); if (m) m.classList.add('active');
+    } else if (rating === 'neutral') {
+      const d = document.getElementById('btn-neutral'); if (d) d.classList.add('active');
+      const m = document.getElementById('m-btn-neutral'); if (m) m.classList.add('active');
+    } else if (rating === 'dislike') {
+      const d = document.getElementById('btn-dislike'); if (d) d.classList.add('active');
+      const m = document.getElementById('m-btn-dislike'); if (m) m.classList.add('active');
+    }
+  }
+
+  async function rateCurrent(rating) {
+    if (currentIndex < 0 || currentIndex >= novels.length) return;
+    const n = novels[currentIndex];
+    const filtered = getFilteredNovels();
+    const curPos = filtered.indexOf(n);
+
+    n.rating = rating;
+    updateRatingUI(rating);
+
+    const tagMap = { 'like': '❤️ 喜歡', 'neutral': '😐 一般', 'dislike': '❌ 討厭' };
+
+    if (isOnlineWithMac && !location.hostname.endsWith('github.io')) {
+      try {
+        const res = await fetch('/api/rate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ rel_path: n.rel_path, rating: rating, auto_move: true })
+        });
+        const result = await res.json();
+        if (result.status === 'ok') {
+          n.rel_path = result.new_rel_path;
+          n.folder = result.new_folder;
+          showToast(`已標記【${tagMap[rating]}】並於 Mac 歸檔`);
+        }
+      } catch (e) {
+        await savePendingRating(n.rel_path, rating);
+        showToast(`📱 已離線標記【${tagMap[rating]}】(可點 ☁️ 匯出至 iCloud 自動同步)`);
+      }
+    } else {
+      await savePendingRating(n.rel_path, rating);
+      const pendings = await getPendingRatings();
+      showToast(`📱 已儲存標記【${tagMap[rating]}】(累計 ${pendings.length} 筆待同步)`);
+    }
+
+    updateStats();
+
+    if (viewMode === 'inbox') {
+      renderList();
+      const remaining = getFilteredNovels();
+      if (remaining.length > 0) {
+        const nextTargetIndex = Math.min(curPos, remaining.length - 1);
+        selectNovel(novels.indexOf(remaining[nextTargetIndex]));
+      } else {
+        document.getElementById('novel-content').textContent = '🎉 待處理收件匣的小說已全數標註分類完成！';
+      }
+    } else {
+      renderList();
+      nextNovel();
+    }
+  }
+
+  function nextNovel() {
+    const filtered = getFilteredNovels();
+    if (filtered.length === 0) return;
+    const curIdx = filtered.indexOf(novels[currentIndex]);
+    if (curIdx >= 0 && curIdx < filtered.length - 1) {
+      selectNovel(novels.indexOf(filtered[curIdx + 1]));
+    } else {
+      selectNovel(novels.indexOf(filtered[0]));
+    }
+  }
+
+  function prevNovel() {
+    const filtered = getFilteredNovels();
+    if (filtered.length === 0) return;
+    const curIdx = filtered.indexOf(novels[currentIndex]);
+    if (curIdx > 0) {
+      selectNovel(novels.indexOf(filtered[curIdx - 1]));
+    } else {
+      selectNovel(novels.indexOf(filtered[filtered.length - 1]));
+    }
+  }
+
+  function randomNovel() {
+    const filtered = getFilteredNovels();
+    if (filtered.length === 0) return;
+    const rand = filtered[Math.floor(Math.random() * filtered.length)];
+    selectNovel(novels.indexOf(rand));
+    showToast('🎲 隨機選中：' + rand.title);
+  }
+
+  function adjustFontSize(delta) {
+    fontSize = Math.max(14, Math.min(32, fontSize + delta));
+    document.documentElement.style.setProperty('--font-size', `${fontSize}px`);
+    showToast(`字體大小: ${fontSize}px`);
+  }
+
+  function toggleTheme() {
+    currentThemeIdx = (currentThemeIdx + 1) % themes.length;
+    document.body.className = themes[currentThemeIdx] + (hudVisible ? '' : ' hud-hidden');
+    const names = ['深色護眼', '明亮紙質', '羊皮復古'];
+    showToast(`主題: ${names[currentThemeIdx]}`);
+  }
+
+  function toggleSidebar(forceState) {
+    const sb = document.getElementById('sidebar');
+    const ov = document.getElementById('sidebar-overlay');
+    const isOpen = (forceState !== undefined) ? forceState : !sb.classList.contains('open');
+    sb.classList.toggle('open', isOpen);
+    ov.classList.toggle('open', isOpen);
+  }
+
+  function handleReaderTap(e) {
+    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'CODE' || e.target.closest('.empty-onboarding')) return;
+    const selection = window.getSelection();
+    if (selection && selection.toString().length > 0) return;
+    hudVisible = !hudVisible;
+    document.body.classList.toggle('hud-hidden', !hudVisible);
+  }
+
+  function showInfoToast() {
+    if (currentIndex < 0 || !novels[currentIndex]) return;
+    const n = novels[currentIndex];
+    showToast(`📄 ${n.filename}\n📁 目錄: ${n.folder}\n📊 大小: ${n.size_kb} KB`);
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => t.classList.remove('show'), 2600);
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function setupShortcuts() {
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+      if (e.key === '1' || e.key === 'l' || e.key === 'L') rateCurrent('like');
+      else if (e.key === '2' || e.key === 'n' || e.key === 'N') rateCurrent('neutral');
+      else if (e.key === '3' || e.key === 'd' || e.key === 'D') rateCurrent('dislike');
+      else if (e.key === 'ArrowDown' || e.key === 'j' || e.key === 'J') { e.preventDefault(); nextNovel(); }
+      else if (e.key === 'ArrowUp' || e.key === 'k' || e.key === 'K') { e.preventDefault(); prevNovel(); }
+      else if (e.key === 'r' || e.key === 'R') randomNovel();
+    });
+  }
+
+  function setupTouchGestures() {
+    let startX = 0, startY = 0;
+    const rc = document.getElementById('reader-container');
+    rc.addEventListener('touchstart', (e) => {
+      startX = e.changedTouches[0].screenX;
+      startY = e.changedTouches[0].screenY;
+    }, { passive: true });
+    rc.addEventListener('touchend', (e) => {
+      const diffX = e.changedTouches[0].screenX - startX;
+      const diffY = e.changedTouches[0].screenY - startY;
+      if (Math.abs(diffX) > 80 && Math.abs(diffY) < 60) {
+        if (diffX < 0) nextNovel();
+        else prevNovel();
+      }
+    }, { passive: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+</script>
+</body>
+</html>
